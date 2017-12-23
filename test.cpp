@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdint.h>
+#include "ops.h"
 #include "../emscripten/emscripten.h"
 
 #define IMM11(x) (x & 0b11111111111)
 #define IMM8(x) (x & 0xFF)
 #define IMM7(x) (x & 0b1111111)
 
-typedef  uint8_t OpArgs[5+4];
+
 typedef void opHandler(OpArgs &);
 
 typedef struct  {
@@ -15,8 +16,18 @@ typedef struct  {
   uint8_t Rn;
   uint8_t Rm;
   uint8_t Rt;
-  uint8_t imm;
+  uint16_t imm;
 } simple_op_args;
+
+typedef struct  {
+  opHandler *handler;
+  uint8_t Rd;
+  uint8_t Rn;
+  uint8_t Rm;
+  uint8_t Rt;
+  uint16_t register_list;
+} opPushPopData;
+
 
 typedef struct {
   bool N;
@@ -108,9 +119,6 @@ void boot() {
 
 }
 
-void op_nop(OpArgs &a);
-void op_branch(OpArgs &a);
-void op_ldr_literal(OpArgs &a);
 void decode_instruction(uint32_t addr, simple_op_args &opdata) {
   uint16_t instruction = fetchHalfword(addr);
   uint16_t opcode = instruction >> 10;
@@ -118,10 +126,166 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
 
     // Data processing on page A5-80
     case(0b010000) : {
+      opcode = (instruction >> 6) & 0b1111;
+      switch(opcode) {
+        // AND (register)
+        case (0b0000) :
+        opdata.handler = op_and_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // EOR (register)
+        case (0b0001) :
+        opdata.handler = op_eor_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // LSL (register)
+        case (0b0010) :
+        opdata.handler = op_lsl_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // LSR (register)
+        case (0b0011) :
+        opdata.handler = op_lsr_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // ASR (register)
+        case (0b0100) :
+        opdata.handler = op_asr_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // ADC (register)
+        case (0b0101) :
+        opdata.handler = op_adc_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // SBC (register)
+        case (0b0110) :
+        opdata.handler = op_sbc_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // ROR (Register)
+        case (0b0111) :
+        opdata.handler = op_ror_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // TST (register)
+        case (0b1000) :
+        opdata.handler = op_tst_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rn = instruction & 0b111;
+        break;
+        // RSB (immediate)
+        case (0b1001) :
+        opdata.handler = op_rsb_register;
+        opdata.Rn = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.imm = 0;
+        break;
+        // CMP (register)
+        case (0b1010) :
+        opdata.handler = op_cmp_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rn = instruction & 0b111;
+        break;
+        // CMN (register)
+        case (0b1011) :
+        opdata.handler = op_cmn_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rn = instruction & 0b111;
+        break;
+        // ORR (register)
+        case (0b1100) :
+        opdata.handler = op_orr_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // MUL
+        case (0b1101) :
+        opdata.handler = op_mul_register;
+        opdata.Rn = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rm = opdata.Rd;
+        break;
+        // BIC (register)
+        case (0b1110) :
+        opdata.handler = op_bic_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        opdata.Rn = opdata.Rd;
+        break;
+        // MVN (register)
+        case (0b1111) :
+        opdata.handler = op_mvn_register;
+        opdata.Rm = (instruction >> 3) & 0b111;
+        opdata.Rd = instruction & 0b111;
+        break;
+      }
+      return;
       break;
     }
     // Special data instructions and branch and exchange
     case (0b010001) : {
+      opcode = (instruction >> 6) & 0b1111;
+      // ADD (Register)
+      if ((opcode & 0b1100) == 0xb0000) {
+        opdata.handler = op_add_register;
+        opdata.Rm = (instruction >> 3) & 0b1111;
+        opdata.Rn = ((instruction >> 0) & 0b111) +
+          ((instruction & 0b10000000) >> 4);
+        opdata.Rd = opdata.Rn;
+        return;
+      } else
+      // unpredictable
+      if (opcode == 0b0100) {
+        // TODO: better than unpredictable
+        opdata.handler = op_nop;
+        return;
+      } else
+      // CMP (register)
+      if ((opcode & 0b1111) == 0b0100) {
+        opdata.handler = op_cmp;
+        opdata.Rm = (instruction >> 3) & 0b1111;
+        opdata.Rn = ((instruction >> 0) & 0b111) +
+          ((instruction & 0b10000000) >> 4);
+        return;
+      } else
+      // MOV (register)
+      if ((opcode & 0b1100) == 0b1000) {
+        opdata.handler = op_mov_register;
+        opdata.Rm = (instruction >> 3) & 0b1111;
+        opdata.Rd = ((instruction >> 0) & 0b111) +
+          ((instruction & 0b10000000) >> 4);
+        return;
+      } else
+      // BX
+      if ((opcode & 0b1110) == 0b1100) {
+        opdata.handler = op_bx;
+        opdata.Rm = (instruction >> 3) & 0b1111;
+        return;
+      } else
+      // BLX
+      if ((opcode & 0b1110) == 0b1110) {
+        opdata.handler = op_blx;
+        opdata.Rm = (instruction >> 3) & 0b1111;
+        return;
+      }
       break;
     }
 
@@ -201,38 +365,38 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         }
         switch (opcode) {
           // STR (imm)
-          case 0x01100:
+          case 0b01100:
           opdata.handler = op_str_immediate;
           break;
           // LDR (imm)
-          case 0x01101:
+          case 0b01101:
           opdata.handler = op_ldr_immediate;
           break;
           // STRB (imm)
-          case 0x01110:
+          case 0b01110:
           opdata.handler = op_strb_immediate;
           break;
           // LDRB (imm)
-          case 0x01111:
+          case 0b01111:
           opdata.handler = op_ldrb_immediate;
           break;
           // STRH (imm)
-          case 0x10000:
+          case 0b10000:
           opdata.handler = op_strh_immediate;
           break;
           // LDRH (imm)
-          case 0x10001:
+          case 0b10001:
           opdata.handler = op_ldrh_immediate;
           break;
           // STR (imm) SP relative
-          case 0x10010:
+          case 0b10010:
           opdata.handler = op_str_immediate;
           opdata.imm = IMM8(instruction);
           opdata.Rn = spRegister;
           opdata.Rt = (instruction >> 8) & 0x111;
           break;
           // LDR (imm) SP relative
-          case 0x10011:
+          case 0b10011:
           opdata.handler = op_ldr_immediate;
           opdata.imm = IMM8(instruction);
           opdata.Rn = spRegister;
@@ -272,64 +436,77 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         return;
       }
       // SXTH
-      if ((opcode && 0b1111110) == 0b0010000) {
+      if ((opcode & 0b1111110) == 0b0010000) {
         opdata.handler = op_sxth;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
       // SXTB
-      if ((opcode && 0b1111110) == 0b0010010) {
+      if ((opcode & 0b1111110) == 0b0010010) {
         opdata.handler = op_sxtb;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
       // UXTH
-      if ((opcode && 0b1111110) == 0b0010100) {
+      if ((opcode & 0b1111110) == 0b0010100) {
         opdata.handler = op_uxth;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
       // UXTB
-      if ((opcode && 0b1111110) == 0b0010110) {
+      if ((opcode & 0b1111110) == 0b0010110) {
         opdata.handler = op_uxtb;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
       // PUSH
+      if ((opcode & 0b1110000) == 0b0100000) {
+        opdata.handler = op_push;
+        opPushPopData &op = (opPushPopData&)opdata;
+        op.register_list = (instruction & 0xFF) +
+          ((instruction & 0x100) << 6);
+        return;
+      }
       // CPS
-      if ((opcode && 0b1111110) == 0b0110011) {
+      if ((opcode & 0b1111110) == 0b0110011) {
         // TODO check that end of instruction is 0010
         opdata.handler = op_cps;
         opdata.imm = (instruction >> 4) & 1;
         return;
       }
       // REV
-      if ((opcode && 0b1111110) == 0b1010000) {
+      if ((opcode & 0b1111110) == 0b1010000) {
         opdata.handler = op_rev;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
       // REV16
-      if ((opcode && 0b1111110) == 0b1010010) {
+      if ((opcode & 0b1111110) == 0b1010010) {
         opdata.handler = op_rev16;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
       // REVSH
-      if ((opcode && 0b1111110) == 0b1010110) {
+      if ((opcode & 0b1111110) == 0b1010110) {
         opdata.handler = op_revsh;
         opdata.Rm = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         return;
       }
-
       // POP
+      if ((opcode & 0b1110000) == 0b1100000) {
+        opdata.handler = op_pop;
+        opPushPopData &op = (opPushPopData&)opdata;
+        op.register_list = (instruction & 0xFF) +
+          ((instruction & 0x100) << 7);
+        return;
+      }
       // BKPT
       if ((instruction >> 8) == 0b10111110) {
         opdata.handler = op_bkpt;
@@ -342,7 +519,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         uint8_t opB = (instruction & 0xFF);
         if (opB != 0) {
           // TODO: undefined
-          return
+          return;
         }
         switch(opA) {
           case 0b0000:
@@ -383,7 +560,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         opdata.imm = IMM8(instruction);
         return;
       // UDF
-      } elseif (opcode == 0b1110) {
+      } else if (opcode == 0b1110) {
         opdata.handler = op_udf;
         opdata.imm = IMM8(instruction) << 1;
         return;
@@ -392,59 +569,59 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
       opdata.imm = IMM8(instruction) << 1;
       switch(opcode) {
         // EQ
-        case 0xb0000:
+        case 0b0000:
         opdata.handler = op_branch_eq;
         break;
         // NE
-        case 0xb0001:
+        case 0b0001:
         opdata.handler = op_branch_ne;
         break;
         // CS
-        case 0xb0010:
+        case 0b0010:
         opdata.handler = op_branch_cs;
         break;
         // CC
-        case 0xb0011:
+        case 0b0011:
         opdata.handler = op_branch_cc;
         break;
         // MI
-        case 0xb0100:
+        case 0b0100:
         opdata.handler = op_branch_mi;
         break;
         // PL
-        case 0xb0101:
+        case 0b0101:
         opdata.handler = op_branch_pl;
         break;
         // VS
-        case 0xb0110:
+        case 0b0110:
         opdata.handler = op_branch_vs;
         break;
         // VC
-        case 0xb0111:
+        case 0b0111:
         opdata.handler = op_branch_vc;
         break;
         // HI
-        case 0xb1000:
+        case 0b1000:
         opdata.handler = op_branch_hi;
         break;
         // LS
-        case 0xb1001:
+        case 0b1001:
         opdata.handler = op_branch_ls;
         break;
         // GE
-        case 0xb1010:
+        case 0b1010:
         opdata.handler = op_branch_ge;
         break;
         // LT
-        case 0xb1011:
+        case 0b1011:
         opdata.handler = op_branch_lt;
         break;
         // GT
-        case 0xb1100:
+        case 0b1100:
         opdata.handler = op_branch_gt;
         break;
         // LE
-        case 0xb1101:
+        case 0b1101:
         opdata.handler = op_branch_le;
         break;
       }

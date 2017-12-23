@@ -1,0 +1,66 @@
+
+typedef  uint8_t OpArgs[6+4];
+
+void op_nop(OpArgs &a);
+void op_branch(OpArgs &a);
+void op_ldr_literal(OpArgs &a);
+void op_ldr_immediate(OpArgs &a);
+void op_ldrb_immediate(OpArgs &a);
+void op_ldrh_immediate(OpArgs &a);
+void op_and_register(OpArgs &a);
+void op_lsr_register(OpArgs &a);
+void op_ldr_register(OpArgs &a);
+void op_asr_register(OpArgs &a);
+void op_mov_register(OpArgs &a);
+void op_eor_register(OpArgs &a);
+void op_ror_register(OpArgs &a);
+void op_lsl_register(OpArgs &a);
+void op_str_register(OpArgs &a);
+void op_strh_register(OpArgs &a);
+void op_strh_immediate(OpArgs &a);
+void op_strb_register(OpArgs &a);
+void op_ldrh_register(OpArgs &a);
+void op_ldrb_register(OpArgs &a);
+void op_str_immediate(OpArgs &a);
+void op_strb_immediate(OpArgs &a);
+void op_ldrh_register(OpArgs &a);
+void op_adc_register(OpArgs &a);
+void op_sbc_register(OpArgs &a);
+void op_tst_register(OpArgs &a);
+void op_rsb_register(OpArgs &a);
+void op_cmp_register(OpArgs &a);
+void op_cmn_register(OpArgs &a);
+void op_orr_register(OpArgs &a);
+void op_mul_register(OpArgs &a);
+void op_bic_register(OpArgs &a);
+void op_mvn_register(OpArgs &a);
+void op_add_register(OpArgs &a);
+void op_add_sp_plus_imm(OpArgs &a);
+void op_add_sp_minus_imm(OpArgs &a);
+void op_cmp(OpArgs &a);
+void op_adr(OpArgs &a);
+void op_uxth(OpArgs &a);
+void op_sxth(OpArgs &a);
+void op_sxtb(OpArgs &a);
+void op_uxtb(OpArgs &a);
+void op_sps(OpArgs &a);
+void op_cps(OpArgs &a);
+void op_push(OpArgs &a);
+void op_pop(OpArgs &a);
+void op_sev(OpArgs &a);
+void op_ldrsb_register(OpArgs &a);
+void op_ldrsh_register(OpArgs &a);
+
+void op_rev(OpArgs &a);
+void op_rev16(OpArgs &a);
+void op_revsh(OpArgs &a);
+
+void op_bx(OpArgs &a);
+void op_blx(OpArgs &a);
+
+void op_udf(OpArgs &a);
+void op_svc(OpArgs &a);
+void op_wfe(OpArgs &a);
+void op_wfi(OpArgs &a);
+void op_yield(OpArgs &a);
+void op_bkpt(OpArgs &a);
