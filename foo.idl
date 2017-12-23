@@ -1,0 +1,16 @@
+interface Foo {
+        void Foo();
+        long getVal();
+        void setVal(long v);
+};
+
+interface Bar {
+        void Bar(long val);
+        void doSomething();
+};
+
+callback booCallback = long (long status, long x);
+
+interface AsyncOperations {
+  void performOperation(booCallback whenFinished);
+};
