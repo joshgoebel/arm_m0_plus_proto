@@ -119,6 +119,9 @@ void boot() {
 
 }
 
+#define b5_3(x) ((x >> 3) && 0b111)
+#define b2_0(x) (x && 0b111)
+
 void decode_instruction(uint32_t addr, simple_op_args &opdata) {
   uint16_t instruction = fetchHalfword(addr);
   uint16_t opcode = instruction >> 10;
@@ -635,6 +638,56 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     }
   }
 
+  // 32-bit instructions
+  opcode = (instruction >> 11) & 0b11111;
+  uint16_t instruction_hi = fetchHalfword(addr + 2);
+
+  // Branch and miscellaneous control
+  if ((opcode == 0b11110) & (instruction_hi >> 15)) {
+    uint8_t op1 = (instruction_hi >> 4) & 0b1111111;
+    uint8_t op2 = (instruction_hi >> 12) & 0b111;
+    // MSR
+    if (((instruction & 0b1111111111110000) == 0b1111001110000000) &&
+    ((instruction_hi >> 8) == 10001000)) {
+      opdata.handler = op_msr;
+      opdata.Rn = instruction & 0b1111;
+      opdata.Rd = instruction_hi & 0xFF; // SYSm
+      return;
+    }
+    // MRS
+    if ((instruction == 0b1111001111101111) &&
+      (instruction_hi >> 12) == 0b1000) {
+        opdata.handler = op_mrs;
+        opdata.Rd = (instruction_hi >> 8) & 0b1111; // SYSm
+        opdata.Rt = instruction_hi & 0xFF; // SYSm
+        return;
+      }
+    // UDF
+    if (op2 == 0b010 && op1 == 0b1111111) {
+      opdata.handler = op_udf;
+      return;
+    }
+    // BL
+    if ((op2 & 0b101) == 0b101) {
+      opdata.handler = op_bl;
+      uint8_t s = (instruction >> 10) & 1;
+      uint8_t j1 = (instruction_hi >> 13) & 1;
+      uint8_t j2 = (instruction_hi >> 11) & 1;
+      uint8_t i1 = !(j1 ^ s);
+      uint8_t i2 = !(j2 ^ s);
+      uint16_t imm10 = instruction    & 0b1111111111;
+      uint16_t imm11 = instruction_hi & 0b11111111111;
+      uint32_t imm32 = (s << 31) +
+        (imm10 << 12) +
+        (imm11 << 1) +
+        (i2 << 22) +
+        (i1 << 23);
+      ;
+      // TODO we don't have 32 bits here yet
+      opdata.imm = imm32;
+      return;
+    }
+  }
 
   opdata.handler = op_nop;
 }

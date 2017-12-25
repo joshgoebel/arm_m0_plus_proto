@@ -56,7 +56,11 @@ void op_rev16(OpArgs &a);
 void op_revsh(OpArgs &a);
 
 void op_bx(OpArgs &a);
+void op_bl(OpArgs &a);
 void op_blx(OpArgs &a);
+
+void op_msr(OpArgs &a);
+void op_mrs(OpArgs &a);
 
 void op_udf(OpArgs &a);
 void op_svc(OpArgs &a);
@@ -64,3 +68,25 @@ void op_wfe(OpArgs &a);
 void op_wfi(OpArgs &a);
 void op_yield(OpArgs &a);
 void op_bkpt(OpArgs &a);
+
+void op_branch_eq(OpArgs &a);
+void op_branch_ne(OpArgs &a);
+void op_branch_cs(OpArgs &a);
+void op_branch_cc(OpArgs &a);
+void op_branch_mi(OpArgs &a);
+void op_branch_pl(OpArgs &a);
+void op_branch_vs(OpArgs &a);
+void op_branch_vc(OpArgs &a);
+void op_branch_hi(OpArgs &a);
+void op_branch_ls(OpArgs &a);
+void op_branch_ge(OpArgs &a);
+void op_branch_lt(OpArgs &a);
+void op_branch_gt(OpArgs &a);
+void op_branch_le(OpArgs &a);
+
+
+// typedef struct {
+//   mask: uint16_t;
+//   match: uint16_t;
+//   op:
+// }
