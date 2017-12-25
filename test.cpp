@@ -412,7 +412,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     if ((opcode & 0b111110) == 0b101000) {
       opdata.handler = op_adr;
       opdata.Rd = (instruction >> 8) & 0b111;
-      opdata.imm = IMM8(instruction);
+      opdata.imm = IMM8(instruction) << 2;
       return;
     } else
     // Generate SP-relative address
@@ -802,6 +802,11 @@ void op_udf(OpArgs &a) {
 
 }
 
+void InstructionSynchronizationBarrier() {};
+void op_isb() {
+  InstructionSynchronizationBarrier();
+}
+
 void hintYield() {}
 
 // TODO
@@ -822,8 +827,10 @@ void op_dsb(OpArgs &a) {
 // because we always execute in order this is effectively a NOP
 }
 
+void BKPTInstrDebugEvent() {};
 // TODO?
 void op_bkpt(OpArgs &a) {
+  BKPTInstrDebugEvent();
 }
 
 void op_uxth(OpArgs &a) {
@@ -854,6 +861,20 @@ uint32_t signExtend32(uint16_t v) {
   }
 }
 
+void op_adr(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t result;
+  // result = if add then (Align(PC,4) + imm32) else (Align(PC,4) - imm32);
+  result = (registers[pcRegister] & ~ 0b11) + args.imm;
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  registers[args.Rd] = result;
+}
+
+
 void op_mul(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
 
@@ -881,6 +902,44 @@ void op_sxtb(OpArgs &a) {
 void op_sev(OpArgs &a) {
   // Send Event
 }
+
+void op_mvn(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = ~registers[args.Rm];
+  registers[args.Rd] = result;
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  // C effectively unchanged
+  // V unchanged
+}
+
+
+void op_ror(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint32_t result;
+  uint8_t shift_n = args.Rm;
+  uint8_t shift_l = (32-shift_n);
+  // (result, carry) = Shift_C(R[n], SRType_ROR, shift_n, APSR.C);
+  result = (args.Rn >> shift_n) +
+    (args.Rn << shift_l);
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+}
+
+void op_eor(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint32_t result;
+  result = registers[args.Rd] = registers[args.Rn] ^ registers[args.Rm];
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  // C effectively unchanged
+  // V unchanged
+}
+
 
 void op_orr(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
@@ -976,6 +1035,70 @@ void op_add_immediate(OpArgs &a) {
   apsr.V = tmp.V;
 }
 
+void op_cmn_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], registers[args.Rm], false);
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_lsr_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = registers[args.Rn] >> args.imm;
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_lsr_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = registers[args.Rn] >> (registers[args.Rm] & 0xFF);
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_lsl_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = registers[args.Rn] << args.imm;
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_lsl_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = registers[args.Rn] << (registers[args.Rm] & 0xFF);
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+
 void op_add_register(OpArgs &a) {
   uint32_t result;
 
@@ -1025,6 +1148,17 @@ void op_and(OpArgs &a) {
   // C effectively unchanged
   // V unchanged
 }
+
+void op_bic(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint32_t result;
+  result = registers[args.Rd] = registers[args.Rn] & ~registers[args.Rm];
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  // C effectively unchanged
+  // V unchanged
+}
+
 
 
 void wow() {

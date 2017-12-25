@@ -3,25 +3,25 @@
 ☐ ADD (register)
 ☐ ADD (SP plus immediate)
 ☐ ADD (SP plus register)
-☐ ADR
-☐ AND (register)
+✔ ADR @done(2017-12-25 03:57)
+✔ AND (register) @done(2017-12-25 03:59)
 ☐ ASR (immediate)
 ☐ ASR (register)
 ☐ B
-☐ BIC (register)
-☐ BKPT
+✔ BIC (register) @done(2017-12-25 03:37)
+✔ BKPT @done(2017-12-25 03:45)
 ☐ BL
 ☐ BLX (register)
 ☐ BX
-☐ CMN (register)
+✔ CMN (register) @done(2017-12-25 04:03)
 ☐ CMP (immediate)
 ☐ CMP (register)
 ☐ CPS
 ☐ CPY
 ✔ DMB @done(2017-12-25 01:26)
 ✔ DSB @done(2017-12-25 01:26)
-☐ EOR (register)
-☐ ISB
+✔ EOR (register) @done(2017-12-25 02:51)
+✔ ISB @done(2017-12-25 03:01)
 ☐ LDM
 ☐ LDMIA
 ☐ LDMFD
@@ -34,8 +34,8 @@
 ☐ LDRH (register)
 ☐ LDRSB (register)
 ☐ LDRSH (register)
-☐ LSL (immediate)
-☐ LSL (register)
+✔ LSL (immediate) @done(2017-12-25 05:17)
+✔ LSL (register) @done(2017-12-25 05:17)
 ☐ LSR (immediate)
 ☐ LSR (register)
 ✔ MOV (immediate) @done(2017-12-25 02:15)
@@ -44,16 +44,16 @@
 ☐ MRS
 ☐ MSR (register)
 ✔ MUL @done(2017-12-25 02:48)
-☐ MVN (register)
-☐ NEG
+✔ MVN (register) @done(2017-12-25 03:33)
+✔ NEG <alias for RSB> @done(2017-12-25 03:03)
 ✔ NOP @done(2017-12-25 01:29)
-☐ ORR (register)
+✔ ORR (register) @done(2017-12-25 03:33)
 ☐ POP
 ☐ PUSH
 ✔ REV @done(2017-12-25 01:38)
 ✔ REV16 @done(2017-12-25 01:58)
 ✔ REVSH @done(2017-12-25 02:01)
-☐ ROR (register)
+✔ ROR (register) @done(2017-12-25 03:17)
 ☐ RSB (immediate)
 ☐ SBC (register)
 ☐ SEV
