@@ -1,0 +1,99 @@
+☐ ADC (register)
+☐ ADD (immediate)
+☐ ADD (register)
+☐ ADD (SP plus immediate)
+☐ ADD (SP plus register)
+☐ ADR
+☐ AND (register)
+☐ ASR (immediate)
+☐ ASR (register)
+☐ B
+☐ BIC (register)
+☐ BKPT
+☐ BL
+☐ BLX (register)
+☐ BX
+☐ CMN (register)
+☐ CMP (immediate)
+☐ CMP (register)
+☐ CPS
+☐ CPY
+✔ DMB @done(2017-12-25 01:26)
+✔ DSB @done(2017-12-25 01:26)
+☐ EOR (register)
+☐ ISB
+☐ LDM
+☐ LDMIA
+☐ LDMFD
+☐ LDR (immediate)
+☐ LDR (literal)
+☐ LDR (register)
+☐ LDRB (immediate)
+☐ LDRB (register)
+☐ LDRH (immediate)
+☐ LDRH (register)
+☐ LDRSB (register)
+☐ LDRSH (register)
+☐ LSL (immediate)
+☐ LSL (register)
+☐ LSR (immediate)
+☐ LSR (register)
+✔ MOV (immediate) @done(2017-12-25 02:15)
+✔ MOV (register) @done(2017-12-25 02:40)
+☐ MOV (shifted register)
+☐ MRS
+☐ MSR (register)
+✔ MUL @done(2017-12-25 02:48)
+☐ MVN (register)
+☐ NEG
+✔ NOP @done(2017-12-25 01:29)
+☐ ORR (register)
+☐ POP
+☐ PUSH
+✔ REV @done(2017-12-25 01:38)
+✔ REV16 @done(2017-12-25 01:58)
+✔ REVSH @done(2017-12-25 02:01)
+☐ ROR (register)
+☐ RSB (immediate)
+☐ SBC (register)
+☐ SEV
+☐ STM
+☐ STMIA
+☐ STMEA
+☐ STR (immediate)
+☐ STR (register)
+☐ STRB (immediate)
+☐ STRB (register)
+☐ STRH (immediate)
+☐ STRH (register)
+☐ SUB (immediate)
+☐ SUB (register)
+☐ SUB (SP minus immediate)
+☐ SVC
+✔ SXTB @done(2017-12-25 02:02)
+✔ SXTH @done(2017-12-25 02:02)
+✔ TST (register) @done(2017-12-25 02:03)
+✔ UDF @done(2017-12-25 01:32)
+✔ UXTB @done(2017-12-25 01:37)
+✔ UXTH @done(2017-12-25 01:37)
+☐ WFE
+☐ WFI
+✔ YIELD @done(2017-12-25 01:37)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+x

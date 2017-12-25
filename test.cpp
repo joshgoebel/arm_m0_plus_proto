@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <string>
 #include "ops.h"
 #include "../emscripten/emscripten.h"
 
@@ -782,6 +783,10 @@ void op_branch_pl(OpArgs &a) {
   }
 }
 
+void ALUWritePC(uint32_t v) {
+  registers[spRegister] = v;
+}
+
 
 // TODO
 // op: 0b1011111100100000
@@ -797,10 +802,12 @@ void op_udf(OpArgs &a) {
 
 }
 
+void hintYield() {}
 
 // TODO
 void op_yield(OpArgs &a) {
   // yield
+  hintYield();
 }
 
 void op_nop(OpArgs &a) {
@@ -828,6 +835,47 @@ void op_uxtb(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   registers[args.Rd] = registers[args.Rm] & 0x000000FF;
 }
+
+uint32_t signExtend32(uint8_t v) {
+  // if high bit is set, set all the higher bits
+  if (v & 0x80) {
+    return 0xFFFFFF00 | v;
+  } else { // do nothing
+    return v;
+  }
+}
+
+uint32_t signExtend32(uint16_t v) {
+  // if high bit is set, set all the higher bits
+  if (v & 0x8000) {
+    return 0xFFFF0000 | v;
+  } else { // do nothing
+    return v;
+  }
+}
+
+void op_mul(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t result;
+  result = registers[args.Rd] = registers[args.Rn] * registers[args.Rm];
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  registers[args.Rd] = result;
+}
+
+void op_sxth(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint16_t result = registers[args.Rm] & 0x0000FFFF;
+  registers[args.Rd] = signExtend32((uint16_t)result);
+}
+
+void op_sxtb(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint8_t result = registers[args.Rm] & 0x000000FF;
+  registers[args.Rd] = signExtend32((uint8_t)result);
+}
+
 
 // TODO
 void op_sev(OpArgs &a) {
@@ -858,11 +906,36 @@ void op_rev(OpArgs &a) {
   registers[args.Rd] = result;
 }
 
+// Byte-Reverse Packed Halfword reverses the byte order in each 16-bit halfword of a 32-bit register.
+void op_rev16(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint32_t result;
+  uint8_t *am = (uint8_t*)&registers[args.Rm];
+  uint8_t *ad = (uint8_t*)&result;
+  ad[2] = am[3];
+  ad[3] = am[2];
+  ad[0] = am[1];
+  ad[1] = am[0];
+  registers[args.Rd] = result;
+}
+
+// Byte-Reverse Signed Halfword reverses the byte order in the lower 16-bit halfword of a 32-bit register, and sign extends the result to 32 bits.
+void op_revsh(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  uint16_t result;
+  uint8_t *am = (uint8_t*)&registers[args.Rm];
+  uint8_t *ad = (uint8_t*)&result;
+  ad[0] = am[1];
+  ad[1] = am[0];
+  registers[args.Rd] = signExtend32(result);
+}
+
+
 void op_mov_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
 
   if (args.Rd == pcRegister) {
-    // TODO
+    ALUWritePC(result);
   } else {
     uint32_t result = registers[args.Rd] = registers[args.Rm];
     apsr.N = result & (1<<31);
@@ -902,6 +975,25 @@ void op_add_immediate(OpArgs &a) {
   apsr.C = tmp.C;
   apsr.V = tmp.V;
 }
+
+void op_add_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], registers[args.Rm], false);
+  if (args.Rd==pcRegister) {
+    ALUWritePC(result);
+  } else {
+    registers[args.Rd] = result;
+    if (setflags) {
+      apsr.N = result & (1<<31);
+      apsr.Z = (result == 0);
+      apsr.C = tmp.C;
+      apsr.V = tmp.V;
+    }
+  }
+}
+
 
 void op_adc_register(OpArgs &a) {
   uint32_t result;

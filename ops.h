@@ -4,6 +4,7 @@ typedef  uint8_t OpArgs[6+4];
 void op_nop(OpArgs &a);
 void op_branch(OpArgs &a);
 void op_ldr_literal(OpArgs &a);
+void op_add_immediate(OpArgs &a);
 void op_ldr_immediate(OpArgs &a);
 void op_ldrb_immediate(OpArgs &a);
 void op_ldrh_immediate(OpArgs &a);
@@ -84,9 +85,30 @@ void op_branch_lt(OpArgs &a);
 void op_branch_gt(OpArgs &a);
 void op_branch_le(OpArgs &a);
 
+typedef void opRunner(OpArgs&);
 
-// typedef struct {
-//   mask: uint16_t;
-//   match: uint16_t;
-//   op:
-// }
+typedef struct opr{
+  uint16_t mask;
+  uint16_t match;
+  std::string label;
+  opRunner *op;
+} opr;
+
+// auto x = [](OpArgs&) {};
+
+opr opTable[] = {
+  {0b1111111111000000,0b0100000101000000,
+    "ADCS: ~Rd, ~Rn, ~Rm", op_adc_register},
+  {0,0,
+    "ADDS: ~Rd, ~Rn, ~imm", op_add_immediate},
+  {0,0,
+    "ADDS: ~Rd, ~Rn, ~Rm", op_add_register},
+  {0,0,
+    "ADD: ~Rdn, ~Rm", op_add_register},
+  { 0b1111100000000000,
+    0b1010100000000000,
+    "ADD ~Rd, SP, ~imm", op_add_sp_plus_imm },
+  { 0b1111111110000000,
+    0b1011000000000000,
+    "ADD SP, ~imm", op_add_sp_plus_imm }
+};
