@@ -17,7 +17,7 @@
 ☐ CMP (immediate)
 ☐ CMP (register)
 ☐ CPS
-☐ CPY
+✔ CPY <see MOV> @done(2017-12-25 06:16)
 ✔ DMB @done(2017-12-25 01:26)
 ✔ DSB @done(2017-12-25 01:26)
 ✔ EOR (register) @done(2017-12-25 02:51)
@@ -36,8 +36,8 @@
 ☐ LDRSH (register)
 ✔ LSL (immediate) @done(2017-12-25 05:17)
 ✔ LSL (register) @done(2017-12-25 05:17)
-☐ LSR (immediate)
-☐ LSR (register)
+✔ LSR (immediate) @done(2017-12-25 05:28)
+✔ LSR (register) @done(2017-12-25 05:28)
 ✔ MOV (immediate) @done(2017-12-25 02:15)
 ✔ MOV (register) @done(2017-12-25 02:40)
 ☐ MOV (shifted register)
@@ -54,7 +54,7 @@
 ✔ REV16 @done(2017-12-25 01:58)
 ✔ REVSH @done(2017-12-25 02:01)
 ✔ ROR (register) @done(2017-12-25 03:17)
-☐ RSB (immediate)
+✔ RSB (immediate) @done(2017-12-25 06:10)
 ☐ SBC (register)
 ☐ SEV
 ☐ STM

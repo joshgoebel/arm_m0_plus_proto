@@ -734,6 +734,58 @@ uint32_t static AddWithCarry(uint32_t a, uint32_t b, bool c) {
   return (uint32_t)r;
 }
 
+// storage
+
+
+void op_str_immediate(OpArgs &a) {
+  uint32_t *ram32 = (uint32_t*)&ram;
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = args.Rn + args.imm;
+  ram32[offset_addr & ~3] = args.Rt;
+}
+
+void op_str_register(OpArgs &a) {
+  uint32_t *ram32 = (uint32_t*)&ram;
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = args.Rn + args.Rm;
+  ram32[offset_addr & ~3] = args.Rt;
+}
+
+void op_strh_immediate(OpArgs &a) {
+  uint16_t *ram16 = (uint16_t*)&ram;
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = args.Rn + args.imm;
+  ram16[offset_addr & ~1] = args.Rt & 0xFFFF;
+}
+
+void op_strh_register(OpArgs &a) {
+  uint16_t *ram16 = (uint16_t*)&ram;
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = args.Rn + args.Rm;
+  ram16[offset_addr & ~1] = args.Rt & 0xFFFF;
+}
+
+void op_strb_immediate(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = args.Rn + args.imm;
+  ram[offset_addr] = args.Rt & 0xFF;
+}
+
+void op_strb_register(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = args.Rn + args.Rm;
+  ram[offset_addr] = args.Rt& 0xFF;
+}
+
+
+
+
 // branching
 
 void op_branch(OpArgs &a) {
@@ -1023,6 +1075,19 @@ void op_tst(OpArgs &a) {
   // V unchanged
 }
 
+// Reverse Subtract (immediate)
+void op_rsb_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(~registers[args.Rn], 0, true);
+  registers[args.Rd] = result;
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
 void op_add_immediate(OpArgs &a) {
   uint32_t result;
 
@@ -1055,8 +1120,9 @@ void op_lsr_immediate(OpArgs &a) {
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
+  // TODO: carry?
   apsr.C = tmp.C;
-  apsr.V = tmp.V;
+  // apsr.V = tmp.V;
 }
 
 void op_lsr_register(OpArgs &a) {
@@ -1068,8 +1134,9 @@ void op_lsr_register(OpArgs &a) {
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
+  // TODO: carry?
   apsr.C = tmp.C;
-  apsr.V = tmp.V;
+  // apsr.V = tmp.V;
 }
 
 void op_lsl_immediate(OpArgs &a) {
@@ -1081,8 +1148,9 @@ void op_lsl_immediate(OpArgs &a) {
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
+  // TODO: carry?
   apsr.C = tmp.C;
-  apsr.V = tmp.V;
+  // apsr.V = tmp.V;
 }
 
 void op_lsl_register(OpArgs &a) {
@@ -1094,8 +1162,9 @@ void op_lsl_register(OpArgs &a) {
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
+  // TODO: carry?
   apsr.C = tmp.C;
-  apsr.V = tmp.V;
+  // apsr.V = tmp.V;
 }
 
 
