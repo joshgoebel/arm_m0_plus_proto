@@ -16,15 +16,15 @@
 ✔ CMN (register) @done(2017-12-25 04:03)
 ✔ CMP (immediate) @done(2017-12-28 06:04)
 ✔ CMP (register) @done(2017-12-28 06:04)
-☐ CPS
+✔ CPS @done(2017-12-28 08:41)
 ✔ CPY <see MOV> @done(2017-12-25 06:16)
 ✔ DMB @done(2017-12-25 01:26)
 ✔ DSB @done(2017-12-25 01:26)
 ✔ EOR (register) @done(2017-12-25 02:51)
 ✔ ISB @done(2017-12-25 03:01)
-☐ LDM
-☐ LDMIA
-☐ LDMFD
+✔ LDM @done(2017-12-28 09:50)
+✔ LDMIA @done(2017-12-28 09:50)
+✔ LDMFD @done(2017-12-28 09:50)
 ✔ LDR (immediate) @done(2017-12-26 01:12)
 ✔ LDR (literal) @done(2017-12-26 01:25)
 ✔ LDR (register) @done(2017-12-26 01:12)
@@ -40,7 +40,7 @@
 ✔ LSR (register) @done(2017-12-25 05:28)
 ✔ MOV (immediate) @done(2017-12-25 02:15)
 ✔ MOV (register) @done(2017-12-25 02:40)
-☐ MOV (shifted register)
+✔ MOV (shifted register) <pseudo-instruction for ASR, LSL, LSR, and ROR> @done(2017-12-28 08:43)
 ☐ MRS
 ☐ MSR (register)
 ✔ MUL @done(2017-12-25 02:48)
@@ -48,8 +48,8 @@
 ✔ NEG <alias for RSB> @done(2017-12-25 03:03)
 ✔ NOP @done(2017-12-25 01:29)
 ✔ ORR (register) @done(2017-12-25 03:33)
-☐ POP
-☐ PUSH
+✔ POP @done(2017-12-28 09:24)
+✔ PUSH @done(2017-12-28 09:24)
 ✔ REV @done(2017-12-25 01:38)
 ✔ REV16 @done(2017-12-25 01:58)
 ✔ REVSH @done(2017-12-25 02:01)
@@ -57,9 +57,9 @@
 ✔ RSB (immediate) @done(2017-12-25 06:10)
 ✔ SBC (register) @done(2017-12-26 02:02)
 ✔ SEV @done(2017-12-25 06:30)
-☐ STM
-☐ STMIA
-☐ STMEA
+✔ STM @done(2017-12-28 09:57)
+✔ STMIA @done(2017-12-28 09:57)
+✔ STMEA @done(2017-12-28 09:57)
 ✔ STR (immediate) @done(2017-12-25 06:28)
 ✔ STR (register) @done(2017-12-25 06:28)
 ✔ STRB (immediate) @done(2017-12-25 06:28)

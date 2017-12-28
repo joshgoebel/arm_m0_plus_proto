@@ -108,6 +108,20 @@ uint16_t fetchByte(uint32_t addr) {
   return 0;
 }
 
+void writeWord(uint32_t addr, uint32_t data) {
+  if (addr < 0x20000000) {
+    // flash
+    uint32_t *flash32 = (uint32_t*)&flash;
+    flash32[addr >> 2] = data;
+  }
+  else if (addr < 0x40000000) {
+    addr -= 0x20000000;
+    uint32_t *ram32 = (uint32_t*)&ram;
+    ram32[addr >> 2] = data;
+  }
+  // Peripheral
+  // else if (addr < 0x60000000) {
+}
 
 uint32_t signExtend32(uint8_t v) {
   // if high bit is set, set all the higher bits
@@ -128,7 +142,7 @@ uint32_t signExtend32(uint16_t v) {
 }
 
 void setPC(uint32_t newPc) {
-  registers[spRegister] = newPc & ~1;
+  registers[pcRegister] = newPc & ~1;
 }
 
 void boot() {
@@ -144,8 +158,10 @@ void boot() {
 
 
   registers[spRegister] = fetchWord(0x0000 + offset);
+  printf("sp: %x\n", registers[spRegister]);
   setPC(fetchHalfword(0x0004 + offset) & ~1);
   registers[lrRegister] = 0xFFFFFFFF;
+  printf("pc: %x\n", registers[pcRegister]);
 
   // this.setRegister(this.spIndex, this.fetchWord(0x0000 + offset));
   // this.setRegister(this.lrIndex, 0xffffffff);
@@ -156,12 +172,45 @@ void boot() {
 
 }
 
+void printBits(size_t const size, uint32_t data)
+{
+    int i, j;
+    uint8_t byte;
+
+    for (i=size-1;i>=0;i--)
+    {
+            byte = (data >> i) & 1;
+            printf("%u", byte);
+    }
+    puts("");
+}
+
+void _step();
+void EMSCRIPTEN_KEEPALIVE loadFlash(uint8_t *buf, uint32_t size) {
+  for (uint32_t i=0; i<sizeof(flash); i++) { flash[i] = 0xFF; }
+  memcpy(flash, buf, size);
+  for (uint8_t i=0; i<16; i++) {
+    printf("flash@%d: %d\n", i, flash[i]);
+  }
+  printf("loading buffer of size %d\n", size);
+  boot();
+  _step();
+  _step();
+  _step();
+  _step();
+  _step();
+  _step();
+}
+
+
 #define b5_3(x) ((x >> 3) && 0b111)
 #define b2_0(x) (x && 0b111)
 
 void decode_instruction(uint32_t addr, simple_op_args &opdata) {
   uint16_t instruction = fetchHalfword(addr);
   uint16_t opcode = instruction >> 10;
+  printf("opcode:");
+  printBits(6,opcode);
   switch (opcode) {
 
     // Data processing on page A5-80
@@ -232,7 +281,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         break;
         // RSB (immediate)
         case (0b1001) :
-        opdata.handler = op_rsb_register;
+        opdata.handler = op_rsb_immediate;
         opdata.Rn = (instruction >> 3) & 0b111;
         opdata.Rd = instruction & 0b111;
         opdata.imm = 0;
@@ -362,6 +411,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     if (((opcode & 0b111100) == 0b010100) ||
       ((opcode & 0b111000) == 0b011000) ||
       ((opcode & 0b111000) == 0b100000)) {
+        printf("possibly load/store\n");
         uint8_t opA = instruction >> 12;
         uint8_t opB = (instruction >> 9) & 0b111;
         if (opA == 0b0101) { // (register)
@@ -412,6 +462,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
           opdata.Rn = (instruction >> 3) & 0x111;
           opdata.Rt = instruction & 0x111;
         }
+        printBits(5, opcode);
         switch (opcode) {
           // STR (imm)
           case 0b01100:
@@ -452,6 +503,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
           opdata.Rt = (instruction >> 8) & 0x111;
           break;
         }
+        return;
     } else
     // Generate PC-relative address (ADR)
     if ((opcode & 0b111110) == 0b101000) {
@@ -479,7 +531,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
       }
       // SUB (SP minus immediate)
       if ((instruction & 0b0000111110000000) == 0b10000000) {
-        opdata.handler = op_sub_sp_minus_immedate;
+        opdata.handler = op_sub_sp_minus_immediate;
         opdata.Rd = spRegister;
         opdata.imm = IMM7(instruction) << 2;
         return;
@@ -735,7 +787,19 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     }
   }
 
-  opdata.handler = op_nop;
+  opdata.handler = op_udf;
+}
+
+void printOp(simple_op_args &op) {
+  opr *o;
+  uint8_t op_count = sizeof(opTable)/ sizeof(opr);
+  for (uint8_t i=0; i<op_count; i++) {
+    if (opTable[i].op == op.handler) {
+      printf("%s\n", opTable[i].label.c_str());
+      break;
+    }
+  }
+
 }
 
 // internal, will not fire timer interrupts, etc.
@@ -749,10 +813,15 @@ void _step() {
   if (!handler) {
     decode_instruction(inst_addr, decoded_op);
   }
+  uint32_t t = fetchHalfword(inst_addr);
+  // printf("%08B ",t);
+  printBits(16, t);
+  printOp(decoded_op);
   handler = decoded_op.handler;
   handler((OpArgs&)decoded_op);
 
   // advance PC ?
+  registers[pcRegister] += 2;
 
   // assume all instructions are one clock
   ticks++;
@@ -779,8 +848,70 @@ uint32_t static AddWithCarry(uint32_t a, uint32_t b, bool c) {
   return (uint32_t)r;
 }
 
+void BXWritePC(uint32_t addy); // forward declaration
+void LoadWritePC(uint32_t address) {
+  BXWritePC(address);
+}
+
+// push and POP
+
+void op_pop(OpArgs &a) {
+  opPushPopData &args = (opPushPopData&)a;
+  uint8_t bitCount = 0;
+
+  uint32_t sp = registers[spRegister];
+  for (uint8_t i=0; i<=7; i++) {
+    if (args.register_list & (1 << i)) {
+      registers[i] = fetchWord(sp);
+      sp += 4;
+      bitCount +=1;
+    }
+  }
+  if (args.register_list & 1<<14) { // registers<15>
+    LoadWritePC(fetchWord(sp));
+    bitCount +=1;
+  }
+  registers[spRegister] += 4*bitCount;
+}
+
+
+void op_push(OpArgs &a) {
+  opPushPopData &args = (opPushPopData&)a;
+  uint8_t bitCount = 0;
+
+  for (uint8_t i=0; i<=14; i++) {
+    if (args.register_list & (1 << i))
+      bitCount++;
+  }
+
+  uint32_t sp = registers[spRegister] - 4*bitCount;
+  for (uint8_t i=0; i<=14; i++) {
+    if (args.register_list & (1 << i)) {
+      writeWord(sp, registers[i]);
+      sp += 4;
+    }
+  }
+  registers[spRegister] -= 4*bitCount;
+}
+
 // storage
 
+void op_stm(OpArgs &a) {
+  opPushPopData &args = (opPushPopData&)a;
+  uint32_t address = args.Rn;
+  bool wback = true;
+
+  for(uint8_t i=0; i<=7; i++) {
+    if (args.register_list & (1<<i)) {
+       writeWord(address, registers[i]);
+      address += 4;
+    }
+  }
+
+  if (wback) {
+    registers[args.Rn] = address;
+  }
+}
 
 void op_str_immediate(OpArgs &a) {
   uint32_t *ram32 = (uint32_t*)&ram;
@@ -830,6 +961,23 @@ void op_strb_register(OpArgs &a) {
 
 
 // loading
+
+void op_ldm(OpArgs &a) {
+  opPushPopData &args = (opPushPopData&)a;
+  uint32_t address = args.Rn;
+  bool wback = (args.register_list & (1<<args.Rn)) == 0;
+
+  for(uint8_t i=0; i<=7; i++) {
+    if (args.register_list & (1<<i)) {
+      registers[i] = fetchWord(address);
+      address += 4;
+    }
+  }
+
+  if (wback) {
+    registers[args.Rn] = address;
+  }
+}
 
 void op_ldr_literal(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
@@ -1061,6 +1209,7 @@ void op_branch_le(OpArgs &a) {
   }
 }
 
+// TODO does our hardware have both modes?
 bool CurrentModeIsPrivileged() {
   return true;
 }
@@ -1100,6 +1249,11 @@ void op_yield(OpArgs &a) {
   // yield
   hintYield();
 }
+
+// TODO
+void op_mrs(OpArgs &a) {
+}
+
 
 void op_nop(OpArgs &a) {
   // NOP
@@ -1143,7 +1297,7 @@ void op_adr(OpArgs &a) {
 }
 
 
-void op_mul(OpArgs &a) {
+void op_mul_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
 
   uint32_t result;
@@ -1171,7 +1325,7 @@ void op_sev(OpArgs &a) {
   // effectively NOP for us
 }
 
-void op_mvn(OpArgs &a) {
+void op_mvn_register(OpArgs &a) {
   uint32_t result;
 
   simple_op_args &args = (simple_op_args&)a;
@@ -1184,7 +1338,7 @@ void op_mvn(OpArgs &a) {
 }
 
 
-void op_ror(OpArgs &a) {
+void op_ror_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   uint32_t result;
   uint8_t shift_n = args.Rm;
@@ -1198,7 +1352,7 @@ void op_ror(OpArgs &a) {
   apsr.C = tmp.C;
 }
 
-void op_eor(OpArgs &a) {
+void op_eor_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   uint32_t result;
   result = registers[args.Rd] = registers[args.Rn] ^ registers[args.Rm];
@@ -1209,7 +1363,7 @@ void op_eor(OpArgs &a) {
 }
 
 
-void op_orr(OpArgs &a) {
+void op_orr_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   uint32_t result;
   result = registers[args.Rd] = registers[args.Rn] | registers[args.Rm];
@@ -1281,7 +1435,7 @@ void op_mov_immediate(OpArgs &a) {
   // V unchanged
 }
 
-void op_tst(OpArgs &a) {
+void op_tst_register(OpArgs &a) {
   uint32_t result;
   simple_op_args &args = (simple_op_args&)a;
 
@@ -1492,12 +1646,12 @@ void op_add_register(OpArgs &a) {
     ALUWritePC(result);
   } else {
     registers[args.Rd] = result;
-    if (setflags) {
+    // if (setflags) {
       apsr.N = result & (1<<31);
       apsr.Z = (result == 0);
       apsr.C = tmp.C;
       apsr.V = tmp.V;
-    }
+    // }
   }
 }
 
@@ -1548,7 +1702,7 @@ void op_adc_register(OpArgs &a) {
   //     APSR.V = overflow;
 }
 
-void op_and(OpArgs &a) {
+void op_and_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   uint32_t result;
   result = registers[args.Rd] = registers[args.Rn] & registers[args.Rm];
@@ -1558,7 +1712,7 @@ void op_and(OpArgs &a) {
   // V unchanged
 }
 
-void op_bic(OpArgs &a) {
+void op_bic_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   uint32_t result;
   result = registers[args.Rd] = registers[args.Rn] & ~registers[args.Rm];
