@@ -36,8 +36,9 @@ void op_mul_register(OpArgs &a);
 void op_bic_register(OpArgs &a);
 void op_mvn_register(OpArgs &a);
 void op_add_register(OpArgs &a);
-void op_add_sp_plus_imm(OpArgs &a);
-void op_add_sp_minus_imm(OpArgs &a);
+void op_add_sp_plus_immediate(OpArgs &a);
+void op_add_sp_plus_register(OpArgs &a);
+void op_sub_sp_minus_immedate(OpArgs &a);
 void op_cmp(OpArgs &a);
 void op_adr(OpArgs &a);
 void op_uxth(OpArgs &a);
@@ -107,8 +108,8 @@ opr opTable[] = {
     "ADD: ~Rdn, ~Rm", op_add_register},
   { 0b1111100000000000,
     0b1010100000000000,
-    "ADD ~Rd, SP, ~imm", op_add_sp_plus_imm },
+    "ADD ~Rd, SP, ~imm", op_add_sp_plus_immediate },
   { 0b1111111110000000,
     0b1011000000000000,
-    "ADD SP, ~imm", op_add_sp_plus_imm }
+    "ADD SP, ~imm", op_add_sp_plus_immediate }
 };

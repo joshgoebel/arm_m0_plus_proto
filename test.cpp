@@ -42,6 +42,10 @@ uint32_t registers[REGISTER_COUNT];
 osflags apsr;
 
 struct {
+  bool PM;
+} PRIMASK;
+
+struct {
   bool C;
   bool V;
 } tmp;
@@ -89,6 +93,38 @@ uint16_t fetchHalfword(uint32_t addr) {
   }
 
   return 0;
+}
+
+uint16_t fetchByte(uint32_t addr) {
+  if (addr < 0x20000000) {
+    // flash
+    return flash[addr];
+  }
+  else if (addr < 0x40000000) {
+    addr -= 0x20000000;
+    return ram[addr];
+  }
+
+  return 0;
+}
+
+
+uint32_t signExtend32(uint8_t v) {
+  // if high bit is set, set all the higher bits
+  if (v & 0x80) {
+    return 0xFFFFFF00 | v;
+  } else { // do nothing
+    return v;
+  }
+}
+
+uint32_t signExtend32(uint16_t v) {
+  // if high bit is set, set all the higher bits
+  if (v & 0x8000) {
+    return 0xFFFF0000 | v;
+  } else { // do nothing
+    return v;
+  }
 }
 
 void setPC(uint32_t newPc) {
@@ -254,6 +290,15 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         opdata.Rn = ((instruction >> 0) & 0b111) +
           ((instruction & 0b10000000) >> 4);
         opdata.Rd = opdata.Rn;
+        // ADD (SP plus register)
+        if (opdata.Rm == spRegister) {
+          opdata.handler = op_add_sp_plus_register;
+          opdata.Rd = opdata.Rn;
+          opdata.Rm = opdata.Rn;
+          opdata.Rn = 0;
+        } else if (opdata.Rd == spRegister) {
+          opdata.handler = op_add_sp_plus_register;
+        }
         return;
       } else
       // unpredictable
@@ -417,7 +462,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     } else
     // Generate SP-relative address
     if ((opcode & 0b111110) == 0b101010) {
-      opdata.handler = op_add_sp_plus_imm;
+      opdata.handler = op_add_sp_plus_immediate;
       opdata.Rd = (instruction >> 8) & 0b111;
       opdata.imm = IMM8(instruction) << 2;
       return;
@@ -427,14 +472,14 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
       opcode = (instruction >> 5) & 0b1111111;
       // ADD (SP plus immediate)
       if ((instruction & 0b0000111110000000) == 0) {
-        opdata.handler = op_add_sp_plus_imm;
+        opdata.handler = op_add_sp_plus_immediate;
         opdata.Rd = spRegister;
         opdata.imm = IMM7(instruction) << 2;
         return;
       }
       // SUB (SP minus immediate)
       if ((instruction & 0b0000111110000000) == 0b10000000) {
-        opdata.handler = op_add_sp_minus_imm;
+        opdata.handler = op_sub_sp_minus_immedate;
         opdata.Rd = spRegister;
         opdata.imm = IMM7(instruction) << 2;
         return;
@@ -784,61 +829,247 @@ void op_strb_register(OpArgs &a) {
 }
 
 
+// loading
 
+void op_ldr_literal(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t base = registers[spRegister] & ~3;
+  uint32_t offset_addr = base + args.imm;
+  uint32_t result = fetchWord(offset_addr & ~3);
+  registers[args.Rt] = result;
+}
+
+
+void op_ldr_register(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + registers[args.Rm];
+  uint32_t result = fetchWord(offset_addr & ~3);
+  registers[args.Rt] = result;
+}
+
+void op_ldr_immediate(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + args.imm;
+  uint32_t result = fetchWord(offset_addr & ~3);
+  registers[args.Rt] = result;
+}
+
+
+void op_ldrb_register(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + registers[args.Rm];
+  uint8_t byte = fetchByte(offset_addr);
+  registers[args.Rt] = byte;
+}
+
+void op_ldrb_immediate(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + args.imm;
+  uint8_t byte = fetchByte(offset_addr);
+  registers[args.Rt] = byte;
+}
+
+void op_ldrh_register(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + registers[args.Rm];
+  uint16_t word = fetchHalfword(offset_addr & ~1);
+  registers[args.Rt] = word;
+}
+
+void op_ldrh_immediate(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + args.imm;
+  uint16_t word = fetchHalfword(offset_addr & ~1);
+  registers[args.Rt] = word;
+}
+
+void op_ldrsb_register(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + registers[args.Rm];
+  uint8_t byte = fetchByte(offset_addr);
+  registers[args.Rt] = signExtend32(byte);
+}
+
+void op_ldrsh_register(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t offset_addr = registers[args.Rn] + registers[args.Rm];
+  uint16_t word = fetchHalfword(offset_addr & ~1);
+  registers[args.Rt] = signExtend32(word);
+}
 
 // branching
 
+void BranchWritePC(uint32_t v) {
+  registers[pcRegister] = v;
+}
+
+void ALUWritePC(uint32_t v) {
+  BranchWritePC(v);
+}
+
+void op_bl(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t next_inst_addr = registers[pcRegister];
+  registers[lrRegister] = next_inst_addr | 0b1;
+  BranchWritePC(registers[pcRegister] + args.imm);
+}
+
+// BLXWritePC(bits(32) address)
+//   EPSR.T = address<0>; // if EPSR.T == 0, a HardFault is taken on the next instruction
+//   BranchTo(address<31:1>:'0');
+void BLXWritePC(uint32_t addy) {
+  registers[pcRegister] = addy & ~1;
+}
+
+void op_blx(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  uint32_t target = args.Rm;
+  uint32_t next_inst_addr = registers[pcRegister] - 2;
+  registers[lrRegister] = next_inst_addr | 0b1;
+  BLXWritePC(target);
+}
+
+// BXWritePC(bits(32) address)
+//   if CurrentMode == Mode_Handler && address<31:28> == '1111' then
+//     ExceptionReturn(address<27:0>);
+//   else
+//     EPSR.T = address<0>; // if EPSR.T == 0, a HardFault
+//     // is taken on the next instruction
+//     BranchTo(address<31:1>:'0');
+void BXWritePC(uint32_t addy) {
+  registers[pcRegister] = addy & ~1;
+}
+
+void op_bx(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+
+  BXWritePC(args.Rm);
+}
+
+
 void op_branch(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
-  // BranchWritePC(PC + args.imm);
+  BranchWritePC(registers[pcRegister] + args.imm);
 }
 
 void op_branch_eq(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   if (apsr.Z == 1) {
-    // BranchWritePC(PC + args.imm);
+    BranchWritePC(registers[pcRegister] + args.imm);
   }
 }
 
 void op_branch_ne(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   if (apsr.Z == 0) {
-    // BranchWritePC(PC + args.imm);
+    BranchWritePC(registers[pcRegister] + args.imm);
   }
 }
 
 void op_branch_cs(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   if (apsr.C == 1) {
-    // BranchWritePC(PC + args.imm);
+    BranchWritePC(registers[pcRegister] + args.imm);
   }
 }
 
 void op_branch_cc(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   if (apsr.C == 0) {
-    // BranchWritePC(PC + args.imm);
+    BranchWritePC(registers[pcRegister] + args.imm);
   }
 }
 
 void op_branch_mi(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   if (apsr.N == 1) {
-    // BranchWritePC(PC + args.imm);
+    BranchWritePC(registers[pcRegister] + args.imm);
   }
 }
 
 void op_branch_pl(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
   if (apsr.N == 0) {
-    // BranchWritePC(PC + args.imm);
+    BranchWritePC(registers[pcRegister] + args.imm);
   }
 }
 
-void ALUWritePC(uint32_t v) {
-  registers[spRegister] = v;
+void op_branch_vs(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.V == 1) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
 }
 
+void op_branch_vc(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.V == 0) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+void op_branch_hi(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.C == 1 && apsr.Z == 0) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+void op_branch_ls(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.C == 0 || apsr.Z == 1) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+void op_branch_ge(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.N == apsr.V) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+void op_branch_lt(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.N != apsr.V) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+void op_branch_gt(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.Z == 0 && (apsr.N == apsr.V)) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+void op_branch_le(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (apsr.Z == 1 || (apsr.N != apsr.V)) {
+    BranchWritePC(registers[pcRegister] + args.imm);
+  }
+}
+
+bool CurrentModeIsPrivileged() {
+  return true;
+}
+
+void op_cps(OpArgs &a) {
+  simple_op_args &args = (simple_op_args&)a;
+  if (CurrentModeIsPrivileged())
+    PRIMASK.PM = args.imm;
+}
 
 // TODO
 // op: 0b1011111100100000
@@ -846,6 +1077,9 @@ void op_wfe(OpArgs &a) {
   // if EventRegistered() then
   //   ClearEventRegister(); else
   //   WaitForEvent();
+}
+
+void op_wfi(OpArgs &a) {
 }
 
 // TODO
@@ -895,24 +1129,6 @@ void op_uxtb(OpArgs &a) {
   registers[args.Rd] = registers[args.Rm] & 0x000000FF;
 }
 
-uint32_t signExtend32(uint8_t v) {
-  // if high bit is set, set all the higher bits
-  if (v & 0x80) {
-    return 0xFFFFFF00 | v;
-  } else { // do nothing
-    return v;
-  }
-}
-
-uint32_t signExtend32(uint16_t v) {
-  // if high bit is set, set all the higher bits
-  if (v & 0x8000) {
-    return 0xFFFF0000 | v;
-  } else { // do nothing
-    return v;
-  }
-}
-
 void op_adr(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
 
@@ -949,10 +1165,10 @@ void op_sxtb(OpArgs &a) {
   registers[args.Rd] = signExtend32((uint8_t)result);
 }
 
-
-// TODO
 void op_sev(OpArgs &a) {
-  // Send Event
+  // Send Event is a hint instruction. It causes an event to be signaled to all CPUs within a multiprocessor system.
+  //
+  // effectively NOP for us
 }
 
 void op_mvn(OpArgs &a) {
@@ -1045,10 +1261,11 @@ void op_revsh(OpArgs &a) {
 void op_mov_register(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
 
+  uint32_t result = registers[args.Rm];
   if (args.Rd == pcRegister) {
     ALUWritePC(result);
   } else {
-    uint32_t result = registers[args.Rd] = registers[args.Rm];
+    registers[args.Rd] = result;
     apsr.N = result & (1<<31);
     apsr.Z = (result == 0);
   }
@@ -1088,18 +1305,6 @@ void op_rsb_immediate(OpArgs &a) {
   apsr.V = tmp.V;
 }
 
-void op_add_immediate(OpArgs &a) {
-  uint32_t result;
-
-  simple_op_args &args = (simple_op_args&)a;
-  result = AddWithCarry(registers[args.Rn], args.imm, false);
-  registers[args.Rd] = result;
-  apsr.N = result & (1<<31);
-  apsr.Z = (result == 0);
-  apsr.C = tmp.C;
-  apsr.V = tmp.V;
-}
-
 void op_cmn_register(OpArgs &a) {
   uint32_t result;
 
@@ -1110,6 +1315,37 @@ void op_cmn_register(OpArgs &a) {
   apsr.C = tmp.C;
   apsr.V = tmp.V;
 }
+
+void op_asr_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  int32_t v = registers[args.Rm];
+  result = v >> args.imm;
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  // TODO: carry?
+  apsr.C = tmp.C;
+  // apsr.V = tmp.V;
+}
+
+void op_asr_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  int32_t v = registers[args.Rn];
+  result = v >> args.imm;
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  // TODO: carry?
+  apsr.C = tmp.C;
+  // apsr.V = tmp.V;
+}
+
 
 void op_lsr_immediate(OpArgs &a) {
   uint32_t result;
@@ -1167,6 +1403,85 @@ void op_lsl_register(OpArgs &a) {
   // apsr.V = tmp.V;
 }
 
+void op_sbc_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], ~registers[args.Rm], apsr.C);
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_sub_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], ~args.imm, true);
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+
+void op_add_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], args.imm, false);
+  registers[args.Rd] = result;
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_sub_sp_minus_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[spRegister], ~args.imm, true);
+  registers[args.Rd] = result;
+}
+
+void op_add_sp_plus_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[spRegister], args.imm, false);
+  registers[args.Rd] = result;
+}
+
+void op_add_sp_plus_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[spRegister], registers[args.Rm], false);
+  if (args.Rd==pcRegister) {
+    ALUWritePC(result);
+  } else {
+    registers[args.Rd] = result;
+  }
+}
+
+void op_sub_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], ~registers[args.Rm], true);
+  registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
 
 void op_add_register(OpArgs &a) {
   uint32_t result;
@@ -1186,6 +1501,31 @@ void op_add_register(OpArgs &a) {
   }
 }
 
+void op_cmp_immediate(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], ~args.imm, true);
+  // registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
+
+void op_cmp_register(OpArgs &a) {
+  uint32_t result;
+
+  simple_op_args &args = (simple_op_args&)a;
+  result = AddWithCarry(registers[args.Rn], ~registers[args.Rm], true);
+  // registers[args.Rd] = result;
+
+  apsr.N = result & (1<<31);
+  apsr.Z = (result == 0);
+  apsr.C = tmp.C;
+  apsr.V = tmp.V;
+}
 
 void op_adc_register(OpArgs &a) {
   uint32_t result;
