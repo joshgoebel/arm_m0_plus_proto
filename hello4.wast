@@ -45,30 +45,30 @@
  (global $threwValue (mut i32) (i32.const 0))
  (global $tempRet0 (mut i32) (i32.const 0))
  (elem (get_global $tableBase) $b0 $b0 $jsCall_ii_0 $b0 $jsCall_ii_1 $b0 $jsCall_ii_2 $b0 $jsCall_ii_3 $b0 $jsCall_ii_4 $b0 $___stdio_close $b0 $b0 $b0 $b1 $b1 $jsCall_iiii_0 $b1 $jsCall_iiii_1 $b1 $jsCall_iiii_2 $b1 $jsCall_iiii_3 $b1 $jsCall_iiii_4 $b1 $___stdout_write $___stdio_seek $_sn_write $__ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv $___stdio_write $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b2 $b2 $jsCall_v_0 $b2 $jsCall_v_1 $b2 $jsCall_v_2 $b2 $jsCall_v_3 $b2 $jsCall_v_4 $b2 $b2 $b2 $b2 $b2 $b3 $b3 $jsCall_vi_0 $b3 $jsCall_vi_1 $b3 $jsCall_vi_2 $b3 $jsCall_vi_3 $b3 $jsCall_vi_4 $b3 $___unlockfile $__ZN10__cxxabiv117__class_type_infoD0Ev $___unlockfile $___unlockfile $__ZN10__cxxabiv117__class_type_infoD0Ev $__Z15op_adc_registerR7OpArgs_ $__Z16op_add_immediateR7OpArgs_ $__Z15op_add_registerR7OpArgs_ $__Z24op_add_sp_plus_immediateR7OpArgs_ $__Z23op_add_sp_plus_registerR7OpArgs_ $__Z6op_adrR7OpArgs_ $__Z15op_and_registerR7OpArgs_ $__Z16op_asr_immediateR7OpArgs_ $__Z15op_asr_registerR7OpArgs_ $__Z9op_branchR7OpArgs_ $__Z12op_branch_eqR7OpArgs_ $__Z12op_branch_neR7OpArgs_ $__Z12op_branch_csR7OpArgs_ $__Z12op_branch_ccR7OpArgs_ $__Z12op_branch_miR7OpArgs_ $__Z12op_branch_plR7OpArgs_ $__Z12op_branch_vsR7OpArgs_ $__Z12op_branch_vcR7OpArgs_ $__Z12op_branch_hiR7OpArgs_ $__Z12op_branch_lsR7OpArgs_ $__Z12op_branch_geR7OpArgs_ $__Z12op_branch_ltR7OpArgs_ $__Z12op_branch_gtR7OpArgs_ $__Z12op_branch_leR7OpArgs_ $__Z15op_bic_registerR7OpArgs_ $__Z7op_bkptR7OpArgs_ $__Z5op_blR7OpArgs_ $__Z6op_blxR7OpArgs_ $__Z5op_bxR7OpArgs_ $__Z15op_cmn_registerR7OpArgs_ $__Z16op_cmp_immediateR7OpArgs_ $__Z15op_cmp_registerR7OpArgs_ $__Z6op_cpsR7OpArgs_ $__Z6op_dmbR7OpArgs_ $__Z6op_dsbR7OpArgs_ $__Z15op_eor_registerR7OpArgs_ $__Z6op_isbR7OpArgs_ $__Z6op_ldmR7OpArgs_ $__Z16op_ldr_immediateR7OpArgs_ $__Z14op_ldr_literalR7OpArgs_ $__Z15op_ldr_registerR7OpArgs_ $__Z17op_ldrb_immediateR7OpArgs_ $__Z16op_ldrb_registerR7OpArgs_ $__Z17op_ldrh_immediateR7OpArgs_ $__Z16op_ldrh_registerR7OpArgs_ $__Z17op_ldrsb_registerR7OpArgs_ $__Z17op_ldrsh_registerR7OpArgs_ $__Z16op_lsl_immediateR7OpArgs_ $__Z15op_lsl_registerR7OpArgs_ $__Z16op_lsr_immediateR7OpArgs_ $__Z15op_lsr_registerR7OpArgs_ $__Z16op_mov_immediateR7OpArgs_ $__Z15op_mov_registerR7OpArgs_ $__Z6op_mrsR7OpArgs_ $__Z6op_msrR7OpArgs_ $__Z15op_mul_registerR7OpArgs_ $__Z15op_mvn_registerR7OpArgs_ $__Z6op_nopR7OpArgs_ $__Z15op_orr_registerR7OpArgs_ $__Z7op_pushR7OpArgs_ $__Z6op_popR7OpArgs_ $__Z6op_revR7OpArgs_ $__Z8op_rev16R7OpArgs_ $__Z8op_revshR7OpArgs_ $__Z15op_ror_registerR7OpArgs_ $__Z16op_rsb_immediateR7OpArgs_ $__Z15op_sbc_registerR7OpArgs_ $__Z6op_sevR7OpArgs_ $__Z6op_stmR7OpArgs_ $__Z16op_str_immediateR7OpArgs_ $__Z15op_str_registerR7OpArgs_ $__Z17op_strb_immediateR7OpArgs_ $__Z16op_strb_registerR7OpArgs_ $__Z17op_strh_immediateR7OpArgs_ $__Z16op_strh_registerR7OpArgs_ $__Z16op_sub_immediateR7OpArgs_ $__Z15op_sub_registerR7OpArgs_ $__Z25op_sub_sp_minus_immediateR7OpArgs_ $__Z6op_svcR7OpArgs_ $__Z7op_sxtbR7OpArgs_ $__Z7op_sxthR7OpArgs_ $__Z15op_tst_registerR7OpArgs_ $__Z6op_udfR7OpArgs_ $__Z7op_uxtbR7OpArgs_ $__Z7op_uxthR7OpArgs_ $__Z6op_wfeR7OpArgs_ $__Z6op_wfiR7OpArgs_ $__Z8op_yieldR7OpArgs_ $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b4 $b4 $jsCall_vii_0 $b4 $jsCall_vii_1 $b4 $jsCall_vii_2 $b4 $jsCall_vii_3 $b4 $jsCall_vii_4 $b4 $b4 $b4 $b4 $b4 $b5 $b5 $jsCall_viiii_0 $b5 $jsCall_viiii_1 $b5 $jsCall_viiii_2 $b5 $jsCall_viiii_3 $b5 $jsCall_viiii_4 $b5 $__ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi $__ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi $b5 $b5 $b6 $b6 $jsCall_viiiii_0 $b6 $jsCall_viiiii_1 $b6 $jsCall_viiiii_2 $b6 $jsCall_viiiii_3 $b6 $jsCall_viiiii_4 $b6 $__ZNK10__cxxabiv117__class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib $__ZNK10__cxxabiv120__si_class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib $b6 $b6 $b7 $b7 $jsCall_viiiiii_0 $b7 $jsCall_viiiiii_1 $b7 $jsCall_viiiiii_2 $b7 $jsCall_viiiiii_3 $b7 $jsCall_viiiiii_4 $b7 $__ZNK10__cxxabiv117__class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib $__ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib $b7 $b7)
- (data (i32.const 1024) "x\06\00\00\1d\14\00\00\10\04\00\00\00\00\00\00x\06\00\00\ca\13\00\00 \04\00\00\00\00\00\00P\06\00\00\eb\13\00\00x\06\00\00\f8\13\00\00\00\04\00\00\00\00\00\00x\06\00\00c\14\00\00\10\04\00\00\00\00\00\00x\06\00\00?\14\00\008\04")
- (data (i32.const 1300) "\e8\1d\1b")
+ (data (i32.const 1024) "x\06\00\00\b2\15\00\00\10\04\00\00\00\00\00\00x\06\00\00_\15\00\00 \04\00\00\00\00\00\00P\06\00\00\80\15\00\00x\06\00\00\8d\15\00\00\00\04\00\00\00\00\00\00x\06\00\00\f8\15\00\00\10\04\00\00\00\00\00\00x\06\00\00\d4\15\00\008\04")
+ (data (i32.const 1300) "`!\1b")
  (data (i32.const 1356) "P\05\00\00\05")
  (data (i32.const 1372) "\0c")
- (data (i32.const 1396) "\0c\00\00\00\0d\00\00\00\12\9e\1f\00\00\04")
+ (data (i32.const 1396) "\0c\00\00\00\0d\00\00\00\8a\a1\1f\00\00\04")
  (data (i32.const 1420) "\01")
  (data (i32.const 1435) "\n\ff\ff\ff\ff")
  (data (i32.const 1520) "\0e")
  (data (i32.const 1559) "\ff\ff\ff\ff\ff")
- (data (i32.const 1613) "\04\00\00\0c\00\00\00\0d\00\00\00\0e\00\00\00\0f\00\00\00\0f\00\00\00\0c\00\00\00\0c\00\00\00\0c\00\00\00\00\00\00\00(\04\00\00\0c\00\00\00\10\00\00\00\0e\00\00\00\0f\00\00\00\0f\00\00\00\0d\00\00\00\0d\00\00\00\0d\00\00\00ADCS: ~Rd, ~Rn, ~Rm\00ADDS: ~Rd, ~Rn, ~imm\00ADDS: ~Rd, ~Rn, ~Rm\00ADD: ~Rdn, ~Rm\00ADD ~Rd, SP, ~imm\00ADD SP, ~imm\00ADD ~Rd, SP, ~Rd\00ADR\00AND (register) ~Rd, ~Rm\00ASR (immediate) ~Rd, ~Rm, ~imm\00ASR (register) ~Rd, ~Rm\00B\00BEQ\00BNE\00BCS\00BCC\00BMI\00BPL\00BVS\00BVC\00BHI\00BLS\00BGE\00BLT\00BGT\00BLE\00BIC\00BKPT\00BL\00BLX (register)\00BX\00CMN (register)\00CMP (imm)\00CMP (reg)\00CPS\00DMB\00DSB\00EOR\00ISB\00LDM\00LDR (immediate)\00LDR (literal) ~Rt, ~imm\00LDR (register)\00LDRB (immediate)\00LDRB (register)\00LDRH (immediate)\00LDRH (register)\00LDRSB\00LDRSH\00LSL (imm)\00LSL (register)\00LSR (imm)\00LSR (reg)\00MOV (imm)\00MOV (reg)\00MRS\00MSR\00MUL\00MVN (register)\00NOP\00ORR (register)\00PUSH\00POP\00REV\00REV16\00REVSH\00ROR\00RSB\00SBC (register)\00SEV\00STM\00STR (immediate)\00STR (register)\00STRB (immediate)\00STRB (register)\00STRH (immediate)\00STRH (register)\00SUB (immediate)\00SUB (register)\00SUB (SP minute imm)\00SVC\00SXTB\00SXTH\00TST (register)\00UDF\00UXTB\00UXTH\00WFE\00WFI\00YIELD\00sp: %x\n\00pc: %x\n\00~Rt\00R\00~imm\00#\00\n; %04x: %04x\n\00flags: [NZCV] : [%d%d%d%d]\n\00LDR addr: %0X\n\00\11\00\n\00\11\11\11\00\00\00\00\05\00\00\00\00\00\00\t\00\00\00\00\0b")
- (data (i32.const 2666) "\11\00\0f\n\11\11\11\03\n\07\00\01\13\t\0b\0b\00\00\t\06\0b\00\00\0b\00\06\11\00\00\00\11\11\11")
- (data (i32.const 2715) "\0b")
- (data (i32.const 2724) "\11\00\n\n\11\11\11\00\n\00\00\02\00\t\0b\00\00\00\t\00\0b\00\00\0b")
- (data (i32.const 2773) "\0c")
- (data (i32.const 2785) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c")
- (data (i32.const 2831) "\0e")
- (data (i32.const 2843) "\0d\00\00\00\04\0d\00\00\00\00\t\0e\00\00\00\00\00\0e\00\00\0e")
- (data (i32.const 2889) "\10")
- (data (i32.const 2901) "\0f\00\00\00\00\0f\00\00\00\00\t\10\00\00\00\00\00\10\00\00\10\00\00\12\00\00\00\12\12\12")
- (data (i32.const 2956) "\12\00\00\00\12\12\12\00\00\00\00\00\00\t")
- (data (i32.const 3005) "\0b")
- (data (i32.const 3017) "\n\00\00\00\00\n\00\00\00\00\t\0b\00\00\00\00\00\0b\00\00\0b")
- (data (i32.const 3063) "\0c")
- (data (i32.const 3075) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c\00\00-+   0X0x\00(null)\00-0X+0X 0X-0x+0x 0x\00inf\00INF\00nan\00NAN\000123456789ABCDEF.\00T!\"\19\0d\01\02\03\11K\1c\0c\10\04\0b\1d\12\1e\'hnopqb \05\06\0f\13\14\15\1a\08\16\07($\17\18\t\n\0e\1b\1f%#\83\82}&*+<=>?CGJMXYZ[\\]^_`acdefgijklrstyz{|\00Illegal byte sequence\00Domain error\00Result not representable\00Not a tty\00Permission denied\00Operation not permitted\00No such file or directory\00No such process\00File exists\00Value too large for data type\00No space left on device\00Out of memory\00Resource busy\00Interrupted system call\00Resource temporarily unavailable\00Invalid seek\00Cross-device link\00Read-only file system\00Directory not empty\00Connection reset by peer\00Operation timed out\00Connection refused\00Host is down\00Host is unreachable\00Address in use\00Broken pipe\00I/O error\00No such device or address\00Block device required\00No such device\00Not a directory\00Is a directory\00Text file busy\00Exec format error\00Invalid argument\00Argument list too long\00Symbolic link loop\00Filename too long\00Too many open files in system\00No file descriptors available\00Bad file descriptor\00No child process\00Bad address\00File too large\00Too many links\00No locks available\00Resource deadlock would occur\00State not recoverable\00Previous owner died\00Operation canceled\00Function not implemented\00No message of desired type\00Identifier removed\00Device not a stream\00No data available\00Device timeout\00Out of streams resources\00Link has been severed\00Protocol error\00Bad message\00File descriptor in bad state\00Not a socket\00Destination address required\00Message too large\00Protocol wrong type for socket\00Protocol not available\00Protocol not supported\00Socket type not supported\00Not supported\00Protocol family not supported\00Address family not supported by protocol\00Address not available\00Network is down\00Network unreachable\00Connection reset by network\00Connection aborted\00No buffer space available\00Socket is connected\00Socket not connected\00Cannot send after socket shutdown\00Operation already in progress\00Operation in progress\00Stale file handle\00Remote I/O error\00Quota exceeded\00No medium found\00Wrong medium type\00No error information\00\00%d\00%u\00N10__cxxabiv116__shim_type_infoE\00St9type_info\00N10__cxxabiv120__si_class_type_infoE\00N10__cxxabiv117__class_type_infoE\00N10__cxxabiv119__pointer_type_infoE\00N10__cxxabiv117__pbase_type_infoE")
+ (data (i32.const 1613) "\04\00\00\0c\00\00\00\0d\00\00\00\0e\00\00\00\0f\00\00\00\0f\00\00\00\0c\00\00\00\0c\00\00\00\0c\00\00\00\00\00\00\00(\04\00\00\0c\00\00\00\10\00\00\00\0e\00\00\00\0f\00\00\00\0f\00\00\00\0d\00\00\00\0d\00\00\00\0d\00\00\00ADCS ~Rd, ~Rn, ~Rm\00ADDS ~Rd, ~Rn, ~imm\00ADDS ~Rdn, ~imm\00ADDS ~Rd, ~Rn, ~Rm\00ADD ~Rdn, ~Rm\00ADD ~Rd, SP, ~imm\00ADD SP, ~imm\00ADD ~Rdm, SP, ~Rdm\00ADD SP, ~Rm\00ADR ~Rd, ~imm\00ANDS ~Rdn, ~Rm\00ASRS ~Rd, ~Rm, ~imm\00ASRS ~Rdn, ~Rm\00B ~imm\00BEQ ~imm\00BNE ~imm\00BCS ~imm\00BCC ~imm\00BMI ~imm\00BPL ~imm\00BVS ~imm\00BVC ~imm\00BHI ~imm\00BLS ~imm\00BGE ~imm\00BLT ~imm\00BGT ~imm\00BLE ~imm\00BIC ~Rdn, ~Rm\00BKPT ~imm\00BL ~imm\00BLX ~Rm\00BX ~Rm\00CMN ~Rn, ~Rm\00CMP ~Rn, ~imm\00CMP ~Rn, ~Rm\00CPS~effect\00DMB ~opt\00DSB ~opt\00EORS ~Rdn, ~Rm\00ISB ~opt\00LDM ~Rn~wback, ~register_list\00LDR ~Rt, ~Rn, ~imm\00LDR ~Rt, SP, ~imm\00LDR ~Rt, PC, ~imm\00LDR ~Rt, ~Rn, ~Rm\00LDRB ~Rt, ~Rn, ~imm\00LDRB ~Rt, ~Rn, ~Rm\00LDRH ~Rt, ~Rn, ~imm\00LDRH ~Rt, ~Rn, ~Rm\00LDRSB ~Rt, ~Rn, ~Rm\00LDRSH ~Rt, ~Rn, ~Rm\00LSLS ~Rd, ~Rm, ~imm\00LSLS ~Rdn, ~Rm\00LSRS ~Rd, ~Rm, ~imm\00LSR ~Rdn, ~Rm\00MOV ~Rd, ~imm\00MOV ~Rd, ~Rm\00MRS ~Rd, ~spec_reg\00MSR ~spec_reg, ~Rd\00MULS ~Rdm, ~Rn, ~Rdm\00MVN ~Rd, ~Rm\00NOP\00ORR ~Rdn, ~Rm\00PUSH ~register_list\00POP ~register_list\00REV ~Rd, ~Rm\00REV16 ~Rd, ~Rm\00REVSH ~Rd, ~Rm\00RORS ~Rdn, ~Rm\00RSBS ~Rd, ~Rn, #0\00SBCS ~Rdn, ~Rm\00SEV\00STM  ~Rn~wback, ~register_list\00STR (immediate)\00STR (register)\00STRB (immediate)\00STRB (register)\00STRH (immediate)\00STRH (register)\00SUB (immediate)\00SUB (register)\00SUB (SP minute imm)\00SVC\00SXTB\00SXTH\00TST (register)\00UDF\00UXTB\00UXTH\00WFE\00WFI\00YIELD\00sp: %x\n\00pc: %x\n\00~Rt\00R\00~imm\00#\00\n; %04x: %04x\n\00flags: [NZCV] : [%d%d%d%d]\n\00LDR addr: %0X\n\00\11\00\n\00\11\11\11\00\00\00\00\05\00\00\00\00\00\00\t\00\00\00\00\0b")
+ (data (i32.const 3071) "\11\00\0f\n\11\11\11\03\n\07\00\01\13\t\0b\0b\00\00\t\06\0b\00\00\0b\00\06\11\00\00\00\11\11\11")
+ (data (i32.const 3120) "\0b")
+ (data (i32.const 3129) "\11\00\n\n\11\11\11\00\n\00\00\02\00\t\0b\00\00\00\t\00\0b\00\00\0b")
+ (data (i32.const 3178) "\0c")
+ (data (i32.const 3190) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c")
+ (data (i32.const 3236) "\0e")
+ (data (i32.const 3248) "\0d\00\00\00\04\0d\00\00\00\00\t\0e\00\00\00\00\00\0e\00\00\0e")
+ (data (i32.const 3294) "\10")
+ (data (i32.const 3306) "\0f\00\00\00\00\0f\00\00\00\00\t\10\00\00\00\00\00\10\00\00\10\00\00\12\00\00\00\12\12\12")
+ (data (i32.const 3361) "\12\00\00\00\12\12\12\00\00\00\00\00\00\t")
+ (data (i32.const 3410) "\0b")
+ (data (i32.const 3422) "\n\00\00\00\00\n\00\00\00\00\t\0b\00\00\00\00\00\0b\00\00\0b")
+ (data (i32.const 3468) "\0c")
+ (data (i32.const 3480) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c\00\00-+   0X0x\00(null)\00-0X+0X 0X-0x+0x 0x\00inf\00INF\00nan\00NAN\000123456789ABCDEF.\00T!\"\19\0d\01\02\03\11K\1c\0c\10\04\0b\1d\12\1e\'hnopqb \05\06\0f\13\14\15\1a\08\16\07($\17\18\t\n\0e\1b\1f%#\83\82}&*+<=>?CGJMXYZ[\\]^_`acdefgijklrstyz{|\00Illegal byte sequence\00Domain error\00Result not representable\00Not a tty\00Permission denied\00Operation not permitted\00No such file or directory\00No such process\00File exists\00Value too large for data type\00No space left on device\00Out of memory\00Resource busy\00Interrupted system call\00Resource temporarily unavailable\00Invalid seek\00Cross-device link\00Read-only file system\00Directory not empty\00Connection reset by peer\00Operation timed out\00Connection refused\00Host is down\00Host is unreachable\00Address in use\00Broken pipe\00I/O error\00No such device or address\00Block device required\00No such device\00Not a directory\00Is a directory\00Text file busy\00Exec format error\00Invalid argument\00Argument list too long\00Symbolic link loop\00Filename too long\00Too many open files in system\00No file descriptors available\00Bad file descriptor\00No child process\00Bad address\00File too large\00Too many links\00No locks available\00Resource deadlock would occur\00State not recoverable\00Previous owner died\00Operation canceled\00Function not implemented\00No message of desired type\00Identifier removed\00Device not a stream\00No data available\00Device timeout\00Out of streams resources\00Link has been severed\00Protocol error\00Bad message\00File descriptor in bad state\00Not a socket\00Destination address required\00Message too large\00Protocol wrong type for socket\00Protocol not available\00Protocol not supported\00Socket type not supported\00Not supported\00Protocol family not supported\00Address family not supported by protocol\00Address not available\00Network is down\00Network unreachable\00Connection reset by network\00Connection aborted\00No buffer space available\00Socket is connected\00Socket not connected\00Cannot send after socket shutdown\00Operation already in progress\00Operation in progress\00Stale file handle\00Remote I/O error\00Quota exceeded\00No medium found\00Wrong medium type\00No error information\00\00%d\00%u\00N10__cxxabiv116__shim_type_infoE\00St9type_info\00N10__cxxabiv120__si_class_type_infoE\00N10__cxxabiv117__class_type_infoE\00N10__cxxabiv119__pointer_type_infoE\00N10__cxxabiv117__pbase_type_infoE")
  (export "__GLOBAL__sub_I_test_cpp" (func $__GLOBAL__sub_I_test_cpp))
  (export "__Z19CallFunctionPointerPFviiE" (func $__Z19CallFunctionPointerPFviiE))
  (export "__Z9loadFlashPhj" (func $__Z9loadFlashPhj))
@@ -178,22 +178,22 @@
   (set_local $3
    (get_local $4)
   )
-  ;;@ ./ops.h:139:0
+  ;;@ ./ops.h:145:0
   (i32.store16
-   (i32.const 5256)
+   (i32.const 5664)
    (i32.const -64)
   )
   (i32.store16
-   (i32.const 5258)
+   (i32.const 5666)
    (i32.const 16704)
   )
   (i64.store align=4
-   (i32.const 5260)
+   (i32.const 5668)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
   (i32.store
-   (i32.const 5268)
+   (i32.const 5676)
    (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
@@ -210,7 +210,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5260)
+    (i32.const 5668)
    )
   )
   (if
@@ -228,11 +228,11 @@
      )
     )
     (i32.store8
-     (i32.const 5271)
+     (i32.const 5679)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5260)
+     (i32.const 5668)
     )
    )
    (block
@@ -256,2525 +256,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5260)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5268)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5264)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1688)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:139:0
-  (i32.store
-   (i32.const 5272)
-   (i32.const 17)
-  )
-  (i64.store align=4
-   (i32.const 5276)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:141:0
-  (i64.store align=4
-   (i32.const 5284)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1708)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5280)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5291)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5280)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5280)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5288)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5284)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1708)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:141:0
-  (i32.store
-   (i32.const 5292)
-   (i32.const 18)
-  )
-  (i64.store align=4
-   (i32.const 5296)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:143:0
-  (i64.store align=4
-   (i32.const 5304)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1729)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5300)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5311)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5300)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5300)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5308)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5304)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1729)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:143:0
-  (i32.store
-   (i32.const 5312)
-   (i32.const 19)
-  )
-  (i64.store align=4
-   (i32.const 5316)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:145:0
-  (i64.store align=4
-   (i32.const 5324)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1749)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5320)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5331)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5320)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5320)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5328)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5324)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1749)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:145:0
-  (i32.store
-   (i32.const 5332)
-   (i32.const 19)
-  )
-  ;;@ ./ops.h:147:0
-  (i32.store16
-   (i32.const 5336)
-   (i32.const -2048)
-  )
-  (i32.store16
-   (i32.const 5338)
-   (i32.const -22528)
-  )
-  (i64.store align=4
-   (i32.const 5340)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
-  (i32.store
-   (i32.const 5348)
-   (i32.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1764)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5340)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5351)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5340)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5340)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5348)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5344)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1764)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:147:0
-  (i32.store
-   (i32.const 5352)
-   (i32.const 20)
-  )
-  ;;@ ./ops.h:150:0
-  (i32.store16
-   (i32.const 5356)
-   (i32.const -128)
-  )
-  (i32.store16
-   (i32.const 5358)
-   (i32.const -20480)
-  )
-  (i64.store align=4
-   (i32.const 5360)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
-  (i32.store
-   (i32.const 5368)
-   (i32.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1782)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5360)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5371)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5360)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5360)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5368)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5364)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1782)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:150:0
-  (i32.store
-   (i32.const 5372)
-   (i32.const 20)
-  )
-  (i64.store align=4
-   (i32.const 5376)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:153:0
-  (i64.store align=4
-   (i32.const 5384)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1795)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5380)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5391)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5380)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5380)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5388)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5384)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1795)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:153:0
-  (i32.store
-   (i32.const 5392)
-   (i32.const 21)
-  )
-  (i64.store align=4
-   (i32.const 5396)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:154:0
-  (i64.store align=4
-   (i32.const 5404)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1812)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5400)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5411)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5400)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5400)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5408)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5404)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1812)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:154:0
-  (i32.store
-   (i32.const 5412)
-   (i32.const 22)
-  )
-  (i64.store align=4
-   (i32.const 5416)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:155:0
-  (i64.store align=4
-   (i32.const 5424)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1816)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5420)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5431)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5420)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5420)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5428)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5424)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1816)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:155:0
-  (i32.store
-   (i32.const 5432)
-   (i32.const 23)
-  )
-  (i64.store align=4
-   (i32.const 5436)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:156:0
-  (i64.store align=4
-   (i32.const 5444)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1840)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5440)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5451)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5440)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5440)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5448)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5444)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1840)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:156:0
-  (i32.store
-   (i32.const 5452)
-   (i32.const 24)
-  )
-  (i64.store align=4
-   (i32.const 5456)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:157:0
-  (i64.store align=4
-   (i32.const 5464)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1871)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5460)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5471)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5460)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5460)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5468)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5464)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1871)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:157:0
-  (i32.store
-   (i32.const 5472)
-   (i32.const 25)
-  )
-  (i64.store align=4
-   (i32.const 5476)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:158:0
-  (i64.store align=4
-   (i32.const 5484)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1895)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5480)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5491)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5480)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5480)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5488)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5484)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1895)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:158:0
-  (i32.store
-   (i32.const 5492)
-   (i32.const 26)
-  )
-  (i64.store align=4
-   (i32.const 5496)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:159:0
-  (i64.store align=4
-   (i32.const 5504)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1897)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5500)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5511)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5500)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5500)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5508)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5504)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1897)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:159:0
-  (i32.store
-   (i32.const 5512)
-   (i32.const 27)
-  )
-  (i64.store align=4
-   (i32.const 5516)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:160:0
-  (i64.store align=4
-   (i32.const 5524)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1901)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5520)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5531)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5520)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5520)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5528)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5524)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1901)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:160:0
-  (i32.store
-   (i32.const 5532)
-   (i32.const 28)
-  )
-  (i64.store align=4
-   (i32.const 5536)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:161:0
-  (i64.store align=4
-   (i32.const 5544)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1905)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5540)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5551)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5540)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5540)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5548)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5544)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1905)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:161:0
-  (i32.store
-   (i32.const 5552)
-   (i32.const 29)
-  )
-  (i64.store align=4
-   (i32.const 5556)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:162:0
-  (i64.store align=4
-   (i32.const 5564)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1909)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5560)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5571)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5560)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5560)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5568)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5564)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1909)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:162:0
-  (i32.store
-   (i32.const 5572)
-   (i32.const 30)
-  )
-  (i64.store align=4
-   (i32.const 5576)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:163:0
-  (i64.store align=4
-   (i32.const 5584)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1913)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5580)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5591)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5580)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5580)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5588)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5584)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1913)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:163:0
-  (i32.store
-   (i32.const 5592)
-   (i32.const 31)
-  )
-  (i64.store align=4
-   (i32.const 5596)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:164:0
-  (i64.store align=4
-   (i32.const 5604)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1917)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5600)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5611)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5600)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5600)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5608)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5604)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1917)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:164:0
-  (i32.store
-   (i32.const 5612)
-   (i32.const 32)
-  )
-  (i64.store align=4
-   (i32.const 5616)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:165:0
-  (i64.store align=4
-   (i32.const 5624)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1921)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5620)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5631)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5620)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5620)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5628)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5624)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1921)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:165:0
-  (i32.store
-   (i32.const 5632)
-   (i32.const 33)
-  )
-  (i64.store align=4
-   (i32.const 5636)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:166:0
-  (i64.store align=4
-   (i32.const 5644)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1925)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5640)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5651)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5640)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5640)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5648)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5644)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1925)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:166:0
-  (i32.store
-   (i32.const 5652)
-   (i32.const 34)
-  )
-  (i64.store align=4
-   (i32.const 5656)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:167:0
-  (i64.store align=4
-   (i32.const 5664)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1929)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5660)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5671)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5660)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5660)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 5668)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5664)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1929)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:167:0
-  (i32.store
-   (i32.const 5672)
-   (i32.const 35)
-  )
-  (i64.store align=4
-   (i32.const 5676)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:168:0
-  (i64.store align=4
-   (i32.const 5684)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1933)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5680)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5691)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5680)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5680)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -2785,12 +268,12 @@
      )
     )
     (i32.store
-     (i32.const 5688)
+     (i32.const 5676)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5684)
+     (i32.const 5672)
      (get_local $1)
     )
    )
@@ -2799,7 +282,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1933)
+    (i32.const 1688)
     (get_local $1)
    )
   )
@@ -2818,24 +301,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:168:0
+  ;;@ ./ops.h:145:0
   (i32.store
-   (i32.const 5692)
-   (i32.const 36)
+   (i32.const 5680)
+   (i32.const 17)
   )
+  (i32.store
+   (i32.const 5684)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 5688)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:147:0
   (i64.store align=4
    (i32.const 5696)
    (i64.const 0)
   )
-  ;;@ ./ops.h:169:0
-  (i64.store align=4
-   (i32.const 5704)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1937)
+    (i32.const 1707)
    )
   )
   (if
@@ -2846,7 +333,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5700)
+    (i32.const 5692)
    )
   )
   (if
@@ -2864,11 +351,11 @@
      )
     )
     (i32.store8
-     (i32.const 5711)
+     (i32.const 5703)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5700)
+     (i32.const 5692)
     )
    )
    (block
@@ -2893,7 +380,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5700)
+     (i32.const 5692)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -2904,12 +391,12 @@
      )
     )
     (i32.store
-     (i32.const 5708)
+     (i32.const 5700)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5704)
+     (i32.const 5696)
      (get_local $1)
     )
    )
@@ -2918,7 +405,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1937)
+    (i32.const 1707)
     (get_local $1)
    )
   )
@@ -2937,24 +424,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:169:0
+  ;;@ ./ops.h:147:0
   (i32.store
-   (i32.const 5712)
-   (i32.const 37)
+   (i32.const 5704)
+   (i32.const 18)
+  )
+  (i32.store
+   (i32.const 5708)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 5716)
+   (i32.const 5712)
    (i64.const 0)
   )
-  ;;@ ./ops.h:170:0
+  ;;@ ./ops.h:149:0
   (i64.store align=4
-   (i32.const 5724)
+   (i32.const 5720)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1941)
+    (i32.const 1727)
    )
   )
   (if
@@ -2965,7 +456,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5720)
+    (i32.const 5716)
    )
   )
   (if
@@ -2983,11 +474,11 @@
      )
     )
     (i32.store8
-     (i32.const 5731)
+     (i32.const 5727)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5720)
+     (i32.const 5716)
     )
    )
    (block
@@ -3012,7 +503,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5720)
+     (i32.const 5716)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3022,13 +513,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 5728)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5724)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5720)
      (get_local $1)
     )
    )
@@ -3037,7 +528,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1941)
+    (i32.const 1727)
     (get_local $1)
    )
   )
@@ -3056,16 +547,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:170:0
+  ;;@ ./ops.h:149:0
+  (i32.store
+   (i32.const 5728)
+   (i32.const 18)
+  )
   (i32.store
    (i32.const 5732)
-   (i32.const 38)
+   (i32.const 2)
   )
   (i64.store align=4
    (i32.const 5736)
    (i64.const 0)
   )
-  ;;@ ./ops.h:171:0
+  ;;@ ./ops.h:151:0
   (i64.store align=4
    (i32.const 5744)
    (i64.const 0)
@@ -3073,7 +568,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1945)
+    (i32.const 1743)
    )
   )
   (if
@@ -3156,7 +651,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1945)
+    (i32.const 1743)
     (get_local $1)
    )
   )
@@ -3175,24 +670,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:171:0
+  ;;@ ./ops.h:151:0
   (i32.store
    (i32.const 5752)
-   (i32.const 39)
+   (i32.const 19)
+  )
+  (i32.store
+   (i32.const 5756)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 5756)
+   (i32.const 5760)
    (i64.const 0)
   )
-  ;;@ ./ops.h:172:0
+  ;;@ ./ops.h:153:0
   (i64.store align=4
-   (i32.const 5764)
+   (i32.const 5768)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1949)
+    (i32.const 1762)
    )
   )
   (if
@@ -3203,7 +702,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5760)
+    (i32.const 5764)
    )
   )
   (if
@@ -3221,11 +720,11 @@
      )
     )
     (i32.store8
-     (i32.const 5771)
+     (i32.const 5775)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5760)
+     (i32.const 5764)
     )
    )
    (block
@@ -3249,24 +748,24 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5760)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5768)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5764)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5772)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5768)
      (get_local $1)
     )
    )
@@ -3275,7 +774,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1949)
+    (i32.const 1762)
     (get_local $1)
    )
   )
@@ -3294,24 +793,37 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:172:0
+  ;;@ ./ops.h:153:0
   (i32.store
-   (i32.const 5772)
-   (i32.const 40)
-  )
-  (i64.store align=4
    (i32.const 5776)
+   (i32.const 19)
+  )
+  (i32.store
+   (i32.const 5780)
+   (i32.const 2)
+  )
+  ;;@ ./ops.h:155:0
+  (i32.store16
+   (i32.const 5784)
+   (i32.const -2048)
+  )
+  (i32.store16
+   (i32.const 5786)
+   (i32.const -22528)
+  )
+  (i64.store align=4
+   (i32.const 5788)
    (i64.const 0)
   )
-  ;;@ ./ops.h:173:0
-  (i64.store align=4
-   (i32.const 5784)
-   (i64.const 0)
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
+  (i32.store
+   (i32.const 5796)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1953)
+    (i32.const 1776)
    )
   )
   (if
@@ -3322,7 +834,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5780)
+    (i32.const 5788)
    )
   )
   (if
@@ -3340,11 +852,11 @@
      )
     )
     (i32.store8
-     (i32.const 5791)
+     (i32.const 5799)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5780)
+     (i32.const 5788)
     )
    )
    (block
@@ -3368,24 +880,24 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5780)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 5788)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5796)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5784)
+     (i32.const 5792)
      (get_local $1)
     )
    )
@@ -3394,7 +906,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1953)
+    (i32.const 1776)
     (get_local $1)
    )
   )
@@ -3413,143 +925,37 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:173:0
+  ;;@ ./ops.h:155:0
   (i32.store
-   (i32.const 5792)
-   (i32.const 41)
+   (i32.const 5800)
+   (i32.const 20)
   )
-  (i64.store align=4
-   (i32.const 5796)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:174:0
-  (i64.store align=4
+  (i32.store
    (i32.const 5804)
-   (i64.const 0)
+   (i32.const 1)
   )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1957)
-   )
+  ;;@ ./ops.h:158:0
+  (i32.store16
+   (i32.const 5808)
+   (i32.const -128)
   )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5800)
-   )
+  (i32.store16
+   (i32.const 5810)
+   (i32.const -20480)
   )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5811)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5800)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5800)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5808)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5804)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1957)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:174:0
-  (i32.store
+  (i64.store align=4
    (i32.const 5812)
-   (i32.const 42)
-  )
-  (i64.store align=4
-   (i32.const 5816)
    (i64.const 0)
   )
-  ;;@ ./ops.h:175:0
-  (i64.store align=4
-   (i32.const 5824)
-   (i64.const 0)
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
+  (i32.store
+   (i32.const 5820)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1962)
+    (i32.const 1794)
    )
   )
   (if
@@ -3560,7 +966,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5820)
+    (i32.const 5812)
    )
   )
   (if
@@ -3578,11 +984,11 @@
      )
     )
     (i32.store8
-     (i32.const 5831)
+     (i32.const 5823)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5820)
+     (i32.const 5812)
     )
    )
    (block
@@ -3607,7 +1013,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5820)
+     (i32.const 5812)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3618,12 +1024,12 @@
      )
     )
     (i32.store
-     (i32.const 5828)
+     (i32.const 5820)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5824)
+     (i32.const 5816)
      (get_local $1)
     )
    )
@@ -3632,7 +1038,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1962)
+    (i32.const 1794)
     (get_local $1)
    )
   )
@@ -3651,24 +1057,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:175:0
+  ;;@ ./ops.h:158:0
   (i32.store
-   (i32.const 5832)
-   (i32.const 43)
+   (i32.const 5824)
+   (i32.const 20)
+  )
+  (i32.store
+   (i32.const 5828)
+   (i32.const 2)
   )
   (i64.store align=4
-   (i32.const 5836)
+   (i32.const 5832)
    (i64.const 0)
   )
-  ;;@ ./ops.h:176:0
+  ;;@ ./ops.h:161:0
   (i64.store align=4
-   (i32.const 5844)
+   (i32.const 5840)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1965)
+    (i32.const 1807)
    )
   )
   (if
@@ -3679,7 +1089,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5840)
+    (i32.const 5836)
    )
   )
   (if
@@ -3697,11 +1107,11 @@
      )
     )
     (i32.store8
-     (i32.const 5851)
+     (i32.const 5847)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5840)
+     (i32.const 5836)
     )
    )
    (block
@@ -3726,7 +1136,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5840)
+     (i32.const 5836)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3736,13 +1146,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 5848)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5844)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5840)
      (get_local $1)
     )
    )
@@ -3751,7 +1161,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1965)
+    (i32.const 1807)
     (get_local $1)
    )
   )
@@ -3770,16 +1180,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:176:0
+  ;;@ ./ops.h:161:0
+  (i32.store
+   (i32.const 5848)
+   (i32.const 21)
+  )
   (i32.store
    (i32.const 5852)
-   (i32.const 44)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 5856)
    (i64.const 0)
   )
-  ;;@ ./ops.h:177:0
+  ;;@ ./ops.h:162:0
   (i64.store align=4
    (i32.const 5864)
    (i64.const 0)
@@ -3787,7 +1201,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1980)
+    (i32.const 1826)
    )
   )
   (if
@@ -3870,7 +1284,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1980)
+    (i32.const 1826)
     (get_local $1)
    )
   )
@@ -3889,24 +1303,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:177:0
+  ;;@ ./ops.h:162:0
   (i32.store
    (i32.const 5872)
-   (i32.const 45)
+   (i32.const 21)
+  )
+  (i32.store
+   (i32.const 5876)
+   (i32.const 2)
   )
   (i64.store align=4
-   (i32.const 5876)
+   (i32.const 5880)
    (i64.const 0)
   )
-  ;;@ ./ops.h:178:0
+  ;;@ ./ops.h:163:0
   (i64.store align=4
-   (i32.const 5884)
+   (i32.const 5888)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1983)
+    (i32.const 1838)
    )
   )
   (if
@@ -3917,7 +1335,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5880)
+    (i32.const 5884)
    )
   )
   (if
@@ -3935,11 +1353,11 @@
      )
     )
     (i32.store8
-     (i32.const 5891)
+     (i32.const 5895)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5880)
+     (i32.const 5884)
     )
    )
    (block
@@ -3964,7 +1382,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5880)
+     (i32.const 5884)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3975,12 +1393,12 @@
      )
     )
     (i32.store
-     (i32.const 5888)
+     (i32.const 5892)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5884)
+     (i32.const 5888)
      (get_local $1)
     )
    )
@@ -3989,7 +1407,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1983)
+    (i32.const 1838)
     (get_local $1)
    )
   )
@@ -4008,24 +1426,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:178:0
+  ;;@ ./ops.h:163:0
   (i32.store
-   (i32.const 5892)
-   (i32.const 46)
-  )
-  (i64.store align=4
    (i32.const 5896)
-   (i64.const 0)
+   (i32.const 22)
   )
-  ;;@ ./ops.h:179:0
+  (i32.store
+   (i32.const 5900)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 5904)
    (i64.const 0)
   )
+  ;;@ ./ops.h:164:0
+  (i64.store align=4
+   (i32.const 5912)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1998)
+    (i32.const 1852)
    )
   )
   (if
@@ -4036,7 +1458,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5900)
+    (i32.const 5908)
    )
   )
   (if
@@ -4054,11 +1476,11 @@
      )
     )
     (i32.store8
-     (i32.const 5911)
+     (i32.const 5919)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5900)
+     (i32.const 5908)
     )
    )
    (block
@@ -4082,127 +1504,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5900)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 5908)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5904)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1998)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:179:0
-  (i32.store
-   (i32.const 5912)
-   (i32.const 47)
-  )
-  (i64.store align=4
-   (i32.const 5916)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:180:0
-  (i64.store align=4
-   (i32.const 5924)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2008)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5920)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5931)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5920)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5920)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4213,12 +1516,12 @@
      )
     )
     (i32.store
-     (i32.const 5928)
+     (i32.const 5916)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5924)
+     (i32.const 5912)
      (get_local $1)
     )
    )
@@ -4227,7 +1530,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2008)
+    (i32.const 1852)
     (get_local $1)
    )
   )
@@ -4246,24 +1549,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:180:0
+  ;;@ ./ops.h:164:0
   (i32.store
-   (i32.const 5932)
-   (i32.const 48)
+   (i32.const 5920)
+   (i32.const 23)
   )
+  (i32.store
+   (i32.const 5924)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 5928)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:165:0
   (i64.store align=4
    (i32.const 5936)
    (i64.const 0)
   )
-  ;;@ ./ops.h:181:0
-  (i64.store align=4
-   (i32.const 5944)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2018)
+    (i32.const 1867)
    )
   )
   (if
@@ -4274,7 +1581,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5940)
+    (i32.const 5932)
    )
   )
   (if
@@ -4292,11 +1599,11 @@
      )
     )
     (i32.store8
-     (i32.const 5951)
+     (i32.const 5943)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5940)
+     (i32.const 5932)
     )
    )
    (block
@@ -4321,7 +1628,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5940)
+     (i32.const 5932)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4332,12 +1639,12 @@
      )
     )
     (i32.store
-     (i32.const 5948)
+     (i32.const 5940)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5944)
+     (i32.const 5936)
      (get_local $1)
     )
    )
@@ -4346,7 +1653,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2018)
+    (i32.const 1867)
     (get_local $1)
    )
   )
@@ -4365,24 +1672,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:181:0
+  ;;@ ./ops.h:165:0
   (i32.store
-   (i32.const 5952)
-   (i32.const 49)
+   (i32.const 5944)
+   (i32.const 24)
+  )
+  (i32.store
+   (i32.const 5948)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 5956)
+   (i32.const 5952)
    (i64.const 0)
   )
-  ;;@ ./ops.h:182:0
+  ;;@ ./ops.h:166:0
   (i64.store align=4
-   (i32.const 5964)
+   (i32.const 5960)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2022)
+    (i32.const 1887)
    )
   )
   (if
@@ -4393,7 +1704,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5960)
+    (i32.const 5956)
    )
   )
   (if
@@ -4411,11 +1722,11 @@
      )
     )
     (i32.store8
-     (i32.const 5971)
+     (i32.const 5967)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5960)
+     (i32.const 5956)
     )
    )
    (block
@@ -4440,7 +1751,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5960)
+     (i32.const 5956)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4450,13 +1761,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 5968)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5964)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5960)
      (get_local $1)
     )
    )
@@ -4465,7 +1776,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2022)
+    (i32.const 1887)
     (get_local $1)
    )
   )
@@ -4484,16 +1795,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:182:0
+  ;;@ ./ops.h:166:0
+  (i32.store
+   (i32.const 5968)
+   (i32.const 25)
+  )
   (i32.store
    (i32.const 5972)
-   (i32.const 50)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 5976)
    (i64.const 0)
   )
-  ;;@ ./ops.h:183:0
+  ;;@ ./ops.h:167:0
   (i64.store align=4
    (i32.const 5984)
    (i64.const 0)
@@ -4501,7 +1816,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2026)
+    (i32.const 1902)
    )
   )
   (if
@@ -4584,7 +1899,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2026)
+    (i32.const 1902)
     (get_local $1)
    )
   )
@@ -4603,24 +1918,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:183:0
+  ;;@ ./ops.h:167:0
   (i32.store
    (i32.const 5992)
-   (i32.const 51)
+   (i32.const 26)
+  )
+  (i32.store
+   (i32.const 5996)
+   (i32.const 2)
   )
   (i64.store align=4
-   (i32.const 5996)
+   (i32.const 6000)
    (i64.const 0)
   )
-  ;;@ ./ops.h:184:0
+  ;;@ ./ops.h:168:0
   (i64.store align=4
-   (i32.const 6004)
+   (i32.const 6008)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2030)
+    (i32.const 1909)
    )
   )
   (if
@@ -4631,7 +1950,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6000)
+    (i32.const 6004)
    )
   )
   (if
@@ -4649,11 +1968,11 @@
      )
     )
     (i32.store8
-     (i32.const 6011)
+     (i32.const 6015)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6000)
+     (i32.const 6004)
     )
    )
    (block
@@ -4678,7 +1997,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6000)
+     (i32.const 6004)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4689,12 +2008,12 @@
      )
     )
     (i32.store
-     (i32.const 6008)
+     (i32.const 6012)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6004)
+     (i32.const 6008)
      (get_local $1)
     )
    )
@@ -4703,7 +2022,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2030)
+    (i32.const 1909)
     (get_local $1)
    )
   )
@@ -4722,24 +2041,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:184:0
+  ;;@ ./ops.h:168:0
   (i32.store
-   (i32.const 6012)
-   (i32.const 52)
-  )
-  (i64.store align=4
    (i32.const 6016)
-   (i64.const 0)
+   (i32.const 27)
   )
-  ;;@ ./ops.h:185:0
+  (i32.store
+   (i32.const 6020)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6024)
    (i64.const 0)
   )
+  ;;@ ./ops.h:169:0
+  (i64.store align=4
+   (i32.const 6032)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2034)
+    (i32.const 1918)
    )
   )
   (if
@@ -4750,7 +2073,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6020)
+    (i32.const 6028)
    )
   )
   (if
@@ -4768,11 +2091,11 @@
      )
     )
     (i32.store8
-     (i32.const 6031)
+     (i32.const 6039)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6020)
+     (i32.const 6028)
     )
    )
    (block
@@ -4796,127 +2119,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6020)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6028)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6024)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2034)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:185:0
-  (i32.store
-   (i32.const 6032)
-   (i32.const 53)
-  )
-  (i64.store align=4
-   (i32.const 6036)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:186:0
-  (i64.store align=4
-   (i32.const 6044)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2038)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6040)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6051)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6040)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6040)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4927,12 +2131,12 @@
      )
     )
     (i32.store
-     (i32.const 6048)
+     (i32.const 6036)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6044)
+     (i32.const 6032)
      (get_local $1)
     )
    )
@@ -4941,7 +2145,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2038)
+    (i32.const 1918)
     (get_local $1)
    )
   )
@@ -4960,24 +2164,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:186:0
+  ;;@ ./ops.h:169:0
   (i32.store
-   (i32.const 6052)
-   (i32.const 54)
+   (i32.const 6040)
+   (i32.const 28)
   )
+  (i32.store
+   (i32.const 6044)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6048)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:170:0
   (i64.store align=4
    (i32.const 6056)
    (i64.const 0)
   )
-  ;;@ ./ops.h:187:0
-  (i64.store align=4
-   (i32.const 6064)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2042)
+    (i32.const 1927)
    )
   )
   (if
@@ -4988,7 +2196,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6060)
+    (i32.const 6052)
    )
   )
   (if
@@ -5006,11 +2214,11 @@
      )
     )
     (i32.store8
-     (i32.const 6071)
+     (i32.const 6063)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6060)
+     (i32.const 6052)
     )
    )
    (block
@@ -5035,7 +2243,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6060)
+     (i32.const 6052)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5046,12 +2254,12 @@
      )
     )
     (i32.store
-     (i32.const 6068)
+     (i32.const 6060)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6064)
+     (i32.const 6056)
      (get_local $1)
     )
    )
@@ -5060,7 +2268,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2042)
+    (i32.const 1927)
     (get_local $1)
    )
   )
@@ -5079,24 +2287,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:187:0
+  ;;@ ./ops.h:170:0
   (i32.store
-   (i32.const 6072)
-   (i32.const 55)
+   (i32.const 6064)
+   (i32.const 29)
+  )
+  (i32.store
+   (i32.const 6068)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6076)
+   (i32.const 6072)
    (i64.const 0)
   )
-  ;;@ ./ops.h:188:0
+  ;;@ ./ops.h:171:0
   (i64.store align=4
-   (i32.const 6084)
+   (i32.const 6080)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2058)
+    (i32.const 1936)
    )
   )
   (if
@@ -5107,7 +2319,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6080)
+    (i32.const 6076)
    )
   )
   (if
@@ -5125,11 +2337,11 @@
      )
     )
     (i32.store8
-     (i32.const 6091)
+     (i32.const 6087)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6080)
+     (i32.const 6076)
     )
    )
    (block
@@ -5154,7 +2366,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6080)
+     (i32.const 6076)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5164,13 +2376,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6088)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6084)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6080)
      (get_local $1)
     )
    )
@@ -5179,7 +2391,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2058)
+    (i32.const 1936)
     (get_local $1)
    )
   )
@@ -5198,16 +2410,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:188:0
+  ;;@ ./ops.h:171:0
+  (i32.store
+   (i32.const 6088)
+   (i32.const 30)
+  )
   (i32.store
    (i32.const 6092)
-   (i32.const 56)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6096)
    (i64.const 0)
   )
-  ;;@ ./ops.h:189:0
+  ;;@ ./ops.h:172:0
   (i64.store align=4
    (i32.const 6104)
    (i64.const 0)
@@ -5215,7 +2431,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2082)
+    (i32.const 1945)
    )
   )
   (if
@@ -5298,7 +2514,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2082)
+    (i32.const 1945)
     (get_local $1)
    )
   )
@@ -5317,24 +2533,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:189:0
+  ;;@ ./ops.h:172:0
   (i32.store
    (i32.const 6112)
-   (i32.const 57)
+   (i32.const 31)
+  )
+  (i32.store
+   (i32.const 6116)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6116)
+   (i32.const 6120)
    (i64.const 0)
   )
-  ;;@ ./ops.h:190:0
+  ;;@ ./ops.h:173:0
   (i64.store align=4
-   (i32.const 6124)
+   (i32.const 6128)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2097)
+    (i32.const 1954)
    )
   )
   (if
@@ -5345,7 +2565,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6120)
+    (i32.const 6124)
    )
   )
   (if
@@ -5363,11 +2583,11 @@
      )
     )
     (i32.store8
-     (i32.const 6131)
+     (i32.const 6135)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6120)
+     (i32.const 6124)
     )
    )
    (block
@@ -5392,7 +2612,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6120)
+     (i32.const 6124)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5403,12 +2623,12 @@
      )
     )
     (i32.store
-     (i32.const 6128)
+     (i32.const 6132)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6124)
+     (i32.const 6128)
      (get_local $1)
     )
    )
@@ -5417,7 +2637,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2097)
+    (i32.const 1954)
     (get_local $1)
    )
   )
@@ -5436,24 +2656,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:190:0
+  ;;@ ./ops.h:173:0
   (i32.store
-   (i32.const 6132)
-   (i32.const 58)
-  )
-  (i64.store align=4
    (i32.const 6136)
-   (i64.const 0)
+   (i32.const 32)
   )
-  ;;@ ./ops.h:191:0
+  (i32.store
+   (i32.const 6140)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6144)
    (i64.const 0)
   )
+  ;;@ ./ops.h:174:0
+  (i64.store align=4
+   (i32.const 6152)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2114)
+    (i32.const 1963)
    )
   )
   (if
@@ -5464,7 +2688,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6140)
+    (i32.const 6148)
    )
   )
   (if
@@ -5482,11 +2706,11 @@
      )
     )
     (i32.store8
-     (i32.const 6151)
+     (i32.const 6159)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6140)
+     (i32.const 6148)
     )
    )
    (block
@@ -5510,127 +2734,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6140)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6148)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6144)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2114)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:191:0
-  (i32.store
-   (i32.const 6152)
-   (i32.const 59)
-  )
-  (i64.store align=4
-   (i32.const 6156)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:192:0
-  (i64.store align=4
-   (i32.const 6164)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2130)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6160)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6171)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6160)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6160)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5641,12 +2746,12 @@
      )
     )
     (i32.store
-     (i32.const 6168)
+     (i32.const 6156)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6164)
+     (i32.const 6152)
      (get_local $1)
     )
    )
@@ -5655,7 +2760,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2130)
+    (i32.const 1963)
     (get_local $1)
    )
   )
@@ -5674,24 +2779,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:192:0
+  ;;@ ./ops.h:174:0
   (i32.store
-   (i32.const 6172)
-   (i32.const 60)
+   (i32.const 6160)
+   (i32.const 33)
   )
+  (i32.store
+   (i32.const 6164)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6168)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:175:0
   (i64.store align=4
    (i32.const 6176)
    (i64.const 0)
   )
-  ;;@ ./ops.h:193:0
-  (i64.store align=4
-   (i32.const 6184)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2147)
+    (i32.const 1972)
    )
   )
   (if
@@ -5702,7 +2811,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6180)
+    (i32.const 6172)
    )
   )
   (if
@@ -5720,11 +2829,11 @@
      )
     )
     (i32.store8
-     (i32.const 6191)
+     (i32.const 6183)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6180)
+     (i32.const 6172)
     )
    )
    (block
@@ -5749,7 +2858,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6180)
+     (i32.const 6172)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5760,12 +2869,12 @@
      )
     )
     (i32.store
-     (i32.const 6188)
+     (i32.const 6180)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6184)
+     (i32.const 6176)
      (get_local $1)
     )
    )
@@ -5774,7 +2883,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2147)
+    (i32.const 1972)
     (get_local $1)
    )
   )
@@ -5793,24 +2902,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:193:0
+  ;;@ ./ops.h:175:0
   (i32.store
-   (i32.const 6192)
-   (i32.const 61)
+   (i32.const 6184)
+   (i32.const 34)
+  )
+  (i32.store
+   (i32.const 6188)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6196)
+   (i32.const 6192)
    (i64.const 0)
   )
-  ;;@ ./ops.h:194:0
+  ;;@ ./ops.h:176:0
   (i64.store align=4
-   (i32.const 6204)
+   (i32.const 6200)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2163)
+    (i32.const 1981)
    )
   )
   (if
@@ -5821,7 +2934,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6200)
+    (i32.const 6196)
    )
   )
   (if
@@ -5839,11 +2952,11 @@
      )
     )
     (i32.store8
-     (i32.const 6211)
+     (i32.const 6207)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6200)
+     (i32.const 6196)
     )
    )
    (block
@@ -5868,7 +2981,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6200)
+     (i32.const 6196)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5878,13 +2991,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6208)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6204)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6200)
      (get_local $1)
     )
    )
@@ -5893,7 +3006,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2163)
+    (i32.const 1981)
     (get_local $1)
    )
   )
@@ -5912,16 +3025,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:194:0
+  ;;@ ./ops.h:176:0
+  (i32.store
+   (i32.const 6208)
+   (i32.const 35)
+  )
   (i32.store
    (i32.const 6212)
-   (i32.const 62)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6216)
    (i64.const 0)
   )
-  ;;@ ./ops.h:195:0
+  ;;@ ./ops.h:177:0
   (i64.store align=4
    (i32.const 6224)
    (i64.const 0)
@@ -5929,7 +3046,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2169)
+    (i32.const 1990)
    )
   )
   (if
@@ -6012,7 +3129,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2169)
+    (i32.const 1990)
     (get_local $1)
    )
   )
@@ -6031,24 +3148,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:195:0
+  ;;@ ./ops.h:177:0
   (i32.store
    (i32.const 6232)
-   (i32.const 63)
+   (i32.const 36)
+  )
+  (i32.store
+   (i32.const 6236)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6236)
+   (i32.const 6240)
    (i64.const 0)
   )
-  ;;@ ./ops.h:196:0
+  ;;@ ./ops.h:178:0
   (i64.store align=4
-   (i32.const 6244)
+   (i32.const 6248)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2175)
+    (i32.const 1999)
    )
   )
   (if
@@ -6059,7 +3180,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6240)
+    (i32.const 6244)
    )
   )
   (if
@@ -6077,11 +3198,11 @@
      )
     )
     (i32.store8
-     (i32.const 6251)
+     (i32.const 6255)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6240)
+     (i32.const 6244)
     )
    )
    (block
@@ -6106,7 +3227,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6240)
+     (i32.const 6244)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6117,12 +3238,12 @@
      )
     )
     (i32.store
-     (i32.const 6248)
+     (i32.const 6252)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6244)
+     (i32.const 6248)
      (get_local $1)
     )
    )
@@ -6131,7 +3252,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2175)
+    (i32.const 1999)
     (get_local $1)
    )
   )
@@ -6150,24 +3271,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:196:0
+  ;;@ ./ops.h:178:0
   (i32.store
-   (i32.const 6252)
-   (i32.const 64)
-  )
-  (i64.store align=4
    (i32.const 6256)
-   (i64.const 0)
+   (i32.const 37)
   )
-  ;;@ ./ops.h:197:0
+  (i32.store
+   (i32.const 6260)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6264)
    (i64.const 0)
   )
+  ;;@ ./ops.h:179:0
+  (i64.store align=4
+   (i32.const 6272)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2185)
+    (i32.const 2008)
    )
   )
   (if
@@ -6178,7 +3303,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6260)
+    (i32.const 6268)
    )
   )
   (if
@@ -6196,11 +3321,11 @@
      )
     )
     (i32.store8
-     (i32.const 6271)
+     (i32.const 6279)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6260)
+     (i32.const 6268)
     )
    )
    (block
@@ -6224,127 +3349,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6260)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6268)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6264)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2185)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:197:0
-  (i32.store
-   (i32.const 6272)
-   (i32.const 65)
-  )
-  (i64.store align=4
-   (i32.const 6276)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:198:0
-  (i64.store align=4
-   (i32.const 6284)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2200)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6280)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6291)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6280)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6280)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6355,12 +3361,12 @@
      )
     )
     (i32.store
-     (i32.const 6288)
+     (i32.const 6276)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6284)
+     (i32.const 6272)
      (get_local $1)
     )
    )
@@ -6369,7 +3375,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2200)
+    (i32.const 2008)
     (get_local $1)
    )
   )
@@ -6388,24 +3394,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:198:0
+  ;;@ ./ops.h:179:0
   (i32.store
-   (i32.const 6292)
-   (i32.const 66)
+   (i32.const 6280)
+   (i32.const 38)
   )
+  (i32.store
+   (i32.const 6284)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6288)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:180:0
   (i64.store align=4
    (i32.const 6296)
    (i64.const 0)
   )
-  ;;@ ./ops.h:199:0
-  (i64.store align=4
-   (i32.const 6304)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2210)
+    (i32.const 2017)
    )
   )
   (if
@@ -6416,7 +3426,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6300)
+    (i32.const 6292)
    )
   )
   (if
@@ -6434,11 +3444,11 @@
      )
     )
     (i32.store8
-     (i32.const 6311)
+     (i32.const 6303)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6300)
+     (i32.const 6292)
     )
    )
    (block
@@ -6463,7 +3473,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6300)
+     (i32.const 6292)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6474,12 +3484,12 @@
      )
     )
     (i32.store
-     (i32.const 6308)
+     (i32.const 6300)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6304)
+     (i32.const 6296)
      (get_local $1)
     )
    )
@@ -6488,7 +3498,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2210)
+    (i32.const 2017)
     (get_local $1)
    )
   )
@@ -6507,24 +3517,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:199:0
+  ;;@ ./ops.h:180:0
   (i32.store
-   (i32.const 6312)
-   (i32.const 67)
+   (i32.const 6304)
+   (i32.const 39)
+  )
+  (i32.store
+   (i32.const 6308)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6316)
+   (i32.const 6312)
    (i64.const 0)
   )
-  ;;@ ./ops.h:200:0
+  ;;@ ./ops.h:181:0
   (i64.store align=4
-   (i32.const 6324)
+   (i32.const 6320)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2220)
+    (i32.const 2026)
    )
   )
   (if
@@ -6535,7 +3549,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6320)
+    (i32.const 6316)
    )
   )
   (if
@@ -6553,11 +3567,11 @@
      )
     )
     (i32.store8
-     (i32.const 6331)
+     (i32.const 6327)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6320)
+     (i32.const 6316)
     )
    )
    (block
@@ -6582,7 +3596,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6320)
+     (i32.const 6316)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6592,13 +3606,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6328)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6324)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6320)
      (get_local $1)
     )
    )
@@ -6607,7 +3621,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2220)
+    (i32.const 2026)
     (get_local $1)
    )
   )
@@ -6626,16 +3640,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:200:0
+  ;;@ ./ops.h:181:0
+  (i32.store
+   (i32.const 6328)
+   (i32.const 40)
+  )
   (i32.store
    (i32.const 6332)
-   (i32.const 68)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6336)
    (i64.const 0)
   )
-  ;;@ ./ops.h:201:0
+  ;;@ ./ops.h:182:0
   (i64.store align=4
    (i32.const 6344)
    (i64.const 0)
@@ -6643,7 +3661,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2230)
+    (i32.const 2035)
    )
   )
   (if
@@ -6726,7 +3744,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2230)
+    (i32.const 2035)
     (get_local $1)
    )
   )
@@ -6745,24 +3763,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:201:0
+  ;;@ ./ops.h:182:0
   (i32.store
    (i32.const 6352)
-   (i32.const 69)
+   (i32.const 41)
+  )
+  (i32.store
+   (i32.const 6356)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6356)
+   (i32.const 6360)
    (i64.const 0)
   )
-  ;;@ ./ops.h:202:0
+  ;;@ ./ops.h:183:0
   (i64.store align=4
-   (i32.const 6364)
+   (i32.const 6368)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2240)
+    (i32.const 2049)
    )
   )
   (if
@@ -6773,7 +3795,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6360)
+    (i32.const 6364)
    )
   )
   (if
@@ -6791,11 +3813,11 @@
      )
     )
     (i32.store8
-     (i32.const 6371)
+     (i32.const 6375)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6360)
+     (i32.const 6364)
     )
    )
    (block
@@ -6820,7 +3842,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6360)
+     (i32.const 6364)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6831,12 +3853,12 @@
      )
     )
     (i32.store
-     (i32.const 6368)
+     (i32.const 6372)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6364)
+     (i32.const 6368)
      (get_local $1)
     )
    )
@@ -6845,7 +3867,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2240)
+    (i32.const 2049)
     (get_local $1)
    )
   )
@@ -6864,24 +3886,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:202:0
+  ;;@ ./ops.h:183:0
   (i32.store
-   (i32.const 6372)
-   (i32.const 70)
-  )
-  (i64.store align=4
    (i32.const 6376)
-   (i64.const 0)
+   (i32.const 42)
   )
-  ;;@ ./ops.h:203:0
+  (i32.store
+   (i32.const 6380)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6384)
    (i64.const 0)
   )
+  ;;@ ./ops.h:184:0
+  (i64.store align=4
+   (i32.const 6392)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2244)
+    (i32.const 2059)
    )
   )
   (if
@@ -6892,7 +3918,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6380)
+    (i32.const 6388)
    )
   )
   (if
@@ -6910,11 +3936,11 @@
      )
     )
     (i32.store8
-     (i32.const 6391)
+     (i32.const 6399)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6380)
+     (i32.const 6388)
     )
    )
    (block
@@ -6938,127 +3964,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6380)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6388)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6384)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2244)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:203:0
-  (i32.store
-   (i32.const 6392)
-   (i32.const 71)
-  )
-  (i64.store align=4
-   (i32.const 6396)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:204:0
-  (i64.store align=4
-   (i32.const 6404)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2248)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6400)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6411)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6400)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6400)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7069,12 +3976,12 @@
      )
     )
     (i32.store
-     (i32.const 6408)
+     (i32.const 6396)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6404)
+     (i32.const 6392)
      (get_local $1)
     )
    )
@@ -7083,7 +3990,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2248)
+    (i32.const 2059)
     (get_local $1)
    )
   )
@@ -7102,24 +4009,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:204:0
+  ;;@ ./ops.h:184:0
   (i32.store
-   (i32.const 6412)
-   (i32.const 72)
+   (i32.const 6400)
+   (i32.const 43)
   )
+  (i32.store
+   (i32.const 6404)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6408)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:185:0
   (i64.store align=4
    (i32.const 6416)
    (i64.const 0)
   )
-  ;;@ ./ops.h:205:0
-  (i64.store align=4
-   (i32.const 6424)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2252)
+    (i32.const 2067)
    )
   )
   (if
@@ -7130,7 +4041,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6420)
+    (i32.const 6412)
    )
   )
   (if
@@ -7148,11 +4059,11 @@
      )
     )
     (i32.store8
-     (i32.const 6431)
+     (i32.const 6423)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6420)
+     (i32.const 6412)
     )
    )
    (block
@@ -7177,7 +4088,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6420)
+     (i32.const 6412)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7188,12 +4099,12 @@
      )
     )
     (i32.store
-     (i32.const 6428)
+     (i32.const 6420)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6424)
+     (i32.const 6416)
      (get_local $1)
     )
    )
@@ -7202,7 +4113,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2252)
+    (i32.const 2067)
     (get_local $1)
    )
   )
@@ -7221,24 +4132,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:205:0
+  ;;@ ./ops.h:185:0
   (i32.store
-   (i32.const 6432)
-   (i32.const 73)
+   (i32.const 6424)
+   (i32.const 44)
+  )
+  (i32.store
+   (i32.const 6428)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6436)
+   (i32.const 6432)
    (i64.const 0)
   )
-  ;;@ ./ops.h:206:0
+  ;;@ ./ops.h:186:0
   (i64.store align=4
-   (i32.const 6444)
+   (i32.const 6440)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2267)
+    (i32.const 2075)
    )
   )
   (if
@@ -7249,7 +4164,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6440)
+    (i32.const 6436)
    )
   )
   (if
@@ -7267,11 +4182,11 @@
      )
     )
     (i32.store8
-     (i32.const 6451)
+     (i32.const 6447)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6440)
+     (i32.const 6436)
     )
    )
    (block
@@ -7296,7 +4211,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6440)
+     (i32.const 6436)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7306,13 +4221,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6448)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6444)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6440)
      (get_local $1)
     )
    )
@@ -7321,7 +4236,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2267)
+    (i32.const 2075)
     (get_local $1)
    )
   )
@@ -7340,16 +4255,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:206:0
+  ;;@ ./ops.h:186:0
+  (i32.store
+   (i32.const 6448)
+   (i32.const 45)
+  )
   (i32.store
    (i32.const 6452)
-   (i32.const 74)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6456)
    (i64.const 0)
   )
-  ;;@ ./ops.h:207:0
+  ;;@ ./ops.h:187:0
   (i64.store align=4
    (i32.const 6464)
    (i64.const 0)
@@ -7357,7 +4276,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2271)
+    (i32.const 2082)
    )
   )
   (if
@@ -7440,7 +4359,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2271)
+    (i32.const 2082)
     (get_local $1)
    )
   )
@@ -7459,24 +4378,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:207:0
+  ;;@ ./ops.h:187:0
   (i32.store
    (i32.const 6472)
-   (i32.const 75)
+   (i32.const 46)
+  )
+  (i32.store
+   (i32.const 6476)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6476)
+   (i32.const 6480)
    (i64.const 0)
   )
-  ;;@ ./ops.h:208:0
+  ;;@ ./ops.h:188:0
   (i64.store align=4
-   (i32.const 6484)
+   (i32.const 6488)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2286)
+    (i32.const 2095)
    )
   )
   (if
@@ -7487,7 +4410,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6480)
+    (i32.const 6484)
    )
   )
   (if
@@ -7505,11 +4428,11 @@
      )
     )
     (i32.store8
-     (i32.const 6491)
+     (i32.const 6495)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6480)
+     (i32.const 6484)
     )
    )
    (block
@@ -7534,7 +4457,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6480)
+     (i32.const 6484)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7545,12 +4468,12 @@
      )
     )
     (i32.store
-     (i32.const 6488)
+     (i32.const 6492)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6484)
+     (i32.const 6488)
      (get_local $1)
     )
    )
@@ -7559,7 +4482,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2286)
+    (i32.const 2095)
     (get_local $1)
    )
   )
@@ -7578,24 +4501,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:208:0
+  ;;@ ./ops.h:188:0
   (i32.store
-   (i32.const 6492)
-   (i32.const 76)
-  )
-  (i64.store align=4
    (i32.const 6496)
-   (i64.const 0)
+   (i32.const 47)
   )
-  ;;@ ./ops.h:209:0
+  (i32.store
+   (i32.const 6500)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6504)
    (i64.const 0)
   )
+  ;;@ ./ops.h:189:0
+  (i64.store align=4
+   (i32.const 6512)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2291)
+    (i32.const 2109)
    )
   )
   (if
@@ -7606,7 +4533,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6500)
+    (i32.const 6508)
    )
   )
   (if
@@ -7624,11 +4551,11 @@
      )
     )
     (i32.store8
-     (i32.const 6511)
+     (i32.const 6519)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6500)
+     (i32.const 6508)
     )
    )
    (block
@@ -7652,127 +4579,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6500)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6508)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6504)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2291)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:209:0
-  (i32.store
-   (i32.const 6512)
-   (i32.const 77)
-  )
-  (i64.store align=4
-   (i32.const 6516)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:210:0
-  (i64.store align=4
-   (i32.const 6524)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2295)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6520)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6531)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6520)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6520)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7783,12 +4591,12 @@
      )
     )
     (i32.store
-     (i32.const 6528)
+     (i32.const 6516)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6524)
+     (i32.const 6512)
      (get_local $1)
     )
    )
@@ -7797,7 +4605,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2295)
+    (i32.const 2109)
     (get_local $1)
    )
   )
@@ -7816,24 +4624,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:210:0
+  ;;@ ./ops.h:189:0
   (i32.store
-   (i32.const 6532)
-   (i32.const 78)
+   (i32.const 6520)
+   (i32.const 48)
   )
+  (i32.store
+   (i32.const 6524)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6528)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:190:0
   (i64.store align=4
    (i32.const 6536)
    (i64.const 0)
   )
-  ;;@ ./ops.h:211:0
-  (i64.store align=4
-   (i32.const 6544)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2299)
+    (i32.const 2109)
    )
   )
   (if
@@ -7844,7 +4656,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6540)
+    (i32.const 6532)
    )
   )
   (if
@@ -7862,11 +4674,11 @@
      )
     )
     (i32.store8
-     (i32.const 6551)
+     (i32.const 6543)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6540)
+     (i32.const 6532)
     )
    )
    (block
@@ -7891,7 +4703,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6540)
+     (i32.const 6532)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7902,12 +4714,12 @@
      )
     )
     (i32.store
-     (i32.const 6548)
+     (i32.const 6540)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6544)
+     (i32.const 6536)
      (get_local $1)
     )
    )
@@ -7916,7 +4728,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2299)
+    (i32.const 2109)
     (get_local $1)
    )
   )
@@ -7935,24 +4747,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:211:0
+  ;;@ ./ops.h:190:0
   (i32.store
-   (i32.const 6552)
-   (i32.const 79)
+   (i32.const 6544)
+   (i32.const 48)
+  )
+  (i32.store
+   (i32.const 6548)
+   (i32.const 2)
   )
   (i64.store align=4
-   (i32.const 6556)
+   (i32.const 6552)
    (i64.const 0)
   )
-  ;;@ ./ops.h:212:0
+  ;;@ ./ops.h:191:0
   (i64.store align=4
-   (i32.const 6564)
+   (i32.const 6560)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2305)
+    (i32.const 2122)
    )
   )
   (if
@@ -7963,7 +4779,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6560)
+    (i32.const 6556)
    )
   )
   (if
@@ -7981,11 +4797,11 @@
      )
     )
     (i32.store8
-     (i32.const 6571)
+     (i32.const 6567)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6560)
+     (i32.const 6556)
     )
    )
    (block
@@ -8010,7 +4826,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6560)
+     (i32.const 6556)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8020,13 +4836,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6568)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6564)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6560)
      (get_local $1)
     )
    )
@@ -8035,7 +4851,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2305)
+    (i32.const 2122)
     (get_local $1)
    )
   )
@@ -8054,16 +4870,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:212:0
+  ;;@ ./ops.h:191:0
+  (i32.store
+   (i32.const 6568)
+   (i32.const 49)
+  )
   (i32.store
    (i32.const 6572)
-   (i32.const 80)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6576)
    (i64.const 0)
   )
-  ;;@ ./ops.h:213:0
+  ;;@ ./ops.h:192:0
   (i64.store align=4
    (i32.const 6584)
    (i64.const 0)
@@ -8071,7 +4891,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2311)
+    (i32.const 2133)
    )
   )
   (if
@@ -8154,7 +4974,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2311)
+    (i32.const 2133)
     (get_local $1)
    )
   )
@@ -8173,24 +4993,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:213:0
+  ;;@ ./ops.h:192:0
   (i32.store
    (i32.const 6592)
-   (i32.const 81)
+   (i32.const 50)
+  )
+  (i32.store
+   (i32.const 6596)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6596)
+   (i32.const 6600)
    (i64.const 0)
   )
-  ;;@ ./ops.h:214:0
+  ;;@ ./ops.h:193:0
   (i64.store align=4
-   (i32.const 6604)
+   (i32.const 6608)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2315)
+    (i32.const 2142)
    )
   )
   (if
@@ -8201,7 +5025,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6600)
+    (i32.const 6604)
    )
   )
   (if
@@ -8219,11 +5043,11 @@
      )
     )
     (i32.store8
-     (i32.const 6611)
+     (i32.const 6615)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6600)
+     (i32.const 6604)
     )
    )
    (block
@@ -8248,7 +5072,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6600)
+     (i32.const 6604)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8259,12 +5083,12 @@
      )
     )
     (i32.store
-     (i32.const 6608)
+     (i32.const 6612)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6604)
+     (i32.const 6608)
      (get_local $1)
     )
    )
@@ -8273,7 +5097,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2315)
+    (i32.const 2142)
     (get_local $1)
    )
   )
@@ -8292,24 +5116,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:214:0
+  ;;@ ./ops.h:193:0
   (i32.store
-   (i32.const 6612)
-   (i32.const 82)
-  )
-  (i64.store align=4
    (i32.const 6616)
-   (i64.const 0)
+   (i32.const 51)
   )
-  ;;@ ./ops.h:215:0
+  (i32.store
+   (i32.const 6620)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6624)
    (i64.const 0)
   )
+  ;;@ ./ops.h:194:0
+  (i64.store align=4
+   (i32.const 6632)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2319)
+    (i32.const 2151)
    )
   )
   (if
@@ -8320,7 +5148,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6620)
+    (i32.const 6628)
    )
   )
   (if
@@ -8338,11 +5166,11 @@
      )
     )
     (i32.store8
-     (i32.const 6631)
+     (i32.const 6639)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6620)
+     (i32.const 6628)
     )
    )
    (block
@@ -8366,127 +5194,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6620)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6628)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6624)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2319)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:215:0
-  (i32.store
-   (i32.const 6632)
-   (i32.const 83)
-  )
-  (i64.store align=4
-   (i32.const 6636)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:216:0
-  (i64.store align=4
-   (i32.const 6644)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2334)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6640)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6651)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6640)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6640)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8497,12 +5206,12 @@
      )
     )
     (i32.store
-     (i32.const 6648)
+     (i32.const 6636)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6644)
+     (i32.const 6632)
      (get_local $1)
     )
    )
@@ -8511,7 +5220,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2334)
+    (i32.const 2151)
     (get_local $1)
    )
   )
@@ -8530,24 +5239,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:216:0
+  ;;@ ./ops.h:194:0
   (i32.store
-   (i32.const 6652)
-   (i32.const 84)
+   (i32.const 6640)
+   (i32.const 52)
   )
+  (i32.store
+   (i32.const 6644)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6648)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:195:0
   (i64.store align=4
    (i32.const 6656)
    (i64.const 0)
   )
-  ;;@ ./ops.h:217:0
-  (i64.store align=4
-   (i32.const 6664)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2338)
+    (i32.const 2166)
    )
   )
   (if
@@ -8558,7 +5271,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6660)
+    (i32.const 6652)
    )
   )
   (if
@@ -8576,11 +5289,11 @@
      )
     )
     (i32.store8
-     (i32.const 6671)
+     (i32.const 6663)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6660)
+     (i32.const 6652)
     )
    )
    (block
@@ -8605,7 +5318,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6660)
+     (i32.const 6652)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8616,12 +5329,12 @@
      )
     )
     (i32.store
-     (i32.const 6668)
+     (i32.const 6660)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6664)
+     (i32.const 6656)
      (get_local $1)
     )
    )
@@ -8630,7 +5343,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2338)
+    (i32.const 2166)
     (get_local $1)
    )
   )
@@ -8649,24 +5362,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:217:0
+  ;;@ ./ops.h:195:0
   (i32.store
-   (i32.const 6672)
-   (i32.const 85)
+   (i32.const 6664)
+   (i32.const 53)
+  )
+  (i32.store
+   (i32.const 6668)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6676)
+   (i32.const 6672)
    (i64.const 0)
   )
-  ;;@ ./ops.h:218:0
+  ;;@ ./ops.h:196:0
   (i64.store align=4
-   (i32.const 6684)
+   (i32.const 6680)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2342)
+    (i32.const 2175)
    )
   )
   (if
@@ -8677,7 +5394,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6680)
+    (i32.const 6676)
    )
   )
   (if
@@ -8695,11 +5412,11 @@
      )
     )
     (i32.store8
-     (i32.const 6691)
+     (i32.const 6687)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6680)
+     (i32.const 6676)
     )
    )
    (block
@@ -8724,7 +5441,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6680)
+     (i32.const 6676)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8734,13 +5451,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6688)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6684)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6680)
      (get_local $1)
     )
    )
@@ -8749,7 +5466,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2342)
+    (i32.const 2175)
     (get_local $1)
    )
   )
@@ -8768,16 +5485,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:218:0
+  ;;@ ./ops.h:196:0
+  (i32.store
+   (i32.const 6688)
+   (i32.const 54)
+  )
   (i32.store
    (i32.const 6692)
-   (i32.const 86)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6696)
    (i64.const 0)
   )
-  ;;@ ./ops.h:219:0
+  ;;@ ./ops.h:197:0
   (i64.store align=4
    (i32.const 6704)
    (i64.const 0)
@@ -8785,7 +5506,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2358)
+    (i32.const 2205)
    )
   )
   (if
@@ -8868,7 +5589,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2358)
+    (i32.const 2205)
     (get_local $1)
    )
   )
@@ -8887,24 +5608,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:219:0
+  ;;@ ./ops.h:197:0
   (i32.store
    (i32.const 6712)
-   (i32.const 87)
+   (i32.const 55)
+  )
+  (i32.store
+   (i32.const 6716)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6716)
+   (i32.const 6720)
    (i64.const 0)
   )
-  ;;@ ./ops.h:220:0
+  ;;@ ./ops.h:198:0
   (i64.store align=4
-   (i32.const 6724)
+   (i32.const 6728)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2373)
+    (i32.const 2224)
    )
   )
   (if
@@ -8915,7 +5640,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6720)
+    (i32.const 6724)
    )
   )
   (if
@@ -8933,11 +5658,11 @@
      )
     )
     (i32.store8
-     (i32.const 6731)
+     (i32.const 6735)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6720)
+     (i32.const 6724)
     )
    )
    (block
@@ -8962,7 +5687,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6720)
+     (i32.const 6724)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8973,12 +5698,12 @@
      )
     )
     (i32.store
-     (i32.const 6728)
+     (i32.const 6732)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6724)
+     (i32.const 6728)
      (get_local $1)
     )
    )
@@ -8987,7 +5712,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2373)
+    (i32.const 2224)
     (get_local $1)
    )
   )
@@ -9006,24 +5731,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:220:0
+  ;;@ ./ops.h:198:0
   (i32.store
-   (i32.const 6732)
-   (i32.const 88)
-  )
-  (i64.store align=4
    (i32.const 6736)
-   (i64.const 0)
+   (i32.const 55)
   )
-  ;;@ ./ops.h:221:0
+  (i32.store
+   (i32.const 6740)
+   (i32.const 2)
+  )
   (i64.store align=4
    (i32.const 6744)
    (i64.const 0)
   )
+  ;;@ ./ops.h:199:0
+  (i64.store align=4
+   (i32.const 6752)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2390)
+    (i32.const 2242)
    )
   )
   (if
@@ -9034,7 +5763,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6740)
+    (i32.const 6748)
    )
   )
   (if
@@ -9052,11 +5781,11 @@
      )
     )
     (i32.store8
-     (i32.const 6751)
+     (i32.const 6759)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6740)
+     (i32.const 6748)
     )
    )
    (block
@@ -9080,127 +5809,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6740)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6748)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6744)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2390)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:221:0
-  (i32.store
-   (i32.const 6752)
-   (i32.const 89)
-  )
-  (i64.store align=4
-   (i32.const 6756)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:222:0
-  (i64.store align=4
-   (i32.const 6764)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2406)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6760)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6771)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6760)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6760)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9211,12 +5821,12 @@
      )
     )
     (i32.store
-     (i32.const 6768)
+     (i32.const 6756)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6764)
+     (i32.const 6752)
      (get_local $1)
     )
    )
@@ -9225,7 +5835,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2406)
+    (i32.const 2242)
     (get_local $1)
    )
   )
@@ -9244,24 +5854,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:222:0
+  ;;@ ./ops.h:199:0
   (i32.store
-   (i32.const 6772)
-   (i32.const 90)
+   (i32.const 6760)
+   (i32.const 56)
   )
+  (i32.store
+   (i32.const 6764)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6768)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:200:0
   (i64.store align=4
    (i32.const 6776)
    (i64.const 0)
   )
-  ;;@ ./ops.h:223:0
-  (i64.store align=4
-   (i32.const 6784)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2423)
+    (i32.const 2260)
    )
   )
   (if
@@ -9272,7 +5886,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6780)
+    (i32.const 6772)
    )
   )
   (if
@@ -9290,11 +5904,11 @@
      )
     )
     (i32.store8
-     (i32.const 6791)
+     (i32.const 6783)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6780)
+     (i32.const 6772)
     )
    )
    (block
@@ -9319,7 +5933,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6780)
+     (i32.const 6772)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9330,12 +5944,12 @@
      )
     )
     (i32.store
-     (i32.const 6788)
+     (i32.const 6780)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6784)
+     (i32.const 6776)
      (get_local $1)
     )
    )
@@ -9344,7 +5958,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2423)
+    (i32.const 2260)
     (get_local $1)
    )
   )
@@ -9363,24 +5977,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:223:0
+  ;;@ ./ops.h:200:0
   (i32.store
-   (i32.const 6792)
-   (i32.const 91)
+   (i32.const 6784)
+   (i32.const 57)
+  )
+  (i32.store
+   (i32.const 6788)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6796)
+   (i32.const 6792)
    (i64.const 0)
   )
-  ;;@ ./ops.h:224:0
+  ;;@ ./ops.h:201:0
   (i64.store align=4
-   (i32.const 6804)
+   (i32.const 6800)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2439)
+    (i32.const 2278)
    )
   )
   (if
@@ -9391,7 +6009,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6800)
+    (i32.const 6796)
    )
   )
   (if
@@ -9409,11 +6027,11 @@
      )
     )
     (i32.store8
-     (i32.const 6811)
+     (i32.const 6807)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6800)
+     (i32.const 6796)
     )
    )
    (block
@@ -9438,7 +6056,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6800)
+     (i32.const 6796)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9448,13 +6066,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6808)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6804)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6800)
      (get_local $1)
     )
    )
@@ -9463,7 +6081,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2439)
+    (i32.const 2278)
     (get_local $1)
    )
   )
@@ -9482,16 +6100,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:224:0
+  ;;@ ./ops.h:201:0
+  (i32.store
+   (i32.const 6808)
+   (i32.const 58)
+  )
   (i32.store
    (i32.const 6812)
-   (i32.const 92)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6816)
    (i64.const 0)
   )
-  ;;@ ./ops.h:225:0
+  ;;@ ./ops.h:202:0
   (i64.store align=4
    (i32.const 6824)
    (i64.const 0)
@@ -9499,7 +6121,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2455)
+    (i32.const 2298)
    )
   )
   (if
@@ -9582,7 +6204,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2455)
+    (i32.const 2298)
     (get_local $1)
    )
   )
@@ -9601,24 +6223,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:225:0
+  ;;@ ./ops.h:202:0
   (i32.store
    (i32.const 6832)
-   (i32.const 93)
+   (i32.const 59)
+  )
+  (i32.store
+   (i32.const 6836)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6836)
+   (i32.const 6840)
    (i64.const 0)
   )
-  ;;@ ./ops.h:226:0
+  ;;@ ./ops.h:203:0
   (i64.store align=4
-   (i32.const 6844)
+   (i32.const 6848)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2470)
+    (i32.const 2317)
    )
   )
   (if
@@ -9629,7 +6255,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6840)
+    (i32.const 6844)
    )
   )
   (if
@@ -9647,11 +6273,11 @@
      )
     )
     (i32.store8
-     (i32.const 6851)
+     (i32.const 6855)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6840)
+     (i32.const 6844)
     )
    )
    (block
@@ -9676,7 +6302,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6840)
+     (i32.const 6844)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9687,12 +6313,12 @@
      )
     )
     (i32.store
-     (i32.const 6848)
+     (i32.const 6852)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6844)
+     (i32.const 6848)
      (get_local $1)
     )
    )
@@ -9701,7 +6327,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2470)
+    (i32.const 2317)
     (get_local $1)
    )
   )
@@ -9720,24 +6346,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:226:0
+  ;;@ ./ops.h:203:0
   (i32.store
-   (i32.const 6852)
-   (i32.const 94)
-  )
-  (i64.store align=4
    (i32.const 6856)
-   (i64.const 0)
+   (i32.const 60)
   )
-  ;;@ ./ops.h:227:0
+  (i32.store
+   (i32.const 6860)
+   (i32.const 1)
+  )
   (i64.store align=4
    (i32.const 6864)
    (i64.const 0)
   )
+  ;;@ ./ops.h:204:0
+  (i64.store align=4
+   (i32.const 6872)
+   (i64.const 0)
+  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2490)
+    (i32.const 2337)
    )
   )
   (if
@@ -9748,7 +6378,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6860)
+    (i32.const 6868)
    )
   )
   (if
@@ -9766,11 +6396,11 @@
      )
     )
     (i32.store8
-     (i32.const 6871)
+     (i32.const 6879)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6860)
+     (i32.const 6868)
     )
    )
    (block
@@ -9794,127 +6424,8 @@
      )
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6860)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
     (i32.store
      (i32.const 6868)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 6864)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 2490)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:227:0
-  (i32.store
-   (i32.const 6872)
-   (i32.const 95)
-  )
-  (i64.store align=4
-   (i32.const 6876)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:228:0
-  (i64.store align=4
-   (i32.const 6884)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2494)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6880)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 6891)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 6880)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 6880)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9925,12 +6436,12 @@
      )
     )
     (i32.store
-     (i32.const 6888)
+     (i32.const 6876)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6884)
+     (i32.const 6872)
      (get_local $1)
     )
    )
@@ -9939,7 +6450,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2494)
+    (i32.const 2337)
     (get_local $1)
    )
   )
@@ -9958,24 +6469,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:228:0
+  ;;@ ./ops.h:204:0
   (i32.store
-   (i32.const 6892)
-   (i32.const 96)
+   (i32.const 6880)
+   (i32.const 61)
   )
+  (i32.store
+   (i32.const 6884)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6888)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:205:0
   (i64.store align=4
    (i32.const 6896)
    (i64.const 0)
   )
-  ;;@ ./ops.h:229:0
-  (i64.store align=4
-   (i32.const 6904)
-   (i64.const 0)
-  )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2499)
+    (i32.const 2356)
    )
   )
   (if
@@ -9986,7 +6501,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6900)
+    (i32.const 6892)
    )
   )
   (if
@@ -10004,11 +6519,11 @@
      )
     )
     (i32.store8
-     (i32.const 6911)
+     (i32.const 6903)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6900)
+     (i32.const 6892)
     )
    )
    (block
@@ -10033,7 +6548,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6900)
+     (i32.const 6892)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10044,12 +6559,12 @@
      )
     )
     (i32.store
-     (i32.const 6908)
+     (i32.const 6900)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6904)
+     (i32.const 6896)
      (get_local $1)
     )
    )
@@ -10058,7 +6573,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2499)
+    (i32.const 2356)
     (get_local $1)
    )
   )
@@ -10077,24 +6592,28 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:229:0
+  ;;@ ./ops.h:205:0
   (i32.store
-   (i32.const 6912)
-   (i32.const 97)
+   (i32.const 6904)
+   (i32.const 62)
+  )
+  (i32.store
+   (i32.const 6908)
+   (i32.const 1)
   )
   (i64.store align=4
-   (i32.const 6916)
+   (i32.const 6912)
    (i64.const 0)
   )
-  ;;@ ./ops.h:230:0
+  ;;@ ./ops.h:206:0
   (i64.store align=4
-   (i32.const 6924)
+   (i32.const 6920)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2504)
+    (i32.const 2376)
    )
   )
   (if
@@ -10105,7 +6624,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6920)
+    (i32.const 6916)
    )
   )
   (if
@@ -10123,11 +6642,11 @@
      )
     )
     (i32.store8
-     (i32.const 6931)
+     (i32.const 6927)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6920)
+     (i32.const 6916)
     )
    )
    (block
@@ -10152,7 +6671,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6920)
+     (i32.const 6916)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10162,13 +6681,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 6928)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 6924)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6920)
      (get_local $1)
     )
    )
@@ -10177,7 +6696,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2504)
+    (i32.const 2376)
     (get_local $1)
    )
   )
@@ -10196,16 +6715,20 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:230:0
+  ;;@ ./ops.h:206:0
+  (i32.store
+   (i32.const 6928)
+   (i32.const 63)
+  )
   (i32.store
    (i32.const 6932)
-   (i32.const 98)
+   (i32.const 1)
   )
   (i64.store align=4
    (i32.const 6936)
    (i64.const 0)
   )
-  ;;@ ./ops.h:231:0
+  ;;@ ./ops.h:207:0
   (i64.store align=4
    (i32.const 6944)
    (i64.const 0)
@@ -10213,7 +6736,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2519)
+    (i32.const 2396)
    )
   )
   (if
@@ -10296,7 +6819,2836 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2519)
+    (i32.const 2396)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:207:0
+  (i32.store
+   (i32.const 6952)
+   (i32.const 64)
+  )
+  (i32.store
+   (i32.const 6956)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6960)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:208:0
+  (i64.store align=4
+   (i32.const 6968)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2416)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 6964)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 6975)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 6964)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 6964)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 6972)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6968)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2416)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:208:0
+  (i32.store
+   (i32.const 6976)
+   (i32.const 65)
+  )
+  (i32.store
+   (i32.const 6980)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 6984)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:209:0
+  (i64.store align=4
+   (i32.const 6992)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2431)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 6988)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 6999)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 6988)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 6988)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 6996)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6992)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2431)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:209:0
+  (i32.store
+   (i32.const 7000)
+   (i32.const 66)
+  )
+  (i32.store
+   (i32.const 7004)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7008)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:210:0
+  (i64.store align=4
+   (i32.const 7016)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2451)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7012)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7023)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7012)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7012)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7020)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7016)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2451)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:210:0
+  (i32.store
+   (i32.const 7024)
+   (i32.const 67)
+  )
+  (i32.store
+   (i32.const 7028)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7032)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:211:0
+  (i64.store align=4
+   (i32.const 7040)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2465)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7036)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7047)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7036)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7036)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7044)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7040)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2465)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:211:0
+  (i32.store
+   (i32.const 7048)
+   (i32.const 68)
+  )
+  (i32.store
+   (i32.const 7052)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7056)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:212:0
+  (i64.store align=4
+   (i32.const 7064)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2479)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7060)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7071)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7060)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7060)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7068)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7064)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2479)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:212:0
+  (i32.store
+   (i32.const 7072)
+   (i32.const 69)
+  )
+  (i32.store
+   (i32.const 7076)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7080)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:213:0
+  (i64.store align=4
+   (i32.const 7088)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2479)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7084)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7095)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7084)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7084)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7092)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7088)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2479)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:213:0
+  (i32.store
+   (i32.const 7096)
+   (i32.const 69)
+  )
+  (i32.store
+   (i32.const 7100)
+   (i32.const 2)
+  )
+  (i64.store align=4
+   (i32.const 7104)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:214:0
+  (i64.store align=4
+   (i32.const 7112)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2492)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7108)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7119)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7108)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7108)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7116)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7112)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2492)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:214:0
+  (i32.store
+   (i32.const 7120)
+   (i32.const 70)
+  )
+  (i32.store
+   (i32.const 7124)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7128)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:215:0
+  (i64.store align=4
+   (i32.const 7136)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2511)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7132)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7143)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7132)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7132)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7140)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7136)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2511)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:215:0
+  (i32.store
+   (i32.const 7144)
+   (i32.const 71)
+  )
+  (i32.store
+   (i32.const 7148)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7152)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:216:0
+  (i64.store align=4
+   (i32.const 7160)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2530)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7156)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7167)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7156)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7156)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7164)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7160)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2530)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:216:0
+  (i32.store
+   (i32.const 7168)
+   (i32.const 72)
+  )
+  (i32.store
+   (i32.const 7172)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7176)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:217:0
+  (i64.store align=4
+   (i32.const 7184)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2551)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7180)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7191)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7180)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7180)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7188)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7184)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2551)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:217:0
+  (i32.store
+   (i32.const 7192)
+   (i32.const 73)
+  )
+  (i32.store
+   (i32.const 7196)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7200)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:218:0
+  (i64.store align=4
+   (i32.const 7208)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2564)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7204)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7215)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7204)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7204)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7212)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7208)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2564)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:218:0
+  (i32.store
+   (i32.const 7216)
+   (i32.const 74)
+  )
+  (i32.store
+   (i32.const 7220)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7224)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:219:0
+  (i64.store align=4
+   (i32.const 7232)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2568)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7228)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7239)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7228)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7228)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7236)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7232)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2568)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:219:0
+  (i32.store
+   (i32.const 7240)
+   (i32.const 75)
+  )
+  (i32.store
+   (i32.const 7244)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7248)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:220:0
+  (i64.store align=4
+   (i32.const 7256)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2582)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7252)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7263)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7252)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7252)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7260)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7256)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2582)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:220:0
+  (i32.store
+   (i32.const 7264)
+   (i32.const 76)
+  )
+  (i32.store
+   (i32.const 7268)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7272)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:221:0
+  (i64.store align=4
+   (i32.const 7280)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2602)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7276)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7287)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7276)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7276)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7284)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7280)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2602)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:221:0
+  (i32.store
+   (i32.const 7288)
+   (i32.const 77)
+  )
+  (i32.store
+   (i32.const 7292)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7296)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:222:0
+  (i64.store align=4
+   (i32.const 7304)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2621)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7300)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7311)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7300)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7300)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7308)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7304)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2621)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:222:0
+  (i32.store
+   (i32.const 7312)
+   (i32.const 78)
+  )
+  (i32.store
+   (i32.const 7316)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7320)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:223:0
+  (i64.store align=4
+   (i32.const 7328)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2634)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7324)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7335)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7324)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7324)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7332)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7328)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2634)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:223:0
+  (i32.store
+   (i32.const 7336)
+   (i32.const 79)
+  )
+  (i32.store
+   (i32.const 7340)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7344)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:224:0
+  (i64.store align=4
+   (i32.const 7352)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2649)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7348)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7359)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7348)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7348)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7356)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7352)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2649)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:224:0
+  (i32.store
+   (i32.const 7360)
+   (i32.const 80)
+  )
+  (i32.store
+   (i32.const 7364)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7368)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:225:0
+  (i64.store align=4
+   (i32.const 7376)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2664)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7372)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7383)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7372)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7372)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7380)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7376)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2664)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:225:0
+  (i32.store
+   (i32.const 7384)
+   (i32.const 81)
+  )
+  (i32.store
+   (i32.const 7388)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7392)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:226:0
+  (i64.store align=4
+   (i32.const 7400)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2679)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7396)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7407)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7396)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7396)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7404)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7400)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2679)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:226:0
+  (i32.store
+   (i32.const 7408)
+   (i32.const 82)
+  )
+  (i32.store
+   (i32.const 7412)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7416)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:227:0
+  (i64.store align=4
+   (i32.const 7424)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2697)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7420)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7431)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7420)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7420)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7428)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7424)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2697)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:227:0
+  (i32.store
+   (i32.const 7432)
+   (i32.const 83)
+  )
+  (i32.store
+   (i32.const 7436)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7440)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:228:0
+  (i64.store align=4
+   (i32.const 7448)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2712)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7444)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7455)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7444)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7444)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7452)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7448)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2712)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:228:0
+  (i32.store
+   (i32.const 7456)
+   (i32.const 84)
+  )
+  (i32.store
+   (i32.const 7460)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7464)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:229:0
+  (i64.store align=4
+   (i32.const 7472)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2716)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7468)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7479)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7468)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7468)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7476)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7472)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2716)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:229:0
+  (i32.store
+   (i32.const 7480)
+   (i32.const 85)
+  )
+  (i32.store
+   (i32.const 7484)
+   (i32.const 1)
+  )
+  (i64.store align=4
+   (i32.const 7488)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:231:0
+  (i64.store align=4
+   (i32.const 7496)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2747)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7492)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7503)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7492)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7492)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7500)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7496)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2747)
     (get_local $1)
    )
   )
@@ -10317,22 +9669,26 @@
   )
   ;;@ ./ops.h:231:0
   (i32.store
-   (i32.const 6952)
-   (i32.const 99)
+   (i32.const 7504)
+   (i32.const 86)
   )
   (i64.store align=4
-   (i32.const 6956)
+   (i32.const 7508)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7516)
    (i64.const 0)
   )
   ;;@ ./ops.h:232:0
-  (i64.store align=4
-   (i32.const 6964)
-   (i64.const 0)
+  (i32.store
+   (i32.const 7524)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2523)
+    (i32.const 2763)
    )
   )
   (if
@@ -10343,7 +9699,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6960)
+    (i32.const 7516)
    )
   )
   (if
@@ -10361,11 +9717,11 @@
      )
     )
     (i32.store8
-     (i32.const 6971)
+     (i32.const 7527)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6960)
+     (i32.const 7516)
     )
    )
    (block
@@ -10390,7 +9746,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6960)
+     (i32.const 7516)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10401,12 +9757,12 @@
      )
     )
     (i32.store
-     (i32.const 6968)
+     (i32.const 7524)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6964)
+     (i32.const 7520)
      (get_local $1)
     )
    )
@@ -10415,7 +9771,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2523)
+    (i32.const 2763)
     (get_local $1)
    )
   )
@@ -10436,22 +9792,26 @@
   )
   ;;@ ./ops.h:232:0
   (i32.store
-   (i32.const 6972)
-   (i32.const 100)
+   (i32.const 7528)
+   (i32.const 87)
   )
   (i64.store align=4
-   (i32.const 6976)
+   (i32.const 7532)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7540)
    (i64.const 0)
   )
   ;;@ ./ops.h:233:0
-  (i64.store align=4
-   (i32.const 6984)
-   (i64.const 0)
+  (i32.store
+   (i32.const 7548)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2528)
+    (i32.const 2778)
    )
   )
   (if
@@ -10462,7 +9822,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6980)
+    (i32.const 7540)
    )
   )
   (if
@@ -10480,11 +9840,11 @@
      )
     )
     (i32.store8
-     (i32.const 6991)
+     (i32.const 7551)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6980)
+     (i32.const 7540)
     )
    )
    (block
@@ -10509,7 +9869,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6980)
+     (i32.const 7540)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10520,12 +9880,12 @@
      )
     )
     (i32.store
-     (i32.const 6988)
+     (i32.const 7548)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6984)
+     (i32.const 7544)
      (get_local $1)
     )
    )
@@ -10534,7 +9894,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2528)
+    (i32.const 2778)
     (get_local $1)
    )
   )
@@ -10555,22 +9915,26 @@
   )
   ;;@ ./ops.h:233:0
   (i32.store
-   (i32.const 6992)
-   (i32.const 101)
+   (i32.const 7552)
+   (i32.const 88)
   )
   (i64.store align=4
-   (i32.const 6996)
+   (i32.const 7556)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7564)
    (i64.const 0)
   )
   ;;@ ./ops.h:234:0
-  (i64.store align=4
-   (i32.const 7004)
-   (i64.const 0)
+  (i32.store
+   (i32.const 7572)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2533)
+    (i32.const 2795)
    )
   )
   (if
@@ -10581,7 +9945,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 7000)
+    (i32.const 7564)
    )
   )
   (if
@@ -10599,11 +9963,11 @@
      )
     )
     (i32.store8
-     (i32.const 7011)
+     (i32.const 7575)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 7000)
+     (i32.const 7564)
     )
    )
    (block
@@ -10628,7 +9992,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 7000)
+     (i32.const 7564)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10639,12 +10003,12 @@
      )
     )
     (i32.store
-     (i32.const 7008)
+     (i32.const 7572)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 7004)
+     (i32.const 7568)
      (get_local $1)
     )
    )
@@ -10653,7 +10017,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2533)
+    (i32.const 2795)
     (get_local $1)
    )
   )
@@ -10674,22 +10038,26 @@
   )
   ;;@ ./ops.h:234:0
   (i32.store
-   (i32.const 7012)
-   (i32.const 102)
+   (i32.const 7576)
+   (i32.const 89)
   )
   (i64.store align=4
-   (i32.const 7016)
+   (i32.const 7580)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7588)
    (i64.const 0)
   )
   ;;@ ./ops.h:235:0
-  (i64.store align=4
-   (i32.const 7024)
-   (i64.const 0)
+  (i32.store
+   (i32.const 7596)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2537)
+    (i32.const 2811)
    )
   )
   (if
@@ -10700,7 +10068,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 7020)
+    (i32.const 7588)
    )
   )
   (if
@@ -10718,11 +10086,11 @@
      )
     )
     (i32.store8
-     (i32.const 7031)
+     (i32.const 7599)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 7020)
+     (i32.const 7588)
     )
    )
    (block
@@ -10747,7 +10115,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 7020)
+     (i32.const 7588)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10758,12 +10126,12 @@
      )
     )
     (i32.store
-     (i32.const 7028)
+     (i32.const 7596)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 7024)
+     (i32.const 7592)
      (get_local $1)
     )
    )
@@ -10772,7 +10140,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2537)
+    (i32.const 2811)
     (get_local $1)
    )
   )
@@ -10793,22 +10161,26 @@
   )
   ;;@ ./ops.h:235:0
   (i32.store
-   (i32.const 7032)
-   (i32.const 103)
+   (i32.const 7600)
+   (i32.const 90)
   )
   (i64.store align=4
-   (i32.const 7036)
+   (i32.const 7604)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7612)
    (i64.const 0)
   )
   ;;@ ./ops.h:236:0
-  (i64.store align=4
-   (i32.const 7044)
-   (i64.const 0)
+  (i32.store
+   (i32.const 7620)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2541)
+    (i32.const 2828)
    )
   )
   (if
@@ -10819,7 +10191,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 7040)
+    (i32.const 7612)
    )
   )
   (if
@@ -10828,7 +10200,6 @@
     (get_local $1)
     (i32.const 11)
    )
-   ;;@ ./ops.h:236:0
    (block
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
     (set_local $0
@@ -10838,17 +10209,1617 @@
      )
     )
     (i32.store8
-     (i32.const 7051)
+     (i32.const 7623)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 7040)
+     (i32.const 7612)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7612)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7620)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7616)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2828)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:236:0
+  (i32.store
+   (i32.const 7624)
+   (i32.const 91)
+  )
+  (i64.store align=4
+   (i32.const 7628)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7636)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:237:0
+  (i32.store
+   (i32.const 7644)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2844)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7636)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7647)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7636)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7636)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7644)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7640)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2844)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:237:0
+  (i32.store
+   (i32.const 7648)
+   (i32.const 92)
+  )
+  (i64.store align=4
+   (i32.const 7652)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7660)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:238:0
+  (i32.store
+   (i32.const 7668)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2860)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7660)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7671)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7660)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7660)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7668)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7664)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2860)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:238:0
+  (i32.store
+   (i32.const 7672)
+   (i32.const 93)
+  )
+  (i64.store align=4
+   (i32.const 7676)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7684)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:239:0
+  (i32.store
+   (i32.const 7692)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2875)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7684)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7695)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7684)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7684)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7692)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7688)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2875)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:239:0
+  (i32.store
+   (i32.const 7696)
+   (i32.const 94)
+  )
+  (i64.store align=4
+   (i32.const 7700)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7708)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:240:0
+  (i32.store
+   (i32.const 7716)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2895)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7708)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7719)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7708)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7708)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7716)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7712)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2895)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:240:0
+  (i32.store
+   (i32.const 7720)
+   (i32.const 95)
+  )
+  (i64.store align=4
+   (i32.const 7724)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7732)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:241:0
+  (i32.store
+   (i32.const 7740)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2899)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7732)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7743)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7732)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7732)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7740)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7736)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2899)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:241:0
+  (i32.store
+   (i32.const 7744)
+   (i32.const 96)
+  )
+  (i64.store align=4
+   (i32.const 7748)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7756)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:242:0
+  (i32.store
+   (i32.const 7764)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2904)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7756)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7767)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7756)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7756)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7764)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7760)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2904)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:242:0
+  (i32.store
+   (i32.const 7768)
+   (i32.const 97)
+  )
+  (i64.store align=4
+   (i32.const 7772)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7780)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:243:0
+  (i32.store
+   (i32.const 7788)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2909)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7780)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7791)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7780)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7780)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7788)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7784)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2909)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:243:0
+  (i32.store
+   (i32.const 7792)
+   (i32.const 98)
+  )
+  (i64.store align=4
+   (i32.const 7796)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7804)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:244:0
+  (i32.store
+   (i32.const 7812)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2924)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7804)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7815)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7804)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7804)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7812)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7808)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2924)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:244:0
+  (i32.store
+   (i32.const 7816)
+   (i32.const 99)
+  )
+  (i64.store align=4
+   (i32.const 7820)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7828)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:245:0
+  (i32.store
+   (i32.const 7836)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2928)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7828)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7839)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7828)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7828)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7836)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7832)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2928)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:245:0
+  (i32.store
+   (i32.const 7840)
+   (i32.const 100)
+  )
+  (i64.store align=4
+   (i32.const 7844)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7852)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:246:0
+  (i32.store
+   (i32.const 7860)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2933)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7852)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7863)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7852)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7852)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7860)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7856)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2933)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:246:0
+  (i32.store
+   (i32.const 7864)
+   (i32.const 101)
+  )
+  (i64.store align=4
+   (i32.const 7868)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7876)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:247:0
+  (i32.store
+   (i32.const 7884)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2938)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7876)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7887)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7876)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7876)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7884)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7880)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2938)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:247:0
+  (i32.store
+   (i32.const 7888)
+   (i32.const 102)
+  )
+  (i64.store align=4
+   (i32.const 7892)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7900)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:248:0
+  (i32.store
+   (i32.const 7908)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2942)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7900)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7911)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7900)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7900)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7908)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7904)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2942)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:248:0
+  (i32.store
+   (i32.const 7912)
+   (i32.const 103)
+  )
+  (i64.store align=4
+   (i32.const 7916)
+   (i64.const 0)
+  )
+  (i64.store align=4
+   (i32.const 7924)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:249:0
+  (i32.store
+   (i32.const 7932)
+   (i32.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2946)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7924)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   ;;@ ./ops.h:249:0
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7935)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7924)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
     (drop
      (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
       (get_local $0)
-      (i32.const 2541)
+      (i32.const 2946)
       (get_local $1)
      )
     )
@@ -10867,10 +11838,14 @@
      (get_local $0)
      (get_local $3)
     )
-    ;;@ ./ops.h:236:0
+    ;;@ ./ops.h:249:0
     (i32.store
-     (i32.const 7052)
+     (i32.const 7936)
      (i32.const 104)
+    )
+    (i32.store
+     (i32.const 7940)
+     (i32.const 0)
     )
     (set_global $STACKTOP
      (get_local $4)
@@ -10898,7 +11873,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 7040)
+     (i32.const 7924)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10909,19 +11884,19 @@
      )
     )
     (i32.store
-     (i32.const 7048)
+     (i32.const 7932)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 7044)
+     (i32.const 7928)
      (get_local $1)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
     (drop
      (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
       (get_local $0)
-      (i32.const 2541)
+      (i32.const 2946)
       (get_local $1)
      )
     )
@@ -10940,10 +11915,14 @@
      (get_local $0)
      (get_local $3)
     )
-    ;;@ ./ops.h:236:0
+    ;;@ ./ops.h:249:0
     (i32.store
-     (i32.const 7052)
+     (i32.const 7936)
      (i32.const 104)
+    )
+    (i32.store
+     (i32.const 7940)
+     (i32.const 0)
     )
     (set_global $STACKTOP
      (get_local $4)
@@ -10979,7 +11958,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -11010,7 +11989,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -11020,7 +11999,7 @@
   )
   (set_local $3
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (set_local $3
@@ -11060,7 +12039,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -11075,7 +12054,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1794:0
@@ -11085,22 +12064,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1795:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1796:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -11131,7 +12110,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -11181,7 +12160,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -11196,7 +12175,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1696:0
@@ -11206,22 +12185,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1697:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1698:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -11252,7 +12231,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -11283,7 +12262,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -11335,7 +12314,7 @@
        (get_local $0)
        (i32.const 2)
       )
-      (i32.const 7056)
+      (i32.const 7944)
      )
     )
     (i32.store
@@ -11350,7 +12329,7 @@
      )
     )
     (i32.store8
-     (i32.const 1777156)
+     (i32.const 1778044)
      (get_local $0)
     )
     ;;@ test.cpp:1753:0
@@ -11360,22 +12339,22 @@
      )
     )
     (i32.store8
-     (i32.const 1777157)
+     (i32.const 1778045)
      (get_local $0)
     )
     ;;@ test.cpp:1754:0
     (i32.store8
-     (i32.const 1777158)
+     (i32.const 1778046)
      (i32.const 0)
     )
     ;;@ test.cpp:1755:0
     (set_local $0
      (i32.load8_s
-      (i32.const 2072073)
+      (i32.const 2072961)
      )
     )
     (i32.store8
-     (i32.const 1777159)
+     (i32.const 1778047)
      (get_local $0)
     )
    )
@@ -11387,7 +12366,7 @@
   ;;@ test.cpp:1713:0
   (set_local $1
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   (set_local $2
@@ -11432,7 +12411,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -11446,7 +12425,7 @@
   ;;@ test.cpp:1721:0
   (set_local $2
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   (set_local $1
@@ -11472,7 +12451,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -11524,7 +12503,7 @@
        (get_local $0)
        (i32.const 2)
       )
-      (i32.const 7056)
+      (i32.const 7944)
      )
     )
     (i32.store
@@ -11540,7 +12519,7 @@
   ;;@ test.cpp:1386:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $1
@@ -11590,7 +12569,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   ;;@ test.cpp:1389:0
@@ -11601,7 +12580,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1390:0
@@ -11611,7 +12590,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1391:0
@@ -11647,7 +12626,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -11678,7 +12657,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -11715,7 +12694,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -11730,7 +12709,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1812:0
@@ -11740,7 +12719,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -11772,7 +12751,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -11822,7 +12801,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -11837,7 +12816,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1577:0
@@ -11847,7 +12826,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1579:0
@@ -11881,7 +12860,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (get_local $0)
   )
  )
@@ -11913,7 +12892,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -11945,7 +12924,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -11990,7 +12969,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -12005,7 +12984,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1593:0
@@ -12015,7 +12994,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1595:0
@@ -12044,7 +13023,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (get_local $0)
   )
  )
@@ -12053,7 +13032,7 @@
   ;;@ test.cpp:1198:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12082,7 +13061,7 @@
   ;;@ test.cpp:1203:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (if
@@ -12095,7 +13074,7 @@
   ;;@ test.cpp:1204:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12124,7 +13103,7 @@
   ;;@ test.cpp:1210:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (if
@@ -12135,7 +13114,7 @@
   ;;@ test.cpp:1211:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12164,7 +13143,7 @@
   ;;@ test.cpp:1217:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (if
@@ -12177,7 +13156,7 @@
   ;;@ test.cpp:1218:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12206,7 +13185,7 @@
   ;;@ test.cpp:1224:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (if
@@ -12217,7 +13196,7 @@
   ;;@ test.cpp:1225:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12246,7 +13225,7 @@
   ;;@ test.cpp:1231:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777156)
+    (i32.const 1778044)
    )
   )
   (if
@@ -12259,7 +13238,7 @@
   ;;@ test.cpp:1232:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12288,7 +13267,7 @@
   ;;@ test.cpp:1238:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777156)
+    (i32.const 1778044)
    )
   )
   (if
@@ -12299,7 +13278,7 @@
   ;;@ test.cpp:1239:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12328,7 +13307,7 @@
   ;;@ test.cpp:1245:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777159)
+    (i32.const 1778047)
    )
   )
   (if
@@ -12341,7 +13320,7 @@
   ;;@ test.cpp:1246:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12370,7 +13349,7 @@
   ;;@ test.cpp:1252:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777159)
+    (i32.const 1778047)
    )
   )
   (if
@@ -12381,7 +13360,7 @@
   ;;@ test.cpp:1253:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12411,7 +13390,7 @@
   ;;@ test.cpp:1259:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (set_local $1
@@ -12422,7 +13401,7 @@
   )
   (set_local $2
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (set_local $2
@@ -12443,7 +13422,7 @@
   ;;@ test.cpp:1260:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12473,7 +13452,7 @@
   ;;@ test.cpp:1266:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (set_local $1
@@ -12484,7 +13463,7 @@
   )
   (set_local $2
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (set_local $2
@@ -12503,7 +13482,7 @@
   ;;@ test.cpp:1267:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12533,12 +13512,12 @@
   ;;@ test.cpp:1273:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777156)
+    (i32.const 1778044)
    )
   )
   (set_local $2
    (i32.load8_s
-    (i32.const 1777159)
+    (i32.const 1778047)
    )
   )
   (if
@@ -12552,7 +13531,7 @@
   ;;@ test.cpp:1274:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12582,12 +13561,12 @@
   ;;@ test.cpp:1280:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777156)
+    (i32.const 1778044)
    )
   )
   (set_local $2
    (i32.load8_s
-    (i32.const 1777159)
+    (i32.const 1778047)
    )
   )
   (if
@@ -12601,7 +13580,7 @@
   ;;@ test.cpp:1281:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12631,7 +13610,7 @@
   ;;@ test.cpp:1287:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (if
@@ -12642,12 +13621,12 @@
   ;;@ test.cpp:1287:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777156)
+    (i32.const 1778044)
    )
   )
   (set_local $2
    (i32.load8_s
-    (i32.const 1777159)
+    (i32.const 1778047)
    )
   )
   (if
@@ -12661,7 +13640,7 @@
   ;;@ test.cpp:1288:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12691,7 +13670,7 @@
   ;;@ test.cpp:1294:0
   (set_local $1
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (if
@@ -12701,12 +13680,12 @@
    (block
     (set_local $1
      (i32.load8_s
-      (i32.const 1777156)
+      (i32.const 1778044)
      )
     )
     (set_local $2
      (i32.load8_s
-      (i32.const 1777159)
+      (i32.const 1778047)
      )
     )
     (if
@@ -12722,7 +13701,7 @@
   ;;@ test.cpp:1295:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -12773,7 +13752,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -12804,7 +13783,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -12847,7 +13826,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -12862,7 +13841,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1822:0
@@ -12872,7 +13851,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -12885,7 +13864,7 @@
   ;;@ test.cpp:1157:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   ;;@ test.cpp:1158:0
@@ -12896,7 +13875,7 @@
    )
   )
   (i32.store
-   (i32.const 7112)
+   (i32.const 8000)
    (get_local $2)
   )
   ;;@ test.cpp:1159:0
@@ -12944,7 +13923,7 @@
   ;;@ test.cpp:1173:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $1
@@ -12961,7 +13940,7 @@
    )
   )
   (i32.store
-   (i32.const 7112)
+   (i32.const 8000)
    (get_local $1)
   )
   ;;@ test.cpp:1175:0
@@ -13018,7 +13997,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -13049,7 +14028,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $0
@@ -13072,7 +14051,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1563:0
@@ -13082,22 +14061,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1564:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1565:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -13127,7 +14106,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -13167,7 +14146,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1768:0
@@ -13177,22 +14156,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1769:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1770:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -13222,7 +14201,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -13253,7 +14232,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $0
@@ -13282,7 +14261,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1781:0
@@ -13292,22 +14271,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1782:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1783:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -13347,7 +14326,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -13378,7 +14357,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -13415,7 +14394,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -13430,7 +14409,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1455:0
@@ -13440,7 +14419,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -13525,7 +14504,7 @@
      )
     )
     (i32.store
-     (i32.const 7056)
+     (i32.const 7944)
      (get_local $1)
     )
    )
@@ -13562,7 +14541,7 @@
      )
     )
     (i32.store
-     (i32.const 7060)
+     (i32.const 7948)
      (get_local $0)
     )
     (set_local $0
@@ -13599,7 +14578,7 @@
      )
     )
     (i32.store
-     (i32.const 7064)
+     (i32.const 7952)
      (get_local $0)
     )
     (set_local $0
@@ -13636,7 +14615,7 @@
      )
     )
     (i32.store
-     (i32.const 7068)
+     (i32.const 7956)
      (get_local $0)
     )
     (set_local $0
@@ -13673,7 +14652,7 @@
      )
     )
     (i32.store
-     (i32.const 7072)
+     (i32.const 7960)
      (get_local $0)
     )
     (set_local $0
@@ -13710,7 +14689,7 @@
      )
     )
     (i32.store
-     (i32.const 7076)
+     (i32.const 7964)
      (get_local $0)
     )
     (set_local $0
@@ -13747,7 +14726,7 @@
      )
     )
     (i32.store
-     (i32.const 7080)
+     (i32.const 7968)
      (get_local $0)
     )
     (set_local $0
@@ -13784,7 +14763,7 @@
      )
     )
     (i32.store
-     (i32.const 7084)
+     (i32.const 7972)
      (get_local $0)
     )
     (set_local $0
@@ -13816,7 +14795,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -13851,7 +14830,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -13912,7 +14891,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -13941,7 +14920,7 @@
   ;;@ test.cpp:1070:0
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $4
@@ -13981,7 +14960,7 @@
   )
   (drop
    (call $_printf
-    (i32.const 2619)
+    (i32.const 3024)
     (get_local $2)
    )
   )
@@ -14015,7 +14994,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14053,7 +15032,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14084,7 +15063,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -14134,7 +15113,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14169,7 +15148,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14230,7 +15209,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14265,7 +15244,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14296,7 +15275,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -14346,7 +15325,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14381,7 +15360,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14448,7 +15427,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14483,7 +15462,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14514,7 +15493,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -14570,7 +15549,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14605,7 +15584,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14636,7 +15615,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -14691,7 +15670,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14726,7 +15705,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -14757,7 +15736,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -14812,7 +15791,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14848,7 +15827,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -14898,7 +15877,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -14913,7 +15892,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1640:0
@@ -14923,7 +15902,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1642:0
@@ -14957,7 +15936,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (get_local $0)
   )
  )
@@ -14989,7 +15968,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -15021,7 +16000,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -15066,7 +16045,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -15081,7 +16060,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1656:0
@@ -15091,7 +16070,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1658:0
@@ -15120,7 +16099,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (get_local $0)
   )
  )
@@ -15152,7 +16131,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -15202,7 +16181,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -15217,7 +16196,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1609:0
@@ -15227,7 +16206,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1611:0
@@ -15261,7 +16240,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (get_local $0)
   )
  )
@@ -15293,7 +16272,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -15325,7 +16304,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -15370,7 +16349,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -15385,7 +16364,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1625:0
@@ -15395,7 +16374,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1627:0
@@ -15424,7 +16403,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (get_local $0)
   )
  )
@@ -15465,7 +16444,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -15480,7 +16459,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1528:0
@@ -15490,7 +16469,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -15520,7 +16499,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -15565,7 +16544,7 @@
        (get_local $0)
        (i32.const 2)
       )
-      (i32.const 7056)
+      (i32.const 7944)
      )
     )
     (i32.store
@@ -15580,7 +16559,7 @@
      )
     )
     (i32.store8
-     (i32.const 1777156)
+     (i32.const 1778044)
      (get_local $0)
     )
     ;;@ test.cpp:1519:0
@@ -15590,7 +16569,7 @@
      )
     )
     (i32.store8
-     (i32.const 1777157)
+     (i32.const 1778045)
      (get_local $0)
     )
    )
@@ -15629,7 +16608,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -15660,7 +16639,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -15697,7 +16676,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   ;;@ test.cpp:1400:0
@@ -15708,7 +16687,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1401:0
@@ -15718,7 +16697,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1402:0
@@ -15754,7 +16733,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -15792,7 +16771,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -15813,7 +16792,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1430:0
@@ -15824,7 +16803,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -15858,7 +16837,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -15889,7 +16868,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -15926,7 +16905,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -15941,7 +16920,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1466:0
@@ -15951,7 +16930,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -16228,7 +17207,7 @@
   ;;@ test.cpp:972:0
   (set_local $2
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   (set_local $3
@@ -16300,7 +17279,7 @@
         (get_local $3)
         (i32.const 2)
        )
-       (i32.const 7056)
+       (i32.const 7944)
       )
      )
      (set_local $4
@@ -16334,7 +17313,7 @@
   ;;@ test.cpp:979:0
   (set_local $0
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   (set_local $0
@@ -16344,7 +17323,7 @@
    )
   )
   (i32.store
-   (i32.const 7108)
+   (i32.const 7996)
    (get_local $0)
   )
  )
@@ -16355,7 +17334,7 @@
   ;;@ test.cpp:947:0
   (set_local $1
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   ;;@ test.cpp:949:0
@@ -16394,7 +17373,7 @@
       )
      )
      (i32.store
-      (i32.const 7056)
+      (i32.const 7944)
       (get_local $1)
      )
      (i32.const 1)
@@ -16449,7 +17428,7 @@
      )
     )
     (i32.store
-     (i32.const 7060)
+     (i32.const 7948)
      (get_local $0)
     )
     (set_local $0
@@ -16499,7 +17478,7 @@
      )
     )
     (i32.store
-     (i32.const 7064)
+     (i32.const 7952)
      (get_local $0)
     )
     ;;@ test.cpp:952:0
@@ -16556,7 +17535,7 @@
      )
     )
     (i32.store
-     (i32.const 7068)
+     (i32.const 7956)
      (get_local $0)
     )
     ;;@ test.cpp:952:0
@@ -16613,7 +17592,7 @@
      )
     )
     (i32.store
-     (i32.const 7072)
+     (i32.const 7960)
      (get_local $0)
     )
     ;;@ test.cpp:952:0
@@ -16670,7 +17649,7 @@
      )
     )
     (i32.store
-     (i32.const 7076)
+     (i32.const 7964)
      (get_local $0)
     )
     ;;@ test.cpp:952:0
@@ -16727,7 +17706,7 @@
      )
     )
     (i32.store
-     (i32.const 7080)
+     (i32.const 7968)
      (get_local $0)
     )
     ;;@ test.cpp:952:0
@@ -16784,7 +17763,7 @@
      )
     )
     (i32.store
-     (i32.const 7084)
+     (i32.const 7972)
      (get_local $0)
     )
     ;;@ test.cpp:952:0
@@ -16832,7 +17811,7 @@
     )
     (set_local $1
      (i32.load
-      (i32.const 7108)
+      (i32.const 7996)
      )
     )
     (set_local $0
@@ -16842,7 +17821,7 @@
      )
     )
     (i32.store
-     (i32.const 7108)
+     (i32.const 7996)
      (get_local $0)
     )
     ;;@ test.cpp:960:0
@@ -16893,7 +17872,7 @@
   )
   (set_local $1
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   (set_local $0
@@ -16903,7 +17882,7 @@
    )
   )
   (i32.store
-   (i32.const 7108)
+   (i32.const 7996)
    (get_local $0)
   )
  )
@@ -16936,7 +17915,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   ;;@ test.cpp:1478:0
@@ -17065,7 +18044,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -17102,7 +18081,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   ;;@ test.cpp:1491:0
@@ -17231,7 +18210,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -17266,7 +18245,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   ;;@ test.cpp:1504:0
@@ -17340,7 +18319,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -17428,7 +18407,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1446:0
@@ -17438,12 +18417,12 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1447:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
  )
@@ -17473,7 +18452,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -17518,7 +18497,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -17533,7 +18512,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1552:0
@@ -17543,22 +18522,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1553:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1554:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -17590,7 +18569,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -17621,7 +18600,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -17637,7 +18616,7 @@
   )
   (set_local $3
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (set_local $3
@@ -17677,7 +18656,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -17692,7 +18671,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1670:0
@@ -17702,22 +18681,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1671:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1672:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -17778,7 +18757,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7056)
+      (i32.const 7944)
      )
     )
     (call $__Z9writeWordjj
@@ -17815,7 +18794,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7060)
+      (i32.const 7948)
      )
     )
     (call $__Z9writeWordjj
@@ -17852,7 +18831,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7064)
+      (i32.const 7952)
      )
     )
     (call $__Z9writeWordjj
@@ -17889,7 +18868,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7068)
+      (i32.const 7956)
      )
     )
     (call $__Z9writeWordjj
@@ -17926,7 +18905,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7072)
+      (i32.const 7960)
      )
     )
     (call $__Z9writeWordjj
@@ -17963,7 +18942,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7076)
+      (i32.const 7964)
      )
     )
     (call $__Z9writeWordjj
@@ -18000,7 +18979,7 @@
     ;;@ test.cpp:991:0
     (set_local $2
      (i32.load
-      (i32.const 7080)
+      (i32.const 7968)
      )
     )
     (call $__Z9writeWordjj
@@ -18047,7 +19026,7 @@
        (get_local $1)
        (i32.const 2)
       )
-      (i32.const 7056)
+      (i32.const 7944)
      )
     )
     (i32.store
@@ -18068,7 +19047,7 @@
   ;;@ test.cpp:991:0
   (set_local $3
    (i32.load
-    (i32.const 7084)
+    (i32.const 7972)
    )
   )
   (call $__Z9writeWordjj
@@ -18096,7 +19075,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -18172,7 +19151,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 2039304)
+    (i32.const 2040192)
    )
   )
   (i32.store
@@ -18254,7 +19233,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 2039304)
+    (i32.const 2040192)
    )
   )
   (i32.store
@@ -18315,7 +19294,7 @@
   (set_local $1
    (i32.add
     (get_local $1)
-    (i32.const 2039304)
+    (i32.const 2040192)
    )
   )
   (i32.store8
@@ -18382,7 +19361,7 @@
   (set_local $1
    (i32.add
     (get_local $1)
-    (i32.const 2039304)
+    (i32.const 2040192)
    )
   )
   (i32.store8
@@ -18458,7 +19437,7 @@
      (get_local $1)
      (i32.const 1)
     )
-    (i32.const 2039304)
+    (i32.const 2040192)
    )
   )
   (i32.store16
@@ -18540,7 +19519,7 @@
      (get_local $1)
      (i32.const 1)
     )
-    (i32.const 2039304)
+    (i32.const 2040192)
    )
   )
   (i32.store16
@@ -18575,7 +19554,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -18631,7 +19610,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -18646,7 +19625,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1683:0
@@ -18656,22 +19635,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1684:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1685:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -18702,7 +19681,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -18733,7 +19712,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $2
@@ -18778,7 +19757,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -18793,7 +19772,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1737:0
@@ -18803,22 +19782,22 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
   ;;@ test.cpp:1738:0
   (i32.store8
-   (i32.const 1777158)
+   (i32.const 1778046)
    (i32.const 0)
   )
   ;;@ test.cpp:1739:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072073)
+    (i32.const 2072961)
    )
   )
   (i32.store8
-   (i32.const 1777159)
+   (i32.const 1778047)
    (get_local $0)
   )
  )
@@ -18828,7 +19807,7 @@
   ;;@ test.cpp:1705:0
   (set_local $2
    (i32.load
-    (i32.const 7108)
+    (i32.const 7996)
    )
   )
   (set_local $1
@@ -18879,7 +19858,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -18916,7 +19895,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -18959,7 +19938,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -18993,7 +19972,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -19036,7 +20015,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -19070,7 +20049,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -19101,7 +20080,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $0
@@ -19123,7 +20102,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777156)
+   (i32.const 1778044)
    (get_local $0)
   )
   ;;@ test.cpp:1539:0
@@ -19133,7 +20112,7 @@
    )
   )
   (i32.store8
-   (i32.const 1777157)
+   (i32.const 1778045)
    (get_local $0)
   )
  )
@@ -19166,7 +20145,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -19203,7 +20182,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -19237,7 +20216,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (set_local $1
@@ -19274,7 +20253,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 7056)
+    (i32.const 7944)
    )
   )
   (i32.store
@@ -19300,7 +20279,7 @@
     (i32.const 536870912)
    )
    (set_local $1
-    (i32.const 1777160)
+    (i32.const 1778048)
    )
    (if
     ;;@ test.cpp:54:0
@@ -19317,7 +20296,7 @@
       )
      )
      (set_local $1
-      (i32.const 2039304)
+      (i32.const 2040192)
      )
     )
     (block
@@ -19356,7 +20335,7 @@
     (i32.const 536870912)
    )
    (set_local $1
-    (i32.const 1777160)
+    (i32.const 1778048)
    )
    (if
     ;;@ test.cpp:72:0
@@ -19373,7 +20352,7 @@
       )
      )
      (set_local $1
-      (i32.const 2039304)
+      (i32.const 2040192)
      )
     )
     (block
@@ -19414,7 +20393,7 @@
    (set_local $0
     (i32.add
      (get_local $0)
-     (i32.const 1777160)
+     (i32.const 1778048)
     )
    )
    (if
@@ -19435,7 +20414,7 @@
      (set_local $0
       (i32.add
        (get_local $0)
-       (i32.const 2039304)
+       (i32.const 2040192)
       )
      )
     )
@@ -19466,7 +20445,7 @@
     (i32.const 536870912)
    )
    (set_local $2
-    (i32.const 1777160)
+    (i32.const 1778048)
    )
    (if
     ;;@ test.cpp:100:0
@@ -19483,7 +20462,7 @@
       )
      )
      (set_local $2
-      (i32.const 2039304)
+      (i32.const 2040192)
      )
     )
     ;;@ test.cpp:107:0
@@ -19594,7 +20573,7 @@
    )
   )
   (i32.store
-   (i32.const 7116)
+   (i32.const 8004)
    (get_local $1)
   )
  )
@@ -19603,7 +20582,7 @@
   ;;@ test.cpp:132:0
   (set_local $0
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (set_local $0
@@ -19613,7 +20592,7 @@
    )
   )
   (i32.store
-   (i32.const 7116)
+   (i32.const 8004)
    (get_local $0)
   )
  )
@@ -19643,48 +20622,48 @@
   )
   ;;@ test.cpp:139:0
   (i32.store align=1
-   (i32.const 1777156)
+   (i32.const 1778044)
    (i32.const 0)
   )
   ;;@ test.cpp:143:0
   (drop
    (call $_memset
-    (i32.const 2039304)
+    (i32.const 2040192)
     (i32.const 0)
     (i32.const 32768)
    )
   )
   (i64.store align=4
-   (i32.const 7056)
+   (i32.const 7944)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 7064)
+   (i32.const 7952)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 7072)
+   (i32.const 7960)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 7080)
+   (i32.const 7968)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 7088)
+   (i32.const 7976)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 7096)
+   (i32.const 7984)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 7104)
+   (i32.const 7992)
    (i64.const 0)
   )
   ;;@ test.cpp:144:0
   (i64.store align=4
-   (i32.const 7112)
+   (i32.const 8000)
    (i64.const 0)
   )
   ;;@ test.cpp:152:0
@@ -19694,7 +20673,7 @@
    )
   )
   (i32.store
-   (i32.const 7108)
+   (i32.const 7996)
    (get_local $3)
   )
   ;;@ test.cpp:153:0
@@ -19704,7 +20683,7 @@
   )
   (drop
    (call $_printf
-    (i32.const 2547)
+    (i32.const 2952)
     (get_local $0)
    )
   )
@@ -19733,13 +20712,13 @@
   (call $__Z11incrementPCv)
   ;;@ test.cpp:157:0
   (i32.store
-   (i32.const 7112)
+   (i32.const 8000)
    (i32.const -1)
   )
   ;;@ test.cpp:158:0
   (set_local $0
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   (i32.store
@@ -19748,7 +20727,7 @@
   )
   (drop
    (call $_printf
-    (i32.const 2555)
+    (i32.const 2960)
     (get_local $2)
    )
   )
@@ -19820,7 +20799,7 @@
    )
    (drop
     (call $_printf
-     (i32.const 5063)
+     (i32.const 5468)
      (get_local $4)
     )
    )
@@ -19852,7 +20831,7 @@
   ;;@ test.cpp:184:0
   (drop
    (call $_memset
-    (i32.const 1777160)
+    (i32.const 1778048)
     (i32.const -1)
     (i32.const 262144)
    )
@@ -19860,7 +20839,7 @@
   ;;@ test.cpp:185:0
   (drop
    (call $_memcpy
-    (i32.const 1785352)
+    (i32.const 1786240)
     (get_local $0)
     (get_local $1)
    )
@@ -19912,7 +20891,7 @@
   )
   (set_local $1
    (i32.load
-    (i32.const 7116)
+    (i32.const 8004)
    )
   )
   ;;@ test.cpp:888:0
@@ -19935,7 +20914,7 @@
      (get_local $1)
      (i32.const 12)
     )
-    (i32.const 7120)
+    (i32.const 8008)
    )
   )
   ;;@ test.cpp:893:0
@@ -19984,7 +20963,7 @@
   )
   (drop
    (call $_printf
-    (i32.const 2576)
+    (i32.const 2981)
     (get_local $0)
    )
   )
@@ -20019,7 +20998,7 @@
   ;;@ test.cpp:906:0
   (set_local $0
    (i32.load8_s
-    (i32.const 1777156)
+    (i32.const 1778044)
    )
   )
   (set_local $0
@@ -20030,7 +21009,7 @@
   )
   (set_local $1
    (i32.load8_s
-    (i32.const 1777157)
+    (i32.const 1778045)
    )
   )
   (set_local $1
@@ -20041,7 +21020,7 @@
   )
   (set_local $2
    (i32.load8_s
-    (i32.const 1777158)
+    (i32.const 1778046)
    )
   )
   (set_local $2
@@ -20052,7 +21031,7 @@
   )
   (set_local $3
    (i32.load8_s
-    (i32.const 1777159)
+    (i32.const 1778047)
    )
   )
   (set_local $3
@@ -20097,14 +21076,14 @@
   )
   (drop
    (call $_printf
-    (i32.const 2591)
+    (i32.const 2996)
     (get_local $4)
    )
   )
   ;;@ test.cpp:912:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2072072)
+    (i32.const 2072960)
    )
   )
   (set_local $0
@@ -20120,7 +21099,7 @@
    )
   )
   (i32.store8
-   (i32.const 2072072)
+   (i32.const 2072960)
    (get_local $0)
   )
   (set_global $STACKTOP
@@ -24055,9 +25034,9 @@
        (i32.add
         (i32.mul
          (get_local $2)
-         (i32.const 20)
+         (i32.const 24)
         )
-        (i32.const 5272)
+        (i32.const 5680)
        )
       )
       (set_local $1
@@ -24084,7 +25063,7 @@
       (br_if $__rjti$0
        (i32.ge_u
         (get_local $1)
-        (i32.const 90)
+        (i32.const 95)
        )
       )
       (set_local $2
@@ -24109,9 +25088,9 @@
    (i32.add
     (i32.mul
      (get_local $2)
-     (i32.const 20)
+     (i32.const 24)
     )
-    (i32.const 5260)
+    (i32.const 5668)
    )
   )
   (drop
@@ -24191,7 +25170,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:3078:0
   (set_local $3
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2563)
+    (i32.const 2968)
    )
   )
   (block $__rjto$2
@@ -24210,7 +25189,7 @@
       (set_local $1
        (i32.add
         (get_local $3)
-        (i32.const 2563)
+        (i32.const 2968)
        )
       )
       ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:698:0
@@ -24218,7 +25197,7 @@
        (call $__ZNSt3__218__search_substringIcNS_11char_traitsIcEEEEPKT_S5_S5_S5_S5_
         (get_local $2)
         (get_local $6)
-        (i32.const 2563)
+        (i32.const 2968)
         (get_local $1)
        )
       )
@@ -24264,7 +25243,7 @@
      (get_local $4)
      (get_local $2)
      (i32.const 3)
-     (i32.const 2567)
+     (i32.const 2972)
     )
    )
    ;;@ test.cpp:871:0
@@ -24436,7 +25415,7 @@
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:3078:0
   (set_local $3
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2569)
+    (i32.const 2974)
    )
   )
   (block $__rjto$4
@@ -24455,7 +25434,7 @@
       (set_local $1
        (i32.add
         (get_local $3)
-        (i32.const 2569)
+        (i32.const 2974)
        )
       )
       ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:698:0
@@ -24463,7 +25442,7 @@
        (call $__ZNSt3__218__search_substringIcNS_11char_traitsIcEEEEPKT_S5_S5_S5_S5_
         (get_local $2)
         (get_local $6)
-        (i32.const 2569)
+        (i32.const 2974)
         (get_local $1)
        )
       )
@@ -24509,7 +25488,7 @@
      (get_local $4)
      (get_local $2)
      (i32.const 4)
-     (i32.const 2574)
+     (i32.const 2979)
     )
    )
    ;;@ test.cpp:876:0
@@ -24667,14 +25646,14 @@
    )
   )
   (i32.store
-   (i32.const 7116)
+   (i32.const 8004)
    (get_local $1)
   )
  )
  (func $__Z13BranchWritePCj (; 131 ;) (param $0 i32)
   ;;@ test.cpp:1146:0
   (i32.store
-   (i32.const 7116)
+   (i32.const 8004)
    (get_local $0)
   )
   ;;@ test.cpp:1147:0
@@ -24696,7 +25675,7 @@
    )
   )
   (i32.store
-   (i32.const 7116)
+   (i32.const 8004)
    (get_local $1)
   )
  )
@@ -24765,7 +25744,7 @@
    )
   )
   (i32.store8
-   (i32.const 2072073)
+   (i32.const 2072961)
    (get_local $0)
   )
   ;;@ test.cpp:933:0
@@ -25129,7 +26108,7 @@
         (i32.shr_u
          (tee_local $7
           (i32.load
-           (i32.const 1776592)
+           (i32.const 1777480)
           )
          )
          (tee_local $0
@@ -25177,7 +26156,7 @@
                   )
                   (i32.const 3)
                  )
-                 (i32.const 1776632)
+                 (i32.const 1777520)
                 )
                )
                (i32.const 8)
@@ -25196,7 +26175,7 @@
          (get_local $0)
         )
         (i32.store
-         (i32.const 1776592)
+         (i32.const 1777480)
          (i32.and
           (get_local $7)
           (i32.xor
@@ -25213,7 +26192,7 @@
           (i32.lt_u
            (get_local $0)
            (i32.load
-            (i32.const 1776608)
+            (i32.const 1777496)
            )
           )
           (call $_abort)
@@ -25286,7 +26265,7 @@
        (get_local $3)
        (tee_local $16
         (i32.load
-         (i32.const 1776600)
+         (i32.const 1777488)
         )
        )
       )
@@ -25419,7 +26398,7 @@
                     )
                     (i32.const 3)
                    )
-                   (i32.const 1776632)
+                   (i32.const 1777520)
                   )
                  )
                  (i32.const 8)
@@ -25438,7 +26417,7 @@
            (get_local $0)
           )
           (i32.store
-           (i32.const 1776592)
+           (i32.const 1777480)
            (tee_local $1
             (i32.and
              (get_local $7)
@@ -25457,7 +26436,7 @@
             (i32.lt_u
              (get_local $0)
              (i32.load
-              (i32.const 1776608)
+              (i32.const 1777496)
              )
             )
             (call $_abort)
@@ -25530,7 +26509,7 @@
           (block
            (set_local $3
             (i32.load
-             (i32.const 1776612)
+             (i32.const 1777500)
             )
            )
            (set_local $0
@@ -25544,7 +26523,7 @@
               )
               (i32.const 3)
              )
-             (i32.const 1776632)
+             (i32.const 1777520)
             )
            )
            (if
@@ -25570,7 +26549,7 @@
                )
               )
               (i32.load
-               (i32.const 1776608)
+               (i32.const 1777496)
               )
              )
              (call $_abort)
@@ -25585,7 +26564,7 @@
             )
             (block
              (i32.store
-              (i32.const 1776592)
+              (i32.const 1777480)
               (i32.or
                (get_local $1)
                (get_local $2)
@@ -25621,11 +26600,11 @@
           )
          )
          (i32.store
-          (i32.const 1776600)
+          (i32.const 1777488)
           (get_local $4)
          )
          (i32.store
-          (i32.const 1776612)
+          (i32.const 1777500)
           (get_local $5)
          )
          (set_global $STACKTOP
@@ -25639,7 +26618,7 @@
        (if
         (tee_local $10
          (i32.load
-          (i32.const 1776596)
+          (i32.const 1777484)
          )
         )
         (block
@@ -25744,7 +26723,7 @@
                  )
                  (i32.const 2)
                 )
-                (i32.const 1776896)
+                (i32.const 1777784)
                )
               )
              )
@@ -25834,7 +26813,7 @@
            (get_local $1)
            (tee_local $15
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
           )
@@ -26037,7 +27016,7 @@
                   )
                   (i32.const 2)
                  )
-                 (i32.const 1776896)
+                 (i32.const 1777784)
                 )
                )
               )
@@ -26053,7 +27032,7 @@
                )
                (block
                 (i32.store
-                 (i32.const 1776596)
+                 (i32.const 1777484)
                  (i32.and
                   (get_local $10)
                   (i32.xor
@@ -26073,7 +27052,7 @@
               (i32.lt_u
                (get_local $12)
                (i32.load
-                (i32.const 1776608)
+                (i32.const 1777496)
                )
               )
               (call $_abort)
@@ -26109,7 +27088,7 @@
               (get_local $4)
               (tee_local $2
                (i32.load
-                (i32.const 1776608)
+                (i32.const 1777496)
                )
               )
              )
@@ -26153,7 +27132,7 @@
               (i32.lt_u
                (get_local $0)
                (i32.load
-                (i32.const 1776608)
+                (i32.const 1777496)
                )
               )
               (call $_abort)
@@ -26235,7 +27214,7 @@
             (block
              (set_local $4
               (i32.load
-               (i32.const 1776612)
+               (i32.const 1777500)
               )
              )
              (set_local $0
@@ -26249,7 +27228,7 @@
                 )
                 (i32.const 3)
                )
-               (i32.const 1776632)
+               (i32.const 1777520)
               )
              )
              (if
@@ -26275,7 +27254,7 @@
                  )
                 )
                 (i32.load
-                 (i32.const 1776608)
+                 (i32.const 1777496)
                 )
                )
                (call $_abort)
@@ -26290,7 +27269,7 @@
               )
               (block
                (i32.store
-                (i32.const 1776592)
+                (i32.const 1777480)
                 (i32.or
                  (get_local $7)
                  (get_local $2)
@@ -26326,11 +27305,11 @@
             )
            )
            (i32.store
-            (i32.const 1776600)
+            (i32.const 1777488)
             (get_local $6)
            )
            (i32.store
-            (i32.const 1776612)
+            (i32.const 1777500)
             (get_local $9)
            )
           )
@@ -26378,7 +27357,7 @@
       (if
        (tee_local $6
         (i32.load
-         (i32.const 1776596)
+         (i32.const 1777484)
         )
        )
        (block
@@ -26494,7 +27473,7 @@
                )
                (i32.const 2)
               )
-              (i32.const 1776896)
+              (i32.const 1777784)
              )
             )
            )
@@ -26764,7 +27743,7 @@
                  )
                  (i32.const 2)
                 )
-                (i32.const 1776896)
+                (i32.const 1777784)
                )
               )
              )
@@ -26836,7 +27815,7 @@
            (get_local $3)
            (i32.sub
             (i32.load
-             (i32.const 1776600)
+             (i32.const 1777488)
             )
             (get_local $4)
            )
@@ -26847,7 +27826,7 @@
              (get_local $5)
              (tee_local $15
               (i32.load
-               (i32.const 1776608)
+               (i32.const 1777496)
               )
              )
             )
@@ -27050,7 +28029,7 @@
                     )
                     (i32.const 2)
                    )
-                   (i32.const 1776896)
+                   (i32.const 1777784)
                   )
                  )
                 )
@@ -27066,7 +28045,7 @@
                  )
                  (block
                   (i32.store
-                   (i32.const 1776596)
+                   (i32.const 1777484)
                    (tee_local $2
                     (i32.and
                      (get_local $6)
@@ -27088,7 +28067,7 @@
                 (i32.lt_u
                  (get_local $10)
                  (i32.load
-                  (i32.const 1776608)
+                  (i32.const 1777496)
                  )
                 )
                 (call $_abort)
@@ -27130,7 +28109,7 @@
                 (get_local $8)
                 (tee_local $1
                  (i32.load
-                  (i32.const 1776608)
+                  (i32.const 1777496)
                  )
                 )
                )
@@ -27174,7 +28153,7 @@
                 (i32.lt_u
                  (get_local $0)
                  (i32.load
-                  (i32.const 1776608)
+                  (i32.const 1777496)
                  )
                 )
                 (call $_abort)
@@ -27279,14 +28258,14 @@
                    (get_local $1)
                    (i32.const 3)
                   )
-                  (i32.const 1776632)
+                  (i32.const 1777520)
                  )
                 )
                 (if
                  (i32.and
                   (tee_local $2
                    (i32.load
-                    (i32.const 1776592)
+                    (i32.const 1777480)
                    )
                   )
                   (tee_local $1
@@ -27309,7 +28288,7 @@
                     )
                    )
                    (i32.load
-                    (i32.const 1776608)
+                    (i32.const 1777496)
                    )
                   )
                   (call $_abort)
@@ -27324,7 +28303,7 @@
                  )
                  (block
                   (i32.store
-                   (i32.const 1776592)
+                   (i32.const 1777480)
                    (i32.or
                     (get_local $2)
                     (get_local $1)
@@ -27462,7 +28441,7 @@
                  )
                  (i32.const 2)
                 )
-                (i32.const 1776896)
+                (i32.const 1777784)
                )
               )
               (i32.store offset=28
@@ -27496,7 +28475,7 @@
                )
                (block
                 (i32.store
-                 (i32.const 1776596)
+                 (i32.const 1777484)
                  (i32.or
                   (get_local $2)
                   (get_local $4)
@@ -27605,7 +28584,7 @@
                  (i32.lt_u
                   (get_local $2)
                   (i32.load
-                   (i32.const 1776608)
+                   (i32.const 1777496)
                   )
                  )
                  (call $_abort)
@@ -27646,7 +28625,7 @@
                   )
                   (tee_local $3
                    (i32.load
-                    (i32.const 1776608)
+                    (i32.const 1777496)
                    )
                   )
                  )
@@ -27714,7 +28693,7 @@
    (i32.ge_u
     (tee_local $3
      (i32.load
-      (i32.const 1776600)
+      (i32.const 1777488)
      )
     )
     (get_local $2)
@@ -27722,7 +28701,7 @@
    (block
     (set_local $0
      (i32.load
-      (i32.const 1776612)
+      (i32.const 1777500)
      )
     )
     (if
@@ -27737,7 +28716,7 @@
      )
      (block
       (i32.store
-       (i32.const 1776612)
+       (i32.const 1777500)
        (tee_local $3
         (i32.add
          (get_local $0)
@@ -27746,7 +28725,7 @@
        )
       )
       (i32.store
-       (i32.const 1776600)
+       (i32.const 1777488)
        (get_local $1)
       )
       (i32.store offset=4
@@ -27773,11 +28752,11 @@
      )
      (block
       (i32.store
-       (i32.const 1776600)
+       (i32.const 1777488)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776612)
+       (i32.const 1777500)
        (i32.const 0)
       )
       (i32.store offset=4
@@ -27821,14 +28800,14 @@
    (i32.gt_u
     (tee_local $1
      (i32.load
-      (i32.const 1776604)
+      (i32.const 1777492)
      )
     )
     (get_local $2)
    )
    (block
     (i32.store
-     (i32.const 1776604)
+     (i32.const 1777492)
      (tee_local $1
       (i32.sub
        (get_local $1)
@@ -27837,12 +28816,12 @@
      )
     )
     (i32.store
-     (i32.const 1776616)
+     (i32.const 1777504)
      (tee_local $3
       (i32.add
        (tee_local $0
         (i32.load
-         (i32.const 1776616)
+         (i32.const 1777504)
         )
        )
        (get_local $2)
@@ -27889,34 +28868,34 @@
         (tee_local $0
          (if (result i32)
           (i32.load
-           (i32.const 1777064)
+           (i32.const 1777952)
           )
           (i32.load
-           (i32.const 1777072)
+           (i32.const 1777960)
           )
           (block (result i32)
            (i32.store
-            (i32.const 1777072)
+            (i32.const 1777960)
             (i32.const 4096)
            )
            (i32.store
-            (i32.const 1777068)
+            (i32.const 1777956)
             (i32.const 4096)
            )
            (i32.store
-            (i32.const 1777076)
+            (i32.const 1777964)
             (i32.const -1)
            )
            (i32.store
-            (i32.const 1777080)
+            (i32.const 1777968)
             (i32.const -1)
            )
            (i32.store
-            (i32.const 1777084)
+            (i32.const 1777972)
             (i32.const 0)
            )
            (i32.store
-            (i32.const 1777036)
+            (i32.const 1777924)
             (i32.const 0)
            )
            (i32.store
@@ -27932,7 +28911,7 @@
             )
            )
            (i32.store
-            (i32.const 1777064)
+            (i32.const 1777952)
             (get_local $0)
            )
            (i32.const 4096)
@@ -27969,7 +28948,7 @@
   (if
    (tee_local $0
     (i32.load
-     (i32.const 1777032)
+     (i32.const 1777920)
     )
    )
    (if
@@ -27979,7 +28958,7 @@
        (i32.add
         (tee_local $3
          (i32.load
-          (i32.const 1777024)
+          (i32.const 1777912)
          )
         )
         (get_local $4)
@@ -28007,7 +28986,7 @@
     (if
      (i32.and
       (i32.load
-       (i32.const 1777036)
+       (i32.const 1777924)
       )
       (i32.const 4)
      )
@@ -28022,13 +29001,13 @@
           (i32.eqz
            (tee_local $0
             (i32.load
-             (i32.const 1776616)
+             (i32.const 1777504)
             )
            )
           )
          )
          (set_local $3
-          (i32.const 1777040)
+          (i32.const 1777928)
          )
          (loop $while-in34
           (block $while-out33
@@ -28132,7 +29111,7 @@
                (i32.add
                 (tee_local $3
                  (i32.load
-                  (i32.const 1777068)
+                  (i32.const 1777956)
                  )
                 )
                 (i32.const -1)
@@ -28167,7 +29146,7 @@
             )
             (tee_local $8
              (i32.load
-              (i32.const 1777024)
+              (i32.const 1777912)
              )
             )
            )
@@ -28187,7 +29166,7 @@
             (if
              (tee_local $7
               (i32.load
-               (i32.const 1777032)
+               (i32.const 1777920)
               )
              )
              (if
@@ -28282,7 +29261,7 @@
             )
             (tee_local $3
              (i32.load
-              (i32.const 1777072)
+              (i32.const 1777960)
              )
             )
            )
@@ -28324,10 +29303,10 @@
        )
       )
       (i32.store
-       (i32.const 1777036)
+       (i32.const 1777924)
        (i32.or
         (i32.load
-         (i32.const 1777036)
+         (i32.const 1777924)
         )
         (i32.const 4)
        )
@@ -28410,11 +29389,11 @@
     (br $__rjto$13)
    )
    (i32.store
-    (i32.const 1777024)
+    (i32.const 1777912)
     (tee_local $3
      (i32.add
       (i32.load
-       (i32.const 1777024)
+       (i32.const 1777912)
       )
       (get_local $1)
      )
@@ -28424,11 +29403,11 @@
     (i32.gt_u
      (get_local $3)
      (i32.load
-      (i32.const 1777028)
+      (i32.const 1777916)
      )
     )
     (i32.store
-     (i32.const 1777028)
+     (i32.const 1777916)
      (get_local $3)
     )
    )
@@ -28436,12 +29415,12 @@
     (if
      (tee_local $6
       (i32.load
-       (i32.const 1776616)
+       (i32.const 1777504)
       )
      )
      (block
       (set_local $3
-       (i32.const 1777040)
+       (i32.const 1777928)
       )
       (block $__rjto$10
        (block $__rjti$10
@@ -28510,7 +29489,7 @@
           )
           (set_local $4
            (i32.load
-            (i32.const 1776604)
+            (i32.const 1777492)
            )
           )
           (set_local $0
@@ -28528,7 +29507,7 @@
            )
           )
           (i32.store
-           (i32.const 1776616)
+           (i32.const 1777504)
            (tee_local $3
             (i32.add
              (get_local $6)
@@ -28546,7 +29525,7 @@
            )
           )
           (i32.store
-           (i32.const 1776604)
+           (i32.const 1777492)
            (tee_local $0
             (i32.add
              (get_local $4)
@@ -28572,9 +29551,9 @@
            (i32.const 40)
           )
           (i32.store
-           (i32.const 1776620)
+           (i32.const 1777508)
            (i32.load
-            (i32.const 1777080)
+            (i32.const 1777968)
            )
           )
           (br $do-once39)
@@ -28587,13 +29566,13 @@
         (get_local $0)
         (tee_local $3
          (i32.load
-          (i32.const 1776608)
+          (i32.const 1777496)
          )
         )
        )
        (block
         (i32.store
-         (i32.const 1776608)
+         (i32.const 1777496)
          (get_local $0)
         )
         (set_local $3
@@ -28608,7 +29587,7 @@
        )
       )
       (set_local $4
-       (i32.const 1777040)
+       (i32.const 1777928)
       )
       (block $__rjto$11
        (block $__rjti$11
@@ -28743,18 +29722,18 @@
            )
            (block
             (i32.store
-             (i32.const 1776604)
+             (i32.const 1777492)
              (tee_local $0
               (i32.add
                (i32.load
-                (i32.const 1776604)
+                (i32.const 1777492)
                )
                (get_local $8)
               )
              )
             )
             (i32.store
-             (i32.const 1776616)
+             (i32.const 1777504)
              (get_local $7)
             )
             (i32.store offset=4
@@ -28770,23 +29749,23 @@
              (i32.eq
               (get_local $5)
               (i32.load
-               (i32.const 1776612)
+               (i32.const 1777500)
               )
              )
              (block
               (i32.store
-               (i32.const 1776600)
+               (i32.const 1777488)
                (tee_local $0
                 (i32.add
                  (i32.load
-                  (i32.const 1776600)
+                  (i32.const 1777488)
                  )
                  (get_local $8)
                 )
                )
               )
               (i32.store
-               (i32.const 1776612)
+               (i32.const 1777500)
                (get_local $7)
               )
               (i32.store offset=4
@@ -28858,7 +29837,7 @@
                         (get_local $4)
                         (i32.const 3)
                        )
-                       (i32.const 1776632)
+                       (i32.const 1777520)
                       )
                      )
                     )
@@ -28889,10 +29868,10 @@
                    )
                    (block
                     (i32.store
-                     (i32.const 1776592)
+                     (i32.const 1777480)
                      (i32.and
                       (i32.load
-                       (i32.const 1776592)
+                       (i32.const 1777480)
                       )
                       (i32.xor
                        (i32.shl
@@ -29147,7 +30126,7 @@
                          )
                          (i32.const 2)
                         )
-                        (i32.const 1776896)
+                        (i32.const 1777784)
                        )
                       )
                      )
@@ -29161,10 +30140,10 @@
                       (get_local $11)
                      )
                      (i32.store
-                      (i32.const 1776596)
+                      (i32.const 1777484)
                       (i32.and
                        (i32.load
-                        (i32.const 1776596)
+                        (i32.const 1777484)
                        )
                        (i32.xor
                         (i32.shl
@@ -29181,7 +30160,7 @@
                      (i32.lt_u
                       (get_local $6)
                       (i32.load
-                       (i32.const 1776608)
+                       (i32.const 1777496)
                       )
                      )
                      (call $_abort)
@@ -29218,7 +30197,7 @@
                     (get_local $11)
                     (tee_local $2
                      (i32.load
-                      (i32.const 1776608)
+                      (i32.const 1777496)
                      )
                     )
                    )
@@ -29270,7 +30249,7 @@
                    (i32.lt_u
                     (get_local $0)
                     (i32.load
-                     (i32.const 1776608)
+                     (i32.const 1777496)
                     )
                    )
                    (call $_abort)
@@ -29348,7 +30327,7 @@
                  (get_local $2)
                  (i32.const 3)
                 )
-                (i32.const 1776632)
+                (i32.const 1777520)
                )
               )
               (block $do-once62
@@ -29356,7 +30335,7 @@
                 (i32.and
                  (tee_local $1
                   (i32.load
-                   (i32.const 1776592)
+                   (i32.const 1777480)
                   )
                  )
                  (tee_local $2
@@ -29380,7 +30359,7 @@
                     )
                    )
                    (i32.load
-                    (i32.const 1776608)
+                    (i32.const 1777496)
                    )
                   )
                   (block
@@ -29397,7 +30376,7 @@
                 )
                 (block
                  (i32.store
-                  (i32.const 1776592)
+                  (i32.const 1777480)
                   (i32.or
                    (get_local $1)
                    (get_local $2)
@@ -29542,7 +30521,7 @@
                )
                (i32.const 2)
               )
-              (i32.const 1776896)
+              (i32.const 1777784)
              )
             )
             (i32.store offset=28
@@ -29567,7 +30546,7 @@
               (i32.and
                (tee_local $1
                 (i32.load
-                 (i32.const 1776596)
+                 (i32.const 1777484)
                 )
                )
                (tee_local $3
@@ -29580,7 +30559,7 @@
              )
              (block
               (i32.store
-               (i32.const 1776596)
+               (i32.const 1777484)
                (i32.or
                 (get_local $1)
                 (get_local $3)
@@ -29689,7 +30668,7 @@
                (i32.lt_u
                 (get_local $2)
                 (i32.load
-                 (i32.const 1776608)
+                 (i32.const 1777496)
                 )
                )
                (call $_abort)
@@ -29730,7 +30709,7 @@
                 )
                 (tee_local $3
                  (i32.load
-                  (i32.const 1776608)
+                  (i32.const 1777496)
                  )
                 )
                )
@@ -29780,7 +30759,7 @@
        )
       )
       (set_local $3
-       (i32.const 1777040)
+       (i32.const 1777928)
       )
       (loop $while-in69
        (block $while-out68
@@ -29893,7 +30872,7 @@
        )
       )
       (i32.store
-       (i32.const 1776616)
+       (i32.const 1777504)
        (tee_local $7
         (i32.add
          (get_local $0)
@@ -29911,7 +30890,7 @@
        )
       )
       (i32.store
-       (i32.const 1776604)
+       (i32.const 1777492)
        (tee_local $5
         (i32.sub
          (get_local $10)
@@ -29934,9 +30913,9 @@
        (i32.const 40)
       )
       (i32.store
-       (i32.const 1776620)
+       (i32.const 1777508)
        (i32.load
-        (i32.const 1777080)
+        (i32.const 1777968)
        )
       )
       (i32.store
@@ -29951,29 +30930,29 @@
       (i64.store align=4
        (get_local $8)
        (i64.load align=4
-        (i32.const 1777040)
+        (i32.const 1777928)
        )
       )
       (i64.store offset=8 align=4
        (get_local $8)
        (i64.load align=4
-        (i32.const 1777048)
+        (i32.const 1777936)
        )
       )
       (i32.store
-       (i32.const 1777040)
+       (i32.const 1777928)
        (get_local $0)
       )
       (i32.store
-       (i32.const 1777044)
+       (i32.const 1777932)
        (get_local $1)
       )
       (i32.store
-       (i32.const 1777052)
+       (i32.const 1777940)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1777048)
+       (i32.const 1777936)
        (get_local $8)
       )
       (set_local $0
@@ -30054,14 +31033,14 @@
              (get_local $1)
              (i32.const 3)
             )
-            (i32.const 1776632)
+            (i32.const 1777520)
            )
           )
           (if
            (i32.and
             (tee_local $3
              (i32.load
-              (i32.const 1776592)
+              (i32.const 1777480)
              )
             )
             (tee_local $1
@@ -30084,7 +31063,7 @@
               )
              )
              (i32.load
-              (i32.const 1776608)
+              (i32.const 1777496)
              )
             )
             (call $_abort)
@@ -30099,7 +31078,7 @@
            )
            (block
             (i32.store
-             (i32.const 1776592)
+             (i32.const 1777480)
              (i32.or
               (get_local $3)
               (get_local $1)
@@ -30237,7 +31216,7 @@
            )
            (i32.const 2)
           )
-          (i32.const 1776896)
+          (i32.const 1777784)
          )
         )
         (i32.store offset=28
@@ -30257,7 +31236,7 @@
           (i32.and
            (tee_local $3
             (i32.load
-             (i32.const 1776596)
+             (i32.const 1777484)
             )
            )
            (tee_local $4
@@ -30270,7 +31249,7 @@
          )
          (block
           (i32.store
-           (i32.const 1776596)
+           (i32.const 1777484)
            (i32.or
             (get_local $3)
             (get_local $4)
@@ -30379,7 +31358,7 @@
            (i32.lt_u
             (get_local $1)
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
            (call $_abort)
@@ -30420,7 +31399,7 @@
             )
             (tee_local $4
              (i32.load
-              (i32.const 1776608)
+              (i32.const 1777496)
              )
             )
            )
@@ -30463,7 +31442,7 @@
         (i32.eqz
          (tee_local $3
           (i32.load
-           (i32.const 1776608)
+           (i32.const 1777496)
           )
          )
         )
@@ -30473,30 +31452,30 @@
         )
        )
        (i32.store
-        (i32.const 1776608)
+        (i32.const 1777496)
         (get_local $0)
        )
       )
       (i32.store
-       (i32.const 1777040)
+       (i32.const 1777928)
        (get_local $0)
       )
       (i32.store
-       (i32.const 1777044)
+       (i32.const 1777932)
        (get_local $1)
       )
       (i32.store
-       (i32.const 1777052)
+       (i32.const 1777940)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776628)
+       (i32.const 1777516)
        (i32.load
-        (i32.const 1777064)
+        (i32.const 1777952)
        )
       )
       (i32.store
-       (i32.const 1776624)
+       (i32.const 1777512)
        (i32.const -1)
       )
       (set_local $3
@@ -30510,7 +31489,7 @@
            (get_local $3)
            (i32.const 3)
           )
-          (i32.const 1776632)
+          (i32.const 1777520)
          )
         )
         (get_local $4)
@@ -30552,7 +31531,7 @@
        )
       )
       (i32.store
-       (i32.const 1776616)
+       (i32.const 1777504)
        (tee_local $0
         (i32.add
          (get_local $0)
@@ -30570,7 +31549,7 @@
        )
       )
       (i32.store
-       (i32.const 1776604)
+       (i32.const 1777492)
        (tee_local $1
         (i32.sub
          (get_local $3)
@@ -30593,9 +31572,9 @@
        (i32.const 40)
       )
       (i32.store
-       (i32.const 1776620)
+       (i32.const 1777508)
        (i32.load
-        (i32.const 1777080)
+        (i32.const 1777968)
        )
       )
      )
@@ -30605,14 +31584,14 @@
     (i32.gt_u
      (tee_local $0
       (i32.load
-       (i32.const 1776604)
+       (i32.const 1777492)
       )
      )
      (get_local $2)
     )
     (block
      (i32.store
-      (i32.const 1776604)
+      (i32.const 1777492)
       (tee_local $1
        (i32.sub
         (get_local $0)
@@ -30621,12 +31600,12 @@
       )
      )
      (i32.store
-      (i32.const 1776616)
+      (i32.const 1777504)
       (tee_local $3
        (i32.add
         (tee_local $0
          (i32.load
-          (i32.const 1776616)
+          (i32.const 1777504)
          )
         )
         (get_local $2)
@@ -30701,7 +31680,7 @@
     )
     (tee_local $12
      (i32.load
-      (i32.const 1776608)
+      (i32.const 1777496)
      )
     )
    )
@@ -30791,7 +31770,7 @@
       (i32.eq
        (get_local $0)
        (i32.load
-        (i32.const 1776612)
+        (i32.const 1777500)
        )
       )
       (block
@@ -30826,7 +31805,7 @@
         )
        )
        (i32.store
-        (i32.const 1776600)
+        (i32.const 1777488)
         (get_local $3)
        )
        (i32.store
@@ -30883,7 +31862,7 @@
             (get_local $5)
             (i32.const 3)
            )
-           (i32.const 1776632)
+           (i32.const 1777520)
           )
          )
         )
@@ -30913,10 +31892,10 @@
         )
         (block
          (i32.store
-          (i32.const 1776592)
+          (i32.const 1777480)
           (i32.and
            (i32.load
-            (i32.const 1776592)
+            (i32.const 1777480)
            )
            (i32.xor
             (i32.shl
@@ -31182,7 +32161,7 @@
              )
              (i32.const 2)
             )
-            (i32.const 1776896)
+            (i32.const 1777784)
            )
           )
          )
@@ -31198,10 +32177,10 @@
           )
           (block
            (i32.store
-            (i32.const 1776596)
+            (i32.const 1777484)
             (i32.and
              (i32.load
-              (i32.const 1776596)
+              (i32.const 1777484)
              )
              (i32.xor
               (i32.shl
@@ -31229,7 +32208,7 @@
          (i32.lt_u
           (get_local $13)
           (i32.load
-           (i32.const 1776608)
+           (i32.const 1777496)
           )
          )
          (call $_abort)
@@ -31277,7 +32256,7 @@
          (get_local $8)
          (tee_local $6
           (i32.load
-           (i32.const 1776608)
+           (i32.const 1777496)
           )
          )
         )
@@ -31326,7 +32305,7 @@
          (i32.lt_u
           (get_local $5)
           (i32.load
-           (i32.const 1776608)
+           (i32.const 1777496)
           )
          )
          (call $_abort)
@@ -31434,30 +32413,30 @@
    (block
     (set_local $3
      (i32.load
-      (i32.const 1776612)
+      (i32.const 1777500)
      )
     )
     (if
      (i32.eq
       (get_local $7)
       (i32.load
-       (i32.const 1776616)
+       (i32.const 1777504)
       )
      )
      (block
       (i32.store
-       (i32.const 1776604)
+       (i32.const 1777492)
        (tee_local $0
         (i32.add
          (i32.load
-          (i32.const 1776604)
+          (i32.const 1777492)
          )
          (get_local $1)
         )
        )
       )
       (i32.store
-       (i32.const 1776616)
+       (i32.const 1777504)
        (get_local $2)
       )
       (i32.store offset=4
@@ -31475,11 +32454,11 @@
        (return)
       )
       (i32.store
-       (i32.const 1776612)
+       (i32.const 1777500)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776600)
+       (i32.const 1777488)
        (i32.const 0)
       )
       (return)
@@ -31492,18 +32471,18 @@
      )
      (block
       (i32.store
-       (i32.const 1776600)
+       (i32.const 1777488)
        (tee_local $0
         (i32.add
          (i32.load
-          (i32.const 1776600)
+          (i32.const 1777488)
          )
          (get_local $1)
         )
        )
       )
       (i32.store
-       (i32.const 1776612)
+       (i32.const 1777500)
        (get_local $4)
       )
       (i32.store offset=4
@@ -31563,7 +32542,7 @@
             (get_local $5)
             (i32.const 3)
            )
-           (i32.const 1776632)
+           (i32.const 1777520)
           )
          )
         )
@@ -31572,7 +32551,7 @@
           (i32.lt_u
            (get_local $3)
            (i32.load
-            (i32.const 1776608)
+            (i32.const 1777496)
            )
           )
           (call $_abort)
@@ -31595,10 +32574,10 @@
         )
         (block
          (i32.store
-          (i32.const 1776592)
+          (i32.const 1777480)
           (i32.and
            (i32.load
-            (i32.const 1776592)
+            (i32.const 1777480)
            )
            (i32.xor
             (i32.shl
@@ -31628,7 +32607,7 @@
           (i32.lt_u
            (get_local $1)
            (i32.load
-            (i32.const 1776608)
+            (i32.const 1777496)
            )
           )
           (call $_abort)
@@ -31761,7 +32740,7 @@
            (i32.lt_u
             (get_local $1)
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
            (call $_abort)
@@ -31785,7 +32764,7 @@
              )
             )
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
            (call $_abort)
@@ -31851,7 +32830,7 @@
                )
                (i32.const 2)
               )
-              (i32.const 1776896)
+              (i32.const 1777784)
              )
             )
            )
@@ -31867,10 +32846,10 @@
             )
             (block
              (i32.store
-              (i32.const 1776596)
+              (i32.const 1777484)
               (i32.and
                (i32.load
-                (i32.const 1776596)
+                (i32.const 1777484)
                )
                (i32.xor
                 (i32.shl
@@ -31889,7 +32868,7 @@
            (i32.lt_u
             (get_local $8)
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
            (call $_abort)
@@ -31925,7 +32904,7 @@
            (get_local $10)
            (tee_local $1
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
           )
@@ -31974,7 +32953,7 @@
            (i32.lt_u
             (get_local $0)
             (i32.load
-             (i32.const 1776608)
+             (i32.const 1777496)
             )
            )
            (call $_abort)
@@ -32013,12 +32992,12 @@
      (i32.eq
       (get_local $2)
       (i32.load
-       (i32.const 1776612)
+       (i32.const 1777500)
       )
      )
      (block
       (i32.store
-       (i32.const 1776600)
+       (i32.const 1777488)
        (get_local $6)
       )
       (return)
@@ -32047,14 +33026,14 @@
        (get_local $4)
        (i32.const 3)
       )
-      (i32.const 1776632)
+      (i32.const 1777520)
      )
     )
     (if
      (i32.and
       (tee_local $1
        (i32.load
-        (i32.const 1776592)
+        (i32.const 1777480)
        )
       )
       (tee_local $4
@@ -32077,7 +33056,7 @@
         )
        )
        (i32.load
-        (i32.const 1776608)
+        (i32.const 1777496)
        )
       )
       (call $_abort)
@@ -32092,7 +33071,7 @@
      )
      (block
       (i32.store
-       (i32.const 1776592)
+       (i32.const 1777480)
        (i32.or
         (get_local $1)
         (get_local $4)
@@ -32230,7 +33209,7 @@
      )
      (i32.const 2)
     )
-    (i32.const 1776896)
+    (i32.const 1777784)
    )
   )
   (i32.store offset=28
@@ -32250,7 +33229,7 @@
     (i32.and
      (tee_local $3
       (i32.load
-       (i32.const 1776596)
+       (i32.const 1777484)
       )
      )
      (tee_local $5
@@ -32345,7 +33324,7 @@
         (i32.lt_u
          (get_local $4)
          (i32.load
-          (i32.const 1776608)
+          (i32.const 1777496)
          )
         )
         (call $_abort)
@@ -32386,7 +33365,7 @@
          )
          (tee_local $3
           (i32.load
-           (i32.const 1776608)
+           (i32.const 1777496)
           )
          )
         )
@@ -32423,7 +33402,7 @@
     )
     (block
      (i32.store
-      (i32.const 1776596)
+      (i32.const 1777484)
       (i32.or
        (get_local $3)
        (get_local $5)
@@ -32449,11 +33428,11 @@
    )
   )
   (i32.store
-   (i32.const 1776624)
+   (i32.const 1777512)
    (tee_local $0
     (i32.add
      (i32.load
-      (i32.const 1776624)
+      (i32.const 1777512)
      )
      (i32.const -1)
     )
@@ -32463,7 +33442,7 @@
    (get_local $0)
    (return)
    (set_local $0
-    (i32.const 1777048)
+    (i32.const 1777936)
    )
   )
   (loop $while-in19
@@ -32482,12 +33461,12 @@
    )
   )
   (i32.store
-   (i32.const 1776624)
+   (i32.const 1777512)
    (i32.const -1)
   )
  )
  (func $_emscripten_get_global_libc (; 146 ;) (result i32)
-  (i32.const 1777088)
+  (i32.const 1777976)
  )
  (func $___stdio_close (; 147 ;) (param $0 i32) (result i32)
   (local $1 i32)
@@ -35330,7 +36309,7 @@
                  (get_local $6)
                 )
                )
-               (i32.const 2569)
+               (i32.const 2974)
               )
              )
             )
@@ -35701,7 +36680,7 @@
                        (i32.const 0)
                       )
                       (set_local $6
-                       (i32.const 3098)
+                       (i32.const 3503)
                       )
                       (if
                        (i32.eqz
@@ -35747,7 +36726,7 @@
                         (i32.const 1)
                        )
                        (set_local $6
-                        (i32.const 3098)
+                        (i32.const 3503)
                        )
                        (br $__rjti$4)
                       )
@@ -35766,8 +36745,8 @@
                           (get_local $8)
                           (i32.const 1)
                          )
-                         (i32.const 3100)
-                         (i32.const 3098)
+                         (i32.const 3505)
+                         (i32.const 3503)
                         )
                        )
                        (set_local $9
@@ -35784,7 +36763,7 @@
                          (get_local $1)
                         )
                         (set_local $6
-                         (i32.const 3099)
+                         (i32.const 3504)
                         )
                        )
                        (br $__rjti$4)
@@ -35795,7 +36774,7 @@
                      (i32.const 0)
                     )
                     (set_local $6
-                     (i32.const 3098)
+                     (i32.const 3503)
                     )
                     (set_local $17
                      (i64.load
@@ -35817,7 +36796,7 @@
                     (i32.const 0)
                    )
                    (set_local $14
-                    (i32.const 3098)
+                    (i32.const 3503)
                    )
                    (set_local $6
                     (get_local $18)
@@ -35848,7 +36827,7 @@
                    )
                   )
                   (set_local $1
-                   (i32.const 3108)
+                   (i32.const 3513)
                   )
                  )
                  (br $__rjti$5)
@@ -35927,7 +36906,7 @@
               (i32.const 0)
              )
              (set_local $14
-              (i32.const 3098)
+              (i32.const 3503)
              )
              (set_local $6
               (get_local $18)
@@ -35954,7 +36933,7 @@
                (get_local $6)
                (i32.const 4)
               )
-              (i32.const 3098)
+              (i32.const 3503)
              )
             )
             (if
@@ -35973,7 +36952,7 @@
               )
              )
              (set_local $6
-              (i32.const 3098)
+              (i32.const 3503)
              )
             )
             (set_local $9
@@ -36028,7 +37007,7 @@
            (i32.const 0)
           )
           (set_local $14
-           (i32.const 3098)
+           (i32.const 3503)
           )
           (if
            (i32.eqz
@@ -36930,7 +37909,7 @@
          )
          (i32.const 15)
         )
-        (i32.const 3150)
+        (i32.const 3555)
        )
       )
       (get_local $2)
@@ -37291,7 +38270,7 @@
      (i32.const 1)
     )
     (set_local $14
-     (i32.const 3115)
+     (i32.const 3520)
     )
    )
    (block
@@ -37309,8 +38288,8 @@
        (get_local $4)
        (i32.const 1)
       )
-      (i32.const 3121)
-      (i32.const 3116)
+      (i32.const 3526)
+      (i32.const 3521)
      )
     )
     (set_local $18
@@ -37327,7 +38306,7 @@
       (get_local $7)
      )
      (set_local $14
-      (i32.const 3118)
+      (i32.const 3523)
      )
     )
    )
@@ -37566,7 +38545,7 @@
                (get_local $1)
               )
              )
-             (i32.const 3150)
+             (i32.const 3555)
             )
            )
            (get_local $11)
@@ -39149,7 +40128,7 @@
          (get_local $16)
          (call $_out_669
           (get_local $0)
-          (i32.const 3166)
+          (i32.const 3571)
           (i32.const 1)
          )
         )
@@ -39373,7 +40352,7 @@
               )
               (call $_out_669
                (get_local $0)
-               (i32.const 3166)
+               (i32.const 3571)
                (i32.const 1)
               )
               (set_local $3
@@ -39502,8 +40481,8 @@
           (i32.const 0)
          )
         )
-        (i32.const 3134)
-        (i32.const 3138)
+        (i32.const 3539)
+        (i32.const 3543)
        )
       )
       (set_local $10
@@ -39518,8 +40497,8 @@
       (set_local $7
        (if (result i32)
         (get_local $3)
-        (i32.const 3142)
-        (i32.const 3146)
+        (i32.const 3547)
+        (i32.const 3551)
        )
       )
       (call $_pad_675
@@ -39897,7 +40876,7 @@
          (i32.load8_u
           (i32.add
            (get_local $2)
-           (i32.const 3168)
+           (i32.const 3573)
           )
          )
          (get_local $0)
@@ -39915,7 +40894,7 @@
         )
        )
        (set_local $0
-        (i32.const 3256)
+        (i32.const 3661)
        )
        (set_local $2
         (i32.const 87)
@@ -39928,12 +40907,12 @@
      (get_local $2)
      (block
       (set_local $0
-       (i32.const 3256)
+       (i32.const 3661)
       )
       (br $__rjti$1)
      )
      (set_local $0
-      (i32.const 3256)
+      (i32.const 3661)
      )
     )
     (br $__rjto$1)
@@ -42031,7 +43010,7 @@
           (get_local $4)
           (i32.const 1)
          )
-         (i32.const 5060)
+         (i32.const 5465)
          (get_local $6)
         )
        )
@@ -42224,7 +43203,7 @@
           (get_local $4)
           (i32.const 1)
          )
-         (i32.const 5063)
+         (i32.const 5468)
          (get_local $6)
         )
        )
@@ -43493,10 +44472,10 @@
  (func $__ZSt15get_new_handlerv (; 227 ;) (result i32)
   (local $0 i32)
   (i32.store
-   (i32.const 1777152)
+   (i32.const 1778040)
    (tee_local $0
     (i32.load
-     (i32.const 1777152)
+     (i32.const 1778040)
     )
    )
   )
