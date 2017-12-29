@@ -146,6 +146,10 @@ void setPC(uint32_t newPc) {
   registers[pcRegister] = newPc & ~1;
 }
 
+void incrementPC() {
+  registers[pcRegister] += 2;
+}
+
 void boot() {
   uint32_t offset = 0x2000;
 
@@ -166,6 +170,7 @@ void boot() {
   registers[spRegister] = fetchWord(0x0000 + offset);
   printf("sp: %x\n", registers[spRegister]);
   setPC(fetchHalfword(0x0004 + offset) & ~1);
+  incrementPC();
   // registers[pcRegister] += 2;
   registers[lrRegister] = 0xFFFFFFFF;
   printf("pc: %x\n", registers[pcRegister]);
@@ -395,17 +400,90 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
 
     // Shift (immediate), add, subtract, move, and compare on page A5-79
     if ((opcode & 0b110000) == 0) {
-      // LSL immediate
-      // LSR immediate
-      // ASR immediate
-      // ADD (register)
-      // SUB (register)
-      // ADD (immediate, 3 bit)
-      // SUB (immediate, 3 bit)
-      // MOV (immediate)
-      // CMP (immediate)
-      // ADD (immediate, 8 bit)
-      // SUB (immediate, 8 bit)
+      opcode = (instruction >> 9) & 0b11111;
+      uint8_t oh = opcode >> 2; // 3 high bits of opcode
+      switch (oh) {
+        // LSL immediate
+        case 0b000:
+          opdata.handler = op_lsl_immediate;
+          opdata.imm = (instruction >> 6) & 0b11111;
+          opdata.Rm = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+        // LSR immediate
+        case 0b001:
+          opdata.handler = op_lsr_immediate;
+          opdata.imm = (instruction >> 6) & 0b11111;
+          opdata.Rm = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+        // ASR immediate
+        case 0b010:
+          opdata.handler = op_asr_immediate;
+          opdata.imm = (instruction >> 6) & 0b11111;
+          opdata.Rm = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+        case 0b011:
+        switch(opcode) {
+          // ADD (register)
+          case(0b01100): // encoding T1
+          opdata.handler = op_add_register;
+          opdata.Rm = (instruction >> 6) & 0b111;
+          opdata.Rn = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+          // SUB (register)
+          case(0b01101): // encoding T1 (no other encoding)
+          opdata.handler = op_sub_register;
+          opdata.Rm = (instruction >> 6) & 0b111;
+          opdata.Rn = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+          // ADD (immediate, 3 bit)
+          case(0b01110): // encoding T1
+          opdata.handler = op_add_immediate;
+          opdata.imm = (instruction >> 6) & 0b111;
+          opdata.Rn = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+          // SUB (immediate, 3 bit)
+          case(0b01111): // encoding T1
+          opdata.handler = op_sub_immediate;
+          opdata.imm = (instruction >> 6) & 0b111;
+          opdata.Rn = (instruction >> 3) & 0b111;
+          opdata.Rd = instruction & 0b111;
+          break;
+        }
+          break;
+        // MOV (immediate)
+        case 0b100:
+          opdata.handler = op_mov_immediate;
+          opdata.imm = IMM8(instruction);
+          opdata.Rd = (instruction >> 8) & 0b111;
+          break;
+        // CMP (immediate)
+        case 0b101:
+          opdata.handler =  op_cmp_immediate;
+          opdata.imm = IMM8(instruction);
+          opdata.Rn = (instruction >> 8) & 0b111;
+          break;
+        // ADD (immediate, 8 bit)
+        case 0b110:
+          opdata.handler = op_add_immediate;
+          opdata.imm = IMM8(instruction);
+          opdata.Rn = (instruction >> 8) & 0b111;
+          opdata.Rd = opdata.Rn;
+          break;
+        // SUB (immediate, 8 bit)
+        case 0b111:
+          opdata.handler = op_sub_immediate;
+          opdata.imm = IMM8(instruction);
+          opdata.Rn = (instruction >> 8) & 0b111;
+          opdata.Rd = opdata.Rn;
+          break;
+      }
+      return;
     } else
     // Load from Literal Pool (LDR)
     if ((opcode & 0b111110) == 0b010010) {
@@ -825,7 +903,8 @@ void printOp(simple_op_args &op) {
 
 // internal, will not fire timer interrupts, etc.
 void _step() {
-  uint32_t inst_addr = registers[pcRegister];
+  uint32_t pc = registers[pcRegister];
+  uint32_t inst_addr = pc-2;
 
   opHandler* handler;
   // TODO: should be allowed to run from RAM also
@@ -840,7 +919,7 @@ void _step() {
   printOp(decoded_op);
   handler = decoded_op.handler;
 
-  registers[pcRegister] += 2;
+  incrementPC();
 
   handler((OpArgs&)decoded_op);
   printf("flags: [NZCV] : [%d%d%d%d]\n",apsr.N, apsr.Z, apsr.C, apsr.V);
@@ -1084,6 +1163,7 @@ void op_ldrsh_register(OpArgs &a) {
 
 void BranchWritePC(uint32_t v) {
   registers[pcRegister] = v;
+  incrementPC();
 }
 
 void ALUWritePC(uint32_t v) {
