@@ -1575,8 +1575,8 @@ void op_asr_immediate(OpArgs &a) {
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
-  // TODO: carry?
-  apsr.C = tmp.C;
+  // the last bit to shift off becomes the carry flag
+  apsr.C = (v >> (args.imm-1)) & 1;
   // apsr.V = tmp.V;
 }
 
@@ -1585,13 +1585,14 @@ void op_asr_register(OpArgs &a) {
 
   simple_op_args &args = (simple_op_args&)a;
   int32_t v = registers[args.Rn];
-  result = v >> args.imm;
+  uint8_t shift_n = (registers[args.Rm] & 0xFF);
+  result = v >> shift_n;
   registers[args.Rd] = result;
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
-  // TODO: carry?
-  apsr.C = tmp.C;
+  // the last bit to shift off becomes the carry flag
+  apsr.C = (v >> (shift_n-1)) & 1;
   // apsr.V = tmp.V;
 }
 
@@ -1600,13 +1601,14 @@ void op_lsr_immediate(OpArgs &a) {
   uint32_t result;
 
   simple_op_args &args = (simple_op_args&)a;
-  result = registers[args.Rn] >> args.imm;
+  uint32_t v = registers[args.Rn];
+  result = v >> args.imm;
   registers[args.Rd] = result;
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
-  // TODO: carry?
-  apsr.C = tmp.C;
+  // the last bit to shift off becomes the carry flag
+  apsr.C = (v >> (args.imm - 1)) & 1;
   // apsr.V = tmp.V;
 }
 
@@ -1614,13 +1616,15 @@ void op_lsr_register(OpArgs &a) {
   uint32_t result;
 
   simple_op_args &args = (simple_op_args&)a;
-  result = registers[args.Rn] >> (registers[args.Rm] & 0xFF);
+  uint32_t v = registers[args.Rn];
+  uint8_t shift_n = (registers[args.Rm] & 0xFF);
+  result = v >> shift_n;
   registers[args.Rd] = result;
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
-  // TODO: carry?
-  apsr.C = tmp.C;
+  // the last bit to shift off becomes the carry flag
+  apsr.C = (v >> (shift_n - 1)) & 1;
   // apsr.V = tmp.V;
 }
 
@@ -1628,13 +1632,14 @@ void op_lsl_immediate(OpArgs &a) {
   uint32_t result;
 
   simple_op_args &args = (simple_op_args&)a;
-  result = registers[args.Rn] << args.imm;
+  uint32_t v = registers[args.Rn];
+  result = v << args.imm;
   registers[args.Rd] = result;
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
-  // TODO: carry?
-  apsr.C = tmp.C;
+  // the last bit to shift left becomes the carry flag
+  apsr.C = (v << (args.imm - 1)) & (1<<31);
   // apsr.V = tmp.V;
 }
 
@@ -1642,13 +1647,15 @@ void op_lsl_register(OpArgs &a) {
   uint32_t result;
 
   simple_op_args &args = (simple_op_args&)a;
-  result = registers[args.Rn] << (registers[args.Rm] & 0xFF);
+  uint32_t v = registers[args.Rn];
+  uint8_t shift_n = (registers[args.Rm] & 0xFF);
+  result = v << shift_n;
   registers[args.Rd] = result;
 
   apsr.N = result & (1<<31);
   apsr.Z = (result == 0);
-  // TODO: carry?
-  apsr.C = tmp.C;
+  // the last bit to shift left becomes the carry flag
+  apsr.C = (v << (shift_n - 1)) & (1<<31);
   // apsr.V = tmp.V;
 }
 
