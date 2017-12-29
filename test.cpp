@@ -9,25 +9,7 @@
 #define IMM7(x) (x & 0b1111111)
 
 
-typedef void opHandler(OpArgs &);
 
-typedef struct  {
-  opHandler *handler;
-  uint8_t Rd;
-  uint8_t Rn;
-  uint8_t Rm;
-  uint8_t Rt;
-  uint16_t imm;
-} simple_op_args;
-
-typedef struct  {
-  opHandler *handler;
-  uint8_t Rd;
-  uint8_t Rn;
-  uint8_t Rm;
-  uint8_t Rt;
-  uint16_t register_list;
-} opPushPopData;
 
 
 typedef struct {
@@ -865,7 +847,6 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
         (i2 << 22) +
         (i1 << 23);
       ;
-      // TODO we don't have 32 bits here yet
       opdata.imm = imm32;
       return;
     }
@@ -1344,7 +1325,8 @@ void op_udf(OpArgs &a) {
 }
 
 void InstructionSynchronizationBarrier() {};
-void op_isb() {
+void op_isb(OpArgs &a) {
+  // because we always execute in order this is effectively a NOP
   InstructionSynchronizationBarrier();
 }
 
@@ -1360,6 +1342,13 @@ void op_yield(OpArgs &a) {
 void op_mrs(OpArgs &a) {
 }
 
+// TODO
+void op_msr(OpArgs &a) {
+}
+
+// TODO
+void op_svc(OpArgs &a) {
+}
 
 void op_nop(OpArgs &a) {
   // NOP

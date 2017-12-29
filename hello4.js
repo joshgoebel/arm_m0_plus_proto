@@ -1715,18 +1715,6 @@ function copyTempDouble(ptr) {
 // {{PRE_LIBRARY}}
 
 
-  function __Z6op_isbRA10_h() {
-  Module['printErr']('missing function: _Z6op_isbRA10_h'); abort(-1);
-  }
-
-  function __Z6op_msrRA10_h() {
-  Module['printErr']('missing function: _Z6op_msrRA10_h'); abort(-1);
-  }
-
-  function __Z6op_svcRA10_h() {
-  Module['printErr']('missing function: _Z6op_svcRA10_h'); abort(-1);
-  }
-
   
   function __ZSt18uncaught_exceptionv() { // std::uncaught_exception()
       return !!__ZSt18uncaught_exceptionv.uncaught_exception;
@@ -2080,7 +2068,7 @@ function jsCall_viiiiii(index,a1,a2,a3,a4,a5,a6) {
 
 Module.asmGlobalArg = {};
 
-Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "invoke_ii": invoke_ii, "jsCall_ii": jsCall_ii, "invoke_iiii": invoke_iiii, "jsCall_iiii": jsCall_iiii, "invoke_v": invoke_v, "jsCall_v": jsCall_v, "invoke_vi": invoke_vi, "jsCall_vi": jsCall_vi, "invoke_vii": invoke_vii, "jsCall_vii": jsCall_vii, "invoke_viiii": invoke_viiii, "jsCall_viiii": jsCall_viiii, "invoke_viiiii": invoke_viiiii, "jsCall_viiiii": jsCall_viiiii, "invoke_viiiiii": invoke_viiiiii, "jsCall_viiiiii": jsCall_viiiiii, "__Z6op_isbRA10_h": __Z6op_isbRA10_h, "__Z6op_msrRA10_h": __Z6op_msrRA10_h, "__Z6op_svcRA10_h": __Z6op_svcRA10_h, "__ZSt18uncaught_exceptionv": __ZSt18uncaught_exceptionv, "___cxa_find_matching_catch": ___cxa_find_matching_catch, "___gxx_personality_v0": ___gxx_personality_v0, "___resumeException": ___resumeException, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall146": ___syscall146, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "_abort": _abort, "_emscripten_memcpy_big": _emscripten_memcpy_big, "flush_NO_FILESYSTEM": flush_NO_FILESYSTEM, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
+Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "invoke_ii": invoke_ii, "jsCall_ii": jsCall_ii, "invoke_iiii": invoke_iiii, "jsCall_iiii": jsCall_iiii, "invoke_v": invoke_v, "jsCall_v": jsCall_v, "invoke_vi": invoke_vi, "jsCall_vi": jsCall_vi, "invoke_vii": invoke_vii, "jsCall_vii": jsCall_vii, "invoke_viiii": invoke_viiii, "jsCall_viiii": jsCall_viiii, "invoke_viiiii": invoke_viiiii, "jsCall_viiiii": jsCall_viiiii, "invoke_viiiiii": invoke_viiiiii, "jsCall_viiiiii": jsCall_viiiiii, "__ZSt18uncaught_exceptionv": __ZSt18uncaught_exceptionv, "___cxa_find_matching_catch": ___cxa_find_matching_catch, "___gxx_personality_v0": ___gxx_personality_v0, "___resumeException": ___resumeException, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall146": ___syscall146, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "_abort": _abort, "_emscripten_memcpy_big": _emscripten_memcpy_big, "flush_NO_FILESYSTEM": flush_NO_FILESYSTEM, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
 // EMSCRIPTEN_START_ASM
 var asm =Module["asm"]// EMSCRIPTEN_END_ASM
 (Module.asmGlobalArg, Module.asmLibraryArg, buffer);

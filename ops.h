@@ -1,4 +1,30 @@
-typedef  uint8_t OpArgs[6+4];
+#ifndef OPS_H
+#define OPS_H
+
+typedef struct OpArgs_ OpArgs;
+typedef void opHandler(OpArgs &);
+typedef struct  {
+  opHandler *handler;
+  uint8_t Rd;
+  uint8_t Rn;
+  uint8_t Rm;
+  uint8_t Rt;
+  uint32_t imm; // 32 bits needed for BL
+} simple_op_args;
+
+typedef struct  {
+  opHandler *handler;
+  uint8_t Rd;
+  uint8_t Rn;
+  uint8_t Rm;
+  uint8_t Rt;
+  uint16_t register_list;
+} opPushPopData;
+
+struct OpArgs_ {
+  uint8_t placeholder[sizeof(simple_op_args)];
+};
+// typedef  uint8_t OpArgs[sizeof(simple_op_args)];
 
 void op_nop(OpArgs &a);
 void op_branch(OpArgs &a);
@@ -212,3 +238,4 @@ opr opTable[] = {
 
 
 };
+#endif
