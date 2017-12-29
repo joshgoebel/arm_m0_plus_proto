@@ -3,11 +3,15 @@
  (type $FUNCSIG$vii (func (param i32 i32)))
  (type $FUNCSIG$iiii (func (param i32 i32 i32) (result i32)))
  (type $FUNCSIG$v (func))
+ (type $FUNCSIG$viiii (func (param i32 i32 i32 i32)))
+ (type $FUNCSIG$viiiiii (func (param i32 i32 i32 i32 i32 i32)))
+ (type $FUNCSIG$viiiii (func (param i32 i32 i32 i32 i32)))
  (type $FUNCSIG$ii (func (param i32) (result i32)))
  (type $FUNCSIG$i (func (result i32)))
  (type $FUNCSIG$iii (func (param i32 i32) (result i32)))
  (type $FUNCSIG$iiiii (func (param i32 i32 i32 i32) (result i32)))
  (type $FUNCSIG$viii (func (param i32 i32 i32)))
+ (type $FUNCSIG$viiiiiii (func (param i32 i32 i32 i32 i32 i32 i32)))
  (import "env" "DYNAMICTOP_PTR" (global $DYNAMICTOP_PTR$asm2wasm$import i32))
  (import "env" "STACKTOP" (global $STACKTOP$asm2wasm$import i32))
  (import "env" "STACK_MAX" (global $STACK_MAX$asm2wasm$import i32))
@@ -20,6 +24,9 @@
  (import "env" "jsCall_v" (func $jsCall_v (param i32)))
  (import "env" "jsCall_vi" (func $jsCall_vi (param i32 i32)))
  (import "env" "jsCall_vii" (func $jsCall_vii (param i32 i32 i32)))
+ (import "env" "jsCall_viiii" (func $jsCall_viiii (param i32 i32 i32 i32 i32)))
+ (import "env" "jsCall_viiiii" (func $jsCall_viiiii (param i32 i32 i32 i32 i32 i32)))
+ (import "env" "jsCall_viiiiii" (func $jsCall_viiiiii (param i32 i32 i32 i32 i32 i32 i32)))
  (import "env" "__Z6op_isbRA10_h" (func $__Z6op_isbRA10_h (param i32)))
  (import "env" "__Z6op_msrRA10_h" (func $__Z6op_msrRA10_h (param i32)))
  (import "env" "__Z6op_svcRA10_h" (func $__Z6op_svcRA10_h (param i32)))
@@ -31,7 +38,7 @@
  (import "env" "_abort" (func $_abort))
  (import "env" "_emscripten_memcpy_big" (func $_emscripten_memcpy_big (param i32 i32 i32) (result i32)))
  (import "env" "memory" (memory $0 256 256))
- (import "env" "table" (table 192 anyfunc))
+ (import "env" "table" (table 256 anyfunc))
  (import "env" "memoryBase" (global $memoryBase i32))
  (import "env" "tableBase" (global $tableBase i32))
  (global $DYNAMICTOP_PTR (mut i32) (get_global $DYNAMICTOP_PTR$asm2wasm$import))
@@ -40,37 +47,43 @@
  (global $__THREW__ (mut i32) (i32.const 0))
  (global $threwValue (mut i32) (i32.const 0))
  (global $tempRet0 (mut i32) (i32.const 0))
- (elem (get_global $tableBase) $b0 $b0 $jsCall_ii_0 $b0 $jsCall_ii_1 $b0 $jsCall_ii_2 $b0 $jsCall_ii_3 $b0 $jsCall_ii_4 $b0 $___stdio_close $b0 $b0 $b0 $b1 $b1 $jsCall_iiii_0 $b1 $jsCall_iiii_1 $b1 $jsCall_iiii_2 $b1 $jsCall_iiii_3 $b1 $jsCall_iiii_4 $b1 $___stdout_write $___stdio_seek $___stdio_write $b1 $b2 $b2 $jsCall_v_0 $b2 $jsCall_v_1 $b2 $jsCall_v_2 $b2 $jsCall_v_3 $b2 $jsCall_v_4 $b2 $b2 $b2 $b2 $b2 $b3 $b3 $jsCall_vi_0 $b3 $jsCall_vi_1 $b3 $jsCall_vi_2 $b3 $jsCall_vi_3 $b3 $jsCall_vi_4 $b3 $__Z15op_adc_registerRA10_h $__Z16op_add_immediateRA10_h $__Z15op_add_registerRA10_h $__Z24op_add_sp_plus_immediateRA10_h $__Z23op_add_sp_plus_registerRA10_h $__Z6op_adrRA10_h $__Z15op_and_registerRA10_h $__Z16op_asr_immediateRA10_h $__Z15op_asr_registerRA10_h $__Z9op_branchRA10_h $__Z12op_branch_eqRA10_h $__Z12op_branch_neRA10_h $__Z12op_branch_csRA10_h $__Z12op_branch_ccRA10_h $__Z12op_branch_miRA10_h $__Z12op_branch_plRA10_h $__Z12op_branch_vsRA10_h $__Z12op_branch_vcRA10_h $__Z12op_branch_hiRA10_h $__Z12op_branch_lsRA10_h $__Z12op_branch_geRA10_h $__Z12op_branch_ltRA10_h $__Z12op_branch_gtRA10_h $__Z12op_branch_leRA10_h $__Z15op_bic_registerRA10_h $__Z7op_bkptRA10_h $__Z5op_blRA10_h $__Z6op_blxRA10_h $__Z5op_bxRA10_h $__Z15op_cmn_registerRA10_h $__Z16op_cmp_immediateRA10_h $__Z15op_cmp_registerRA10_h $__Z6op_cpsRA10_h $__Z6op_dmbRA10_h $__Z6op_dsbRA10_h $__Z15op_eor_registerRA10_h $__Z6op_isbRA10_h $__Z6op_ldmRA10_h $__Z16op_ldr_immediateRA10_h $__Z14op_ldr_literalRA10_h $__Z15op_ldr_registerRA10_h $__Z17op_ldrb_immediateRA10_h $__Z16op_ldrb_registerRA10_h $__Z17op_ldrh_immediateRA10_h $__Z16op_ldrh_registerRA10_h $__Z17op_ldrsb_registerRA10_h $__Z17op_ldrsh_registerRA10_h $__Z16op_lsl_immediateRA10_h $__Z15op_lsl_registerRA10_h $__Z16op_lsr_immediateRA10_h $__Z15op_lsr_registerRA10_h $__Z16op_mov_immediateRA10_h $__Z15op_mov_registerRA10_h $__Z6op_mrsRA10_h $__Z6op_msrRA10_h $__Z15op_mul_registerRA10_h $__Z15op_mvn_registerRA10_h $__Z6op_nopRA10_h $__Z15op_orr_registerRA10_h $__Z7op_pushRA10_h $__Z6op_popRA10_h $__Z6op_revRA10_h $__Z8op_rev16RA10_h $__Z8op_revshRA10_h $__Z15op_ror_registerRA10_h $__Z16op_rsb_immediateRA10_h $__Z15op_sbc_registerRA10_h $__Z6op_sevRA10_h $__Z6op_stmRA10_h $__Z16op_str_immediateRA10_h $__Z15op_str_registerRA10_h $__Z17op_strb_immediateRA10_h $__Z16op_strb_registerRA10_h $__Z17op_strh_immediateRA10_h $__Z16op_strh_registerRA10_h $__Z16op_sub_immediateRA10_h $__Z15op_sub_registerRA10_h $__Z25op_sub_sp_minus_immediateRA10_h $__Z6op_svcRA10_h $__Z7op_sxtbRA10_h $__Z7op_sxthRA10_h $__Z15op_tst_registerRA10_h $__Z6op_udfRA10_h $__Z7op_uxtbRA10_h $__Z7op_uxthRA10_h $__Z6op_wfeRA10_h $__Z6op_wfiRA10_h $__Z8op_yieldRA10_h $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b4 $b4 $jsCall_vii_0 $b4 $jsCall_vii_1 $b4 $jsCall_vii_2 $b4 $jsCall_vii_3 $b4 $jsCall_vii_4 $b4 $b4 $b4 $b4 $b4)
- (data (i32.const 1212) "\e4\1b\1b")
- (data (i32.const 1268) "\f8\04\00\00\05")
- (data (i32.const 1284) "\0c")
- (data (i32.const 1308) "\0c\00\00\00\0d\00\00\00\0e\9c\1f\00\00\04")
- (data (i32.const 1332) "\01")
- (data (i32.const 1347) "\n\ff\ff\ff\ff")
- (data (i32.const 1396) "ADCS: ~Rd, ~Rn, ~Rm\00ADDS: ~Rd, ~Rn, ~imm\00ADDS: ~Rd, ~Rn, ~Rm\00ADD: ~Rdn, ~Rm\00ADD ~Rd, SP, ~imm\00ADD SP, ~imm\00ADD ~Rd, SP, ~Rd\00ADR\00AND (register) ~Rd, ~Rm\00ASR (immediate) ~Rd, ~Rm, ~imm\00ASR (register) ~Rd, ~Rm\00B\00BEQ\00BNE\00BCS\00BCC\00BMI\00BPL\00BVS\00BVC\00BHI\00BLS\00BGE\00BLT\00BGT\00BLE\00BIC\00BKPT\00BL\00BLX (register)\00BX\00CMN (register)\00CMP (imm)\00CMP (reg)\00CPS\00DMB\00DSB\00EOR\00ISB\00LDM\00LDR (immediate)\00LDR (literal)\00LDR (register)\00LDRB (immediate)\00LDRB (register)\00LDRH (immediate)\00LDRH (register)\00LDRSB\00LDRSH\00LSL (imm)\00LSL (register)\00LSR (imm)\00LSR (reg)\00MOV (imm)\00MOV (reg)\00MRS\00MSR\00MUL\00MVN (register)\00NOP\00ORR (register)\00PUSH\00POP\00REV\00REV16\00REVSH\00ROR\00RSB\00SBC (register)\00SEV\00STM\00STR (immediate)\00STR (register)\00STRB (immediate)\00STRB (register)\00STRH (immediate)\00STRH (register)\00SUB (immediate)\00SUB (register)\00SUB (SP minute imm)\00SVC\00SXTB\00SXTH\00TST (register)\00UDF\00UXTB\00UXTH\00WFE\00WFI\00YIELD\00sp: %x\n\00pc: %x\n\00%u\00flash@%d: %d\n\00loading buffer of size %d\n\00opcode:\00\11\00\n\00\11\11\11\00\00\00\00\05\00\00\00\00\00\00\t\00\00\00\00\0b")
- (data (i32.const 2345) "\11\00\0f\n\11\11\11\03\n\07\00\01\13\t\0b\0b\00\00\t\06\0b\00\00\0b\00\06\11\00\00\00\11\11\11")
- (data (i32.const 2394) "\0b")
- (data (i32.const 2403) "\11\00\n\n\11\11\11\00\n\00\00\02\00\t\0b\00\00\00\t\00\0b\00\00\0b")
- (data (i32.const 2452) "\0c")
- (data (i32.const 2464) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c")
- (data (i32.const 2510) "\0e")
- (data (i32.const 2522) "\0d\00\00\00\04\0d\00\00\00\00\t\0e\00\00\00\00\00\0e\00\00\0e")
- (data (i32.const 2568) "\10")
- (data (i32.const 2580) "\0f\00\00\00\00\0f\00\00\00\00\t\10\00\00\00\00\00\10\00\00\10\00\00\12\00\00\00\12\12\12")
- (data (i32.const 2635) "\12\00\00\00\12\12\12\00\00\00\00\00\00\t")
- (data (i32.const 2684) "\0b")
- (data (i32.const 2696) "\n\00\00\00\00\n\00\00\00\00\t\0b\00\00\00\00\00\0b\00\00\0b")
- (data (i32.const 2742) "\0c")
- (data (i32.const 2754) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c\00\00-+   0X0x\00(null)\00-0X+0X 0X-0x+0x 0x\00inf\00INF\00nan\00NAN\000123456789ABCDEF.\00T!\"\19\0d\01\02\03\11K\1c\0c\10\04\0b\1d\12\1e\'hnopqb \05\06\0f\13\14\15\1a\08\16\07($\17\18\t\n\0e\1b\1f%#\83\82}&*+<=>?CGJMXYZ[\\]^_`acdefgijklrstyz{|\00Illegal byte sequence\00Domain error\00Result not representable\00Not a tty\00Permission denied\00Operation not permitted\00No such file or directory\00No such process\00File exists\00Value too large for data type\00No space left on device\00Out of memory\00Resource busy\00Interrupted system call\00Resource temporarily unavailable\00Invalid seek\00Cross-device link\00Read-only file system\00Directory not empty\00Connection reset by peer\00Operation timed out\00Connection refused\00Host is down\00Host is unreachable\00Address in use\00Broken pipe\00I/O error\00No such device or address\00Block device required\00No such device\00Not a directory\00Is a directory\00Text file busy\00Exec format error\00Invalid argument\00Argument list too long\00Symbolic link loop\00Filename too long\00Too many open files in system\00No file descriptors available\00Bad file descriptor\00No child process\00Bad address\00File too large\00Too many links\00No locks available\00Resource deadlock would occur\00State not recoverable\00Previous owner died\00Operation canceled\00Function not implemented\00No message of desired type\00Identifier removed\00Device not a stream\00No data available\00Device timeout\00Out of streams resources\00Link has been severed\00Protocol error\00Bad message\00File descriptor in bad state\00Not a socket\00Destination address required\00Message too large\00Protocol wrong type for socket\00Protocol not available\00Protocol not supported\00Socket type not supported\00Not supported\00Protocol family not supported\00Address family not supported by protocol\00Address not available\00Network is down\00Network unreachable\00Connection reset by network\00Connection aborted\00No buffer space available\00Socket is connected\00Socket not connected\00Cannot send after socket shutdown\00Operation already in progress\00Operation in progress\00Stale file handle\00Remote I/O error\00Quota exceeded\00No medium found\00Wrong medium type\00No error information")
+ (elem (get_global $tableBase) $b0 $b0 $jsCall_ii_0 $b0 $jsCall_ii_1 $b0 $jsCall_ii_2 $b0 $jsCall_ii_3 $b0 $jsCall_ii_4 $b0 $___stdio_close $b0 $b0 $b0 $b1 $b1 $jsCall_iiii_0 $b1 $jsCall_iiii_1 $b1 $jsCall_iiii_2 $b1 $jsCall_iiii_3 $b1 $jsCall_iiii_4 $b1 $___stdout_write $___stdio_seek $_sn_write $__ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv $___stdio_write $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b1 $b2 $b2 $jsCall_v_0 $b2 $jsCall_v_1 $b2 $jsCall_v_2 $b2 $jsCall_v_3 $b2 $jsCall_v_4 $b2 $b2 $b2 $b2 $b2 $b3 $b3 $jsCall_vi_0 $b3 $jsCall_vi_1 $b3 $jsCall_vi_2 $b3 $jsCall_vi_3 $b3 $jsCall_vi_4 $b3 $___unlockfile $__ZN10__cxxabiv117__class_type_infoD0Ev $___unlockfile $___unlockfile $__ZN10__cxxabiv117__class_type_infoD0Ev $__Z15op_adc_registerRA10_h $__Z16op_add_immediateRA10_h $__Z15op_add_registerRA10_h $__Z24op_add_sp_plus_immediateRA10_h $__Z23op_add_sp_plus_registerRA10_h $__Z6op_adrRA10_h $__Z15op_and_registerRA10_h $__Z16op_asr_immediateRA10_h $__Z15op_asr_registerRA10_h $__Z9op_branchRA10_h $__Z12op_branch_eqRA10_h $__Z12op_branch_neRA10_h $__Z12op_branch_csRA10_h $__Z12op_branch_ccRA10_h $__Z12op_branch_miRA10_h $__Z12op_branch_plRA10_h $__Z12op_branch_vsRA10_h $__Z12op_branch_vcRA10_h $__Z12op_branch_hiRA10_h $__Z12op_branch_lsRA10_h $__Z12op_branch_geRA10_h $__Z12op_branch_ltRA10_h $__Z12op_branch_gtRA10_h $__Z12op_branch_leRA10_h $__Z15op_bic_registerRA10_h $__Z7op_bkptRA10_h $__Z5op_blRA10_h $__Z6op_blxRA10_h $__Z5op_bxRA10_h $__Z15op_cmn_registerRA10_h $__Z16op_cmp_immediateRA10_h $__Z15op_cmp_registerRA10_h $__Z6op_cpsRA10_h $__Z6op_dmbRA10_h $__Z6op_dsbRA10_h $__Z15op_eor_registerRA10_h $__Z6op_isbRA10_h $__Z6op_ldmRA10_h $__Z16op_ldr_immediateRA10_h $__Z14op_ldr_literalRA10_h $__Z15op_ldr_registerRA10_h $__Z17op_ldrb_immediateRA10_h $__Z16op_ldrb_registerRA10_h $__Z17op_ldrh_immediateRA10_h $__Z16op_ldrh_registerRA10_h $__Z17op_ldrsb_registerRA10_h $__Z17op_ldrsh_registerRA10_h $__Z16op_lsl_immediateRA10_h $__Z15op_lsl_registerRA10_h $__Z16op_lsr_immediateRA10_h $__Z15op_lsr_registerRA10_h $__Z16op_mov_immediateRA10_h $__Z15op_mov_registerRA10_h $__Z6op_mrsRA10_h $__Z6op_msrRA10_h $__Z15op_mul_registerRA10_h $__Z15op_mvn_registerRA10_h $__Z6op_nopRA10_h $__Z15op_orr_registerRA10_h $__Z7op_pushRA10_h $__Z6op_popRA10_h $__Z6op_revRA10_h $__Z8op_rev16RA10_h $__Z8op_revshRA10_h $__Z15op_ror_registerRA10_h $__Z16op_rsb_immediateRA10_h $__Z15op_sbc_registerRA10_h $__Z6op_sevRA10_h $__Z6op_stmRA10_h $__Z16op_str_immediateRA10_h $__Z15op_str_registerRA10_h $__Z17op_strb_immediateRA10_h $__Z16op_strb_registerRA10_h $__Z17op_strh_immediateRA10_h $__Z16op_strh_registerRA10_h $__Z16op_sub_immediateRA10_h $__Z15op_sub_registerRA10_h $__Z25op_sub_sp_minus_immediateRA10_h $__Z6op_svcRA10_h $__Z7op_sxtbRA10_h $__Z7op_sxthRA10_h $__Z15op_tst_registerRA10_h $__Z6op_udfRA10_h $__Z7op_uxtbRA10_h $__Z7op_uxthRA10_h $__Z6op_wfeRA10_h $__Z6op_wfiRA10_h $__Z8op_yieldRA10_h $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b3 $b4 $b4 $jsCall_vii_0 $b4 $jsCall_vii_1 $b4 $jsCall_vii_2 $b4 $jsCall_vii_3 $b4 $jsCall_vii_4 $b4 $b4 $b4 $b4 $b4 $b5 $b5 $jsCall_viiii_0 $b5 $jsCall_viiii_1 $b5 $jsCall_viiii_2 $b5 $jsCall_viiii_3 $b5 $jsCall_viiii_4 $b5 $__ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi $__ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi $b5 $b5 $b6 $b6 $jsCall_viiiii_0 $b6 $jsCall_viiiii_1 $b6 $jsCall_viiiii_2 $b6 $jsCall_viiiii_3 $b6 $jsCall_viiiii_4 $b6 $__ZNK10__cxxabiv117__class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib $__ZNK10__cxxabiv120__si_class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib $b6 $b6 $b7 $b7 $jsCall_viiiiii_0 $b7 $jsCall_viiiiii_1 $b7 $jsCall_viiiiii_2 $b7 $jsCall_viiiiii_3 $b7 $jsCall_viiiiii_4 $b7 $__ZNK10__cxxabiv117__class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib $__ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib $b7 $b7)
+ (data (i32.const 1024) "x\06\00\00\1d\14\00\00\10\04\00\00\00\00\00\00x\06\00\00\ca\13\00\00 \04\00\00\00\00\00\00P\06\00\00\eb\13\00\00x\06\00\00\f8\13\00\00\00\04\00\00\00\00\00\00x\06\00\00c\14\00\00\10\04\00\00\00\00\00\00x\06\00\00?\14\00\008\04")
+ (data (i32.const 1300) "\e8\1d\1b")
+ (data (i32.const 1356) "P\05\00\00\05")
+ (data (i32.const 1372) "\0c")
+ (data (i32.const 1396) "\0c\00\00\00\0d\00\00\00\12\9e\1f\00\00\04")
+ (data (i32.const 1420) "\01")
+ (data (i32.const 1435) "\n\ff\ff\ff\ff")
+ (data (i32.const 1520) "\0e")
+ (data (i32.const 1559) "\ff\ff\ff\ff\ff")
+ (data (i32.const 1613) "\04\00\00\0c\00\00\00\0d\00\00\00\0e\00\00\00\0f\00\00\00\0f\00\00\00\0c\00\00\00\0c\00\00\00\0c\00\00\00\00\00\00\00(\04\00\00\0c\00\00\00\10\00\00\00\0e\00\00\00\0f\00\00\00\0f\00\00\00\0d\00\00\00\0d\00\00\00\0d\00\00\00ADCS: ~Rd, ~Rn, ~Rm\00ADDS: ~Rd, ~Rn, ~imm\00ADDS: ~Rd, ~Rn, ~Rm\00ADD: ~Rdn, ~Rm\00ADD ~Rd, SP, ~imm\00ADD SP, ~imm\00ADD ~Rd, SP, ~Rd\00ADR\00AND (register) ~Rd, ~Rm\00ASR (immediate) ~Rd, ~Rm, ~imm\00ASR (register) ~Rd, ~Rm\00B\00BEQ\00BNE\00BCS\00BCC\00BMI\00BPL\00BVS\00BVC\00BHI\00BLS\00BGE\00BLT\00BGT\00BLE\00BIC\00BKPT\00BL\00BLX (register)\00BX\00CMN (register)\00CMP (imm)\00CMP (reg)\00CPS\00DMB\00DSB\00EOR\00ISB\00LDM\00LDR (immediate)\00LDR (literal) ~Rt, ~imm\00LDR (register)\00LDRB (immediate)\00LDRB (register)\00LDRH (immediate)\00LDRH (register)\00LDRSB\00LDRSH\00LSL (imm)\00LSL (register)\00LSR (imm)\00LSR (reg)\00MOV (imm)\00MOV (reg)\00MRS\00MSR\00MUL\00MVN (register)\00NOP\00ORR (register)\00PUSH\00POP\00REV\00REV16\00REVSH\00ROR\00RSB\00SBC (register)\00SEV\00STM\00STR (immediate)\00STR (register)\00STRB (immediate)\00STRB (register)\00STRH (immediate)\00STRH (register)\00SUB (immediate)\00SUB (register)\00SUB (SP minute imm)\00SVC\00SXTB\00SXTH\00TST (register)\00UDF\00UXTB\00UXTH\00WFE\00WFI\00YIELD\00sp: %x\n\00pc: %x\n\00%u\00~Rt\00R\00~imm\00#\00\n; %04x: %04x\n\00flags: [NZCV] : [%d%d%d%d]\n\00LDR addr: %0X\n\00\11\00\n\00\11\11\11\00\00\00\00\05\00\00\00\00\00\00\t\00\00\00\00\0b")
+ (data (i32.const 2669) "\11\00\0f\n\11\11\11\03\n\07\00\01\13\t\0b\0b\00\00\t\06\0b\00\00\0b\00\06\11\00\00\00\11\11\11")
+ (data (i32.const 2718) "\0b")
+ (data (i32.const 2727) "\11\00\n\n\11\11\11\00\n\00\00\02\00\t\0b\00\00\00\t\00\0b\00\00\0b")
+ (data (i32.const 2776) "\0c")
+ (data (i32.const 2788) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c")
+ (data (i32.const 2834) "\0e")
+ (data (i32.const 2846) "\0d\00\00\00\04\0d\00\00\00\00\t\0e\00\00\00\00\00\0e\00\00\0e")
+ (data (i32.const 2892) "\10")
+ (data (i32.const 2904) "\0f\00\00\00\00\0f\00\00\00\00\t\10\00\00\00\00\00\10\00\00\10\00\00\12\00\00\00\12\12\12")
+ (data (i32.const 2959) "\12\00\00\00\12\12\12\00\00\00\00\00\00\t")
+ (data (i32.const 3008) "\0b")
+ (data (i32.const 3020) "\n\00\00\00\00\n\00\00\00\00\t\0b\00\00\00\00\00\0b\00\00\0b")
+ (data (i32.const 3066) "\0c")
+ (data (i32.const 3078) "\0c\00\00\00\00\0c\00\00\00\00\t\0c\00\00\00\00\00\0c\00\00\0c\00\00-+   0X0x\00(null)\00-0X+0X 0X-0x+0x 0x\00inf\00INF\00nan\00NAN\000123456789ABCDEF.\00T!\"\19\0d\01\02\03\11K\1c\0c\10\04\0b\1d\12\1e\'hnopqb \05\06\0f\13\14\15\1a\08\16\07($\17\18\t\n\0e\1b\1f%#\83\82}&*+<=>?CGJMXYZ[\\]^_`acdefgijklrstyz{|\00Illegal byte sequence\00Domain error\00Result not representable\00Not a tty\00Permission denied\00Operation not permitted\00No such file or directory\00No such process\00File exists\00Value too large for data type\00No space left on device\00Out of memory\00Resource busy\00Interrupted system call\00Resource temporarily unavailable\00Invalid seek\00Cross-device link\00Read-only file system\00Directory not empty\00Connection reset by peer\00Operation timed out\00Connection refused\00Host is down\00Host is unreachable\00Address in use\00Broken pipe\00I/O error\00No such device or address\00Block device required\00No such device\00Not a directory\00Is a directory\00Text file busy\00Exec format error\00Invalid argument\00Argument list too long\00Symbolic link loop\00Filename too long\00Too many open files in system\00No file descriptors available\00Bad file descriptor\00No child process\00Bad address\00File too large\00Too many links\00No locks available\00Resource deadlock would occur\00State not recoverable\00Previous owner died\00Operation canceled\00Function not implemented\00No message of desired type\00Identifier removed\00Device not a stream\00No data available\00Device timeout\00Out of streams resources\00Link has been severed\00Protocol error\00Bad message\00File descriptor in bad state\00Not a socket\00Destination address required\00Message too large\00Protocol wrong type for socket\00Protocol not available\00Protocol not supported\00Socket type not supported\00Not supported\00Protocol family not supported\00Address family not supported by protocol\00Address not available\00Network is down\00Network unreachable\00Connection reset by network\00Connection aborted\00No buffer space available\00Socket is connected\00Socket not connected\00Cannot send after socket shutdown\00Operation already in progress\00Operation in progress\00Stale file handle\00Remote I/O error\00Quota exceeded\00No medium found\00Wrong medium type\00No error information\00\00%d\00N10__cxxabiv116__shim_type_infoE\00St9type_info\00N10__cxxabiv120__si_class_type_infoE\00N10__cxxabiv117__class_type_infoE\00N10__cxxabiv119__pointer_type_infoE\00N10__cxxabiv117__pbase_type_infoE")
  (export "__GLOBAL__sub_I_test_cpp" (func $__GLOBAL__sub_I_test_cpp))
  (export "__Z19CallFunctionPointerPFviiE" (func $__Z19CallFunctionPointerPFviiE))
  (export "__Z9loadFlashPhj" (func $__Z9loadFlashPhj))
+ (export "___cxa_can_catch" (func $___cxa_can_catch))
+ (export "___cxa_is_pointer_type" (func $___cxa_is_pointer_type))
  (export "___errno_location" (func $___errno_location))
  (export "_emscripten_get_global_libc" (func $_emscripten_get_global_libc))
  (export "_free" (func $_free))
  (export "_llvm_bswap_i32" (func $_llvm_bswap_i32))
  (export "_malloc" (func $_malloc))
  (export "_memcpy" (func $_memcpy))
+ (export "_memmove" (func $_memmove))
  (export "_memset" (func $_memset))
  (export "_sbrk" (func $_sbrk))
  (export "dynCall_ii" (func $dynCall_ii))
@@ -78,6 +91,9 @@
  (export "dynCall_v" (func $dynCall_v))
  (export "dynCall_vi" (func $dynCall_vi))
  (export "dynCall_vii" (func $dynCall_vii))
+ (export "dynCall_viiii" (func $dynCall_viiii))
+ (export "dynCall_viiiii" (func $dynCall_viiiii))
+ (export "dynCall_viiiiii" (func $dynCall_viiiiii))
  (export "establishStackSpace" (func $establishStackSpace))
  (export "getTempRet0" (func $getTempRet0))
  (export "runPostSets" (func $runPostSets))
@@ -86,7 +102,7 @@
  (export "stackAlloc" (func $stackAlloc))
  (export "stackRestore" (func $stackRestore))
  (export "stackSave" (func $stackSave))
- (func $stackAlloc (; 19 ;) (param $0 i32) (result i32)
+ (func $stackAlloc (; 22 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (set_local $1
    (get_global $STACKTOP)
@@ -108,15 +124,15 @@
   )
   (get_local $1)
  )
- (func $stackSave (; 20 ;) (result i32)
+ (func $stackSave (; 23 ;) (result i32)
   (get_global $STACKTOP)
  )
- (func $stackRestore (; 21 ;) (param $0 i32)
+ (func $stackRestore (; 24 ;) (param $0 i32)
   (set_global $STACKTOP
    (get_local $0)
   )
  )
- (func $establishStackSpace (; 22 ;) (param $0 i32) (param $1 i32)
+ (func $establishStackSpace (; 25 ;) (param $0 i32) (param $1 i32)
   (set_global $STACKTOP
    (get_local $0)
   )
@@ -124,7 +140,7 @@
    (get_local $1)
   )
  )
- (func $setThrew (; 23 ;) (param $0 i32) (param $1 i32)
+ (func $setThrew (; 26 ;) (param $0 i32) (param $1 i32)
   (if
    (i32.eqz
     (get_global $__THREW__)
@@ -139,15 +155,15 @@
    )
   )
  )
- (func $setTempRet0 (; 24 ;) (param $0 i32)
+ (func $setTempRet0 (; 27 ;) (param $0 i32)
   (set_global $tempRet0
    (get_local $0)
   )
  )
- (func $getTempRet0 (; 25 ;) (result i32)
+ (func $getTempRet0 (; 28 ;) (result i32)
   (get_global $tempRet0)
  )
- (func $___cxx_global_var_init (; 26 ;)
+ (func $___cxx_global_var_init (; 29 ;)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -165,3140 +181,28 @@
   (set_local $3
    (get_local $4)
   )
-  ;;@ ./ops.h:114:0
+  ;;@ ./ops.h:113:0
   (i32.store16
-   (i32.const 4740)
+   (i32.const 5256)
    (i32.const -64)
   )
   (i32.store16
-   (i32.const 4742)
+   (i32.const 5258)
    (i32.const 16704)
-  )
-  (i64.store align=4
-   (i32.const 4744)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
-  (i32.store
-   (i32.const 4752)
-   (i32.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1396)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4744)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4755)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4744)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4744)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4752)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4748)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1396)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:114:0
-  (i32.store
-   (i32.const 4756)
-   (i32.const 12)
-  )
-  (i64.store align=4
-   (i32.const 4760)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:116:0
-  (i64.store align=4
-   (i32.const 4768)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1416)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4764)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4775)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4764)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4764)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4772)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4768)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1416)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:116:0
-  (i32.store
-   (i32.const 4776)
-   (i32.const 13)
-  )
-  (i64.store align=4
-   (i32.const 4780)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:118:0
-  (i64.store align=4
-   (i32.const 4788)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1437)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4784)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4795)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4784)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4784)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4792)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4788)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1437)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:118:0
-  (i32.store
-   (i32.const 4796)
-   (i32.const 14)
-  )
-  (i64.store align=4
-   (i32.const 4800)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:120:0
-  (i64.store align=4
-   (i32.const 4808)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1457)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4804)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4815)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4804)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4804)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4812)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4808)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1457)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:120:0
-  (i32.store
-   (i32.const 4816)
-   (i32.const 14)
-  )
-  ;;@ ./ops.h:122:0
-  (i32.store16
-   (i32.const 4820)
-   (i32.const -2048)
-  )
-  (i32.store16
-   (i32.const 4822)
-   (i32.const -22528)
-  )
-  (i64.store align=4
-   (i32.const 4824)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
-  (i32.store
-   (i32.const 4832)
-   (i32.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1472)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4824)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4835)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4824)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4824)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4832)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4828)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1472)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:122:0
-  (i32.store
-   (i32.const 4836)
-   (i32.const 15)
-  )
-  ;;@ ./ops.h:125:0
-  (i32.store16
-   (i32.const 4840)
-   (i32.const -128)
-  )
-  (i32.store16
-   (i32.const 4842)
-   (i32.const -20480)
-  )
-  (i64.store align=4
-   (i32.const 4844)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
-  (i32.store
-   (i32.const 4852)
-   (i32.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1490)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4844)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4855)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4844)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4844)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4852)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4848)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1490)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:125:0
-  (i32.store
-   (i32.const 4856)
-   (i32.const 15)
-  )
-  (i64.store align=4
-   (i32.const 4860)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:128:0
-  (i64.store align=4
-   (i32.const 4868)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1503)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4864)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4875)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4864)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4864)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4872)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4868)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1503)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:128:0
-  (i32.store
-   (i32.const 4876)
-   (i32.const 16)
-  )
-  (i64.store align=4
-   (i32.const 4880)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:129:0
-  (i64.store align=4
-   (i32.const 4888)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1520)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4884)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4895)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4884)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4884)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4892)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4888)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1520)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:129:0
-  (i32.store
-   (i32.const 4896)
-   (i32.const 17)
-  )
-  (i64.store align=4
-   (i32.const 4900)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:130:0
-  (i64.store align=4
-   (i32.const 4908)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1524)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4904)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4915)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4904)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4904)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4912)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4908)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1524)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:130:0
-  (i32.store
-   (i32.const 4916)
-   (i32.const 18)
-  )
-  (i64.store align=4
-   (i32.const 4920)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:131:0
-  (i64.store align=4
-   (i32.const 4928)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1548)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4924)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4935)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4924)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4924)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4932)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4928)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1548)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:131:0
-  (i32.store
-   (i32.const 4936)
-   (i32.const 19)
-  )
-  (i64.store align=4
-   (i32.const 4940)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:132:0
-  (i64.store align=4
-   (i32.const 4948)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1579)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4944)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4955)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4944)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4944)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4952)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4948)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1579)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:132:0
-  (i32.store
-   (i32.const 4956)
-   (i32.const 20)
-  )
-  (i64.store align=4
-   (i32.const 4960)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:133:0
-  (i64.store align=4
-   (i32.const 4968)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1603)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4964)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4975)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4964)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4964)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4972)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4968)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1603)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:133:0
-  (i32.store
-   (i32.const 4976)
-   (i32.const 21)
-  )
-  (i64.store align=4
-   (i32.const 4980)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:134:0
-  (i64.store align=4
-   (i32.const 4988)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1605)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 4984)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 4995)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 4984)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 4984)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 4992)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 4988)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1605)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:134:0
-  (i32.store
-   (i32.const 4996)
-   (i32.const 22)
-  )
-  (i64.store align=4
-   (i32.const 5000)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:135:0
-  (i64.store align=4
-   (i32.const 5008)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1609)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5004)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5015)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5004)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5004)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5012)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5008)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1609)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:135:0
-  (i32.store
-   (i32.const 5016)
-   (i32.const 23)
-  )
-  (i64.store align=4
-   (i32.const 5020)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:136:0
-  (i64.store align=4
-   (i32.const 5028)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1613)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5024)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5035)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5024)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5024)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5032)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5028)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1613)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:136:0
-  (i32.store
-   (i32.const 5036)
-   (i32.const 24)
-  )
-  (i64.store align=4
-   (i32.const 5040)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:137:0
-  (i64.store align=4
-   (i32.const 5048)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1617)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5044)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5055)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5044)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5044)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5052)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5048)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1617)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:137:0
-  (i32.store
-   (i32.const 5056)
-   (i32.const 25)
-  )
-  (i64.store align=4
-   (i32.const 5060)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:138:0
-  (i64.store align=4
-   (i32.const 5068)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1621)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5064)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5075)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5064)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5064)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5072)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5068)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1621)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:138:0
-  (i32.store
-   (i32.const 5076)
-   (i32.const 26)
-  )
-  (i64.store align=4
-   (i32.const 5080)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:139:0
-  (i64.store align=4
-   (i32.const 5088)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1625)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5084)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5095)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5084)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5084)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5092)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5088)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1625)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:139:0
-  (i32.store
-   (i32.const 5096)
-   (i32.const 27)
-  )
-  (i64.store align=4
-   (i32.const 5100)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:140:0
-  (i64.store align=4
-   (i32.const 5108)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1629)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5104)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5115)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5104)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5104)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5112)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5108)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1629)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:140:0
-  (i32.store
-   (i32.const 5116)
-   (i32.const 28)
-  )
-  (i64.store align=4
-   (i32.const 5120)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:141:0
-  (i64.store align=4
-   (i32.const 5128)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1633)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5124)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5135)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5124)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5124)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5132)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5128)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1633)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:141:0
-  (i32.store
-   (i32.const 5136)
-   (i32.const 29)
-  )
-  (i64.store align=4
-   (i32.const 5140)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:142:0
-  (i64.store align=4
-   (i32.const 5148)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1637)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5144)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5155)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5144)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5144)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5152)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5148)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1637)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:142:0
-  (i32.store
-   (i32.const 5156)
-   (i32.const 30)
-  )
-  (i64.store align=4
-   (i32.const 5160)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:143:0
-  (i64.store align=4
-   (i32.const 5168)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1641)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5164)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5175)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5164)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5164)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5172)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5168)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1641)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:143:0
-  (i32.store
-   (i32.const 5176)
-   (i32.const 31)
-  )
-  (i64.store align=4
-   (i32.const 5180)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:144:0
-  (i64.store align=4
-   (i32.const 5188)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1645)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5184)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5195)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5184)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5184)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5192)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5188)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1645)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:144:0
-  (i32.store
-   (i32.const 5196)
-   (i32.const 32)
-  )
-  (i64.store align=4
-   (i32.const 5200)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:145:0
-  (i64.store align=4
-   (i32.const 5208)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1649)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5204)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5215)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5204)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5204)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5212)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5208)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1649)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:145:0
-  (i32.store
-   (i32.const 5216)
-   (i32.const 33)
-  )
-  (i64.store align=4
-   (i32.const 5220)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:146:0
-  (i64.store align=4
-   (i32.const 5228)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1653)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5224)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5235)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5224)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5224)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5232)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5228)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1653)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:146:0
-  (i32.store
-   (i32.const 5236)
-   (i32.const 34)
-  )
-  (i64.store align=4
-   (i32.const 5240)
-   (i64.const 0)
-  )
-  ;;@ ./ops.h:147:0
-  (i64.store align=4
-   (i32.const 5248)
-   (i64.const 0)
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
-  (set_local $1
-   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1657)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
-   (i32.gt_u
-    (get_local $1)
-    (i32.const -17)
-   )
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
-   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5244)
-   )
-  )
-  (if
-   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
-   (i32.lt_u
-    (get_local $1)
-    (i32.const 11)
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
-    (set_local $0
-     (i32.and
-      (get_local $1)
-      (i32.const 255)
-     )
-    )
-    (i32.store8
-     (i32.const 5255)
-     (get_local $0)
-    )
-    (set_local $0
-     (i32.const 5244)
-    )
-   )
-   (block
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
-    (set_local $0
-     (i32.add
-      (get_local $1)
-      (i32.const 16)
-     )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $0)
-      (i32.const -16)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
-    (set_local $0
-     (call $__Znwj
-      (get_local $2)
-     )
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
-    (i32.store
-     (i32.const 5244)
-     (get_local $0)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
-    (set_local $2
-     (i32.or
-      (get_local $2)
-      (i32.const -2147483648)
-     )
-    )
-    (i32.store
-     (i32.const 5252)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
-    (i32.store
-     (i32.const 5248)
-     (get_local $1)
-    )
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
-  (drop
-   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
-    (get_local $0)
-    (i32.const 1657)
-    (get_local $1)
-   )
-  )
-  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (get_local $3)
-   (i32.const 0)
-  )
-  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
-   (get_local $0)
-   (get_local $3)
-  )
-  ;;@ ./ops.h:147:0
-  (i32.store
-   (i32.const 5256)
-   (i32.const 35)
   )
   (i64.store align=4
    (i32.const 5260)
    (i64.const 0)
   )
-  ;;@ ./ops.h:148:0
-  (i64.store align=4
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
+  (i32.store
    (i32.const 5268)
-   (i64.const 0)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1661)
+    (i32.const 1688)
    )
   )
   (if
@@ -3309,7 +213,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5264)
+    (i32.const 5260)
    )
   )
   (if
@@ -3327,11 +231,11 @@
      )
     )
     (i32.store8
-     (i32.const 5275)
+     (i32.const 5271)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5264)
+     (i32.const 5260)
     )
    )
    (block
@@ -3356,7 +260,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5264)
+     (i32.const 5260)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3366,13 +270,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 5272)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5268)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5264)
      (get_local $1)
     )
    )
@@ -3381,7 +285,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1661)
+    (i32.const 1688)
     (get_local $1)
    )
   )
@@ -3400,24 +304,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:148:0
+  ;;@ ./ops.h:113:0
   (i32.store
-   (i32.const 5276)
-   (i32.const 36)
+   (i32.const 5272)
+   (i32.const 17)
   )
   (i64.store align=4
-   (i32.const 5280)
+   (i32.const 5276)
    (i64.const 0)
   )
-  ;;@ ./ops.h:149:0
+  ;;@ ./ops.h:115:0
   (i64.store align=4
-   (i32.const 5288)
+   (i32.const 5284)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1665)
+    (i32.const 1708)
    )
   )
   (if
@@ -3428,7 +332,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5284)
+    (i32.const 5280)
    )
   )
   (if
@@ -3446,11 +350,11 @@
      )
     )
     (i32.store8
-     (i32.const 5295)
+     (i32.const 5291)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5284)
+     (i32.const 5280)
     )
    )
    (block
@@ -3475,7 +379,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5284)
+     (i32.const 5280)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3485,13 +389,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 5292)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5288)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5284)
      (get_local $1)
     )
    )
@@ -3500,7 +404,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1665)
+    (i32.const 1708)
     (get_local $1)
    )
   )
@@ -3519,24 +423,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:149:0
+  ;;@ ./ops.h:115:0
   (i32.store
-   (i32.const 5296)
-   (i32.const 37)
+   (i32.const 5292)
+   (i32.const 18)
   )
   (i64.store align=4
-   (i32.const 5300)
+   (i32.const 5296)
    (i64.const 0)
   )
-  ;;@ ./ops.h:150:0
+  ;;@ ./ops.h:117:0
   (i64.store align=4
-   (i32.const 5308)
+   (i32.const 5304)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1670)
+    (i32.const 1729)
    )
   )
   (if
@@ -3547,7 +451,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5304)
+    (i32.const 5300)
    )
   )
   (if
@@ -3565,11 +469,11 @@
      )
     )
     (i32.store8
-     (i32.const 5315)
+     (i32.const 5311)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5304)
+     (i32.const 5300)
     )
    )
    (block
@@ -3594,7 +498,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5304)
+     (i32.const 5300)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3604,13 +508,13 @@
       (i32.const -2147483648)
      )
     )
-    (i32.store
-     (i32.const 5312)
-     (get_local $2)
-    )
-    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
      (i32.const 5308)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5304)
      (get_local $1)
     )
    )
@@ -3619,7 +523,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1670)
+    (i32.const 1729)
     (get_local $1)
    )
   )
@@ -3638,24 +542,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:150:0
+  ;;@ ./ops.h:117:0
   (i32.store
-   (i32.const 5316)
-   (i32.const 38)
+   (i32.const 5312)
+   (i32.const 19)
   )
   (i64.store align=4
-   (i32.const 5320)
+   (i32.const 5316)
    (i64.const 0)
   )
-  ;;@ ./ops.h:151:0
+  ;;@ ./ops.h:119:0
   (i64.store align=4
-   (i32.const 5328)
+   (i32.const 5324)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1673)
+    (i32.const 1749)
    )
   )
   (if
@@ -3666,7 +570,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5324)
+    (i32.const 5320)
    )
   )
   (if
@@ -3684,11 +588,11 @@
      )
     )
     (i32.store8
-     (i32.const 5335)
+     (i32.const 5331)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5324)
+     (i32.const 5320)
     )
    )
    (block
@@ -3713,7 +617,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5324)
+     (i32.const 5320)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3724,12 +628,12 @@
      )
     )
     (i32.store
-     (i32.const 5332)
+     (i32.const 5328)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5328)
+     (i32.const 5324)
      (get_local $1)
     )
    )
@@ -3738,7 +642,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1673)
+    (i32.const 1749)
     (get_local $1)
    )
   )
@@ -3757,24 +661,33 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:151:0
+  ;;@ ./ops.h:119:0
   (i32.store
+   (i32.const 5332)
+   (i32.const 19)
+  )
+  ;;@ ./ops.h:121:0
+  (i32.store16
    (i32.const 5336)
-   (i32.const 39)
+   (i32.const -2048)
+  )
+  (i32.store16
+   (i32.const 5338)
+   (i32.const -22528)
   )
   (i64.store align=4
    (i32.const 5340)
    (i64.const 0)
   )
-  ;;@ ./ops.h:152:0
-  (i64.store align=4
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
+  (i32.store
    (i32.const 5348)
-   (i64.const 0)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1688)
+    (i32.const 1764)
    )
   )
   (if
@@ -3785,7 +698,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5344)
+    (i32.const 5340)
    )
   )
   (if
@@ -3803,11 +716,11 @@
      )
     )
     (i32.store8
-     (i32.const 5355)
+     (i32.const 5351)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5344)
+     (i32.const 5340)
     )
    )
    (block
@@ -3832,7 +745,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5344)
+     (i32.const 5340)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3843,12 +756,12 @@
      )
     )
     (i32.store
-     (i32.const 5352)
+     (i32.const 5348)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5348)
+     (i32.const 5344)
      (get_local $1)
     )
    )
@@ -3857,7 +770,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1688)
+    (i32.const 1764)
     (get_local $1)
    )
   )
@@ -3876,24 +789,33 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:152:0
+  ;;@ ./ops.h:121:0
   (i32.store
+   (i32.const 5352)
+   (i32.const 20)
+  )
+  ;;@ ./ops.h:124:0
+  (i32.store16
    (i32.const 5356)
-   (i32.const 40)
+   (i32.const -128)
+  )
+  (i32.store16
+   (i32.const 5358)
+   (i32.const -20480)
   )
   (i64.store align=4
    (i32.const 5360)
    (i64.const 0)
   )
-  ;;@ ./ops.h:153:0
-  (i64.store align=4
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/memory:2208:0
+  (i32.store
    (i32.const 5368)
-   (i64.const 0)
+   (i32.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1691)
+    (i32.const 1782)
    )
   )
   (if
@@ -3904,7 +826,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5364)
+    (i32.const 5360)
    )
   )
   (if
@@ -3922,11 +844,11 @@
      )
     )
     (i32.store8
-     (i32.const 5375)
+     (i32.const 5371)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5364)
+     (i32.const 5360)
     )
    )
    (block
@@ -3951,7 +873,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5364)
+     (i32.const 5360)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -3962,12 +884,12 @@
      )
     )
     (i32.store
-     (i32.const 5372)
+     (i32.const 5368)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5368)
+     (i32.const 5364)
      (get_local $1)
     )
    )
@@ -3976,7 +898,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1691)
+    (i32.const 1782)
     (get_local $1)
    )
   )
@@ -3995,24 +917,2523 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:153:0
+  ;;@ ./ops.h:124:0
   (i32.store
+   (i32.const 5372)
+   (i32.const 20)
+  )
+  (i64.store align=4
    (i32.const 5376)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:127:0
+  (i64.store align=4
+   (i32.const 5384)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1795)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5380)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5391)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5380)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5380)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5388)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5384)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1795)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:127:0
+  (i32.store
+   (i32.const 5392)
+   (i32.const 21)
+  )
+  (i64.store align=4
+   (i32.const 5396)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:128:0
+  (i64.store align=4
+   (i32.const 5404)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1812)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5400)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5411)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5400)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5400)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5408)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5404)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1812)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:128:0
+  (i32.store
+   (i32.const 5412)
+   (i32.const 22)
+  )
+  (i64.store align=4
+   (i32.const 5416)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:129:0
+  (i64.store align=4
+   (i32.const 5424)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1816)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5420)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5431)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5420)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5420)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5428)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5424)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1816)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:129:0
+  (i32.store
+   (i32.const 5432)
+   (i32.const 23)
+  )
+  (i64.store align=4
+   (i32.const 5436)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:130:0
+  (i64.store align=4
+   (i32.const 5444)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1840)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5440)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5451)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5440)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5440)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5448)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5444)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1840)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:130:0
+  (i32.store
+   (i32.const 5452)
+   (i32.const 24)
+  )
+  (i64.store align=4
+   (i32.const 5456)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:131:0
+  (i64.store align=4
+   (i32.const 5464)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1871)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5460)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5471)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5460)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5460)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5468)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5464)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1871)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:131:0
+  (i32.store
+   (i32.const 5472)
+   (i32.const 25)
+  )
+  (i64.store align=4
+   (i32.const 5476)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:132:0
+  (i64.store align=4
+   (i32.const 5484)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1895)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5480)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5491)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5480)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5480)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5488)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5484)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1895)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:132:0
+  (i32.store
+   (i32.const 5492)
+   (i32.const 26)
+  )
+  (i64.store align=4
+   (i32.const 5496)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:133:0
+  (i64.store align=4
+   (i32.const 5504)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1897)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5500)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5511)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5500)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5500)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5508)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5504)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1897)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:133:0
+  (i32.store
+   (i32.const 5512)
+   (i32.const 27)
+  )
+  (i64.store align=4
+   (i32.const 5516)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:134:0
+  (i64.store align=4
+   (i32.const 5524)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1901)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5520)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5531)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5520)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5520)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5528)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5524)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1901)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:134:0
+  (i32.store
+   (i32.const 5532)
+   (i32.const 28)
+  )
+  (i64.store align=4
+   (i32.const 5536)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:135:0
+  (i64.store align=4
+   (i32.const 5544)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1905)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5540)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5551)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5540)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5540)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5548)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5544)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1905)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:135:0
+  (i32.store
+   (i32.const 5552)
+   (i32.const 29)
+  )
+  (i64.store align=4
+   (i32.const 5556)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:136:0
+  (i64.store align=4
+   (i32.const 5564)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1909)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5560)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5571)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5560)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5560)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5568)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5564)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1909)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:136:0
+  (i32.store
+   (i32.const 5572)
+   (i32.const 30)
+  )
+  (i64.store align=4
+   (i32.const 5576)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:137:0
+  (i64.store align=4
+   (i32.const 5584)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1913)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5580)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5591)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5580)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5580)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5588)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5584)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1913)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:137:0
+  (i32.store
+   (i32.const 5592)
+   (i32.const 31)
+  )
+  (i64.store align=4
+   (i32.const 5596)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:138:0
+  (i64.store align=4
+   (i32.const 5604)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1917)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5600)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5611)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5600)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5600)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5608)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5604)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1917)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:138:0
+  (i32.store
+   (i32.const 5612)
+   (i32.const 32)
+  )
+  (i64.store align=4
+   (i32.const 5616)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:139:0
+  (i64.store align=4
+   (i32.const 5624)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1921)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5620)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5631)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5620)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5620)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5628)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5624)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1921)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:139:0
+  (i32.store
+   (i32.const 5632)
+   (i32.const 33)
+  )
+  (i64.store align=4
+   (i32.const 5636)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:140:0
+  (i64.store align=4
+   (i32.const 5644)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1925)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5640)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5651)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5640)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5640)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5648)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5644)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1925)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:140:0
+  (i32.store
+   (i32.const 5652)
+   (i32.const 34)
+  )
+  (i64.store align=4
+   (i32.const 5656)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:141:0
+  (i64.store align=4
+   (i32.const 5664)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1929)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5660)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5671)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5660)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5660)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5668)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5664)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1929)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:141:0
+  (i32.store
+   (i32.const 5672)
+   (i32.const 35)
+  )
+  (i64.store align=4
+   (i32.const 5676)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:142:0
+  (i64.store align=4
+   (i32.const 5684)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1933)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5680)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5691)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5680)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5680)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5688)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5684)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1933)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:142:0
+  (i32.store
+   (i32.const 5692)
+   (i32.const 36)
+  )
+  (i64.store align=4
+   (i32.const 5696)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:143:0
+  (i64.store align=4
+   (i32.const 5704)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1937)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5700)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5711)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5700)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5700)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5708)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5704)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1937)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:143:0
+  (i32.store
+   (i32.const 5712)
+   (i32.const 37)
+  )
+  (i64.store align=4
+   (i32.const 5716)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:144:0
+  (i64.store align=4
+   (i32.const 5724)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1941)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5720)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5731)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5720)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5720)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5728)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5724)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1941)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:144:0
+  (i32.store
+   (i32.const 5732)
+   (i32.const 38)
+  )
+  (i64.store align=4
+   (i32.const 5736)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:145:0
+  (i64.store align=4
+   (i32.const 5744)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1945)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5740)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5751)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5740)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5740)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5748)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5744)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1945)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:145:0
+  (i32.store
+   (i32.const 5752)
+   (i32.const 39)
+  )
+  (i64.store align=4
+   (i32.const 5756)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:146:0
+  (i64.store align=4
+   (i32.const 5764)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1949)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5760)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5771)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5760)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5760)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5768)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5764)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1949)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:146:0
+  (i32.store
+   (i32.const 5772)
+   (i32.const 40)
+  )
+  (i64.store align=4
+   (i32.const 5776)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:147:0
+  (i64.store align=4
+   (i32.const 5784)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 1953)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 5780)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 5791)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 5780)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 5780)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 5788)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 5784)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 1953)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:147:0
+  (i32.store
+   (i32.const 5792)
    (i32.const 41)
   )
   (i64.store align=4
-   (i32.const 5380)
+   (i32.const 5796)
    (i64.const 0)
   )
-  ;;@ ./ops.h:154:0
+  ;;@ ./ops.h:148:0
   (i64.store align=4
-   (i32.const 5388)
+   (i32.const 5804)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1706)
+    (i32.const 1957)
    )
   )
   (if
@@ -4023,7 +3444,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5384)
+    (i32.const 5800)
    )
   )
   (if
@@ -4041,11 +3462,11 @@
      )
     )
     (i32.store8
-     (i32.const 5395)
+     (i32.const 5811)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5384)
+     (i32.const 5800)
     )
    )
    (block
@@ -4070,7 +3491,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5384)
+     (i32.const 5800)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4081,12 +3502,12 @@
      )
     )
     (i32.store
-     (i32.const 5392)
+     (i32.const 5808)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5388)
+     (i32.const 5804)
      (get_local $1)
     )
    )
@@ -4095,7 +3516,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1706)
+    (i32.const 1957)
     (get_local $1)
    )
   )
@@ -4114,24 +3535,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:154:0
+  ;;@ ./ops.h:148:0
   (i32.store
-   (i32.const 5396)
+   (i32.const 5812)
    (i32.const 42)
   )
   (i64.store align=4
-   (i32.const 5400)
+   (i32.const 5816)
    (i64.const 0)
   )
-  ;;@ ./ops.h:155:0
+  ;;@ ./ops.h:149:0
   (i64.store align=4
-   (i32.const 5408)
+   (i32.const 5824)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1716)
+    (i32.const 1962)
    )
   )
   (if
@@ -4142,7 +3563,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5404)
+    (i32.const 5820)
    )
   )
   (if
@@ -4160,11 +3581,11 @@
      )
     )
     (i32.store8
-     (i32.const 5415)
+     (i32.const 5831)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5404)
+     (i32.const 5820)
     )
    )
    (block
@@ -4189,7 +3610,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5404)
+     (i32.const 5820)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4200,12 +3621,12 @@
      )
     )
     (i32.store
-     (i32.const 5412)
+     (i32.const 5828)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5408)
+     (i32.const 5824)
      (get_local $1)
     )
    )
@@ -4214,7 +3635,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1716)
+    (i32.const 1962)
     (get_local $1)
    )
   )
@@ -4233,24 +3654,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:155:0
+  ;;@ ./ops.h:149:0
   (i32.store
-   (i32.const 5416)
+   (i32.const 5832)
    (i32.const 43)
   )
   (i64.store align=4
-   (i32.const 5420)
+   (i32.const 5836)
    (i64.const 0)
   )
-  ;;@ ./ops.h:156:0
+  ;;@ ./ops.h:150:0
   (i64.store align=4
-   (i32.const 5428)
+   (i32.const 5844)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1726)
+    (i32.const 1965)
    )
   )
   (if
@@ -4261,7 +3682,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5424)
+    (i32.const 5840)
    )
   )
   (if
@@ -4279,11 +3700,11 @@
      )
     )
     (i32.store8
-     (i32.const 5435)
+     (i32.const 5851)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5424)
+     (i32.const 5840)
     )
    )
    (block
@@ -4308,7 +3729,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5424)
+     (i32.const 5840)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4319,12 +3740,12 @@
      )
     )
     (i32.store
-     (i32.const 5432)
+     (i32.const 5848)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5428)
+     (i32.const 5844)
      (get_local $1)
     )
    )
@@ -4333,7 +3754,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1726)
+    (i32.const 1965)
     (get_local $1)
    )
   )
@@ -4352,24 +3773,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:156:0
+  ;;@ ./ops.h:150:0
   (i32.store
-   (i32.const 5436)
+   (i32.const 5852)
    (i32.const 44)
   )
   (i64.store align=4
-   (i32.const 5440)
+   (i32.const 5856)
    (i64.const 0)
   )
-  ;;@ ./ops.h:157:0
+  ;;@ ./ops.h:151:0
   (i64.store align=4
-   (i32.const 5448)
+   (i32.const 5864)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1730)
+    (i32.const 1980)
    )
   )
   (if
@@ -4380,7 +3801,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5444)
+    (i32.const 5860)
    )
   )
   (if
@@ -4398,11 +3819,11 @@
      )
     )
     (i32.store8
-     (i32.const 5455)
+     (i32.const 5871)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5444)
+     (i32.const 5860)
     )
    )
    (block
@@ -4427,7 +3848,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5444)
+     (i32.const 5860)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4438,12 +3859,12 @@
      )
     )
     (i32.store
-     (i32.const 5452)
+     (i32.const 5868)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5448)
+     (i32.const 5864)
      (get_local $1)
     )
    )
@@ -4452,7 +3873,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1730)
+    (i32.const 1980)
     (get_local $1)
    )
   )
@@ -4471,24 +3892,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:157:0
+  ;;@ ./ops.h:151:0
   (i32.store
-   (i32.const 5456)
+   (i32.const 5872)
    (i32.const 45)
   )
   (i64.store align=4
-   (i32.const 5460)
+   (i32.const 5876)
    (i64.const 0)
   )
-  ;;@ ./ops.h:158:0
+  ;;@ ./ops.h:152:0
   (i64.store align=4
-   (i32.const 5468)
+   (i32.const 5884)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1734)
+    (i32.const 1983)
    )
   )
   (if
@@ -4499,7 +3920,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5464)
+    (i32.const 5880)
    )
   )
   (if
@@ -4517,11 +3938,11 @@
      )
     )
     (i32.store8
-     (i32.const 5475)
+     (i32.const 5891)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5464)
+     (i32.const 5880)
     )
    )
    (block
@@ -4546,7 +3967,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5464)
+     (i32.const 5880)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4557,12 +3978,12 @@
      )
     )
     (i32.store
-     (i32.const 5472)
+     (i32.const 5888)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5468)
+     (i32.const 5884)
      (get_local $1)
     )
    )
@@ -4571,7 +3992,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1734)
+    (i32.const 1983)
     (get_local $1)
    )
   )
@@ -4590,24 +4011,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:158:0
+  ;;@ ./ops.h:152:0
   (i32.store
-   (i32.const 5476)
+   (i32.const 5892)
    (i32.const 46)
   )
   (i64.store align=4
-   (i32.const 5480)
+   (i32.const 5896)
    (i64.const 0)
   )
-  ;;@ ./ops.h:159:0
+  ;;@ ./ops.h:153:0
   (i64.store align=4
-   (i32.const 5488)
+   (i32.const 5904)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1738)
+    (i32.const 1998)
    )
   )
   (if
@@ -4618,7 +4039,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5484)
+    (i32.const 5900)
    )
   )
   (if
@@ -4636,11 +4057,11 @@
      )
     )
     (i32.store8
-     (i32.const 5495)
+     (i32.const 5911)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5484)
+     (i32.const 5900)
     )
    )
    (block
@@ -4665,7 +4086,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5484)
+     (i32.const 5900)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4676,12 +4097,12 @@
      )
     )
     (i32.store
-     (i32.const 5492)
+     (i32.const 5908)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5488)
+     (i32.const 5904)
      (get_local $1)
     )
    )
@@ -4690,7 +4111,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1738)
+    (i32.const 1998)
     (get_local $1)
    )
   )
@@ -4709,24 +4130,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:159:0
+  ;;@ ./ops.h:153:0
   (i32.store
-   (i32.const 5496)
+   (i32.const 5912)
    (i32.const 47)
   )
   (i64.store align=4
-   (i32.const 5500)
+   (i32.const 5916)
    (i64.const 0)
   )
-  ;;@ ./ops.h:160:0
+  ;;@ ./ops.h:154:0
   (i64.store align=4
-   (i32.const 5508)
+   (i32.const 5924)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1742)
+    (i32.const 2008)
    )
   )
   (if
@@ -4737,7 +4158,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5504)
+    (i32.const 5920)
    )
   )
   (if
@@ -4755,11 +4176,11 @@
      )
     )
     (i32.store8
-     (i32.const 5515)
+     (i32.const 5931)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5504)
+     (i32.const 5920)
     )
    )
    (block
@@ -4784,7 +4205,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5504)
+     (i32.const 5920)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4795,12 +4216,12 @@
      )
     )
     (i32.store
-     (i32.const 5512)
+     (i32.const 5928)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5508)
+     (i32.const 5924)
      (get_local $1)
     )
    )
@@ -4809,7 +4230,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1742)
+    (i32.const 2008)
     (get_local $1)
    )
   )
@@ -4828,24 +4249,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:160:0
+  ;;@ ./ops.h:154:0
   (i32.store
-   (i32.const 5516)
+   (i32.const 5932)
    (i32.const 48)
   )
   (i64.store align=4
-   (i32.const 5520)
+   (i32.const 5936)
    (i64.const 0)
   )
-  ;;@ ./ops.h:161:0
+  ;;@ ./ops.h:155:0
   (i64.store align=4
-   (i32.const 5528)
+   (i32.const 5944)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1746)
+    (i32.const 2018)
    )
   )
   (if
@@ -4856,7 +4277,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5524)
+    (i32.const 5940)
    )
   )
   (if
@@ -4874,11 +4295,11 @@
      )
     )
     (i32.store8
-     (i32.const 5535)
+     (i32.const 5951)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5524)
+     (i32.const 5940)
     )
    )
    (block
@@ -4903,7 +4324,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5524)
+     (i32.const 5940)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -4914,12 +4335,12 @@
      )
     )
     (i32.store
-     (i32.const 5532)
+     (i32.const 5948)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5528)
+     (i32.const 5944)
      (get_local $1)
     )
    )
@@ -4928,7 +4349,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1746)
+    (i32.const 2018)
     (get_local $1)
    )
   )
@@ -4947,24 +4368,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:161:0
+  ;;@ ./ops.h:155:0
   (i32.store
-   (i32.const 5536)
+   (i32.const 5952)
    (i32.const 49)
   )
   (i64.store align=4
-   (i32.const 5540)
+   (i32.const 5956)
    (i64.const 0)
   )
-  ;;@ ./ops.h:162:0
+  ;;@ ./ops.h:156:0
   (i64.store align=4
-   (i32.const 5548)
+   (i32.const 5964)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1750)
+    (i32.const 2022)
    )
   )
   (if
@@ -4975,7 +4396,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5544)
+    (i32.const 5960)
    )
   )
   (if
@@ -4993,11 +4414,11 @@
      )
     )
     (i32.store8
-     (i32.const 5555)
+     (i32.const 5971)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5544)
+     (i32.const 5960)
     )
    )
    (block
@@ -5022,7 +4443,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5544)
+     (i32.const 5960)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5033,12 +4454,12 @@
      )
     )
     (i32.store
-     (i32.const 5552)
+     (i32.const 5968)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5548)
+     (i32.const 5964)
      (get_local $1)
     )
    )
@@ -5047,7 +4468,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1750)
+    (i32.const 2022)
     (get_local $1)
    )
   )
@@ -5066,24 +4487,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:162:0
+  ;;@ ./ops.h:156:0
   (i32.store
-   (i32.const 5556)
+   (i32.const 5972)
    (i32.const 50)
   )
   (i64.store align=4
-   (i32.const 5560)
+   (i32.const 5976)
    (i64.const 0)
   )
-  ;;@ ./ops.h:163:0
+  ;;@ ./ops.h:157:0
   (i64.store align=4
-   (i32.const 5568)
+   (i32.const 5984)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1766)
+    (i32.const 2026)
    )
   )
   (if
@@ -5094,7 +4515,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5564)
+    (i32.const 5980)
    )
   )
   (if
@@ -5112,11 +4533,11 @@
      )
     )
     (i32.store8
-     (i32.const 5575)
+     (i32.const 5991)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5564)
+     (i32.const 5980)
     )
    )
    (block
@@ -5141,7 +4562,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5564)
+     (i32.const 5980)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5152,12 +4573,12 @@
      )
     )
     (i32.store
-     (i32.const 5572)
+     (i32.const 5988)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5568)
+     (i32.const 5984)
      (get_local $1)
     )
    )
@@ -5166,7 +4587,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1766)
+    (i32.const 2026)
     (get_local $1)
    )
   )
@@ -5185,24 +4606,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:163:0
+  ;;@ ./ops.h:157:0
   (i32.store
-   (i32.const 5576)
+   (i32.const 5992)
    (i32.const 51)
   )
   (i64.store align=4
-   (i32.const 5580)
+   (i32.const 5996)
    (i64.const 0)
   )
-  ;;@ ./ops.h:164:0
+  ;;@ ./ops.h:158:0
   (i64.store align=4
-   (i32.const 5588)
+   (i32.const 6004)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1780)
+    (i32.const 2030)
    )
   )
   (if
@@ -5213,7 +4634,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5584)
+    (i32.const 6000)
    )
   )
   (if
@@ -5231,11 +4652,11 @@
      )
     )
     (i32.store8
-     (i32.const 5595)
+     (i32.const 6011)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5584)
+     (i32.const 6000)
     )
    )
    (block
@@ -5260,7 +4681,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5584)
+     (i32.const 6000)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5271,12 +4692,12 @@
      )
     )
     (i32.store
-     (i32.const 5592)
+     (i32.const 6008)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5588)
+     (i32.const 6004)
      (get_local $1)
     )
    )
@@ -5285,7 +4706,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1780)
+    (i32.const 2030)
     (get_local $1)
    )
   )
@@ -5304,24 +4725,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:164:0
+  ;;@ ./ops.h:158:0
   (i32.store
-   (i32.const 5596)
+   (i32.const 6012)
    (i32.const 52)
   )
   (i64.store align=4
-   (i32.const 5600)
+   (i32.const 6016)
    (i64.const 0)
   )
-  ;;@ ./ops.h:165:0
+  ;;@ ./ops.h:159:0
   (i64.store align=4
-   (i32.const 5608)
+   (i32.const 6024)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1795)
+    (i32.const 2034)
    )
   )
   (if
@@ -5332,7 +4753,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5604)
+    (i32.const 6020)
    )
   )
   (if
@@ -5350,11 +4771,11 @@
      )
     )
     (i32.store8
-     (i32.const 5615)
+     (i32.const 6031)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5604)
+     (i32.const 6020)
     )
    )
    (block
@@ -5379,7 +4800,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5604)
+     (i32.const 6020)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5390,12 +4811,12 @@
      )
     )
     (i32.store
-     (i32.const 5612)
+     (i32.const 6028)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5608)
+     (i32.const 6024)
      (get_local $1)
     )
    )
@@ -5404,7 +4825,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1795)
+    (i32.const 2034)
     (get_local $1)
    )
   )
@@ -5423,24 +4844,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:165:0
+  ;;@ ./ops.h:159:0
   (i32.store
-   (i32.const 5616)
+   (i32.const 6032)
    (i32.const 53)
   )
   (i64.store align=4
-   (i32.const 5620)
+   (i32.const 6036)
    (i64.const 0)
   )
-  ;;@ ./ops.h:166:0
+  ;;@ ./ops.h:160:0
   (i64.store align=4
-   (i32.const 5628)
+   (i32.const 6044)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1812)
+    (i32.const 2038)
    )
   )
   (if
@@ -5451,7 +4872,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5624)
+    (i32.const 6040)
    )
   )
   (if
@@ -5469,11 +4890,11 @@
      )
     )
     (i32.store8
-     (i32.const 5635)
+     (i32.const 6051)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5624)
+     (i32.const 6040)
     )
    )
    (block
@@ -5498,7 +4919,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5624)
+     (i32.const 6040)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5509,12 +4930,12 @@
      )
     )
     (i32.store
-     (i32.const 5632)
+     (i32.const 6048)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5628)
+     (i32.const 6044)
      (get_local $1)
     )
    )
@@ -5523,7 +4944,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1812)
+    (i32.const 2038)
     (get_local $1)
    )
   )
@@ -5542,24 +4963,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:166:0
+  ;;@ ./ops.h:160:0
   (i32.store
-   (i32.const 5636)
+   (i32.const 6052)
    (i32.const 54)
   )
   (i64.store align=4
-   (i32.const 5640)
+   (i32.const 6056)
    (i64.const 0)
   )
-  ;;@ ./ops.h:167:0
+  ;;@ ./ops.h:161:0
   (i64.store align=4
-   (i32.const 5648)
+   (i32.const 6064)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1828)
+    (i32.const 2042)
    )
   )
   (if
@@ -5570,7 +4991,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5644)
+    (i32.const 6060)
    )
   )
   (if
@@ -5588,11 +5009,11 @@
      )
     )
     (i32.store8
-     (i32.const 5655)
+     (i32.const 6071)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5644)
+     (i32.const 6060)
     )
    )
    (block
@@ -5617,7 +5038,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5644)
+     (i32.const 6060)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5628,12 +5049,12 @@
      )
     )
     (i32.store
-     (i32.const 5652)
+     (i32.const 6068)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5648)
+     (i32.const 6064)
      (get_local $1)
     )
    )
@@ -5642,7 +5063,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1828)
+    (i32.const 2042)
     (get_local $1)
    )
   )
@@ -5661,24 +5082,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:167:0
+  ;;@ ./ops.h:161:0
   (i32.store
-   (i32.const 5656)
+   (i32.const 6072)
    (i32.const 55)
   )
   (i64.store align=4
-   (i32.const 5660)
+   (i32.const 6076)
    (i64.const 0)
   )
-  ;;@ ./ops.h:168:0
+  ;;@ ./ops.h:162:0
   (i64.store align=4
-   (i32.const 5668)
+   (i32.const 6084)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1845)
+    (i32.const 2058)
    )
   )
   (if
@@ -5689,7 +5110,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5664)
+    (i32.const 6080)
    )
   )
   (if
@@ -5707,11 +5128,11 @@
      )
     )
     (i32.store8
-     (i32.const 5675)
+     (i32.const 6091)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5664)
+     (i32.const 6080)
     )
    )
    (block
@@ -5736,7 +5157,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5664)
+     (i32.const 6080)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5747,12 +5168,12 @@
      )
     )
     (i32.store
-     (i32.const 5672)
+     (i32.const 6088)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5668)
+     (i32.const 6084)
      (get_local $1)
     )
    )
@@ -5761,7 +5182,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1845)
+    (i32.const 2058)
     (get_local $1)
    )
   )
@@ -5780,24 +5201,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:168:0
+  ;;@ ./ops.h:162:0
   (i32.store
-   (i32.const 5676)
+   (i32.const 6092)
    (i32.const 56)
   )
   (i64.store align=4
-   (i32.const 5680)
+   (i32.const 6096)
    (i64.const 0)
   )
-  ;;@ ./ops.h:169:0
+  ;;@ ./ops.h:163:0
   (i64.store align=4
-   (i32.const 5688)
+   (i32.const 6104)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1861)
+    (i32.const 2082)
    )
   )
   (if
@@ -5808,7 +5229,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5684)
+    (i32.const 6100)
    )
   )
   (if
@@ -5826,11 +5247,11 @@
      )
     )
     (i32.store8
-     (i32.const 5695)
+     (i32.const 6111)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5684)
+     (i32.const 6100)
     )
    )
    (block
@@ -5855,7 +5276,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5684)
+     (i32.const 6100)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5866,12 +5287,12 @@
      )
     )
     (i32.store
-     (i32.const 5692)
+     (i32.const 6108)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5688)
+     (i32.const 6104)
      (get_local $1)
     )
    )
@@ -5880,7 +5301,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1861)
+    (i32.const 2082)
     (get_local $1)
    )
   )
@@ -5899,24 +5320,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:169:0
+  ;;@ ./ops.h:163:0
   (i32.store
-   (i32.const 5696)
+   (i32.const 6112)
    (i32.const 57)
   )
   (i64.store align=4
-   (i32.const 5700)
+   (i32.const 6116)
    (i64.const 0)
   )
-  ;;@ ./ops.h:170:0
+  ;;@ ./ops.h:164:0
   (i64.store align=4
-   (i32.const 5708)
+   (i32.const 6124)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1867)
+    (i32.const 2097)
    )
   )
   (if
@@ -5927,7 +5348,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5704)
+    (i32.const 6120)
    )
   )
   (if
@@ -5945,11 +5366,11 @@
      )
     )
     (i32.store8
-     (i32.const 5715)
+     (i32.const 6131)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5704)
+     (i32.const 6120)
     )
    )
    (block
@@ -5974,7 +5395,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5704)
+     (i32.const 6120)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -5985,12 +5406,12 @@
      )
     )
     (i32.store
-     (i32.const 5712)
+     (i32.const 6128)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5708)
+     (i32.const 6124)
      (get_local $1)
     )
    )
@@ -5999,7 +5420,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1867)
+    (i32.const 2097)
     (get_local $1)
    )
   )
@@ -6018,24 +5439,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:170:0
+  ;;@ ./ops.h:164:0
   (i32.store
-   (i32.const 5716)
+   (i32.const 6132)
    (i32.const 58)
   )
   (i64.store align=4
-   (i32.const 5720)
+   (i32.const 6136)
    (i64.const 0)
   )
-  ;;@ ./ops.h:171:0
+  ;;@ ./ops.h:165:0
   (i64.store align=4
-   (i32.const 5728)
+   (i32.const 6144)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1873)
+    (i32.const 2114)
    )
   )
   (if
@@ -6046,7 +5467,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5724)
+    (i32.const 6140)
    )
   )
   (if
@@ -6064,11 +5485,11 @@
      )
     )
     (i32.store8
-     (i32.const 5735)
+     (i32.const 6151)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5724)
+     (i32.const 6140)
     )
    )
    (block
@@ -6093,7 +5514,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5724)
+     (i32.const 6140)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6104,12 +5525,12 @@
      )
     )
     (i32.store
-     (i32.const 5732)
+     (i32.const 6148)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5728)
+     (i32.const 6144)
      (get_local $1)
     )
    )
@@ -6118,7 +5539,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1873)
+    (i32.const 2114)
     (get_local $1)
    )
   )
@@ -6137,24 +5558,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:171:0
+  ;;@ ./ops.h:165:0
   (i32.store
-   (i32.const 5736)
+   (i32.const 6152)
    (i32.const 59)
   )
   (i64.store align=4
-   (i32.const 5740)
+   (i32.const 6156)
    (i64.const 0)
   )
-  ;;@ ./ops.h:172:0
+  ;;@ ./ops.h:166:0
   (i64.store align=4
-   (i32.const 5748)
+   (i32.const 6164)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1883)
+    (i32.const 2130)
    )
   )
   (if
@@ -6165,7 +5586,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5744)
+    (i32.const 6160)
    )
   )
   (if
@@ -6183,11 +5604,11 @@
      )
     )
     (i32.store8
-     (i32.const 5755)
+     (i32.const 6171)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5744)
+     (i32.const 6160)
     )
    )
    (block
@@ -6212,7 +5633,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5744)
+     (i32.const 6160)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6223,12 +5644,12 @@
      )
     )
     (i32.store
-     (i32.const 5752)
+     (i32.const 6168)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5748)
+     (i32.const 6164)
      (get_local $1)
     )
    )
@@ -6237,7 +5658,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1883)
+    (i32.const 2130)
     (get_local $1)
    )
   )
@@ -6256,24 +5677,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:172:0
+  ;;@ ./ops.h:166:0
   (i32.store
-   (i32.const 5756)
+   (i32.const 6172)
    (i32.const 60)
   )
   (i64.store align=4
-   (i32.const 5760)
+   (i32.const 6176)
    (i64.const 0)
   )
-  ;;@ ./ops.h:173:0
+  ;;@ ./ops.h:167:0
   (i64.store align=4
-   (i32.const 5768)
+   (i32.const 6184)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1898)
+    (i32.const 2147)
    )
   )
   (if
@@ -6284,7 +5705,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5764)
+    (i32.const 6180)
    )
   )
   (if
@@ -6302,11 +5723,11 @@
      )
     )
     (i32.store8
-     (i32.const 5775)
+     (i32.const 6191)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5764)
+     (i32.const 6180)
     )
    )
    (block
@@ -6331,7 +5752,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5764)
+     (i32.const 6180)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6342,12 +5763,12 @@
      )
     )
     (i32.store
-     (i32.const 5772)
+     (i32.const 6188)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5768)
+     (i32.const 6184)
      (get_local $1)
     )
    )
@@ -6356,7 +5777,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1898)
+    (i32.const 2147)
     (get_local $1)
    )
   )
@@ -6375,24 +5796,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:173:0
+  ;;@ ./ops.h:167:0
   (i32.store
-   (i32.const 5776)
+   (i32.const 6192)
    (i32.const 61)
   )
   (i64.store align=4
-   (i32.const 5780)
+   (i32.const 6196)
    (i64.const 0)
   )
-  ;;@ ./ops.h:174:0
+  ;;@ ./ops.h:168:0
   (i64.store align=4
-   (i32.const 5788)
+   (i32.const 6204)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1908)
+    (i32.const 2163)
    )
   )
   (if
@@ -6403,7 +5824,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5784)
+    (i32.const 6200)
    )
   )
   (if
@@ -6421,11 +5842,11 @@
      )
     )
     (i32.store8
-     (i32.const 5795)
+     (i32.const 6211)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5784)
+     (i32.const 6200)
     )
    )
    (block
@@ -6450,7 +5871,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5784)
+     (i32.const 6200)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6461,12 +5882,12 @@
      )
     )
     (i32.store
-     (i32.const 5792)
+     (i32.const 6208)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5788)
+     (i32.const 6204)
      (get_local $1)
     )
    )
@@ -6475,7 +5896,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1908)
+    (i32.const 2163)
     (get_local $1)
    )
   )
@@ -6494,24 +5915,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:174:0
+  ;;@ ./ops.h:168:0
   (i32.store
-   (i32.const 5796)
+   (i32.const 6212)
    (i32.const 62)
   )
   (i64.store align=4
-   (i32.const 5800)
+   (i32.const 6216)
    (i64.const 0)
   )
-  ;;@ ./ops.h:175:0
+  ;;@ ./ops.h:169:0
   (i64.store align=4
-   (i32.const 5808)
+   (i32.const 6224)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1918)
+    (i32.const 2169)
    )
   )
   (if
@@ -6522,7 +5943,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5804)
+    (i32.const 6220)
    )
   )
   (if
@@ -6540,11 +5961,11 @@
      )
     )
     (i32.store8
-     (i32.const 5815)
+     (i32.const 6231)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5804)
+     (i32.const 6220)
     )
    )
    (block
@@ -6569,7 +5990,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5804)
+     (i32.const 6220)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6580,12 +6001,12 @@
      )
     )
     (i32.store
-     (i32.const 5812)
+     (i32.const 6228)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5808)
+     (i32.const 6224)
      (get_local $1)
     )
    )
@@ -6594,7 +6015,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1918)
+    (i32.const 2169)
     (get_local $1)
    )
   )
@@ -6613,24 +6034,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:175:0
+  ;;@ ./ops.h:169:0
   (i32.store
-   (i32.const 5816)
+   (i32.const 6232)
    (i32.const 63)
   )
   (i64.store align=4
-   (i32.const 5820)
+   (i32.const 6236)
    (i64.const 0)
   )
-  ;;@ ./ops.h:176:0
+  ;;@ ./ops.h:170:0
   (i64.store align=4
-   (i32.const 5828)
+   (i32.const 6244)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1928)
+    (i32.const 2175)
    )
   )
   (if
@@ -6641,7 +6062,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5824)
+    (i32.const 6240)
    )
   )
   (if
@@ -6659,11 +6080,11 @@
      )
     )
     (i32.store8
-     (i32.const 5835)
+     (i32.const 6251)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5824)
+     (i32.const 6240)
     )
    )
    (block
@@ -6688,7 +6109,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5824)
+     (i32.const 6240)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6699,12 +6120,12 @@
      )
     )
     (i32.store
-     (i32.const 5832)
+     (i32.const 6248)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5828)
+     (i32.const 6244)
      (get_local $1)
     )
    )
@@ -6713,7 +6134,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1928)
+    (i32.const 2175)
     (get_local $1)
    )
   )
@@ -6732,24 +6153,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:176:0
+  ;;@ ./ops.h:170:0
   (i32.store
-   (i32.const 5836)
+   (i32.const 6252)
    (i32.const 64)
   )
   (i64.store align=4
-   (i32.const 5840)
+   (i32.const 6256)
    (i64.const 0)
   )
-  ;;@ ./ops.h:177:0
+  ;;@ ./ops.h:171:0
   (i64.store align=4
-   (i32.const 5848)
+   (i32.const 6264)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1938)
+    (i32.const 2185)
    )
   )
   (if
@@ -6760,7 +6181,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5844)
+    (i32.const 6260)
    )
   )
   (if
@@ -6778,11 +6199,11 @@
      )
     )
     (i32.store8
-     (i32.const 5855)
+     (i32.const 6271)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5844)
+     (i32.const 6260)
     )
    )
    (block
@@ -6807,7 +6228,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5844)
+     (i32.const 6260)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6818,12 +6239,12 @@
      )
     )
     (i32.store
-     (i32.const 5852)
+     (i32.const 6268)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5848)
+     (i32.const 6264)
      (get_local $1)
     )
    )
@@ -6832,7 +6253,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1938)
+    (i32.const 2185)
     (get_local $1)
    )
   )
@@ -6851,24 +6272,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:177:0
+  ;;@ ./ops.h:171:0
   (i32.store
-   (i32.const 5856)
+   (i32.const 6272)
    (i32.const 65)
   )
   (i64.store align=4
-   (i32.const 5860)
+   (i32.const 6276)
    (i64.const 0)
   )
-  ;;@ ./ops.h:178:0
+  ;;@ ./ops.h:172:0
   (i64.store align=4
-   (i32.const 5868)
+   (i32.const 6284)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1942)
+    (i32.const 2200)
    )
   )
   (if
@@ -6879,7 +6300,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5864)
+    (i32.const 6280)
    )
   )
   (if
@@ -6897,11 +6318,11 @@
      )
     )
     (i32.store8
-     (i32.const 5875)
+     (i32.const 6291)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5864)
+     (i32.const 6280)
     )
    )
    (block
@@ -6926,7 +6347,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5864)
+     (i32.const 6280)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -6937,12 +6358,12 @@
      )
     )
     (i32.store
-     (i32.const 5872)
+     (i32.const 6288)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5868)
+     (i32.const 6284)
      (get_local $1)
     )
    )
@@ -6951,7 +6372,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1942)
+    (i32.const 2200)
     (get_local $1)
    )
   )
@@ -6970,24 +6391,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:178:0
+  ;;@ ./ops.h:172:0
   (i32.store
-   (i32.const 5876)
+   (i32.const 6292)
    (i32.const 66)
   )
   (i64.store align=4
-   (i32.const 5880)
+   (i32.const 6296)
    (i64.const 0)
   )
-  ;;@ ./ops.h:179:0
+  ;;@ ./ops.h:173:0
   (i64.store align=4
-   (i32.const 5888)
+   (i32.const 6304)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1946)
+    (i32.const 2210)
    )
   )
   (if
@@ -6998,7 +6419,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5884)
+    (i32.const 6300)
    )
   )
   (if
@@ -7016,11 +6437,11 @@
      )
     )
     (i32.store8
-     (i32.const 5895)
+     (i32.const 6311)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5884)
+     (i32.const 6300)
     )
    )
    (block
@@ -7045,7 +6466,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5884)
+     (i32.const 6300)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7056,12 +6477,12 @@
      )
     )
     (i32.store
-     (i32.const 5892)
+     (i32.const 6308)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5888)
+     (i32.const 6304)
      (get_local $1)
     )
    )
@@ -7070,7 +6491,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1946)
+    (i32.const 2210)
     (get_local $1)
    )
   )
@@ -7089,24 +6510,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:179:0
+  ;;@ ./ops.h:173:0
   (i32.store
-   (i32.const 5896)
+   (i32.const 6312)
    (i32.const 67)
   )
   (i64.store align=4
-   (i32.const 5900)
+   (i32.const 6316)
    (i64.const 0)
   )
-  ;;@ ./ops.h:180:0
+  ;;@ ./ops.h:174:0
   (i64.store align=4
-   (i32.const 5908)
+   (i32.const 6324)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1950)
+    (i32.const 2220)
    )
   )
   (if
@@ -7117,7 +6538,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5904)
+    (i32.const 6320)
    )
   )
   (if
@@ -7135,11 +6556,11 @@
      )
     )
     (i32.store8
-     (i32.const 5915)
+     (i32.const 6331)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5904)
+     (i32.const 6320)
     )
    )
    (block
@@ -7164,7 +6585,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5904)
+     (i32.const 6320)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7175,12 +6596,12 @@
      )
     )
     (i32.store
-     (i32.const 5912)
+     (i32.const 6328)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5908)
+     (i32.const 6324)
      (get_local $1)
     )
    )
@@ -7189,7 +6610,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1950)
+    (i32.const 2220)
     (get_local $1)
    )
   )
@@ -7208,24 +6629,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:180:0
+  ;;@ ./ops.h:174:0
   (i32.store
-   (i32.const 5916)
+   (i32.const 6332)
    (i32.const 68)
   )
   (i64.store align=4
-   (i32.const 5920)
+   (i32.const 6336)
    (i64.const 0)
   )
-  ;;@ ./ops.h:181:0
+  ;;@ ./ops.h:175:0
   (i64.store align=4
-   (i32.const 5928)
+   (i32.const 6344)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1965)
+    (i32.const 2230)
    )
   )
   (if
@@ -7236,7 +6657,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5924)
+    (i32.const 6340)
    )
   )
   (if
@@ -7254,11 +6675,11 @@
      )
     )
     (i32.store8
-     (i32.const 5935)
+     (i32.const 6351)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5924)
+     (i32.const 6340)
     )
    )
    (block
@@ -7283,7 +6704,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5924)
+     (i32.const 6340)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7294,12 +6715,12 @@
      )
     )
     (i32.store
-     (i32.const 5932)
+     (i32.const 6348)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5928)
+     (i32.const 6344)
      (get_local $1)
     )
    )
@@ -7308,7 +6729,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1965)
+    (i32.const 2230)
     (get_local $1)
    )
   )
@@ -7327,24 +6748,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:181:0
+  ;;@ ./ops.h:175:0
   (i32.store
-   (i32.const 5936)
+   (i32.const 6352)
    (i32.const 69)
   )
   (i64.store align=4
-   (i32.const 5940)
+   (i32.const 6356)
    (i64.const 0)
   )
-  ;;@ ./ops.h:182:0
+  ;;@ ./ops.h:176:0
   (i64.store align=4
-   (i32.const 5948)
+   (i32.const 6364)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1969)
+    (i32.const 2240)
    )
   )
   (if
@@ -7355,7 +6776,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5944)
+    (i32.const 6360)
    )
   )
   (if
@@ -7373,11 +6794,11 @@
      )
     )
     (i32.store8
-     (i32.const 5955)
+     (i32.const 6371)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5944)
+     (i32.const 6360)
     )
    )
    (block
@@ -7402,7 +6823,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5944)
+     (i32.const 6360)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7413,12 +6834,12 @@
      )
     )
     (i32.store
-     (i32.const 5952)
+     (i32.const 6368)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5948)
+     (i32.const 6364)
      (get_local $1)
     )
    )
@@ -7427,7 +6848,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1969)
+    (i32.const 2240)
     (get_local $1)
    )
   )
@@ -7446,24 +6867,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:182:0
+  ;;@ ./ops.h:176:0
   (i32.store
-   (i32.const 5956)
+   (i32.const 6372)
    (i32.const 70)
   )
   (i64.store align=4
-   (i32.const 5960)
+   (i32.const 6376)
    (i64.const 0)
   )
-  ;;@ ./ops.h:183:0
+  ;;@ ./ops.h:177:0
   (i64.store align=4
-   (i32.const 5968)
+   (i32.const 6384)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1984)
+    (i32.const 2244)
    )
   )
   (if
@@ -7474,7 +6895,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5964)
+    (i32.const 6380)
    )
   )
   (if
@@ -7492,11 +6913,11 @@
      )
     )
     (i32.store8
-     (i32.const 5975)
+     (i32.const 6391)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5964)
+     (i32.const 6380)
     )
    )
    (block
@@ -7521,7 +6942,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5964)
+     (i32.const 6380)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7532,12 +6953,12 @@
      )
     )
     (i32.store
-     (i32.const 5972)
+     (i32.const 6388)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5968)
+     (i32.const 6384)
      (get_local $1)
     )
    )
@@ -7546,7 +6967,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1984)
+    (i32.const 2244)
     (get_local $1)
    )
   )
@@ -7565,24 +6986,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:183:0
+  ;;@ ./ops.h:177:0
   (i32.store
-   (i32.const 5976)
+   (i32.const 6392)
    (i32.const 71)
   )
   (i64.store align=4
-   (i32.const 5980)
+   (i32.const 6396)
    (i64.const 0)
   )
-  ;;@ ./ops.h:184:0
+  ;;@ ./ops.h:178:0
   (i64.store align=4
-   (i32.const 5988)
+   (i32.const 6404)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1989)
+    (i32.const 2248)
    )
   )
   (if
@@ -7593,7 +7014,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 5984)
+    (i32.const 6400)
    )
   )
   (if
@@ -7611,11 +7032,11 @@
      )
     )
     (i32.store8
-     (i32.const 5995)
+     (i32.const 6411)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 5984)
+     (i32.const 6400)
     )
    )
    (block
@@ -7640,7 +7061,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 5984)
+     (i32.const 6400)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7651,12 +7072,12 @@
      )
     )
     (i32.store
-     (i32.const 5992)
+     (i32.const 6408)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 5988)
+     (i32.const 6404)
      (get_local $1)
     )
    )
@@ -7665,7 +7086,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1989)
+    (i32.const 2248)
     (get_local $1)
    )
   )
@@ -7684,24 +7105,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:184:0
+  ;;@ ./ops.h:178:0
   (i32.store
-   (i32.const 5996)
+   (i32.const 6412)
    (i32.const 72)
   )
   (i64.store align=4
-   (i32.const 6000)
+   (i32.const 6416)
    (i64.const 0)
   )
-  ;;@ ./ops.h:185:0
+  ;;@ ./ops.h:179:0
   (i64.store align=4
-   (i32.const 6008)
+   (i32.const 6424)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1993)
+    (i32.const 2252)
    )
   )
   (if
@@ -7712,7 +7133,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6004)
+    (i32.const 6420)
    )
   )
   (if
@@ -7730,11 +7151,11 @@
      )
     )
     (i32.store8
-     (i32.const 6015)
+     (i32.const 6431)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6004)
+     (i32.const 6420)
     )
    )
    (block
@@ -7759,7 +7180,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6004)
+     (i32.const 6420)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7770,12 +7191,12 @@
      )
     )
     (i32.store
-     (i32.const 6012)
+     (i32.const 6428)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6008)
+     (i32.const 6424)
      (get_local $1)
     )
    )
@@ -7784,7 +7205,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1993)
+    (i32.const 2252)
     (get_local $1)
    )
   )
@@ -7803,24 +7224,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:185:0
+  ;;@ ./ops.h:179:0
   (i32.store
-   (i32.const 6016)
+   (i32.const 6432)
    (i32.const 73)
   )
   (i64.store align=4
-   (i32.const 6020)
+   (i32.const 6436)
    (i64.const 0)
   )
-  ;;@ ./ops.h:186:0
+  ;;@ ./ops.h:180:0
   (i64.store align=4
-   (i32.const 6028)
+   (i32.const 6444)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 1997)
+    (i32.const 2267)
    )
   )
   (if
@@ -7831,7 +7252,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6024)
+    (i32.const 6440)
    )
   )
   (if
@@ -7849,11 +7270,11 @@
      )
     )
     (i32.store8
-     (i32.const 6035)
+     (i32.const 6451)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6024)
+     (i32.const 6440)
     )
    )
    (block
@@ -7878,7 +7299,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6024)
+     (i32.const 6440)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -7889,12 +7310,12 @@
      )
     )
     (i32.store
-     (i32.const 6032)
+     (i32.const 6448)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6028)
+     (i32.const 6444)
      (get_local $1)
     )
    )
@@ -7903,7 +7324,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 1997)
+    (i32.const 2267)
     (get_local $1)
    )
   )
@@ -7922,24 +7343,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:186:0
+  ;;@ ./ops.h:180:0
   (i32.store
-   (i32.const 6036)
+   (i32.const 6452)
    (i32.const 74)
   )
   (i64.store align=4
-   (i32.const 6040)
+   (i32.const 6456)
    (i64.const 0)
   )
-  ;;@ ./ops.h:187:0
+  ;;@ ./ops.h:181:0
   (i64.store align=4
-   (i32.const 6048)
+   (i32.const 6464)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2003)
+    (i32.const 2271)
    )
   )
   (if
@@ -7950,7 +7371,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6044)
+    (i32.const 6460)
    )
   )
   (if
@@ -7968,11 +7389,11 @@
      )
     )
     (i32.store8
-     (i32.const 6055)
+     (i32.const 6471)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6044)
+     (i32.const 6460)
     )
    )
    (block
@@ -7997,7 +7418,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6044)
+     (i32.const 6460)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8008,12 +7429,12 @@
      )
     )
     (i32.store
-     (i32.const 6052)
+     (i32.const 6468)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6048)
+     (i32.const 6464)
      (get_local $1)
     )
    )
@@ -8022,7 +7443,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2003)
+    (i32.const 2271)
     (get_local $1)
    )
   )
@@ -8041,24 +7462,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:187:0
+  ;;@ ./ops.h:181:0
   (i32.store
-   (i32.const 6056)
+   (i32.const 6472)
    (i32.const 75)
   )
   (i64.store align=4
-   (i32.const 6060)
+   (i32.const 6476)
    (i64.const 0)
   )
-  ;;@ ./ops.h:188:0
+  ;;@ ./ops.h:182:0
   (i64.store align=4
-   (i32.const 6068)
+   (i32.const 6484)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2009)
+    (i32.const 2286)
    )
   )
   (if
@@ -8069,7 +7490,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6064)
+    (i32.const 6480)
    )
   )
   (if
@@ -8087,11 +7508,11 @@
      )
     )
     (i32.store8
-     (i32.const 6075)
+     (i32.const 6491)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6064)
+     (i32.const 6480)
     )
    )
    (block
@@ -8116,7 +7537,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6064)
+     (i32.const 6480)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8127,12 +7548,12 @@
      )
     )
     (i32.store
-     (i32.const 6072)
+     (i32.const 6488)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6068)
+     (i32.const 6484)
      (get_local $1)
     )
    )
@@ -8141,7 +7562,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2009)
+    (i32.const 2286)
     (get_local $1)
    )
   )
@@ -8160,24 +7581,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:188:0
+  ;;@ ./ops.h:182:0
   (i32.store
-   (i32.const 6076)
+   (i32.const 6492)
    (i32.const 76)
   )
   (i64.store align=4
-   (i32.const 6080)
+   (i32.const 6496)
    (i64.const 0)
   )
-  ;;@ ./ops.h:189:0
+  ;;@ ./ops.h:183:0
   (i64.store align=4
-   (i32.const 6088)
+   (i32.const 6504)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2013)
+    (i32.const 2291)
    )
   )
   (if
@@ -8188,7 +7609,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6084)
+    (i32.const 6500)
    )
   )
   (if
@@ -8206,11 +7627,11 @@
      )
     )
     (i32.store8
-     (i32.const 6095)
+     (i32.const 6511)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6084)
+     (i32.const 6500)
     )
    )
    (block
@@ -8235,7 +7656,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6084)
+     (i32.const 6500)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8246,12 +7667,12 @@
      )
     )
     (i32.store
-     (i32.const 6092)
+     (i32.const 6508)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6088)
+     (i32.const 6504)
      (get_local $1)
     )
    )
@@ -8260,7 +7681,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2013)
+    (i32.const 2291)
     (get_local $1)
    )
   )
@@ -8279,24 +7700,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:189:0
+  ;;@ ./ops.h:183:0
   (i32.store
-   (i32.const 6096)
+   (i32.const 6512)
    (i32.const 77)
   )
   (i64.store align=4
-   (i32.const 6100)
+   (i32.const 6516)
    (i64.const 0)
   )
-  ;;@ ./ops.h:190:0
+  ;;@ ./ops.h:184:0
   (i64.store align=4
-   (i32.const 6108)
+   (i32.const 6524)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2017)
+    (i32.const 2295)
    )
   )
   (if
@@ -8307,7 +7728,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6104)
+    (i32.const 6520)
    )
   )
   (if
@@ -8325,11 +7746,11 @@
      )
     )
     (i32.store8
-     (i32.const 6115)
+     (i32.const 6531)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6104)
+     (i32.const 6520)
     )
    )
    (block
@@ -8354,7 +7775,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6104)
+     (i32.const 6520)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8365,12 +7786,12 @@
      )
     )
     (i32.store
-     (i32.const 6112)
+     (i32.const 6528)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6108)
+     (i32.const 6524)
      (get_local $1)
     )
    )
@@ -8379,7 +7800,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2017)
+    (i32.const 2295)
     (get_local $1)
    )
   )
@@ -8398,24 +7819,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:190:0
+  ;;@ ./ops.h:184:0
   (i32.store
-   (i32.const 6116)
+   (i32.const 6532)
    (i32.const 78)
   )
   (i64.store align=4
-   (i32.const 6120)
+   (i32.const 6536)
    (i64.const 0)
   )
-  ;;@ ./ops.h:191:0
+  ;;@ ./ops.h:185:0
   (i64.store align=4
-   (i32.const 6128)
+   (i32.const 6544)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2032)
+    (i32.const 2299)
    )
   )
   (if
@@ -8426,7 +7847,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6124)
+    (i32.const 6540)
    )
   )
   (if
@@ -8444,11 +7865,11 @@
      )
     )
     (i32.store8
-     (i32.const 6135)
+     (i32.const 6551)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6124)
+     (i32.const 6540)
     )
    )
    (block
@@ -8473,7 +7894,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6124)
+     (i32.const 6540)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8484,12 +7905,12 @@
      )
     )
     (i32.store
-     (i32.const 6132)
+     (i32.const 6548)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6128)
+     (i32.const 6544)
      (get_local $1)
     )
    )
@@ -8498,7 +7919,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2032)
+    (i32.const 2299)
     (get_local $1)
    )
   )
@@ -8517,24 +7938,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:191:0
+  ;;@ ./ops.h:185:0
   (i32.store
-   (i32.const 6136)
+   (i32.const 6552)
    (i32.const 79)
   )
   (i64.store align=4
-   (i32.const 6140)
+   (i32.const 6556)
    (i64.const 0)
   )
-  ;;@ ./ops.h:192:0
+  ;;@ ./ops.h:186:0
   (i64.store align=4
-   (i32.const 6148)
+   (i32.const 6564)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2036)
+    (i32.const 2305)
    )
   )
   (if
@@ -8545,7 +7966,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6144)
+    (i32.const 6560)
    )
   )
   (if
@@ -8563,11 +7984,11 @@
      )
     )
     (i32.store8
-     (i32.const 6155)
+     (i32.const 6571)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6144)
+     (i32.const 6560)
     )
    )
    (block
@@ -8592,7 +8013,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6144)
+     (i32.const 6560)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8603,12 +8024,12 @@
      )
     )
     (i32.store
-     (i32.const 6152)
+     (i32.const 6568)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6148)
+     (i32.const 6564)
      (get_local $1)
     )
    )
@@ -8617,7 +8038,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2036)
+    (i32.const 2305)
     (get_local $1)
    )
   )
@@ -8636,24 +8057,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:192:0
+  ;;@ ./ops.h:186:0
   (i32.store
-   (i32.const 6156)
+   (i32.const 6572)
    (i32.const 80)
   )
   (i64.store align=4
-   (i32.const 6160)
+   (i32.const 6576)
    (i64.const 0)
   )
-  ;;@ ./ops.h:193:0
+  ;;@ ./ops.h:187:0
   (i64.store align=4
-   (i32.const 6168)
+   (i32.const 6584)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2040)
+    (i32.const 2311)
    )
   )
   (if
@@ -8664,7 +8085,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6164)
+    (i32.const 6580)
    )
   )
   (if
@@ -8682,11 +8103,11 @@
      )
     )
     (i32.store8
-     (i32.const 6175)
+     (i32.const 6591)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6164)
+     (i32.const 6580)
     )
    )
    (block
@@ -8711,7 +8132,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6164)
+     (i32.const 6580)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8722,12 +8143,12 @@
      )
     )
     (i32.store
-     (i32.const 6172)
+     (i32.const 6588)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6168)
+     (i32.const 6584)
      (get_local $1)
     )
    )
@@ -8736,7 +8157,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2040)
+    (i32.const 2311)
     (get_local $1)
    )
   )
@@ -8755,24 +8176,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:193:0
+  ;;@ ./ops.h:187:0
   (i32.store
-   (i32.const 6176)
+   (i32.const 6592)
    (i32.const 81)
   )
   (i64.store align=4
-   (i32.const 6180)
+   (i32.const 6596)
    (i64.const 0)
   )
-  ;;@ ./ops.h:194:0
+  ;;@ ./ops.h:188:0
   (i64.store align=4
-   (i32.const 6188)
+   (i32.const 6604)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2056)
+    (i32.const 2315)
    )
   )
   (if
@@ -8783,7 +8204,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6184)
+    (i32.const 6600)
    )
   )
   (if
@@ -8801,11 +8222,11 @@
      )
     )
     (i32.store8
-     (i32.const 6195)
+     (i32.const 6611)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6184)
+     (i32.const 6600)
     )
    )
    (block
@@ -8830,7 +8251,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6184)
+     (i32.const 6600)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8841,12 +8262,12 @@
      )
     )
     (i32.store
-     (i32.const 6192)
+     (i32.const 6608)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6188)
+     (i32.const 6604)
      (get_local $1)
     )
    )
@@ -8855,7 +8276,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2056)
+    (i32.const 2315)
     (get_local $1)
    )
   )
@@ -8874,24 +8295,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:194:0
+  ;;@ ./ops.h:188:0
   (i32.store
-   (i32.const 6196)
+   (i32.const 6612)
    (i32.const 82)
   )
   (i64.store align=4
-   (i32.const 6200)
+   (i32.const 6616)
    (i64.const 0)
   )
-  ;;@ ./ops.h:195:0
+  ;;@ ./ops.h:189:0
   (i64.store align=4
-   (i32.const 6208)
+   (i32.const 6624)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2071)
+    (i32.const 2319)
    )
   )
   (if
@@ -8902,7 +8323,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6204)
+    (i32.const 6620)
    )
   )
   (if
@@ -8920,11 +8341,11 @@
      )
     )
     (i32.store8
-     (i32.const 6215)
+     (i32.const 6631)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6204)
+     (i32.const 6620)
     )
    )
    (block
@@ -8949,7 +8370,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6204)
+     (i32.const 6620)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -8960,12 +8381,12 @@
      )
     )
     (i32.store
-     (i32.const 6212)
+     (i32.const 6628)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6208)
+     (i32.const 6624)
      (get_local $1)
     )
    )
@@ -8974,7 +8395,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2071)
+    (i32.const 2319)
     (get_local $1)
    )
   )
@@ -8993,24 +8414,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:195:0
+  ;;@ ./ops.h:189:0
   (i32.store
-   (i32.const 6216)
+   (i32.const 6632)
    (i32.const 83)
   )
   (i64.store align=4
-   (i32.const 6220)
+   (i32.const 6636)
    (i64.const 0)
   )
-  ;;@ ./ops.h:196:0
+  ;;@ ./ops.h:190:0
   (i64.store align=4
-   (i32.const 6228)
+   (i32.const 6644)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2088)
+    (i32.const 2334)
    )
   )
   (if
@@ -9021,7 +8442,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6224)
+    (i32.const 6640)
    )
   )
   (if
@@ -9039,11 +8460,11 @@
      )
     )
     (i32.store8
-     (i32.const 6235)
+     (i32.const 6651)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6224)
+     (i32.const 6640)
     )
    )
    (block
@@ -9068,7 +8489,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6224)
+     (i32.const 6640)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9079,12 +8500,12 @@
      )
     )
     (i32.store
-     (i32.const 6232)
+     (i32.const 6648)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6228)
+     (i32.const 6644)
      (get_local $1)
     )
    )
@@ -9093,7 +8514,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2088)
+    (i32.const 2334)
     (get_local $1)
    )
   )
@@ -9112,24 +8533,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:196:0
+  ;;@ ./ops.h:190:0
   (i32.store
-   (i32.const 6236)
+   (i32.const 6652)
    (i32.const 84)
   )
   (i64.store align=4
-   (i32.const 6240)
+   (i32.const 6656)
    (i64.const 0)
   )
-  ;;@ ./ops.h:197:0
+  ;;@ ./ops.h:191:0
   (i64.store align=4
-   (i32.const 6248)
+   (i32.const 6664)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2104)
+    (i32.const 2338)
    )
   )
   (if
@@ -9140,7 +8561,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6244)
+    (i32.const 6660)
    )
   )
   (if
@@ -9158,11 +8579,11 @@
      )
     )
     (i32.store8
-     (i32.const 6255)
+     (i32.const 6671)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6244)
+     (i32.const 6660)
     )
    )
    (block
@@ -9187,7 +8608,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6244)
+     (i32.const 6660)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9198,12 +8619,12 @@
      )
     )
     (i32.store
-     (i32.const 6252)
+     (i32.const 6668)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6248)
+     (i32.const 6664)
      (get_local $1)
     )
    )
@@ -9212,7 +8633,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2104)
+    (i32.const 2338)
     (get_local $1)
    )
   )
@@ -9231,24 +8652,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:197:0
+  ;;@ ./ops.h:191:0
   (i32.store
-   (i32.const 6256)
+   (i32.const 6672)
    (i32.const 85)
   )
   (i64.store align=4
-   (i32.const 6260)
+   (i32.const 6676)
    (i64.const 0)
   )
-  ;;@ ./ops.h:198:0
+  ;;@ ./ops.h:192:0
   (i64.store align=4
-   (i32.const 6268)
+   (i32.const 6684)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2121)
+    (i32.const 2342)
    )
   )
   (if
@@ -9259,7 +8680,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6264)
+    (i32.const 6680)
    )
   )
   (if
@@ -9277,11 +8698,11 @@
      )
     )
     (i32.store8
-     (i32.const 6275)
+     (i32.const 6691)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6264)
+     (i32.const 6680)
     )
    )
    (block
@@ -9306,7 +8727,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6264)
+     (i32.const 6680)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9317,12 +8738,12 @@
      )
     )
     (i32.store
-     (i32.const 6272)
+     (i32.const 6688)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6268)
+     (i32.const 6684)
      (get_local $1)
     )
    )
@@ -9331,7 +8752,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2121)
+    (i32.const 2342)
     (get_local $1)
    )
   )
@@ -9350,24 +8771,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:198:0
+  ;;@ ./ops.h:192:0
   (i32.store
-   (i32.const 6276)
+   (i32.const 6692)
    (i32.const 86)
   )
   (i64.store align=4
-   (i32.const 6280)
+   (i32.const 6696)
    (i64.const 0)
   )
-  ;;@ ./ops.h:199:0
+  ;;@ ./ops.h:193:0
   (i64.store align=4
-   (i32.const 6288)
+   (i32.const 6704)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2137)
+    (i32.const 2358)
    )
   )
   (if
@@ -9378,7 +8799,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6284)
+    (i32.const 6700)
    )
   )
   (if
@@ -9396,11 +8817,11 @@
      )
     )
     (i32.store8
-     (i32.const 6295)
+     (i32.const 6711)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6284)
+     (i32.const 6700)
     )
    )
    (block
@@ -9425,7 +8846,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6284)
+     (i32.const 6700)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9436,12 +8857,12 @@
      )
     )
     (i32.store
-     (i32.const 6292)
+     (i32.const 6708)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6288)
+     (i32.const 6704)
      (get_local $1)
     )
    )
@@ -9450,7 +8871,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2137)
+    (i32.const 2358)
     (get_local $1)
    )
   )
@@ -9469,24 +8890,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:199:0
+  ;;@ ./ops.h:193:0
   (i32.store
-   (i32.const 6296)
+   (i32.const 6712)
    (i32.const 87)
   )
   (i64.store align=4
-   (i32.const 6300)
+   (i32.const 6716)
    (i64.const 0)
   )
-  ;;@ ./ops.h:200:0
+  ;;@ ./ops.h:194:0
   (i64.store align=4
-   (i32.const 6308)
+   (i32.const 6724)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2153)
+    (i32.const 2373)
    )
   )
   (if
@@ -9497,7 +8918,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6304)
+    (i32.const 6720)
    )
   )
   (if
@@ -9515,11 +8936,11 @@
      )
     )
     (i32.store8
-     (i32.const 6315)
+     (i32.const 6731)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6304)
+     (i32.const 6720)
     )
    )
    (block
@@ -9544,7 +8965,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6304)
+     (i32.const 6720)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9555,12 +8976,12 @@
      )
     )
     (i32.store
-     (i32.const 6312)
+     (i32.const 6728)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6308)
+     (i32.const 6724)
      (get_local $1)
     )
    )
@@ -9569,7 +8990,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2153)
+    (i32.const 2373)
     (get_local $1)
    )
   )
@@ -9588,24 +9009,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:200:0
+  ;;@ ./ops.h:194:0
   (i32.store
-   (i32.const 6316)
+   (i32.const 6732)
    (i32.const 88)
   )
   (i64.store align=4
-   (i32.const 6320)
+   (i32.const 6736)
    (i64.const 0)
   )
-  ;;@ ./ops.h:201:0
+  ;;@ ./ops.h:195:0
   (i64.store align=4
-   (i32.const 6328)
+   (i32.const 6744)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2168)
+    (i32.const 2390)
    )
   )
   (if
@@ -9616,7 +9037,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6324)
+    (i32.const 6740)
    )
   )
   (if
@@ -9634,11 +9055,11 @@
      )
     )
     (i32.store8
-     (i32.const 6335)
+     (i32.const 6751)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6324)
+     (i32.const 6740)
     )
    )
    (block
@@ -9663,7 +9084,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6324)
+     (i32.const 6740)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9674,12 +9095,12 @@
      )
     )
     (i32.store
-     (i32.const 6332)
+     (i32.const 6748)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6328)
+     (i32.const 6744)
      (get_local $1)
     )
    )
@@ -9688,7 +9109,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2168)
+    (i32.const 2390)
     (get_local $1)
    )
   )
@@ -9707,24 +9128,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:201:0
+  ;;@ ./ops.h:195:0
   (i32.store
-   (i32.const 6336)
+   (i32.const 6752)
    (i32.const 89)
   )
   (i64.store align=4
-   (i32.const 6340)
+   (i32.const 6756)
    (i64.const 0)
   )
-  ;;@ ./ops.h:202:0
+  ;;@ ./ops.h:196:0
   (i64.store align=4
-   (i32.const 6348)
+   (i32.const 6764)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2188)
+    (i32.const 2406)
    )
   )
   (if
@@ -9735,7 +9156,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6344)
+    (i32.const 6760)
    )
   )
   (if
@@ -9753,11 +9174,11 @@
      )
     )
     (i32.store8
-     (i32.const 6355)
+     (i32.const 6771)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6344)
+     (i32.const 6760)
     )
    )
    (block
@@ -9782,7 +9203,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6344)
+     (i32.const 6760)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9793,12 +9214,12 @@
      )
     )
     (i32.store
-     (i32.const 6352)
+     (i32.const 6768)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6348)
+     (i32.const 6764)
      (get_local $1)
     )
    )
@@ -9807,7 +9228,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2188)
+    (i32.const 2406)
     (get_local $1)
    )
   )
@@ -9826,24 +9247,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:202:0
+  ;;@ ./ops.h:196:0
   (i32.store
-   (i32.const 6356)
+   (i32.const 6772)
    (i32.const 90)
   )
   (i64.store align=4
-   (i32.const 6360)
+   (i32.const 6776)
    (i64.const 0)
   )
-  ;;@ ./ops.h:203:0
+  ;;@ ./ops.h:197:0
   (i64.store align=4
-   (i32.const 6368)
+   (i32.const 6784)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2192)
+    (i32.const 2423)
    )
   )
   (if
@@ -9854,7 +9275,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6364)
+    (i32.const 6780)
    )
   )
   (if
@@ -9872,11 +9293,11 @@
      )
     )
     (i32.store8
-     (i32.const 6375)
+     (i32.const 6791)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6364)
+     (i32.const 6780)
     )
    )
    (block
@@ -9901,7 +9322,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6364)
+     (i32.const 6780)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -9912,12 +9333,12 @@
      )
     )
     (i32.store
-     (i32.const 6372)
+     (i32.const 6788)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6368)
+     (i32.const 6784)
      (get_local $1)
     )
    )
@@ -9926,7 +9347,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2192)
+    (i32.const 2423)
     (get_local $1)
    )
   )
@@ -9945,24 +9366,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:203:0
+  ;;@ ./ops.h:197:0
   (i32.store
-   (i32.const 6376)
+   (i32.const 6792)
    (i32.const 91)
   )
   (i64.store align=4
-   (i32.const 6380)
+   (i32.const 6796)
    (i64.const 0)
   )
-  ;;@ ./ops.h:204:0
+  ;;@ ./ops.h:198:0
   (i64.store align=4
-   (i32.const 6388)
+   (i32.const 6804)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2197)
+    (i32.const 2439)
    )
   )
   (if
@@ -9973,7 +9394,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6384)
+    (i32.const 6800)
    )
   )
   (if
@@ -9991,11 +9412,11 @@
      )
     )
     (i32.store8
-     (i32.const 6395)
+     (i32.const 6811)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6384)
+     (i32.const 6800)
     )
    )
    (block
@@ -10020,7 +9441,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6384)
+     (i32.const 6800)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10031,12 +9452,12 @@
      )
     )
     (i32.store
-     (i32.const 6392)
+     (i32.const 6808)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6388)
+     (i32.const 6804)
      (get_local $1)
     )
    )
@@ -10045,7 +9466,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2197)
+    (i32.const 2439)
     (get_local $1)
    )
   )
@@ -10064,24 +9485,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:204:0
+  ;;@ ./ops.h:198:0
   (i32.store
-   (i32.const 6396)
+   (i32.const 6812)
    (i32.const 92)
   )
   (i64.store align=4
-   (i32.const 6400)
+   (i32.const 6816)
    (i64.const 0)
   )
-  ;;@ ./ops.h:205:0
+  ;;@ ./ops.h:199:0
   (i64.store align=4
-   (i32.const 6408)
+   (i32.const 6824)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2202)
+    (i32.const 2455)
    )
   )
   (if
@@ -10092,7 +9513,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6404)
+    (i32.const 6820)
    )
   )
   (if
@@ -10110,11 +9531,11 @@
      )
     )
     (i32.store8
-     (i32.const 6415)
+     (i32.const 6831)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6404)
+     (i32.const 6820)
     )
    )
    (block
@@ -10139,7 +9560,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6404)
+     (i32.const 6820)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10150,12 +9571,12 @@
      )
     )
     (i32.store
-     (i32.const 6412)
+     (i32.const 6828)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6408)
+     (i32.const 6824)
      (get_local $1)
     )
    )
@@ -10164,7 +9585,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2202)
+    (i32.const 2455)
     (get_local $1)
    )
   )
@@ -10183,24 +9604,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:205:0
+  ;;@ ./ops.h:199:0
   (i32.store
-   (i32.const 6416)
+   (i32.const 6832)
    (i32.const 93)
   )
   (i64.store align=4
-   (i32.const 6420)
+   (i32.const 6836)
    (i64.const 0)
   )
-  ;;@ ./ops.h:206:0
+  ;;@ ./ops.h:200:0
   (i64.store align=4
-   (i32.const 6428)
+   (i32.const 6844)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2217)
+    (i32.const 2470)
    )
   )
   (if
@@ -10211,7 +9632,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6424)
+    (i32.const 6840)
    )
   )
   (if
@@ -10229,11 +9650,11 @@
      )
     )
     (i32.store8
-     (i32.const 6435)
+     (i32.const 6851)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6424)
+     (i32.const 6840)
     )
    )
    (block
@@ -10258,7 +9679,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6424)
+     (i32.const 6840)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10269,12 +9690,12 @@
      )
     )
     (i32.store
-     (i32.const 6432)
+     (i32.const 6848)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6428)
+     (i32.const 6844)
      (get_local $1)
     )
    )
@@ -10283,7 +9704,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2217)
+    (i32.const 2470)
     (get_local $1)
    )
   )
@@ -10302,24 +9723,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:206:0
+  ;;@ ./ops.h:200:0
   (i32.store
-   (i32.const 6436)
+   (i32.const 6852)
    (i32.const 94)
   )
   (i64.store align=4
-   (i32.const 6440)
+   (i32.const 6856)
    (i64.const 0)
   )
-  ;;@ ./ops.h:207:0
+  ;;@ ./ops.h:201:0
   (i64.store align=4
-   (i32.const 6448)
+   (i32.const 6864)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2221)
+    (i32.const 2490)
    )
   )
   (if
@@ -10330,7 +9751,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6444)
+    (i32.const 6860)
    )
   )
   (if
@@ -10348,11 +9769,11 @@
      )
     )
     (i32.store8
-     (i32.const 6455)
+     (i32.const 6871)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6444)
+     (i32.const 6860)
     )
    )
    (block
@@ -10377,7 +9798,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6444)
+     (i32.const 6860)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10388,12 +9809,12 @@
      )
     )
     (i32.store
-     (i32.const 6452)
+     (i32.const 6868)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6448)
+     (i32.const 6864)
      (get_local $1)
     )
    )
@@ -10402,7 +9823,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2221)
+    (i32.const 2490)
     (get_local $1)
    )
   )
@@ -10421,24 +9842,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:207:0
+  ;;@ ./ops.h:201:0
   (i32.store
-   (i32.const 6456)
+   (i32.const 6872)
    (i32.const 95)
   )
   (i64.store align=4
-   (i32.const 6460)
+   (i32.const 6876)
    (i64.const 0)
   )
-  ;;@ ./ops.h:208:0
+  ;;@ ./ops.h:202:0
   (i64.store align=4
-   (i32.const 6468)
+   (i32.const 6884)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2226)
+    (i32.const 2494)
    )
   )
   (if
@@ -10449,7 +9870,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6464)
+    (i32.const 6880)
    )
   )
   (if
@@ -10467,11 +9888,11 @@
      )
     )
     (i32.store8
-     (i32.const 6475)
+     (i32.const 6891)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6464)
+     (i32.const 6880)
     )
    )
    (block
@@ -10496,7 +9917,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6464)
+     (i32.const 6880)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10507,12 +9928,12 @@
      )
     )
     (i32.store
-     (i32.const 6472)
+     (i32.const 6888)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6468)
+     (i32.const 6884)
      (get_local $1)
     )
    )
@@ -10521,7 +9942,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2226)
+    (i32.const 2494)
     (get_local $1)
    )
   )
@@ -10540,24 +9961,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:208:0
+  ;;@ ./ops.h:202:0
   (i32.store
-   (i32.const 6476)
+   (i32.const 6892)
    (i32.const 96)
   )
   (i64.store align=4
-   (i32.const 6480)
+   (i32.const 6896)
    (i64.const 0)
   )
-  ;;@ ./ops.h:209:0
+  ;;@ ./ops.h:203:0
   (i64.store align=4
-   (i32.const 6488)
+   (i32.const 6904)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2231)
+    (i32.const 2499)
    )
   )
   (if
@@ -10568,7 +9989,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6484)
+    (i32.const 6900)
    )
   )
   (if
@@ -10586,11 +10007,11 @@
      )
     )
     (i32.store8
-     (i32.const 6495)
+     (i32.const 6911)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6484)
+     (i32.const 6900)
     )
    )
    (block
@@ -10615,7 +10036,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6484)
+     (i32.const 6900)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10626,12 +10047,12 @@
      )
     )
     (i32.store
-     (i32.const 6492)
+     (i32.const 6908)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6488)
+     (i32.const 6904)
      (get_local $1)
     )
    )
@@ -10640,7 +10061,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2231)
+    (i32.const 2499)
     (get_local $1)
    )
   )
@@ -10659,24 +10080,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:209:0
+  ;;@ ./ops.h:203:0
   (i32.store
-   (i32.const 6496)
+   (i32.const 6912)
    (i32.const 97)
   )
   (i64.store align=4
-   (i32.const 6500)
+   (i32.const 6916)
    (i64.const 0)
   )
-  ;;@ ./ops.h:210:0
+  ;;@ ./ops.h:204:0
   (i64.store align=4
-   (i32.const 6508)
+   (i32.const 6924)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2235)
+    (i32.const 2504)
    )
   )
   (if
@@ -10687,7 +10108,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6504)
+    (i32.const 6920)
    )
   )
   (if
@@ -10705,11 +10126,11 @@
      )
     )
     (i32.store8
-     (i32.const 6515)
+     (i32.const 6931)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6504)
+     (i32.const 6920)
     )
    )
    (block
@@ -10734,7 +10155,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6504)
+     (i32.const 6920)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10745,12 +10166,12 @@
      )
     )
     (i32.store
-     (i32.const 6512)
+     (i32.const 6928)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6508)
+     (i32.const 6924)
      (get_local $1)
     )
    )
@@ -10759,7 +10180,7 @@
   (drop
    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
     (get_local $0)
-    (i32.const 2235)
+    (i32.const 2504)
     (get_local $1)
    )
   )
@@ -10778,24 +10199,24 @@
    (get_local $0)
    (get_local $3)
   )
-  ;;@ ./ops.h:210:0
+  ;;@ ./ops.h:204:0
   (i32.store
-   (i32.const 6516)
+   (i32.const 6932)
    (i32.const 98)
   )
   (i64.store align=4
-   (i32.const 6520)
+   (i32.const 6936)
    (i64.const 0)
   )
-  ;;@ ./ops.h:211:0
+  ;;@ ./ops.h:205:0
   (i64.store align=4
-   (i32.const 6528)
+   (i32.const 6944)
    (i64.const 0)
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
   (set_local $1
    (call $__ZNSt3__211char_traitsIcE6lengthEPKc
-    (i32.const 2239)
+    (i32.const 2519)
    )
   )
   (if
@@ -10806,7 +10227,7 @@
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
    (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
-    (i32.const 6524)
+    (i32.const 6940)
    )
   )
   (if
@@ -10815,7 +10236,6 @@
     (get_local $1)
     (i32.const 11)
    )
-   ;;@ ./ops.h:211:0
    (block
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
     (set_local $0
@@ -10825,17 +10245,613 @@
      )
     )
     (i32.store8
-     (i32.const 6535)
+     (i32.const 6951)
      (get_local $0)
     )
     (set_local $0
-     (i32.const 6524)
+     (i32.const 6940)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 6940)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 6948)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6944)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2519)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:205:0
+  (i32.store
+   (i32.const 6952)
+   (i32.const 99)
+  )
+  (i64.store align=4
+   (i32.const 6956)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:206:0
+  (i64.store align=4
+   (i32.const 6964)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2523)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 6960)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 6971)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 6960)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 6960)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 6968)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6964)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2523)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:206:0
+  (i32.store
+   (i32.const 6972)
+   (i32.const 100)
+  )
+  (i64.store align=4
+   (i32.const 6976)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:207:0
+  (i64.store align=4
+   (i32.const 6984)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2528)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 6980)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 6991)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 6980)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 6980)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 6988)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 6984)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2528)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:207:0
+  (i32.store
+   (i32.const 6992)
+   (i32.const 101)
+  )
+  (i64.store align=4
+   (i32.const 6996)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:208:0
+  (i64.store align=4
+   (i32.const 7004)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2533)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7000)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7011)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7000)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7000)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7008)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7004)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2533)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:208:0
+  (i32.store
+   (i32.const 7012)
+   (i32.const 102)
+  )
+  (i64.store align=4
+   (i32.const 7016)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:209:0
+  (i64.store align=4
+   (i32.const 7024)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2537)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7020)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7031)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7020)
+    )
+   )
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1320:0
+    (set_local $0
+     (i32.add
+      (get_local $1)
+      (i32.const 16)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $0)
+      (i32.const -16)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/new:215:0
+    (set_local $0
+     (call $__Znwj
+      (get_local $2)
+     )
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
+    (i32.store
+     (i32.const 7020)
+     (get_local $0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
+    (set_local $2
+     (i32.or
+      (get_local $2)
+      (i32.const -2147483648)
+     )
+    )
+    (i32.store
+     (i32.const 7028)
+     (get_local $2)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
+    (i32.store
+     (i32.const 7024)
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
+  (drop
+   (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+    (get_local $0)
+    (i32.const 2537)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1539:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (get_local $3)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (get_local $0)
+   (get_local $3)
+  )
+  ;;@ ./ops.h:209:0
+  (i32.store
+   (i32.const 7032)
+   (i32.const 103)
+  )
+  (i64.store align=4
+   (i32.const 7036)
+   (i64.const 0)
+  )
+  ;;@ ./ops.h:210:0
+  (i64.store align=4
+   (i32.const 7044)
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1547:0
+  (set_local $1
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2541)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1522:0
+   (i32.gt_u
+    (get_local $1)
+    (i32.const -17)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1523:0
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (i32.const 7040)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1525:0
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 11)
+   )
+   ;;@ ./ops.h:210:0
+   (block
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1239:0
+    (set_local $0
+     (i32.and
+      (get_local $1)
+      (i32.const 255)
+     )
+    )
+    (i32.store8
+     (i32.const 7051)
+     (get_local $0)
+    )
+    (set_local $0
+     (i32.const 7040)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
     (drop
      (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
       (get_local $0)
-      (i32.const 2239)
+      (i32.const 2541)
       (get_local $1)
      )
     )
@@ -10854,10 +10870,10 @@
      (get_local $0)
      (get_local $3)
     )
-    ;;@ ./ops.h:211:0
+    ;;@ ./ops.h:210:0
     (i32.store
-     (i32.const 6536)
-     (i32.const 99)
+     (i32.const 7052)
+     (i32.const 104)
     )
     (set_global $STACKTOP
      (get_local $4)
@@ -10885,7 +10901,7 @@
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1289:0
     (i32.store
-     (i32.const 6524)
+     (i32.const 7040)
      (get_local $0)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1282:0
@@ -10896,19 +10912,19 @@
      )
     )
     (i32.store
-     (i32.const 6532)
+     (i32.const 7048)
      (get_local $2)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1272:0
     (i32.store
-     (i32.const 6528)
+     (i32.const 7044)
      (get_local $1)
     )
     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1538:0
     (drop
      (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
       (get_local $0)
-      (i32.const 2239)
+      (i32.const 2541)
       (get_local $1)
      )
     )
@@ -10927,10 +10943,10 @@
      (get_local $0)
      (get_local $3)
     )
-    ;;@ ./ops.h:211:0
+    ;;@ ./ops.h:210:0
     (i32.store
-     (i32.const 6536)
-     (i32.const 99)
+     (i32.const 7052)
+     (i32.const 104)
     )
     (set_global $STACKTOP
      (get_local $4)
@@ -10938,11 +10954,11 @@
    )
   )
  )
- (func $__Z15op_adc_registerRA10_h (; 27 ;) (param $0 i32)
+ (func $__Z15op_adc_registerRA10_h (; 30 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
-  ;;@ test.cpp:1689:0
+  ;;@ test.cpp:1715:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -10966,7 +10982,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -10997,7 +11013,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -11007,7 +11023,7 @@
   )
   (set_local $3
    (i32.load8_s
-    (i32.const 1776642)
+    (i32.const 1777158)
    )
   )
   (set_local $3
@@ -11023,7 +11039,7 @@
     (get_local $3)
    )
   )
-  ;;@ test.cpp:1690:0
+  ;;@ test.cpp:1716:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11047,14 +11063,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1691:0
+  ;;@ test.cpp:1717:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -11062,39 +11078,39 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1692:0
+  ;;@ test.cpp:1718:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1693:0
+  ;;@ test.cpp:1719:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1694:0
+  ;;@ test.cpp:1720:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z16op_add_immediateRA10_h (; 28 ;) (param $0 i32)
+ (func $__Z16op_add_immediateRA10_h (; 31 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1591:0
+  ;;@ test.cpp:1617:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -11118,7 +11134,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -11150,7 +11166,7 @@
     (i32.const 0)
    )
   )
-  ;;@ test.cpp:1592:0
+  ;;@ test.cpp:1618:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11174,14 +11190,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1593:0
+  ;;@ test.cpp:1619:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -11189,39 +11205,39 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1594:0
+  ;;@ test.cpp:1620:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1595:0
+  ;;@ test.cpp:1621:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1596:0
+  ;;@ test.cpp:1622:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z15op_add_registerRA10_h (; 29 ;) (param $0 i32)
+ (func $__Z15op_add_registerRA10_h (; 32 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1644:0
+  ;;@ test.cpp:1670:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -11245,7 +11261,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -11276,7 +11292,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -11291,7 +11307,7 @@
     (i32.const 0)
    )
   )
-  ;;@ test.cpp:1645:0
+  ;;@ test.cpp:1671:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11308,34 +11324,34 @@
     (get_local $0)
     (i32.const 15)
    )
-   ;;@ test.cpp:1646:0
+   ;;@ test.cpp:1672:0
    (call $__Z10ALUWritePCj
     (get_local $1)
    )
-   ;;@ test.cpp:1656:0
+   ;;@ test.cpp:1682:0
    (block
-    ;;@ test.cpp:1645:0
+    ;;@ test.cpp:1671:0
     (set_local $0
      (i32.and
       (get_local $0)
       (i32.const 255)
      )
     )
-    ;;@ test.cpp:1648:0
+    ;;@ test.cpp:1674:0
     (set_local $0
      (i32.add
       (i32.shl
        (get_local $0)
        (i32.const 2)
       )
-      (i32.const 6540)
+      (i32.const 7056)
      )
     )
     (i32.store
      (get_local $0)
      (get_local $1)
     )
-    ;;@ test.cpp:1650:0
+    ;;@ test.cpp:1676:0
     (set_local $0
      (i32.shr_u
       (get_local $1)
@@ -11343,44 +11359,44 @@
      )
     )
     (i32.store8
-     (i32.const 1776640)
+     (i32.const 1777156)
      (get_local $0)
     )
-    ;;@ test.cpp:1651:0
+    ;;@ test.cpp:1677:0
     (set_local $0
      (i32.eqz
       (get_local $1)
      )
     )
     (i32.store8
-     (i32.const 1776641)
+     (i32.const 1777157)
      (get_local $0)
     )
-    ;;@ test.cpp:1652:0
+    ;;@ test.cpp:1678:0
     (i32.store8
-     (i32.const 1776642)
+     (i32.const 1777158)
      (i32.const 0)
     )
-    ;;@ test.cpp:1653:0
+    ;;@ test.cpp:1679:0
     (set_local $0
      (i32.load8_s
-      (i32.const 2071557)
+      (i32.const 2072073)
      )
     )
     (i32.store8
-     (i32.const 1776643)
+     (i32.const 1777159)
      (get_local $0)
     )
    )
   )
  )
- (func $__Z24op_add_sp_plus_immediateRA10_h (; 30 ;) (param $0 i32)
+ (func $__Z24op_add_sp_plus_immediateRA10_h (; 33 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1611:0
+  ;;@ test.cpp:1637:0
   (set_local $2
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
   (set_local $1
@@ -11407,7 +11423,7 @@
     (i32.const 0)
    )
   )
-  ;;@ test.cpp:1612:0
+  ;;@ test.cpp:1638:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11431,7 +11447,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -11439,13 +11455,13 @@
    (get_local $2)
   )
  )
- (func $__Z23op_add_sp_plus_registerRA10_h (; 31 ;) (param $0 i32)
+ (func $__Z23op_add_sp_plus_registerRA10_h (; 34 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1619:0
+  ;;@ test.cpp:1645:0
   (set_local $2
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
   (set_local $1
@@ -11471,7 +11487,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -11486,7 +11502,7 @@
     (i32.const 0)
    )
   )
-  ;;@ test.cpp:1620:0
+  ;;@ test.cpp:1646:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11503,27 +11519,27 @@
     (get_local $0)
     (i32.const 15)
    )
-   ;;@ test.cpp:1621:0
+   ;;@ test.cpp:1647:0
    (call $__Z10ALUWritePCj
     (get_local $2)
    )
-   ;;@ test.cpp:1625:0
+   ;;@ test.cpp:1651:0
    (block
-    ;;@ test.cpp:1620:0
+    ;;@ test.cpp:1646:0
     (set_local $0
      (i32.and
       (get_local $0)
       (i32.const 255)
      )
     )
-    ;;@ test.cpp:1623:0
+    ;;@ test.cpp:1649:0
     (set_local $0
      (i32.add
       (i32.shl
        (get_local $0)
        (i32.const 2)
       )
-      (i32.const 6540)
+      (i32.const 7056)
      )
     )
     (i32.store
@@ -11533,13 +11549,13 @@
    )
   )
  )
- (func $__Z6op_adrRA10_h (; 32 ;) (param $0 i32)
+ (func $__Z6op_adrRA10_h (; 35 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1291:0
+  ;;@ test.cpp:1317:0
   (set_local $1
    (i32.load
-    (i32.const 6600)
+    (i32.const 7116)
    )
   )
   (set_local $1
@@ -11571,7 +11587,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1292:0
+  ;;@ test.cpp:1318:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11595,10 +11611,10 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
-  ;;@ test.cpp:1294:0
+  ;;@ test.cpp:1320:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -11606,29 +11622,29 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1295:0
+  ;;@ test.cpp:1321:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1296:0
+  ;;@ test.cpp:1322:0
   (i32.store
    (get_local $2)
    (get_local $1)
   )
  )
- (func $__Z15op_and_registerRA10_h (; 33 ;) (param $0 i32)
+ (func $__Z15op_and_registerRA10_h (; 36 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1708:0
+  ;;@ test.cpp:1734:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -11652,7 +11668,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -11683,7 +11699,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -11720,14 +11736,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1709:0
+  ;;@ test.cpp:1735:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -11735,24 +11751,24 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1710:0
+  ;;@ test.cpp:1736:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
  )
- (func $__Z16op_asr_immediateRA10_h (; 34 ;) (param $0 i32)
+ (func $__Z16op_asr_immediateRA10_h (; 37 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1477:0
+  ;;@ test.cpp:1503:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -11776,7 +11792,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -11784,7 +11800,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1478:0
+  ;;@ test.cpp:1504:0
   (set_local $2
    (i32.add
     (get_local $0)
@@ -11808,7 +11824,7 @@
     (get_local $2)
    )
   )
-  ;;@ test.cpp:1479:0
+  ;;@ test.cpp:1505:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -11832,14 +11848,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1481:0
+  ;;@ test.cpp:1507:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -11847,28 +11863,1184 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1482:0
+  ;;@ test.cpp:1508:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1484:0
+  ;;@ test.cpp:1510:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
  )
- (func $__Z15op_asr_registerRA10_h (; 35 ;) (param $0 i32)
+ (func $__Z15op_asr_registerRA10_h (; 38 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
+  ;;@ test.cpp:1518:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1519:0
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $2
+   (i32.load16_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 65535)
+   )
+  )
+  (set_local $1
+   (i32.shr_s
+    (get_local $1)
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:1520:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+  ;;@ test.cpp:1522:0
+  (set_local $0
+   (i32.shr_u
+    (get_local $1)
+    (i32.const 31)
+   )
+  )
+  (i32.store8
+   (i32.const 1777156)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1523:0
+  (set_local $0
+   (i32.eqz
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (i32.const 1777157)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1525:0
+  (i32.store8
+   (i32.const 1777158)
+   (i32.const 0)
+  )
+ )
+ (func $__Z9op_branchRA10_h (; 39 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1137:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_eqRA10_h (; 40 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1142:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (if
+   (i32.eqz
+    (get_local $1)
+   )
+   ;;@ test.cpp:1145:0
+   (return)
+  )
+  ;;@ test.cpp:1143:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_neRA10_h (; 41 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1149:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (if
+   (get_local $1)
+   ;;@ test.cpp:1152:0
+   (return)
+  )
+  ;;@ test.cpp:1150:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_csRA10_h (; 42 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1156:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777158)
+   )
+  )
+  (if
+   (i32.eqz
+    (get_local $1)
+   )
+   ;;@ test.cpp:1159:0
+   (return)
+  )
+  ;;@ test.cpp:1157:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_ccRA10_h (; 43 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1163:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777158)
+   )
+  )
+  (if
+   (get_local $1)
+   ;;@ test.cpp:1166:0
+   (return)
+  )
+  ;;@ test.cpp:1164:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_miRA10_h (; 44 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1170:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777156)
+   )
+  )
+  (if
+   (i32.eqz
+    (get_local $1)
+   )
+   ;;@ test.cpp:1173:0
+   (return)
+  )
+  ;;@ test.cpp:1171:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_plRA10_h (; 45 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1177:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777156)
+   )
+  )
+  (if
+   (get_local $1)
+   ;;@ test.cpp:1180:0
+   (return)
+  )
+  ;;@ test.cpp:1178:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_vsRA10_h (; 46 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1184:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777159)
+   )
+  )
+  (if
+   (i32.eqz
+    (get_local $1)
+   )
+   ;;@ test.cpp:1187:0
+   (return)
+  )
+  ;;@ test.cpp:1185:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_vcRA10_h (; 47 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1191:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777159)
+   )
+  )
+  (if
+   (get_local $1)
+   ;;@ test.cpp:1194:0
+   (return)
+  )
+  ;;@ test.cpp:1192:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_hiRA10_h (; 48 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1198:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777158)
+   )
+  )
+  (set_local $1
+   (i32.ne
+    (get_local $1)
+    (i32.const 0)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (set_local $2
+   (i32.eqz
+    (get_local $2)
+   )
+  )
+  (if
+   (i32.eqz
+    (i32.and
+     (get_local $1)
+     (get_local $2)
+    )
+   )
+   ;;@ test.cpp:1201:0
+   (return)
+  )
+  ;;@ test.cpp:1199:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_lsRA10_h (; 49 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1205:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777158)
+   )
+  )
+  (set_local $1
+   (i32.ne
+    (get_local $1)
+    (i32.const 0)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (set_local $2
+   (i32.eqz
+    (get_local $2)
+   )
+  )
+  (if
+   (i32.and
+    (get_local $1)
+    (get_local $2)
+   )
+   ;;@ test.cpp:1208:0
+   (return)
+  )
+  ;;@ test.cpp:1206:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_geRA10_h (; 50 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1212:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777156)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (i32.const 1777159)
+   )
+  )
+  (if
+   (i32.ne
+    (get_local $1)
+    (get_local $2)
+   )
+   ;;@ test.cpp:1215:0
+   (return)
+  )
+  ;;@ test.cpp:1213:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_ltRA10_h (; 51 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1219:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777156)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (i32.const 1777159)
+   )
+  )
+  (if
+   (i32.eq
+    (get_local $1)
+    (get_local $2)
+   )
+   ;;@ test.cpp:1222:0
+   (return)
+  )
+  ;;@ test.cpp:1220:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_gtRA10_h (; 52 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1226:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (if
+   (get_local $1)
+   ;;@ test.cpp:1229:0
+   (return)
+  )
+  ;;@ test.cpp:1226:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777156)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (i32.const 1777159)
+   )
+  )
+  (if
+   (i32.ne
+    (get_local $1)
+    (get_local $2)
+   )
+   ;;@ test.cpp:1229:0
+   (return)
+  )
+  ;;@ test.cpp:1227:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z12op_branch_leRA10_h (; 53 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1233:0
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (if
+   (i32.eqz
+    (get_local $1)
+   )
+   (block
+    (set_local $1
+     (i32.load8_s
+      (i32.const 1777156)
+     )
+    )
+    (set_local $2
+     (i32.load8_s
+      (i32.const 1777159)
+     )
+    )
+    (if
+     (i32.eq
+      (get_local $1)
+      (get_local $2)
+     )
+     ;;@ test.cpp:1236:0
+     (return)
+    )
+   )
+  )
+  ;;@ test.cpp:1234:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z15op_bic_registerRA10_h (; 54 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1744:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (i32.shl
+     (get_local $2)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $2
+   (i32.load
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.xor
+    (get_local $2)
+    (i32.const -1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (get_local $2)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+  ;;@ test.cpp:1745:0
+  (set_local $0
+   (i32.shr_u
+    (get_local $1)
+    (i32.const 31)
+   )
+  )
+  (i32.store8
+   (i32.const 1777156)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1746:0
+  (set_local $0
+   (i32.eqz
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (i32.const 1777157)
+   (get_local $0)
+  )
+ )
+ (func $__Z7op_bkptRA10_h (; 55 ;) (param $0 i32)
+  (nop)
+ )
+ (func $__Z5op_blRA10_h (; 56 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1096:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  ;;@ test.cpp:1097:0
+  (set_local $2
+   (i32.or
+    (get_local $1)
+    (i32.const 1)
+   )
+  )
+  (i32.store
+   (i32.const 7112)
+   (get_local $2)
+  )
+  ;;@ test.cpp:1098:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $0
+   (i32.load16_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  (call $__Z13BranchWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z6op_blxRA10_h (; 57 ;) (param $0 i32)
+  (local $1 i32)
+  ;;@ test.cpp:1111:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  ;;@ test.cpp:1112:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $1)
+    (i32.const -2)
+   )
+  )
+  ;;@ test.cpp:1113:0
+  (set_local $1
+   (i32.or
+    (get_local $1)
+    (i32.const 1)
+   )
+  )
+  (i32.store
+   (i32.const 7112)
+   (get_local $1)
+  )
+  ;;@ test.cpp:1114:0
+  (call $__Z10BLXWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z5op_bxRA10_h (; 58 ;) (param $0 i32)
+  ;;@ test.cpp:1131:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (call $__Z9BXWritePCj
+   (get_local $0)
+  )
+ )
+ (func $__Z15op_cmn_registerRA10_h (; 59 ;) (param $0 i32)
+  (local $1 i32)
   ;;@ test.cpp:1492:0
   (set_local $1
    (i32.add
@@ -11893,888 +13065,92 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
    (i32.load
     (get_local $1)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $0
+   (i32.load
+    (get_local $0)
+   )
+  )
+  (set_local $1
+   (call $__ZL12AddWithCarryjjb
+    (get_local $1)
+    (get_local $0)
+    (i32.const 0)
    )
   )
   ;;@ test.cpp:1493:0
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.load16_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 65535)
-   )
-  )
-  (set_local $1
-   (i32.shr_s
+  (set_local $0
+   (i32.shr_u
     (get_local $1)
-    (get_local $2)
+    (i32.const 31)
    )
+  )
+  (i32.store8
+   (i32.const 1777156)
+   (get_local $0)
   )
   ;;@ test.cpp:1494:0
   (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
+   (i32.eqz
+    (get_local $1)
    )
   )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
+  (i32.store8
+   (i32.const 1777157)
    (get_local $0)
-   (get_local $1)
+  )
+  ;;@ test.cpp:1495:0
+  (i32.store8
+   (i32.const 1777158)
+   (i32.const 0)
   )
   ;;@ test.cpp:1496:0
   (set_local $0
-   (i32.shr_u
-    (get_local $1)
-    (i32.const 31)
+   (i32.load8_s
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776640)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1497:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1499:0
-  (i32.store8
-   (i32.const 1776642)
-   (i32.const 0)
-  )
- )
- (func $__Z9op_branchRA10_h (; 36 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1111:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z12op_branch_eqRA10_h (; 37 ;) (param $0 i32)
+ (func $__Z16op_cmp_immediateRA10_h (; 60 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1116:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776641)
-   )
-  )
-  (if
-   (i32.eqz
-    (get_local $1)
-   )
-   ;;@ test.cpp:1119:0
-   (return)
-  )
-  ;;@ test.cpp:1117:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_neRA10_h (; 38 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1123:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776641)
-   )
-  )
-  (if
-   (get_local $1)
-   ;;@ test.cpp:1126:0
-   (return)
-  )
-  ;;@ test.cpp:1124:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_csRA10_h (; 39 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1130:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776642)
-   )
-  )
-  (if
-   (i32.eqz
-    (get_local $1)
-   )
-   ;;@ test.cpp:1133:0
-   (return)
-  )
-  ;;@ test.cpp:1131:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_ccRA10_h (; 40 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1137:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776642)
-   )
-  )
-  (if
-   (get_local $1)
-   ;;@ test.cpp:1140:0
-   (return)
-  )
-  ;;@ test.cpp:1138:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_miRA10_h (; 41 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1144:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776640)
-   )
-  )
-  (if
-   (i32.eqz
-    (get_local $1)
-   )
-   ;;@ test.cpp:1147:0
-   (return)
-  )
-  ;;@ test.cpp:1145:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_plRA10_h (; 42 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1151:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776640)
-   )
-  )
-  (if
-   (get_local $1)
-   ;;@ test.cpp:1154:0
-   (return)
-  )
-  ;;@ test.cpp:1152:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_vsRA10_h (; 43 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1158:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776643)
-   )
-  )
-  (if
-   (i32.eqz
-    (get_local $1)
-   )
-   ;;@ test.cpp:1161:0
-   (return)
-  )
-  ;;@ test.cpp:1159:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_vcRA10_h (; 44 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1165:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776643)
-   )
-  )
-  (if
-   (get_local $1)
-   ;;@ test.cpp:1168:0
-   (return)
-  )
-  ;;@ test.cpp:1166:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_hiRA10_h (; 45 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1172:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776642)
-   )
-  )
-  (set_local $1
-   (i32.ne
-    (get_local $1)
-    (i32.const 0)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (i32.const 1776641)
-   )
-  )
-  (set_local $2
-   (i32.eqz
-    (get_local $2)
-   )
-  )
-  (if
-   (i32.eqz
-    (i32.and
-     (get_local $1)
-     (get_local $2)
-    )
-   )
-   ;;@ test.cpp:1175:0
-   (return)
-  )
-  ;;@ test.cpp:1173:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_lsRA10_h (; 46 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1179:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776642)
-   )
-  )
-  (set_local $1
-   (i32.ne
-    (get_local $1)
-    (i32.const 0)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (i32.const 1776641)
-   )
-  )
-  (set_local $2
-   (i32.eqz
-    (get_local $2)
-   )
-  )
-  (if
-   (i32.and
-    (get_local $1)
-    (get_local $2)
-   )
-   ;;@ test.cpp:1182:0
-   (return)
-  )
-  ;;@ test.cpp:1180:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_geRA10_h (; 47 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1186:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776640)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (i32.const 1776643)
-   )
-  )
-  (if
-   (i32.ne
-    (get_local $1)
-    (get_local $2)
-   )
-   ;;@ test.cpp:1189:0
-   (return)
-  )
-  ;;@ test.cpp:1187:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_ltRA10_h (; 48 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1193:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776640)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (i32.const 1776643)
-   )
-  )
-  (if
-   (i32.eq
-    (get_local $1)
-    (get_local $2)
-   )
-   ;;@ test.cpp:1196:0
-   (return)
-  )
-  ;;@ test.cpp:1194:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_gtRA10_h (; 49 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1200:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776641)
-   )
-  )
-  (if
-   (get_local $1)
-   ;;@ test.cpp:1203:0
-   (return)
-  )
-  ;;@ test.cpp:1200:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776640)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (i32.const 1776643)
-   )
-  )
-  (if
-   (i32.ne
-    (get_local $1)
-    (get_local $2)
-   )
-   ;;@ test.cpp:1203:0
-   (return)
-  )
-  ;;@ test.cpp:1201:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z12op_branch_leRA10_h (; 50 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1207:0
-  (set_local $1
-   (i32.load8_s
-    (i32.const 1776641)
-   )
-  )
-  (if
-   (i32.eqz
-    (get_local $1)
-   )
-   (block
-    (set_local $1
-     (i32.load8_s
-      (i32.const 1776640)
-     )
-    )
-    (set_local $2
-     (i32.load8_s
-      (i32.const 1776643)
-     )
-    )
-    (if
-     (i32.eq
-      (get_local $1)
-      (get_local $2)
-     )
-     ;;@ test.cpp:1210:0
-     (return)
-    )
-   )
-  )
-  ;;@ test.cpp:1208:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z15op_bic_registerRA10_h (; 51 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1718:0
+  ;;@ test.cpp:1688:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -12798,367 +13174,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (i32.shl
-     (get_local $2)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $2
-   (i32.load
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.xor
-    (get_local $2)
-    (i32.const -1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (get_local $2)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
-  ;;@ test.cpp:1719:0
-  (set_local $0
-   (i32.shr_u
-    (get_local $1)
-    (i32.const 31)
-   )
-  )
-  (i32.store8
-   (i32.const 1776640)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1720:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
- )
- (func $__Z7op_bkptRA10_h (; 52 ;) (param $0 i32)
-  (nop)
- )
- (func $__Z5op_blRA10_h (; 53 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1070:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  ;;@ test.cpp:1071:0
-  (set_local $2
-   (i32.or
-    (get_local $1)
-    (i32.const 1)
-   )
-  )
-  (i32.store
-   (i32.const 6596)
-   (get_local $2)
-  )
-  ;;@ test.cpp:1072:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $0
-   (i32.load16_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  (call $__Z13BranchWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z6op_blxRA10_h (; 54 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1085:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  ;;@ test.cpp:1086:0
-  (set_local $1
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $1)
-    (i32.const -2)
-   )
-  )
-  ;;@ test.cpp:1087:0
-  (set_local $1
-   (i32.or
-    (get_local $1)
-    (i32.const 1)
-   )
-  )
-  (i32.store
-   (i32.const 6596)
-   (get_local $1)
-  )
-  ;;@ test.cpp:1088:0
-  (call $__Z10BLXWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z5op_bxRA10_h (; 55 ;) (param $0 i32)
-  ;;@ test.cpp:1105:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (call $__Z9BXWritePCj
-   (get_local $0)
-  )
- )
- (func $__Z15op_cmn_registerRA10_h (; 56 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1466:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $0
-   (i32.load
-    (get_local $0)
-   )
-  )
-  (set_local $1
-   (call $__ZL12AddWithCarryjjb
-    (get_local $1)
-    (get_local $0)
-    (i32.const 0)
-   )
-  )
-  ;;@ test.cpp:1467:0
-  (set_local $0
-   (i32.shr_u
-    (get_local $1)
-    (i32.const 31)
-   )
-  )
-  (i32.store8
-   (i32.const 1776640)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1468:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1469:0
-  (i32.store8
-   (i32.const 1776642)
-   (i32.const 0)
-  )
-  ;;@ test.cpp:1470:0
-  (set_local $0
-   (i32.load8_s
-    (i32.const 2071557)
-   )
-  )
-  (i32.store8
-   (i32.const 1776643)
-   (get_local $0)
-  )
- )
- (func $__Z16op_cmp_immediateRA10_h (; 57 ;) (param $0 i32)
-  (local $1 i32)
-  ;;@ test.cpp:1662:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -13196,7 +13212,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:1665:0
+  ;;@ test.cpp:1691:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -13204,38 +13220,38 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1666:0
+  ;;@ test.cpp:1692:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1667:0
+  ;;@ test.cpp:1693:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1668:0
+  ;;@ test.cpp:1694:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z15op_cmp_registerRA10_h (; 58 ;) (param $0 i32)
+ (func $__Z15op_cmp_registerRA10_h (; 61 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1675:0
+  ;;@ test.cpp:1701:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -13259,7 +13275,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -13290,7 +13306,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $0
@@ -13311,7 +13327,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:1678:0
+  ;;@ test.cpp:1704:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -13319,48 +13335,48 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1679:0
+  ;;@ test.cpp:1705:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1680:0
+  ;;@ test.cpp:1706:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1681:0
+  ;;@ test.cpp:1707:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z6op_cpsRA10_h (; 59 ;) (param $0 i32)
+ (func $__Z6op_cpsRA10_h (; 62 ;) (param $0 i32)
   (nop)
  )
- (func $__Z6op_dmbRA10_h (; 60 ;) (param $0 i32)
+ (func $__Z6op_dmbRA10_h (; 63 ;) (param $0 i32)
   (nop)
  )
- (func $__Z6op_dsbRA10_h (; 61 ;) (param $0 i32)
+ (func $__Z6op_dsbRA10_h (; 64 ;) (param $0 i32)
   (nop)
  )
- (func $__Z15op_eor_registerRA10_h (; 62 ;) (param $0 i32)
+ (func $__Z15op_eor_registerRA10_h (; 65 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1358:0
+  ;;@ test.cpp:1384:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -13384,7 +13400,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -13415,7 +13431,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -13452,14 +13468,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1359:0
+  ;;@ test.cpp:1385:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -13467,27 +13483,27 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1360:0
+  ;;@ test.cpp:1386:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
  )
- (func $__Z6op_ldmRA10_h (; 63 ;) (param $0 i32)
+ (func $__Z6op_ldmRA10_h (; 66 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
-  ;;@ test.cpp:967:0
+  ;;@ test.cpp:992:0
   (set_local $4
    (i32.add
     (get_local $0)
@@ -13505,7 +13521,7 @@
     (i32.const 255)
    )
   )
-  ;;@ test.cpp:968:0
+  ;;@ test.cpp:993:0
   (set_local $2
    (i32.add
     (get_local $0)
@@ -13535,7 +13551,7 @@
     (get_local $5)
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $0
    (i32.and
     (get_local $0)
@@ -13545,21 +13561,21 @@
   (if
    (get_local $0)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $0
      (i32.add
       (get_local $1)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $1
      (call $__Z9fetchWordj
       (get_local $1)
      )
     )
     (i32.store
-     (i32.const 6540)
+     (i32.const 7056)
      (get_local $1)
     )
    )
@@ -13567,7 +13583,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13582,21 +13598,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6544)
+     (i32.const 7060)
      (get_local $0)
     )
     (set_local $0
@@ -13604,7 +13620,7 @@
     )
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13619,21 +13635,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6548)
+     (i32.const 7064)
      (get_local $0)
     )
     (set_local $0
@@ -13641,7 +13657,7 @@
     )
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13656,21 +13672,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6552)
+     (i32.const 7068)
      (get_local $0)
     )
     (set_local $0
@@ -13678,7 +13694,7 @@
     )
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13693,21 +13709,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6556)
+     (i32.const 7072)
      (get_local $0)
     )
     (set_local $0
@@ -13715,7 +13731,7 @@
     )
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13730,21 +13746,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6560)
+     (i32.const 7076)
      (get_local $0)
     )
     (set_local $0
@@ -13752,7 +13768,7 @@
     )
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13767,21 +13783,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6564)
+     (i32.const 7080)
      (get_local $0)
     )
     (set_local $0
@@ -13789,7 +13805,7 @@
     )
    )
   )
-  ;;@ test.cpp:971:0
+  ;;@ test.cpp:996:0
   (set_local $1
    (i32.load16_s
     (get_local $2)
@@ -13804,21 +13820,21 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:973:0
+    ;;@ test.cpp:998:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:972:0
+    ;;@ test.cpp:997:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6568)
+     (i32.const 7084)
      (get_local $0)
     )
     (set_local $0
@@ -13827,12 +13843,12 @@
    )
   )
   (if
-   ;;@ test.cpp:968:0
+   ;;@ test.cpp:993:0
    (get_local $3)
-   ;;@ test.cpp:980:0
+   ;;@ test.cpp:1005:0
    (return)
   )
-  ;;@ test.cpp:978:0
+  ;;@ test.cpp:1003:0
   (set_local $1
    (i32.load8_s
     (get_local $4)
@@ -13850,7 +13866,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -13858,714 +13874,61 @@
    (get_local $0)
   )
  )
- (func $__Z16op_ldr_immediateRA10_h (; 64 ;) (param $0 i32)
+ (func $__Z16op_ldr_immediateRA10_h (; 67 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1003:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.load16_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 65535)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1004:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const -4)
-   )
-  )
-  (set_local $1
-   (call $__Z9fetchWordj
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1005:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z14op_ldr_literalRA10_h (; 65 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:985:0
-  (set_local $1
-   (i32.load
-    (i32.const 6592)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const -4)
-   )
-  )
-  ;;@ test.cpp:986:0
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.load16_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 65535)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:987:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const -4)
-   )
-  )
-  (set_local $1
-   (call $__Z9fetchWordj
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:988:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z15op_ldr_registerRA10_h (; 66 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:995:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (i32.shl
-     (get_local $2)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $2
-   (i32.load
-    (get_local $2)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:996:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const -4)
-   )
-  )
-  (set_local $1
-   (call $__Z9fetchWordj
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:997:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z17op_ldrb_immediateRA10_h (; 67 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1020:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.load16_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 65535)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1021:0
-  (set_local $1
-   (call $__Z9fetchBytej
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1022:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z16op_ldrb_registerRA10_h (; 68 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1012:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (i32.shl
-     (get_local $2)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $2
-   (i32.load
-    (get_local $2)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1013:0
-  (set_local $1
-   (call $__Z9fetchBytej
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1014:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z17op_ldrh_immediateRA10_h (; 69 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1036:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.load16_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 65535)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1037:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const -2)
-   )
-  )
-  (set_local $1
-   (call $__Z13fetchHalfwordj
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1038:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 65535)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z16op_ldrh_registerRA10_h (; 70 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1028:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (i32.shl
-     (get_local $2)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $2
-   (i32.load
-    (get_local $2)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (get_local $2)
-    (get_local $1)
-   )
-  )
   ;;@ test.cpp:1029:0
   (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const -2)
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
    )
   )
   (set_local $1
-   (call $__Z13fetchHalfwordj
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $2
+   (i32.load16_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 65535)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $2)
     (get_local $1)
    )
   )
@@ -14573,9 +13936,15 @@
   (set_local $1
    (i32.and
     (get_local $1)
-    (i32.const 65535)
+    (i32.const -4)
    )
   )
+  (set_local $1
+   (call $__Z9fetchWordj
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1031:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -14599,7 +13968,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -14607,10 +13976,122 @@
    (get_local $1)
   )
  )
- (func $__Z17op_ldrsb_registerRA10_h (; 71 ;) (param $0 i32)
+ (func $__Z14op_ldr_literalRA10_h (; 68 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1044:0
+  (local $3 i32)
+  (local $4 i32)
+  (set_local $3
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  ;;@ test.cpp:1007:0
+  (set_local $2
+   (get_local $3)
+  )
+  ;;@ test.cpp:1010:0
+  (set_local $1
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $4
+   (i32.and
+    (get_local $1)
+    (i32.const -4)
+   )
+  )
+  ;;@ test.cpp:1011:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $1
+   (i32.load16_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 65535)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $1)
+    (get_local $4)
+   )
+  )
+  ;;@ test.cpp:1012:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const -4)
+   )
+  )
+  (i32.store
+   (get_local $2)
+   (get_local $1)
+  )
+  (drop
+   (call $_printf
+    (i32.const 2622)
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:1013:0
+  (set_local $2
+   (call $__Z9fetchWordj
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1014:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 7)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $2)
+  )
+  (set_global $STACKTOP
+   (get_local $3)
+  )
+ )
+ (func $__Z15op_ldr_registerRA10_h (; 69 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1021:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -14634,7 +14115,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -14665,7 +14146,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -14679,7 +14160,571 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1045:0
+  ;;@ test.cpp:1022:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const -4)
+   )
+  )
+  (set_local $1
+   (call $__Z9fetchWordj
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1023:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 7)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z17op_ldrb_immediateRA10_h (; 70 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1046:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $2
+   (i32.load16_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 65535)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1047:0
+  (set_local $1
+   (call $__Z9fetchBytej
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1048:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 7)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z16op_ldrb_registerRA10_h (; 71 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1038:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (i32.shl
+     (get_local $2)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $2
+   (i32.load
+    (get_local $2)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1039:0
+  (set_local $1
+   (call $__Z9fetchBytej
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1040:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 7)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z17op_ldrh_immediateRA10_h (; 72 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1062:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $2
+   (i32.load16_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 65535)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1063:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const -2)
+   )
+  )
+  (set_local $1
+   (call $__Z13fetchHalfwordj
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1064:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 7)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z16op_ldrh_registerRA10_h (; 73 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1054:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (i32.shl
+     (get_local $2)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $2
+   (i32.load
+    (get_local $2)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1055:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const -2)
+   )
+  )
+  (set_local $1
+   (call $__Z13fetchHalfwordj
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1056:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 65535)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 7)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z17op_ldrsb_registerRA10_h (; 74 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1070:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (i32.shl
+     (get_local $2)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $2
+   (i32.load
+    (get_local $2)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1071:0
   (set_local $1
    (call $__Z9fetchBytej
     (get_local $1)
@@ -14691,7 +14736,7 @@
     (i32.const 255)
    )
   )
-  ;;@ test.cpp:1046:0
+  ;;@ test.cpp:1072:0
   (set_local $1
    (call $__Z12signExtend32h
     (get_local $1)
@@ -14720,7 +14765,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -14728,10 +14773,10 @@
    (get_local $1)
   )
  )
- (func $__Z17op_ldrsh_registerRA10_h (; 72 ;) (param $0 i32)
+ (func $__Z17op_ldrsh_registerRA10_h (; 75 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1052:0
+  ;;@ test.cpp:1078:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -14755,7 +14800,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -14786,7 +14831,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -14800,7 +14845,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1053:0
+  ;;@ test.cpp:1079:0
   (set_local $1
    (i32.and
     (get_local $1)
@@ -14812,7 +14857,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1054:0
+  ;;@ test.cpp:1080:0
   (set_local $1
    (call $__Z12signExtend32t
     (get_local $1)
@@ -14841,7 +14886,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -14849,10 +14894,10 @@
    (get_local $1)
   )
  )
- (func $__Z16op_lsl_immediateRA10_h (; 73 ;) (param $0 i32)
+ (func $__Z16op_lsl_immediateRA10_h (; 76 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1536:0
+  ;;@ test.cpp:1562:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -14876,7 +14921,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -14906,69 +14951,321 @@
     (get_local $1)
     (get_local $2)
    )
+  )
+  ;;@ test.cpp:1563:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+  ;;@ test.cpp:1565:0
+  (set_local $0
+   (i32.shr_u
+    (get_local $1)
+    (i32.const 31)
+   )
+  )
+  (i32.store8
+   (i32.const 1777156)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1566:0
+  (set_local $0
+   (i32.eqz
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (i32.const 1777157)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1568:0
+  (i32.store8
+   (i32.const 1777158)
+   (i32.const 0)
+  )
+ )
+ (func $__Z15op_lsl_registerRA10_h (; 77 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1576:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (i32.shl
+     (get_local $2)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $2
+   (i32.load
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.shl
+    (get_local $1)
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:1577:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+  ;;@ test.cpp:1579:0
+  (set_local $0
+   (i32.shr_u
+    (get_local $1)
+    (i32.const 31)
+   )
+  )
+  (i32.store8
+   (i32.const 1777156)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1580:0
+  (set_local $0
+   (i32.eqz
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (i32.const 1777157)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1582:0
+  (i32.store8
+   (i32.const 1777158)
+   (i32.const 0)
+  )
+ )
+ (func $__Z16op_lsr_immediateRA10_h (; 78 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1534:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 5)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (set_local $1
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (set_local $2
+   (i32.add
+    (get_local $0)
+    (i32.const 8)
+   )
+  )
+  (set_local $2
+   (i32.load16_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 65535)
+   )
+  )
+  (set_local $1
+   (i32.shr_u
+    (get_local $1)
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:1535:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
   )
   ;;@ test.cpp:1537:0
   (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
-  ;;@ test.cpp:1539:0
-  (set_local $0
    (i32.shr_u
     (get_local $1)
     (i32.const 31)
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1538:0
+  (set_local $0
+   (i32.eqz
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (i32.const 1777157)
    (get_local $0)
   )
   ;;@ test.cpp:1540:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
   (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1542:0
-  (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
  )
- (func $__Z15op_lsl_registerRA10_h (; 74 ;) (param $0 i32)
+ (func $__Z15op_lsr_registerRA10_h (; 79 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1550:0
+  ;;@ test.cpp:1548:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -14992,7 +15289,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -15023,7 +15320,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -15038,325 +15335,73 @@
    )
   )
   (set_local $1
-   (i32.shl
+   (i32.shr_u
     (get_local $1)
     (get_local $2)
    )
+  )
+  ;;@ test.cpp:1549:0
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
   )
   ;;@ test.cpp:1551:0
   (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
-  ;;@ test.cpp:1553:0
-  (set_local $0
    (i32.shr_u
     (get_local $1)
     (i32.const 31)
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
+   (get_local $0)
+  )
+  ;;@ test.cpp:1552:0
+  (set_local $0
+   (i32.eqz
+    (get_local $1)
+   )
+  )
+  (i32.store8
+   (i32.const 1777157)
    (get_local $0)
   )
   ;;@ test.cpp:1554:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
   (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1556:0
-  (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
  )
- (func $__Z16op_lsr_immediateRA10_h (; 75 ;) (param $0 i32)
+ (func $__Z16op_mov_immediateRA10_h (; 80 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1508:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.load16_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 65535)
-   )
-  )
-  (set_local $1
-   (i32.shr_u
-    (get_local $1)
-    (get_local $2)
-   )
-  )
-  ;;@ test.cpp:1509:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
-  ;;@ test.cpp:1511:0
-  (set_local $0
-   (i32.shr_u
-    (get_local $1)
-    (i32.const 31)
-   )
-  )
-  (i32.store8
-   (i32.const 1776640)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1512:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1514:0
-  (i32.store8
-   (i32.const 1776642)
-   (i32.const 0)
-  )
- )
- (func $__Z15op_lsr_registerRA10_h (; 76 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1522:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 5)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $1
-   (i32.load
-    (get_local $1)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.add
-    (i32.shl
-     (get_local $2)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (set_local $2
-   (i32.load
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.shr_u
-    (get_local $1)
-    (get_local $2)
-   )
-  )
-  ;;@ test.cpp:1523:0
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
-  ;;@ test.cpp:1525:0
-  (set_local $0
-   (i32.shr_u
-    (get_local $1)
-    (i32.const 31)
-   )
-  )
-  (i32.store8
-   (i32.const 1776640)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1526:0
-  (set_local $0
-   (i32.eqz
-    (get_local $1)
-   )
-  )
-  (i32.store8
-   (i32.const 1776641)
-   (get_local $0)
-  )
-  ;;@ test.cpp:1528:0
-  (i32.store8
-   (i32.const 1776642)
-   (i32.const 0)
-  )
- )
- (func $__Z16op_mov_immediateRA10_h (; 77 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1431:0
+  ;;@ test.cpp:1457:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -15397,32 +15442,32 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $2)
   )
-  ;;@ test.cpp:1432:0
+  ;;@ test.cpp:1458:0
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (i32.const 0)
   )
-  ;;@ test.cpp:1433:0
+  ;;@ test.cpp:1459:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
  )
- (func $__Z15op_mov_registerRA10_h (; 78 ;) (param $0 i32)
+ (func $__Z15op_mov_registerRA10_h (; 81 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1418:0
+  ;;@ test.cpp:1444:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -15446,7 +15491,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -15454,7 +15499,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1419:0
+  ;;@ test.cpp:1445:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -15471,34 +15516,34 @@
     (get_local $0)
     (i32.const 15)
    )
-   ;;@ test.cpp:1420:0
+   ;;@ test.cpp:1446:0
    (call $__Z10ALUWritePCj
     (get_local $1)
    )
-   ;;@ test.cpp:1426:0
+   ;;@ test.cpp:1452:0
    (block
-    ;;@ test.cpp:1419:0
+    ;;@ test.cpp:1445:0
     (set_local $0
      (i32.and
       (get_local $0)
       (i32.const 255)
      )
     )
-    ;;@ test.cpp:1422:0
+    ;;@ test.cpp:1448:0
     (set_local $0
      (i32.add
       (i32.shl
        (get_local $0)
        (i32.const 2)
       )
-      (i32.const 6540)
+      (i32.const 7056)
      )
     )
     (i32.store
      (get_local $0)
      (get_local $1)
     )
-    ;;@ test.cpp:1423:0
+    ;;@ test.cpp:1449:0
     (set_local $0
      (i32.shr_u
       (get_local $1)
@@ -15506,29 +15551,29 @@
      )
     )
     (i32.store8
-     (i32.const 1776640)
+     (i32.const 1777156)
      (get_local $0)
     )
-    ;;@ test.cpp:1424:0
+    ;;@ test.cpp:1450:0
     (set_local $0
      (i32.eqz
       (get_local $1)
      )
     )
     (i32.store8
-     (i32.const 1776641)
+     (i32.const 1777157)
      (get_local $0)
     )
    )
   )
  )
- (func $__Z6op_mrsRA10_h (; 79 ;) (param $0 i32)
+ (func $__Z6op_mrsRA10_h (; 82 ;) (param $0 i32)
   (nop)
  )
- (func $__Z15op_mul_registerRA10_h (; 80 ;) (param $0 i32)
+ (func $__Z15op_mul_registerRA10_h (; 83 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1304:0
+  ;;@ test.cpp:1330:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -15552,7 +15597,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -15583,7 +15628,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -15620,10 +15665,10 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
-  ;;@ test.cpp:1305:0
+  ;;@ test.cpp:1331:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -15631,29 +15676,29 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1306:0
+  ;;@ test.cpp:1332:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1307:0
+  ;;@ test.cpp:1333:0
   (i32.store
    (get_local $2)
    (get_local $1)
   )
  )
- (func $__Z15op_mvn_registerRA10_h (; 81 ;) (param $0 i32)
+ (func $__Z15op_mvn_registerRA10_h (; 84 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1332:0
+  ;;@ test.cpp:1358:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -15677,7 +15722,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -15691,7 +15736,7 @@
     (i32.const -1)
    )
   )
-  ;;@ test.cpp:1333:0
+  ;;@ test.cpp:1359:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -15715,14 +15760,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $2)
   )
-  ;;@ test.cpp:1334:0
+  ;;@ test.cpp:1360:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -15736,10 +15781,10 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1335:0
+  ;;@ test.cpp:1361:0
   (set_local $0
    (i32.eq
     (get_local $1)
@@ -15747,17 +15792,17 @@
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
  )
- (func $__Z6op_nopRA10_h (; 82 ;) (param $0 i32)
+ (func $__Z6op_nopRA10_h (; 85 ;) (param $0 i32)
   (nop)
  )
- (func $__Z15op_orr_registerRA10_h (; 83 ;) (param $0 i32)
+ (func $__Z15op_orr_registerRA10_h (; 86 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1369:0
+  ;;@ test.cpp:1395:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -15781,7 +15826,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -15812,7 +15857,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -15849,14 +15894,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1370:0
+  ;;@ test.cpp:1396:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -15864,21 +15909,21 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1371:0
+  ;;@ test.cpp:1397:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
  )
- (func $__Z7op_pushRA10_h (; 84 ;) (param $0 i32)
+ (func $__Z7op_pushRA10_h (; 87 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -15889,7 +15934,7 @@
     (get_local $0)
    )
   )
-  ;;@ test.cpp:883:0
+  ;;@ test.cpp:908:0
   (set_local $2
    (i32.and
     (get_local $3)
@@ -16148,10 +16193,10 @@
     (get_local $2)
    )
   )
-  ;;@ test.cpp:887:0
+  ;;@ test.cpp:912:0
   (set_local $2
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
   (set_local $3
@@ -16182,7 +16227,7 @@
    (i32.const 0)
   )
   (loop $while-in
-   ;;@ test.cpp:889:0
+   ;;@ test.cpp:914:0
    (set_local $2
     (i32.load16_s
      (get_local $5)
@@ -16209,21 +16254,21 @@
    (if
     (get_local $2)
     (block
-     ;;@ test.cpp:891:0
+     ;;@ test.cpp:916:0
      (set_local $2
       (i32.add
        (get_local $0)
        (i32.const 4)
       )
      )
-     ;;@ test.cpp:890:0
+     ;;@ test.cpp:915:0
      (set_local $4
       (i32.add
        (i32.shl
         (get_local $3)
         (i32.const 2)
        )
-       (i32.const 6540)
+       (i32.const 7056)
       )
      )
      (set_local $4
@@ -16240,7 +16285,7 @@
      )
     )
    )
-   ;;@ test.cpp:888:0
+   ;;@ test.cpp:913:0
    (set_local $3
     (i32.add
      (get_local $3)
@@ -16254,10 +16299,10 @@
     )
    )
   )
-  ;;@ test.cpp:894:0
+  ;;@ test.cpp:919:0
   (set_local $0
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
   (set_local $0
@@ -16267,21 +16312,21 @@
    )
   )
   (i32.store
-   (i32.const 6592)
+   (i32.const 7108)
    (get_local $0)
   )
  )
- (func $__Z6op_popRA10_h (; 85 ;) (param $0 i32)
+ (func $__Z6op_popRA10_h (; 88 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
-  ;;@ test.cpp:862:0
+  ;;@ test.cpp:887:0
   (set_local $1
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $3
    (i32.add
     (get_local $0)
@@ -16303,21 +16348,21 @@
    (if (result i32)
     (get_local $0)
     (block (result i32)
-     ;;@ test.cpp:866:0
+     ;;@ test.cpp:891:0
      (set_local $0
       (i32.add
        (get_local $1)
        (i32.const 4)
       )
      )
-     ;;@ test.cpp:865:0
+     ;;@ test.cpp:890:0
      (set_local $1
       (call $__Z9fetchWordj
        (get_local $1)
       )
      )
      (i32.store
-      (i32.const 6540)
+      (i32.const 7056)
       (get_local $1)
      )
      (i32.const 1)
@@ -16330,7 +16375,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16345,7 +16390,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.shr_s
       (i32.shl
@@ -16358,21 +16403,21 @@
       (i32.const 24)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $2
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6544)
+     (i32.const 7060)
      (get_local $0)
     )
     (set_local $0
@@ -16380,7 +16425,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16395,7 +16440,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.and
       (get_local $1)
@@ -16408,24 +16453,24 @@
       (i32.const 1)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6548)
+     (i32.const 7064)
      (get_local $0)
     )
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $0
      (get_local $1)
     )
@@ -16437,7 +16482,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16452,7 +16497,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.and
       (get_local $1)
@@ -16465,24 +16510,24 @@
       (i32.const 1)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6552)
+     (i32.const 7068)
      (get_local $0)
     )
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $0
      (get_local $1)
     )
@@ -16494,7 +16539,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16509,7 +16554,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.and
       (get_local $1)
@@ -16522,24 +16567,24 @@
       (i32.const 1)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6556)
+     (i32.const 7072)
      (get_local $0)
     )
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $0
      (get_local $1)
     )
@@ -16551,7 +16596,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16566,7 +16611,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.and
       (get_local $1)
@@ -16579,24 +16624,24 @@
       (i32.const 1)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6560)
+     (i32.const 7076)
      (get_local $0)
     )
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $0
      (get_local $1)
     )
@@ -16608,7 +16653,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16623,7 +16668,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.and
       (get_local $1)
@@ -16636,24 +16681,24 @@
       (i32.const 1)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6564)
+     (i32.const 7080)
      (get_local $0)
     )
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $0
      (get_local $1)
     )
@@ -16665,7 +16710,7 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
@@ -16680,7 +16725,7 @@
   (if
    (get_local $2)
    (block
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $1
      (i32.and
       (get_local $1)
@@ -16693,24 +16738,24 @@
       (i32.const 1)
      )
     )
-    ;;@ test.cpp:866:0
+    ;;@ test.cpp:891:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:865:0
+    ;;@ test.cpp:890:0
     (set_local $0
      (call $__Z9fetchWordj
       (get_local $0)
      )
     )
     (i32.store
-     (i32.const 6568)
+     (i32.const 7084)
      (get_local $0)
     )
-    ;;@ test.cpp:867:0
+    ;;@ test.cpp:892:0
     (set_local $0
      (get_local $1)
     )
@@ -16722,13 +16767,13 @@
     )
    )
   )
-  ;;@ test.cpp:864:0
+  ;;@ test.cpp:889:0
   (set_local $2
    (i32.load16_s
     (get_local $3)
    )
   )
-  ;;@ test.cpp:870:0
+  ;;@ test.cpp:895:0
   (set_local $2
    (i32.and
     (get_local $2)
@@ -16740,7 +16785,7 @@
     (get_local $2)
    )
    (block
-    ;;@ test.cpp:874:0
+    ;;@ test.cpp:899:0
     (set_local $0
      (i32.and
       (get_local $1)
@@ -16755,7 +16800,7 @@
     )
     (set_local $1
      (i32.load
-      (i32.const 6592)
+      (i32.const 7108)
      )
     )
     (set_local $0
@@ -16765,14 +16810,14 @@
      )
     )
     (i32.store
-     (i32.const 6592)
+     (i32.const 7108)
      (get_local $0)
     )
-    ;;@ test.cpp:875:0
+    ;;@ test.cpp:900:0
     (return)
    )
   )
-  ;;@ test.cpp:872:0
+  ;;@ test.cpp:897:0
   (set_local $1
    (i32.and
     (get_local $1)
@@ -16785,7 +16830,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:871:0
+  ;;@ test.cpp:896:0
   (set_local $0
    (call $__Z9fetchWordj
     (get_local $0)
@@ -16794,14 +16839,14 @@
   (call $__Z11LoadWritePCj
    (get_local $0)
   )
-  ;;@ test.cpp:872:0
+  ;;@ test.cpp:897:0
   (set_local $1
    (i32.and
     (get_local $1)
     (i32.const 255)
    )
   )
-  ;;@ test.cpp:874:0
+  ;;@ test.cpp:899:0
   (set_local $0
    (i32.and
     (get_local $1)
@@ -16816,7 +16861,7 @@
   )
   (set_local $1
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
   (set_local $0
@@ -16826,16 +16871,16 @@
    )
   )
   (i32.store
-   (i32.const 6592)
+   (i32.const 7108)
    (get_local $0)
   )
  )
- (func $__Z6op_revRA10_h (; 86 ;) (param $0 i32)
+ (func $__Z6op_revRA10_h (; 89 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
-  ;;@ test.cpp:1380:0
+  ;;@ test.cpp:1406:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -16859,344 +16904,14 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
-   )
-  )
-  ;;@ test.cpp:1383:0
-  (set_local $2
-   (i32.add
-    (get_local $1)
-    (i32.const 3)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  ;;@ test.cpp:1384:0
-  (set_local $3
-   (i32.add
-    (get_local $1)
-    (i32.const 2)
-   )
-  )
-  (set_local $3
-   (i32.load8_s
-    (get_local $3)
-   )
-  )
-  ;;@ test.cpp:1385:0
-  (set_local $4
-   (i32.add
-    (get_local $1)
-    (i32.const 1)
-   )
-  )
-  (set_local $4
-   (i32.load8_s
-    (get_local $4)
-   )
-  )
-  ;;@ test.cpp:1386:0
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1387:0
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.shl
-    (get_local $1)
-    (i32.const 24)
-   )
-  )
-  (set_local $4
-   (i32.and
-    (get_local $4)
-    (i32.const 255)
-   )
-  )
-  (set_local $4
-   (i32.shl
-    (get_local $4)
-    (i32.const 16)
-   )
-  )
-  (set_local $3
-   (i32.and
-    (get_local $3)
-    (i32.const 255)
-   )
-  )
-  (set_local $3
-   (i32.shl
-    (get_local $3)
-    (i32.const 8)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.or
-    (get_local $3)
-    (get_local $2)
-   )
-  )
-  (set_local $2
-   (i32.or
-    (get_local $2)
-    (get_local $4)
-   )
-  )
-  (set_local $1
-   (i32.or
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z8op_rev16RA10_h (; 87 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  ;;@ test.cpp:1394:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  ;;@ test.cpp:1396:0
-  (set_local $2
-   (i32.add
-    (get_local $1)
-    (i32.const 3)
-   )
-  )
-  (set_local $2
-   (i32.load8_s
-    (get_local $2)
-   )
-  )
-  ;;@ test.cpp:1397:0
-  (set_local $3
-   (i32.add
-    (get_local $1)
-    (i32.const 2)
-   )
-  )
-  (set_local $3
-   (i32.load8_s
-    (get_local $3)
-   )
-  )
-  ;;@ test.cpp:1398:0
-  (set_local $4
-   (i32.add
-    (get_local $1)
-    (i32.const 1)
-   )
-  )
-  (set_local $4
-   (i32.load8_s
-    (get_local $4)
-   )
-  )
-  ;;@ test.cpp:1399:0
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:1400:0
-  (set_local $3
-   (i32.and
-    (get_local $3)
-    (i32.const 255)
-   )
-  )
-  (set_local $3
-   (i32.shl
-    (get_local $3)
-    (i32.const 24)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $2)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.shl
-    (get_local $2)
-    (i32.const 16)
-   )
-  )
-  (set_local $2
-   (i32.or
-    (get_local $3)
-    (get_local $2)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.shl
-    (get_local $1)
-    (i32.const 8)
-   )
-  )
-  (set_local $3
-   (i32.and
-    (get_local $4)
-    (i32.const 255)
-   )
-  )
-  (set_local $2
-   (i32.or
-    (get_local $2)
-    (get_local $3)
-   )
-  )
-  (set_local $1
-   (i32.or
-    (get_local $2)
-    (get_local $1)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 4)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (get_local $0)
-   )
-  )
-  (set_local $0
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (i32.shl
-     (get_local $0)
-     (i32.const 2)
-    )
-    (i32.const 6540)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $1)
-  )
- )
- (func $__Z8op_revshRA10_h (; 88 ;) (param $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:1407:0
-  (set_local $1
-   (i32.add
-    (get_local $0)
-    (i32.const 6)
-   )
-  )
-  (set_local $1
-   (i32.load8_s
-    (get_local $1)
-   )
-  )
-  (set_local $1
-   (i32.and
-    (get_local $1)
-    (i32.const 255)
-   )
-  )
-  (set_local $1
-   (i32.add
-    (i32.shl
-     (get_local $1)
-     (i32.const 2)
-    )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   ;;@ test.cpp:1409:0
   (set_local $2
    (i32.add
     (get_local $1)
-    (i32.const 1)
+    (i32.const 3)
    )
   )
   (set_local $2
@@ -17205,12 +16920,342 @@
    )
   )
   ;;@ test.cpp:1410:0
+  (set_local $3
+   (i32.add
+    (get_local $1)
+    (i32.const 2)
+   )
+  )
+  (set_local $3
+   (i32.load8_s
+    (get_local $3)
+   )
+  )
+  ;;@ test.cpp:1411:0
+  (set_local $4
+   (i32.add
+    (get_local $1)
+    (i32.const 1)
+   )
+  )
+  (set_local $4
+   (i32.load8_s
+    (get_local $4)
+   )
+  )
+  ;;@ test.cpp:1412:0
   (set_local $1
    (i32.load8_s
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1411:0
+  ;;@ test.cpp:1413:0
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.shl
+    (get_local $1)
+    (i32.const 24)
+   )
+  )
+  (set_local $4
+   (i32.and
+    (get_local $4)
+    (i32.const 255)
+   )
+  )
+  (set_local $4
+   (i32.shl
+    (get_local $4)
+    (i32.const 16)
+   )
+  )
+  (set_local $3
+   (i32.and
+    (get_local $3)
+    (i32.const 255)
+   )
+  )
+  (set_local $3
+   (i32.shl
+    (get_local $3)
+    (i32.const 8)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.or
+    (get_local $3)
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (i32.or
+    (get_local $2)
+    (get_local $4)
+   )
+  )
+  (set_local $1
+   (i32.or
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z8op_rev16RA10_h (; 90 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  ;;@ test.cpp:1420:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  ;;@ test.cpp:1422:0
+  (set_local $2
+   (i32.add
+    (get_local $1)
+    (i32.const 3)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:1423:0
+  (set_local $3
+   (i32.add
+    (get_local $1)
+    (i32.const 2)
+   )
+  )
+  (set_local $3
+   (i32.load8_s
+    (get_local $3)
+   )
+  )
+  ;;@ test.cpp:1424:0
+  (set_local $4
+   (i32.add
+    (get_local $1)
+    (i32.const 1)
+   )
+  )
+  (set_local $4
+   (i32.load8_s
+    (get_local $4)
+   )
+  )
+  ;;@ test.cpp:1425:0
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1426:0
+  (set_local $3
+   (i32.and
+    (get_local $3)
+    (i32.const 255)
+   )
+  )
+  (set_local $3
+   (i32.shl
+    (get_local $3)
+    (i32.const 24)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.shl
+    (get_local $2)
+    (i32.const 16)
+   )
+  )
+  (set_local $2
+   (i32.or
+    (get_local $3)
+    (get_local $2)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.shl
+    (get_local $1)
+    (i32.const 8)
+   )
+  )
+  (set_local $3
+   (i32.and
+    (get_local $4)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.or
+    (get_local $2)
+    (get_local $3)
+   )
+  )
+  (set_local $1
+   (i32.or
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (set_local $0
+   (i32.load8_s
+    (get_local $0)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (i32.shl
+     (get_local $0)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__Z8op_revshRA10_h (; 91 ;) (param $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  ;;@ test.cpp:1433:0
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 6)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  (set_local $1
+   (i32.and
+    (get_local $1)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.add
+    (i32.shl
+     (get_local $1)
+     (i32.const 2)
+    )
+    (i32.const 7056)
+   )
+  )
+  ;;@ test.cpp:1435:0
+  (set_local $2
+   (i32.add
+    (get_local $1)
+    (i32.const 1)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:1436:0
+  (set_local $1
+   (i32.load8_s
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:1437:0
   (set_local $1
    (i32.and
     (get_local $1)
@@ -17263,7 +17308,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -17271,10 +17316,10 @@
    (get_local $1)
   )
  )
- (func $__Z15op_ror_registerRA10_h (; 89 ;) (param $0 i32)
+ (func $__Z15op_ror_registerRA10_h (; 92 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1344:0
+  ;;@ test.cpp:1370:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -17286,7 +17331,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1345:0
+  ;;@ test.cpp:1371:0
   (set_local $1
    (i32.and
     (get_local $1)
@@ -17299,7 +17344,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1347:0
+  ;;@ test.cpp:1373:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -17323,7 +17368,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1348:0
+  ;;@ test.cpp:1374:0
   (set_local $2
    (i32.and
     (get_local $2)
@@ -17336,14 +17381,14 @@
     (get_local $2)
    )
   )
-  ;;@ test.cpp:1347:0
+  ;;@ test.cpp:1373:0
   (set_local $1
    (i32.add
     (get_local $0)
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1350:0
+  ;;@ test.cpp:1376:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -17351,28 +17396,28 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1351:0
+  ;;@ test.cpp:1377:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1352:0
+  ;;@ test.cpp:1378:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
  )
- (func $__Z16op_rsb_immediateRA10_h (; 90 ;) (param $0 i32)
+ (func $__Z16op_rsb_immediateRA10_h (; 93 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1454:0
+  ;;@ test.cpp:1480:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -17396,7 +17441,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -17417,7 +17462,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:1455:0
+  ;;@ test.cpp:1481:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -17441,14 +17486,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1456:0
+  ;;@ test.cpp:1482:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -17456,40 +17501,40 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1457:0
+  ;;@ test.cpp:1483:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1458:0
+  ;;@ test.cpp:1484:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1459:0
+  ;;@ test.cpp:1485:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z15op_sbc_registerRA10_h (; 91 ;) (param $0 i32)
+ (func $__Z15op_sbc_registerRA10_h (; 94 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
-  ;;@ test.cpp:1564:0
+  ;;@ test.cpp:1590:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -17513,7 +17558,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -17544,7 +17589,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -17560,7 +17605,7 @@
   )
   (set_local $3
    (i32.load8_s
-    (i32.const 1776642)
+    (i32.const 1777158)
    )
   )
   (set_local $3
@@ -17576,7 +17621,7 @@
     (get_local $3)
    )
   )
-  ;;@ test.cpp:1565:0
+  ;;@ test.cpp:1591:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -17600,14 +17645,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1567:0
+  ;;@ test.cpp:1593:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -17615,44 +17660,44 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1568:0
+  ;;@ test.cpp:1594:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1569:0
+  ;;@ test.cpp:1595:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1570:0
+  ;;@ test.cpp:1596:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z6op_sevRA10_h (; 92 ;) (param $0 i32)
+ (func $__Z6op_sevRA10_h (; 95 ;) (param $0 i32)
   (nop)
  )
- (func $__Z6op_stmRA10_h (; 93 ;) (param $0 i32)
+ (func $__Z6op_stmRA10_h (; 96 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
-  ;;@ test.cpp:901:0
+  ;;@ test.cpp:926:0
   (set_local $4
    (i32.add
     (get_local $0)
@@ -17676,7 +17721,7 @@
     (i32.const 8)
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $0
    (i32.load16_s
     (get_local $3)
@@ -17691,17 +17736,17 @@
   (if
    (get_local $0)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $0
      (i32.add
       (get_local $1)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6540)
+      (i32.const 7056)
      )
     )
     (call $__Z9writeWordjj
@@ -17713,7 +17758,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17728,17 +17773,17 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6544)
+      (i32.const 7060)
      )
     )
     (call $__Z9writeWordjj
@@ -17750,7 +17795,7 @@
     )
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17765,17 +17810,17 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6548)
+      (i32.const 7064)
      )
     )
     (call $__Z9writeWordjj
@@ -17787,7 +17832,7 @@
     )
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17802,17 +17847,17 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6552)
+      (i32.const 7068)
      )
     )
     (call $__Z9writeWordjj
@@ -17824,7 +17869,7 @@
     )
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17839,17 +17884,17 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6556)
+      (i32.const 7072)
      )
     )
     (call $__Z9writeWordjj
@@ -17861,7 +17906,7 @@
     )
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17876,17 +17921,17 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6560)
+      (i32.const 7076)
      )
     )
     (call $__Z9writeWordjj
@@ -17898,7 +17943,7 @@
     )
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17913,17 +17958,17 @@
   (if
    (get_local $1)
    (block
-    ;;@ test.cpp:907:0
+    ;;@ test.cpp:932:0
     (set_local $1
      (i32.add
       (get_local $0)
       (i32.const 4)
      )
     )
-    ;;@ test.cpp:906:0
+    ;;@ test.cpp:931:0
     (set_local $2
      (i32.load
-      (i32.const 6564)
+      (i32.const 7080)
      )
     )
     (call $__Z9writeWordjj
@@ -17935,7 +17980,7 @@
     )
    )
   )
-  ;;@ test.cpp:905:0
+  ;;@ test.cpp:930:0
   (set_local $1
    (i32.load16_s
     (get_local $3)
@@ -17952,7 +17997,7 @@
     (get_local $1)
    )
    (block
-    ;;@ test.cpp:912:0
+    ;;@ test.cpp:937:0
     (set_local $1
      (i32.load8_s
       (get_local $4)
@@ -17970,28 +18015,28 @@
        (get_local $1)
        (i32.const 2)
       )
-      (i32.const 6540)
+      (i32.const 7056)
      )
     )
     (i32.store
      (get_local $1)
      (get_local $0)
     )
-    ;;@ test.cpp:914:0
+    ;;@ test.cpp:939:0
     (return)
    )
   )
-  ;;@ test.cpp:907:0
+  ;;@ test.cpp:932:0
   (set_local $1
    (i32.add
     (get_local $0)
     (i32.const 4)
    )
   )
-  ;;@ test.cpp:906:0
+  ;;@ test.cpp:931:0
   (set_local $3
    (i32.load
-    (i32.const 6568)
+    (i32.const 7084)
    )
   )
   (call $__Z9writeWordjj
@@ -18001,7 +18046,7 @@
   (set_local $0
    (get_local $1)
   )
-  ;;@ test.cpp:912:0
+  ;;@ test.cpp:937:0
   (set_local $1
    (i32.load8_s
     (get_local $4)
@@ -18019,7 +18064,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -18027,10 +18072,10 @@
    (get_local $0)
   )
  )
- (func $__Z16op_str_immediateRA10_h (; 94 ;) (param $0 i32)
+ (func $__Z16op_str_immediateRA10_h (; 97 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:920:0
+  ;;@ test.cpp:945:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18071,7 +18116,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:921:0
+  ;;@ test.cpp:946:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18101,7 +18146,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 2038788)
+    (i32.const 2039304)
    )
   )
   (i32.store
@@ -18109,10 +18154,10 @@
    (get_local $0)
   )
  )
- (func $__Z15op_str_registerRA10_h (; 95 ;) (param $0 i32)
+ (func $__Z15op_str_registerRA10_h (; 98 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:928:0
+  ;;@ test.cpp:953:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18153,7 +18198,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:929:0
+  ;;@ test.cpp:954:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18183,7 +18228,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 2038788)
+    (i32.const 2039304)
    )
   )
   (i32.store
@@ -18191,10 +18236,10 @@
    (get_local $0)
   )
  )
- (func $__Z17op_strb_immediateRA10_h (; 96 ;) (param $0 i32)
+ (func $__Z17op_strb_immediateRA10_h (; 99 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:951:0
+  ;;@ test.cpp:976:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18235,7 +18280,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:952:0
+  ;;@ test.cpp:977:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18250,7 +18295,7 @@
   (set_local $1
    (i32.add
     (get_local $1)
-    (i32.const 2038788)
+    (i32.const 2039304)
    )
   )
   (i32.store8
@@ -18258,10 +18303,10 @@
    (get_local $0)
   )
  )
- (func $__Z16op_strb_registerRA10_h (; 97 ;) (param $0 i32)
+ (func $__Z16op_strb_registerRA10_h (; 100 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:958:0
+  ;;@ test.cpp:983:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18302,7 +18347,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:959:0
+  ;;@ test.cpp:984:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18317,7 +18362,7 @@
   (set_local $1
    (i32.add
     (get_local $1)
-    (i32.const 2038788)
+    (i32.const 2039304)
    )
   )
   (i32.store8
@@ -18325,10 +18370,10 @@
    (get_local $0)
   )
  )
- (func $__Z17op_strh_immediateRA10_h (; 98 ;) (param $0 i32)
+ (func $__Z17op_strh_immediateRA10_h (; 101 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:936:0
+  ;;@ test.cpp:961:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18369,7 +18414,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:937:0
+  ;;@ test.cpp:962:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18399,7 +18444,7 @@
      (get_local $1)
      (i32.const 1)
     )
-    (i32.const 2038788)
+    (i32.const 2039304)
    )
   )
   (i32.store16
@@ -18407,10 +18452,10 @@
    (get_local $0)
   )
  )
- (func $__Z16op_strh_registerRA10_h (; 99 ;) (param $0 i32)
+ (func $__Z16op_strh_registerRA10_h (; 102 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:944:0
+  ;;@ test.cpp:969:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18451,7 +18496,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:945:0
+  ;;@ test.cpp:970:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18481,7 +18526,7 @@
      (get_local $1)
      (i32.const 1)
     )
-    (i32.const 2038788)
+    (i32.const 2039304)
    )
   )
   (i32.store16
@@ -18489,10 +18534,10 @@
    (get_local $0)
   )
  )
- (func $__Z16op_sub_immediateRA10_h (; 100 ;) (param $0 i32)
+ (func $__Z16op_sub_immediateRA10_h (; 103 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1577:0
+  ;;@ test.cpp:1603:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18516,7 +18561,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -18554,7 +18599,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:1578:0
+  ;;@ test.cpp:1604:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18578,14 +18623,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1580:0
+  ;;@ test.cpp:1606:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -18593,39 +18638,39 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1581:0
+  ;;@ test.cpp:1607:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1582:0
+  ;;@ test.cpp:1608:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1583:0
+  ;;@ test.cpp:1609:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z15op_sub_registerRA10_h (; 101 ;) (param $0 i32)
+ (func $__Z15op_sub_registerRA10_h (; 104 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1631:0
+  ;;@ test.cpp:1657:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18649,7 +18694,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -18680,7 +18725,7 @@
      (get_local $2)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $2
@@ -18701,7 +18746,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:1632:0
+  ;;@ test.cpp:1658:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18725,14 +18770,14 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
    (get_local $0)
    (get_local $1)
   )
-  ;;@ test.cpp:1634:0
+  ;;@ test.cpp:1660:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -18740,42 +18785,42 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1635:0
+  ;;@ test.cpp:1661:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
-  ;;@ test.cpp:1636:0
+  ;;@ test.cpp:1662:0
   (i32.store8
-   (i32.const 1776642)
+   (i32.const 1777158)
    (i32.const 0)
   )
-  ;;@ test.cpp:1637:0
+  ;;@ test.cpp:1663:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071557)
+    (i32.const 2072073)
    )
   )
   (i32.store8
-   (i32.const 1776643)
+   (i32.const 1777159)
    (get_local $0)
   )
  )
- (func $__Z25op_sub_sp_minus_immediateRA10_h (; 102 ;) (param $0 i32)
+ (func $__Z25op_sub_sp_minus_immediateRA10_h (; 105 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:1603:0
+  ;;@ test.cpp:1629:0
   (set_local $2
    (i32.load
-    (i32.const 6592)
+    (i32.const 7108)
    )
   )
   (set_local $1
@@ -18808,7 +18853,7 @@
     (i32.const 1)
    )
   )
-  ;;@ test.cpp:1604:0
+  ;;@ test.cpp:1630:0
   (set_local $0
    (i32.add
     (get_local $0)
@@ -18832,7 +18877,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -18840,9 +18885,9 @@
    (get_local $2)
   )
  )
- (func $__Z7op_sxtbRA10_h (; 103 ;) (param $0 i32)
+ (func $__Z7op_sxtbRA10_h (; 106 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1318:0
+  ;;@ test.cpp:1344:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18866,7 +18911,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -18880,7 +18925,7 @@
     (i32.const 255)
    )
   )
-  ;;@ test.cpp:1319:0
+  ;;@ test.cpp:1345:0
   (set_local $1
    (call $__Z12signExtend32h
     (get_local $1)
@@ -18909,7 +18954,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -18917,9 +18962,9 @@
    (get_local $1)
   )
  )
- (func $__Z7op_sxthRA10_h (; 104 ;) (param $0 i32)
+ (func $__Z7op_sxthRA10_h (; 107 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1312:0
+  ;;@ test.cpp:1338:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -18943,7 +18988,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -18957,7 +19002,7 @@
     (i32.const 65535)
    )
   )
-  ;;@ test.cpp:1313:0
+  ;;@ test.cpp:1339:0
   (set_local $1
    (call $__Z12signExtend32t
     (get_local $1)
@@ -18986,7 +19031,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -18994,9 +19039,9 @@
    (get_local $1)
   )
  )
- (func $__Z15op_tst_registerRA10_h (; 105 ;) (param $0 i32)
+ (func $__Z15op_tst_registerRA10_h (; 108 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1442:0
+  ;;@ test.cpp:1468:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -19020,7 +19065,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -19051,7 +19096,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $0
@@ -19065,7 +19110,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:1443:0
+  ;;@ test.cpp:1469:0
   (set_local $0
    (i32.shr_u
     (get_local $1)
@@ -19073,26 +19118,26 @@
    )
   )
   (i32.store8
-   (i32.const 1776640)
+   (i32.const 1777156)
    (get_local $0)
   )
-  ;;@ test.cpp:1444:0
+  ;;@ test.cpp:1470:0
   (set_local $0
    (i32.eqz
     (get_local $1)
    )
   )
   (i32.store8
-   (i32.const 1776641)
+   (i32.const 1777157)
    (get_local $0)
   )
  )
- (func $__Z6op_udfRA10_h (; 106 ;) (param $0 i32)
+ (func $__Z6op_udfRA10_h (; 109 ;) (param $0 i32)
   (nop)
  )
- (func $__Z7op_uxtbRA10_h (; 107 ;) (param $0 i32)
+ (func $__Z7op_uxtbRA10_h (; 110 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1283:0
+  ;;@ test.cpp:1309:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -19116,7 +19161,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -19153,7 +19198,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -19161,9 +19206,9 @@
    (get_local $1)
   )
  )
- (func $__Z7op_uxthRA10_h (; 108 ;) (param $0 i32)
+ (func $__Z7op_uxthRA10_h (; 111 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1278:0
+  ;;@ test.cpp:1304:0
   (set_local $1
    (i32.add
     (get_local $0)
@@ -19187,7 +19232,7 @@
      (get_local $1)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (set_local $1
@@ -19224,7 +19269,7 @@
      (get_local $0)
      (i32.const 2)
     )
-    (i32.const 6540)
+    (i32.const 7056)
    )
   )
   (i32.store
@@ -19232,16 +19277,16 @@
    (get_local $1)
   )
  )
- (func $__Z6op_wfeRA10_h (; 109 ;) (param $0 i32)
+ (func $__Z6op_wfeRA10_h (; 112 ;) (param $0 i32)
   (nop)
  )
- (func $__Z6op_wfiRA10_h (; 110 ;) (param $0 i32)
+ (func $__Z6op_wfiRA10_h (; 113 ;) (param $0 i32)
   (nop)
  )
- (func $__Z8op_yieldRA10_h (; 111 ;) (param $0 i32)
+ (func $__Z8op_yieldRA10_h (; 114 ;) (param $0 i32)
   (nop)
  )
- (func $__Z9fetchWordj (; 112 ;) (param $0 i32) (result i32)
+ (func $__Z9fetchWordj (; 115 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (if
    ;;@ test.cpp:67:0
@@ -19250,7 +19295,7 @@
     (i32.const 536870912)
    )
    (set_local $1
-    (i32.const 1776644)
+    (i32.const 1777160)
    )
    (if
     ;;@ test.cpp:72:0
@@ -19267,7 +19312,7 @@
       )
      )
      (set_local $1
-      (i32.const 2038788)
+      (i32.const 2039304)
      )
     )
     (block
@@ -19297,7 +19342,7 @@
   )
   (get_local $0)
  )
- (func $__Z13fetchHalfwordj (; 113 ;) (param $0 i32) (result i32)
+ (func $__Z13fetchHalfwordj (; 116 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (if
    ;;@ test.cpp:84:0
@@ -19306,16 +19351,16 @@
     (i32.const 536870912)
    )
    (set_local $1
-    (i32.const 1776644)
+    (i32.const 1777160)
    )
    (if
-    ;;@ test.cpp:89:0
+    ;;@ test.cpp:90:0
     (i32.lt_u
      (get_local $0)
      (i32.const 1073741824)
     )
     (block
-     ;;@ test.cpp:90:0
+     ;;@ test.cpp:91:0
      (set_local $0
       (i32.add
        (get_local $0)
@@ -19323,14 +19368,14 @@
       )
      )
      (set_local $1
-      (i32.const 2038788)
+      (i32.const 2039304)
      )
     )
     (block
      (set_local $0
       (i32.const 0)
      )
-     ;;@ test.cpp:96:0
+     ;;@ test.cpp:97:0
      (return
       (get_local $0)
      )
@@ -19353,39 +19398,39 @@
   )
   (get_local $0)
  )
- (func $__Z9fetchBytej (; 114 ;) (param $0 i32) (result i32)
+ (func $__Z9fetchBytej (; 117 ;) (param $0 i32) (result i32)
   (if
-   ;;@ test.cpp:99:0
+   ;;@ test.cpp:100:0
    (i32.lt_u
     (get_local $0)
     (i32.const 536870912)
    )
-   ;;@ test.cpp:101:0
+   ;;@ test.cpp:102:0
    (set_local $0
     (i32.add
      (get_local $0)
-     (i32.const 1776644)
+     (i32.const 1777160)
     )
    )
    (if
-    ;;@ test.cpp:103:0
+    ;;@ test.cpp:104:0
     (i32.lt_u
      (get_local $0)
      (i32.const 1073741824)
     )
     (block
-     ;;@ test.cpp:104:0
+     ;;@ test.cpp:105:0
      (set_local $0
       (i32.add
        (get_local $0)
        (i32.const -536870912)
       )
      )
-     ;;@ test.cpp:105:0
+     ;;@ test.cpp:106:0
      (set_local $0
       (i32.add
        (get_local $0)
-       (i32.const 2038788)
+       (i32.const 2039304)
       )
      )
     )
@@ -19393,7 +19438,7 @@
      (set_local $0
       (i32.const 0)
      )
-     ;;@ test.cpp:109:0
+     ;;@ test.cpp:110:0
      (return
       (get_local $0)
      )
@@ -19407,25 +19452,25 @@
   )
   (get_local $0)
  )
- (func $__Z9writeWordjj (; 115 ;) (param $0 i32) (param $1 i32)
+ (func $__Z9writeWordjj (; 118 ;) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (if
-   ;;@ test.cpp:112:0
+   ;;@ test.cpp:113:0
    (i32.lt_u
     (get_local $0)
     (i32.const 536870912)
    )
    (set_local $2
-    (i32.const 1776644)
+    (i32.const 1777160)
    )
    (if
-    ;;@ test.cpp:117:0
+    ;;@ test.cpp:118:0
     (i32.lt_u
      (get_local $0)
      (i32.const 1073741824)
     )
     (block
-     ;;@ test.cpp:118:0
+     ;;@ test.cpp:119:0
      (set_local $0
       (i32.add
        (get_local $0)
@@ -19433,10 +19478,10 @@
       )
      )
      (set_local $2
-      (i32.const 2038788)
+      (i32.const 2039304)
      )
     )
-    ;;@ test.cpp:124:0
+    ;;@ test.cpp:125:0
     (return)
    )
   )
@@ -19454,10 +19499,10 @@
    (get_local $1)
   )
  )
- (func $__Z12signExtend32h (; 116 ;) (param $0 i32) (result i32)
+ (func $__Z12signExtend32h (; 119 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:128:0
+  ;;@ test.cpp:129:0
   (set_local $0
    (i32.and
     (get_local $0)
@@ -19475,7 +19520,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:129:0
+  ;;@ test.cpp:130:0
   (set_local $2
    (i32.or
     (get_local $0)
@@ -19483,7 +19528,7 @@
    )
   )
   (if
-   ;;@ test.cpp:128:0
+   ;;@ test.cpp:129:0
    (i32.eqz
     (get_local $1)
    )
@@ -19491,13 +19536,13 @@
     (get_local $2)
    )
   )
-  ;;@ test.cpp:133:0
+  ;;@ test.cpp:134:0
   (get_local $0)
  )
- (func $__Z12signExtend32t (; 117 ;) (param $0 i32) (result i32)
+ (func $__Z12signExtend32t (; 120 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
-  ;;@ test.cpp:137:0
+  ;;@ test.cpp:138:0
   (set_local $0
    (i32.and
     (get_local $0)
@@ -19515,7 +19560,7 @@
     (get_local $1)
    )
   )
-  ;;@ test.cpp:138:0
+  ;;@ test.cpp:139:0
   (set_local $2
    (i32.or
     (get_local $0)
@@ -19523,7 +19568,7 @@
    )
   )
   (if
-   ;;@ test.cpp:137:0
+   ;;@ test.cpp:138:0
    (i32.eqz
     (get_local $1)
    )
@@ -19531,12 +19576,12 @@
     (get_local $2)
    )
   )
-  ;;@ test.cpp:142:0
+  ;;@ test.cpp:143:0
   (get_local $0)
  )
- (func $__Z5setPCj (; 118 ;) (param $0 i32)
+ (func $__Z5setPCj (; 121 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:145:0
+  ;;@ test.cpp:146:0
   (set_local $1
    (i32.and
     (get_local $0)
@@ -19544,11 +19589,11 @@
    )
   )
   (i32.store
-   (i32.const 6600)
+   (i32.const 7116)
    (get_local $1)
   )
  )
- (func $__Z4bootv (; 119 ;)
+ (func $__Z4bootv (; 122 ;)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -19562,7 +19607,7 @@
     (i32.const 16)
    )
   )
-  ;;@ test.cpp:149:0
+  ;;@ test.cpp:150:0
   (set_local $2
    (i32.add
     (get_local $1)
@@ -19572,77 +19617,77 @@
   (set_local $0
    (get_local $1)
   )
-  ;;@ test.cpp:152:0
+  ;;@ test.cpp:153:0
   (i32.store align=1
-   (i32.const 1776640)
+   (i32.const 1777156)
    (i32.const 0)
   )
-  ;;@ test.cpp:156:0
+  ;;@ test.cpp:157:0
   (drop
    (call $_memset
-    (i32.const 2038788)
+    (i32.const 2039304)
     (i32.const 0)
     (i32.const 32768)
    )
   )
   (i64.store align=4
-   (i32.const 6540)
+   (i32.const 7056)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 6548)
+   (i32.const 7064)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 6556)
+   (i32.const 7072)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 6564)
+   (i32.const 7080)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 6572)
+   (i32.const 7088)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 6580)
+   (i32.const 7096)
    (i64.const 0)
   )
   (i64.store align=4
-   (i32.const 6588)
+   (i32.const 7104)
    (i64.const 0)
   )
-  ;;@ test.cpp:157:0
+  ;;@ test.cpp:158:0
   (i64.store align=4
-   (i32.const 6596)
+   (i32.const 7112)
    (i64.const 0)
   )
-  ;;@ test.cpp:160:0
+  ;;@ test.cpp:166:0
   (set_local $3
    (call $__Z9fetchWordj
-    (i32.const 0)
+    (i32.const 8192)
    )
   )
   (i32.store
-   (i32.const 6592)
+   (i32.const 7108)
    (get_local $3)
   )
-  ;;@ test.cpp:161:0
+  ;;@ test.cpp:167:0
   (i32.store
    (get_local $0)
    (get_local $3)
   )
   (drop
    (call $_printf
-    (i32.const 2245)
+    (i32.const 2547)
     (get_local $0)
    )
   )
-  ;;@ test.cpp:162:0
+  ;;@ test.cpp:168:0
   (set_local $0
    (call $__Z13fetchHalfwordj
-    (i32.const 4)
+    (i32.const 8196)
    )
   )
   (set_local $0
@@ -19660,15 +19705,15 @@
   (call $__Z5setPCj
    (get_local $0)
   )
-  ;;@ test.cpp:163:0
+  ;;@ test.cpp:170:0
   (i32.store
-   (i32.const 6596)
+   (i32.const 7112)
    (i32.const -1)
   )
-  ;;@ test.cpp:164:0
+  ;;@ test.cpp:171:0
   (set_local $0
    (i32.load
-    (i32.const 6600)
+    (i32.const 7116)
    )
   )
   (i32.store
@@ -19677,7 +19722,7 @@
   )
   (drop
    (call $_printf
-    (i32.const 2253)
+    (i32.const 2555)
     (get_local $2)
    )
   )
@@ -19685,7 +19730,7 @@
    (get_local $1)
   )
  )
- (func $__Z9printBitsjj (; 120 ;) (param $0 i32) (param $1 i32)
+ (func $__Z9printBitsjj (; 123 ;) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -19698,7 +19743,7 @@
     (i32.const 16)
    )
   )
-  ;;@ test.cpp:175:0
+  ;;@ test.cpp:182:0
   (set_local $4
    (get_local $2)
   )
@@ -19709,13 +19754,13 @@
    )
   )
   (if
-   ;;@ test.cpp:180:0
+   ;;@ test.cpp:187:0
    (i32.le_s
     (get_local $0)
     (i32.const -1)
    )
    (block
-    ;;@ test.cpp:185:0
+    ;;@ test.cpp:192:0
     (drop
      (call $_putchar
       (i32.const 10)
@@ -19724,12 +19769,12 @@
     (set_global $STACKTOP
      (get_local $2)
     )
-    ;;@ test.cpp:186:0
+    ;;@ test.cpp:193:0
     (return)
    )
   )
   (loop $while-in
-   ;;@ test.cpp:182:0
+   ;;@ test.cpp:189:0
    (set_local $3
     (i32.shr_u
      (get_local $1)
@@ -19742,14 +19787,14 @@
      (i32.const 1)
     )
    )
-   ;;@ test.cpp:183:0
+   ;;@ test.cpp:190:0
    (i32.store
     (get_local $4)
     (get_local $3)
    )
    (drop
     (call $_printf
-     (i32.const 2261)
+     (i32.const 2563)
      (get_local $4)
     )
    )
@@ -19759,7 +19804,7 @@
      (i32.const -1)
     )
    )
-   ;;@ test.cpp:180:0
+   ;;@ test.cpp:187:0
    (br_if $while-in
     (i32.gt_s
      (get_local $0)
@@ -19767,7 +19812,7 @@
     )
    )
   )
-  ;;@ test.cpp:185:0
+  ;;@ test.cpp:192:0
   (drop
    (call $_putchar
     (i32.const 10)
@@ -19777,778 +19822,270 @@
    (get_local $2)
   )
  )
- (func $__Z9loadFlashPhj (; 121 ;) (param $0 i32) (param $1 i32)
+ (func $__Z9loadFlashPhj (; 124 ;) (param $0 i32) (param $1 i32)
+  ;;@ test.cpp:197:0
+  (drop
+   (call $_memset
+    (i32.const 1777160)
+    (i32.const -1)
+    (i32.const 262144)
+   )
+  )
+  ;;@ test.cpp:198:0
+  (drop
+   (call $_memcpy
+    (i32.const 1785352)
+    (get_local $0)
+    (get_local $1)
+   )
+  )
+  ;;@ test.cpp:204:0
+  (call $__Z4bootv)
+  ;;@ test.cpp:206:0
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+  (call $__Z5_stepv)
+ )
+ (func $__Z5_stepv (; 125 ;)
+  (local $0 i32)
+  (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
-  (local $6 i32)
-  (local $7 i32)
-  (local $8 i32)
-  (local $9 i32)
-  (local $10 i32)
-  (local $11 i32)
-  (local $12 i32)
-  (local $13 i32)
-  (local $14 i32)
-  (local $15 i32)
-  (local $16 i32)
-  (local $17 i32)
-  (local $18 i32)
-  (local $19 i32)
-  (local $20 i32)
-  (set_local $3
+  (set_local $5
    (get_global $STACKTOP)
   )
   (set_global $STACKTOP
    (i32.add
     (get_global $STACKTOP)
-    (i32.const 144)
-   )
-  )
-  ;;@ test.cpp:189:0
-  (set_local $19
-   (i32.add
-    (get_local $3)
-    (i32.const 128)
-   )
-  )
-  (set_local $4
-   (i32.add
-    (get_local $3)
-    (i32.const 120)
-   )
-  )
-  (set_local $5
-   (i32.add
-    (get_local $3)
-    (i32.const 112)
-   )
-  )
-  (set_local $6
-   (i32.add
-    (get_local $3)
-    (i32.const 104)
-   )
-  )
-  (set_local $7
-   (i32.add
-    (get_local $3)
-    (i32.const 96)
-   )
-  )
-  (set_local $8
-   (i32.add
-    (get_local $3)
-    (i32.const 88)
-   )
-  )
-  (set_local $9
-   (i32.add
-    (get_local $3)
-    (i32.const 80)
-   )
-  )
-  (set_local $10
-   (i32.add
-    (get_local $3)
-    (i32.const 72)
-   )
-  )
-  (set_local $11
-   (i32.add
-    (get_local $3)
-    (i32.const 64)
-   )
-  )
-  (set_local $12
-   (i32.add
-    (get_local $3)
-    (i32.const 56)
-   )
-  )
-  (set_local $13
-   (i32.add
-    (get_local $3)
-    (i32.const 48)
-   )
-  )
-  (set_local $14
-   (i32.add
-    (get_local $3)
-    (i32.const 40)
-   )
-  )
-  (set_local $15
-   (i32.add
-    (get_local $3)
     (i32.const 32)
    )
   )
-  (set_local $16
+  ;;@ test.cpp:828:0
+  (set_local $4
    (i32.add
-    (get_local $3)
-    (i32.const 24)
-   )
-  )
-  (set_local $17
-   (i32.add
-    (get_local $3)
-    (i32.const 16)
-   )
-  )
-  (set_local $18
-   (i32.add
-    (get_local $3)
+    (get_local $5)
     (i32.const 8)
    )
   )
-  (set_local $2
-   (get_local $3)
-  )
-  ;;@ test.cpp:190:0
-  (drop
-   (call $_memset
-    (i32.const 1776644)
-    (i32.const -1)
-    (i32.const 262144)
-   )
-  )
-  ;;@ test.cpp:191:0
-  (drop
-   (call $_memcpy
-    (i32.const 1776644)
-    (get_local $0)
-    (get_local $1)
-   )
-  )
-  ;;@ test.cpp:193:0
   (set_local $0
-   (i32.load8_s
-    (i32.const 1776644)
-   )
-  )
-  (set_local $20
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $2)
-   (i32.const 0)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $2)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $20)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $2)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776645)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $18)
-   (i32.const 1)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $18)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $18)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776646)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $17)
-   (i32.const 2)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $17)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $17)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776647)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $16)
-   (i32.const 3)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $16)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $16)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776648)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $15)
-   (i32.const 4)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $15)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $15)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776649)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $14)
-   (i32.const 5)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $14)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $14)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776650)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $13)
-   (i32.const 6)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $13)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $13)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776651)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $12)
-   (i32.const 7)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $12)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $12)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776652)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $11)
-   (i32.const 8)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $11)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $11)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776653)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $10)
-   (i32.const 9)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $10)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $10)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776654)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $9)
-   (i32.const 10)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $9)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $9)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776655)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $8)
-   (i32.const 11)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $8)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $8)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776656)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $7)
-   (i32.const 12)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $7)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $7)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776657)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $6)
-   (i32.const 13)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $6)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $6)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776658)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
    (get_local $5)
-   (i32.const 14)
   )
-  (set_local $0
-   (i32.add
-    (get_local $5)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $5)
-   )
-  )
-  (set_local $0
-   (i32.load8_s
-    (i32.const 1776659)
-   )
-  )
-  (set_local $2
-   (i32.and
-    (get_local $0)
-    (i32.const 255)
-   )
-  )
-  (i32.store
-   (get_local $4)
-   (i32.const 15)
-  )
-  (set_local $0
-   (i32.add
-    (get_local $4)
-    (i32.const 4)
-   )
-  )
-  (i32.store
-   (get_local $0)
-   (get_local $2)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2264)
-    (get_local $4)
-   )
-  )
-  ;;@ test.cpp:195:0
-  (i32.store
-   (get_local $19)
-   (get_local $1)
-  )
-  (drop
-   (call $_printf
-    (i32.const 2278)
-    (get_local $19)
-   )
-  )
-  ;;@ test.cpp:196:0
-  (call $__Z4bootv)
-  ;;@ test.cpp:197:0
-  (call $__Z5_stepv)
-  ;;@ test.cpp:198:0
-  (call $__Z5_stepv)
-  ;;@ test.cpp:199:0
-  (call $__Z5_stepv)
-  ;;@ test.cpp:200:0
-  (call $__Z5_stepv)
-  ;;@ test.cpp:201:0
-  (call $__Z5_stepv)
-  ;;@ test.cpp:202:0
-  (call $__Z5_stepv)
-  (set_global $STACKTOP
-   (get_local $3)
-  )
- )
- (func $__Z5_stepv (; 122 ;)
-  (local $0 i32)
-  (local $1 i32)
-  (local $2 i32)
-  ;;@ test.cpp:807:0
   (set_local $1
    (i32.load
-    (i32.const 6600)
+    (i32.const 7116)
    )
   )
-  ;;@ test.cpp:811:0
-  (set_local $0
+  ;;@ test.cpp:832:0
+  (set_local $2
    (i32.shr_u
     (get_local $1)
     (i32.const 1)
    )
   )
-  (set_local $0
+  (set_local $2
    (i32.add
     (i32.mul
-     (get_local $0)
+     (get_local $2)
      (i32.const 12)
     )
-    (i32.const 6604)
+    (i32.const 7120)
    )
   )
-  ;;@ test.cpp:812:0
-  (set_local $2
+  ;;@ test.cpp:833:0
+  (set_local $3
    (i32.load
-    (get_local $0)
+    (get_local $2)
    )
   )
   (if
-   ;;@ test.cpp:813:0
+   ;;@ test.cpp:834:0
    (i32.eqz
-    (get_local $2)
+    (get_local $3)
    )
-   ;;@ test.cpp:814:0
+   ;;@ test.cpp:835:0
    (call $__Z18decode_instructionjR14simple_op_args
     (get_local $1)
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:837:0
+  (set_local $3
+   (call $__Z13fetchHalfwordj
+    (get_local $1)
+   )
+  )
+  (set_local $3
+   (i32.and
+    (get_local $3)
+    (i32.const 65535)
+   )
+  )
+  ;;@ test.cpp:838:0
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+  (set_local $1
+   (i32.add
+    (get_local $0)
+    (i32.const 4)
+   )
+  )
+  (i32.store
+   (get_local $1)
+   (get_local $3)
+  )
+  (drop
+   (call $_printf
+    (i32.const 2579)
     (get_local $0)
    )
   )
-  ;;@ test.cpp:816:0
+  ;;@ test.cpp:839:0
+  (call $__Z9printBitsjj
+   (i32.const 16)
+   (get_local $3)
+  )
+  ;;@ test.cpp:840:0
+  (call $__Z7printOpR14simple_op_args
+   (get_local $2)
+  )
+  ;;@ test.cpp:841:0
+  (set_local $0
+   (i32.load
+    (get_local $2)
+   )
+  )
+  ;;@ test.cpp:843:0
   (set_local $1
-   (call $__Z13fetchHalfwordj
+   (i32.load
+    (i32.const 7116)
+   )
+  )
+  (set_local $1
+   (i32.add
     (get_local $1)
+    (i32.const 2)
+   )
+  )
+  (i32.store
+   (i32.const 7116)
+   (get_local $1)
+  )
+  ;;@ test.cpp:845:0
+  (call_indirect (type $FUNCSIG$vi)
+   (get_local $2)
+   (i32.add
+    (i32.and
+     (get_local $0)
+     (i32.const 127)
+    )
+    (i32.const 64)
+   )
+  )
+  ;;@ test.cpp:846:0
+  (set_local $0
+   (i32.load8_s
+    (i32.const 1777156)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (set_local $2
+   (i32.load8_s
+    (i32.const 1777157)
+   )
+  )
+  (set_local $2
+   (i32.and
+    (get_local $2)
+    (i32.const 255)
+   )
+  )
+  (set_local $1
+   (i32.load8_s
+    (i32.const 1777158)
    )
   )
   (set_local $1
    (i32.and
     (get_local $1)
-    (i32.const 65535)
+    (i32.const 255)
    )
   )
-  ;;@ test.cpp:818:0
-  (call $__Z9printBitsjj
-   (i32.const 16)
-   (get_local $1)
-  )
-  ;;@ test.cpp:819:0
-  (call $__Z7printOpR14simple_op_args
-   (get_local $0)
-  )
-  ;;@ test.cpp:820:0
-  (set_local $1
-   (i32.load
-    (get_local $0)
+  (set_local $3
+   (i32.load8_s
+    (i32.const 1777159)
    )
   )
-  ;;@ test.cpp:821:0
-  (call_indirect (type $FUNCSIG$vi)
-   (get_local $0)
-   (i32.add
-    (i32.and
-     (get_local $1)
-     (i32.const 127)
-    )
-    (i32.const 48)
-   )
-  )
-  ;;@ test.cpp:824:0
-  (set_local $0
-   (i32.load
-    (i32.const 6600)
-   )
-  )
-  (set_local $0
-   (i32.add
-    (get_local $0)
-    (i32.const 2)
+  (set_local $3
+   (i32.and
+    (get_local $3)
+    (i32.const 255)
    )
   )
   (i32.store
-   (i32.const 6600)
+   (get_local $4)
    (get_local $0)
   )
-  ;;@ test.cpp:827:0
+  (set_local $0
+   (i32.add
+    (get_local $4)
+    (i32.const 4)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $2)
+  )
+  (set_local $0
+   (i32.add
+    (get_local $4)
+    (i32.const 8)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $1)
+  )
+  (set_local $0
+   (i32.add
+    (get_local $4)
+    (i32.const 12)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $3)
+  )
+  (drop
+   (call $_printf
+    (i32.const 2594)
+    (get_local $4)
+   )
+  )
+  ;;@ test.cpp:852:0
   (set_local $0
    (i32.load8_s
-    (i32.const 2071556)
+    (i32.const 2072072)
    )
   )
   (set_local $0
@@ -20564,127 +20101,165 @@
    )
   )
   (i32.store8
-   (i32.const 2071556)
+   (i32.const 2072072)
    (get_local $0)
   )
+  (set_global $STACKTOP
+   (get_local $5)
+  )
  )
- (func $__Z18decode_instructionjR14simple_op_args (; 123 ;) (param $0 i32) (param $1 i32)
+ (func $__Z18decode_instructionjR14simple_op_args (; 126 ;) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
   (local $7 i32)
-  (set_local $4
-   (get_global $STACKTOP)
-  )
-  (set_global $STACKTOP
-   (i32.add
-    (get_global $STACKTOP)
-    (i32.const 16)
-   )
-  )
-  ;;@ test.cpp:209:0
-  (set_local $2
-   (get_local $4)
-  )
-  ;;@ test.cpp:210:0
-  (set_local $6
+  ;;@ test.cpp:215:0
+  (set_local $5
    (call $__Z13fetchHalfwordj
     (get_local $0)
    )
   )
-  ;;@ test.cpp:211:0
+  ;;@ test.cpp:216:0
   (set_local $3
    (i32.and
-    (get_local $6)
+    (get_local $5)
     (i32.const 65535)
    )
   )
-  (set_local $5
+  (set_local $4
    (i32.shr_u
     (get_local $3)
     (i32.const 10)
    )
   )
-  ;;@ test.cpp:212:0
-  (drop
-   (call $_printf
-    (i32.const 2305)
-    (get_local $2)
-   )
-  )
-  ;;@ test.cpp:213:0
-  (call $__Z9printBitsjj
-   (i32.const 6)
-   (get_local $5)
-  )
-  ;;@ test.cpp:214:0
-  (set_local $2
+  ;;@ test.cpp:219:0
+  (set_local $7
    (i32.and
-    (get_local $5)
+    (get_local $4)
     (i32.const 255)
    )
   )
-  (block $switch-default23
-   (block $switch-case22
-    (block $switch-case17
-     (br_table $switch-case17 $switch-case22 $switch-default23
-      (i32.sub
-       (i32.and
-        (get_local $2)
-        (i32.const 63)
+  (block $label$break$L1
+   (block $switch-default23
+    (block $switch-case22
+     (block $switch-case17
+      (br_table $switch-case17 $switch-case22 $switch-default23
+       (i32.sub
+        (i32.and
+         (get_local $7)
+         (i32.const 63)
+        )
+        (i32.const 16)
        )
-       (i32.const 16)
       )
      )
-    )
-    ;;@ test.cpp:219:0
-    (set_local $2
-     (i32.shr_u
+     ;;@ test.cpp:224:0
+     (set_local $4
+      (i32.shr_u
+       (i32.and
+        (get_local $5)
+        (i32.const 65535)
+       )
+       (i32.const 6)
+      )
+     )
+     (set_local $4
       (i32.and
-       (get_local $6)
-       (i32.const 65535)
+       (get_local $4)
+       (i32.const 255)
       )
-      (i32.const 6)
      )
-    )
-    (set_local $2
-     (i32.and
-      (get_local $2)
-      (i32.const 255)
-     )
-    )
-    (block $switch-default
-     (block $switch-case16
-      (block $switch-case15
-       (block $switch-case14
-        (block $switch-case13
-         (block $switch-case12
-          (block $switch-case11
-           (block $switch-case10
-            (block $switch-case9
-             (block $switch-case8
-              (block $switch-case7
-               (block $switch-case6
-                (block $switch-case5
-                 (block $switch-case4
-                  (block $switch-case3
-                   (block $switch-case2
-                    (block $switch-case
-                     (br_table $switch-case $switch-case2 $switch-case3 $switch-case4 $switch-case5 $switch-case6 $switch-case7 $switch-case8 $switch-case9 $switch-case10 $switch-case11 $switch-case12 $switch-case13 $switch-case14 $switch-case15 $switch-case16 $switch-default
-                      (i32.and
-                       (get_local $2)
-                       (i32.const 15)
+     (block $switch-default
+      (block $switch-case16
+       (block $switch-case15
+        (block $switch-case14
+         (block $switch-case13
+          (block $switch-case12
+           (block $switch-case11
+            (block $switch-case10
+             (block $switch-case9
+              (block $switch-case8
+               (block $switch-case7
+                (block $switch-case6
+                 (block $switch-case5
+                  (block $switch-case4
+                   (block $switch-case3
+                    (block $switch-case2
+                     (block $switch-case
+                      (br_table $switch-case $switch-case2 $switch-case3 $switch-case4 $switch-case5 $switch-case6 $switch-case7 $switch-case8 $switch-case9 $switch-case10 $switch-case11 $switch-case12 $switch-case13 $switch-case14 $switch-case15 $switch-case16 $switch-default
+                       (i32.and
+                        (get_local $4)
+                        (i32.const 15)
+                       )
                       )
                      )
+                     ;;@ test.cpp:227:0
+                     (i32.store
+                      (get_local $1)
+                      (i32.const 23)
+                     )
+                     ;;@ test.cpp:228:0
+                     (set_local $0
+                      (i32.shr_u
+                       (get_local $3)
+                       (i32.const 3)
+                      )
+                     )
+                     (set_local $0
+                      (i32.and
+                       (get_local $0)
+                       (i32.const 7)
+                      )
+                     )
+                     (set_local $2
+                      (i32.add
+                       (get_local $1)
+                       (i32.const 6)
+                      )
+                     )
+                     (i32.store8
+                      (get_local $2)
+                      (get_local $0)
+                     )
+                     ;;@ test.cpp:229:0
+                     (set_local $0
+                      (i32.and
+                       (get_local $3)
+                       (i32.const 7)
+                      )
+                     )
+                     (set_local $2
+                      (i32.add
+                       (get_local $1)
+                       (i32.const 4)
+                      )
+                     )
+                     (i32.store8
+                      (get_local $2)
+                      (get_local $0)
+                     )
+                     ;;@ test.cpp:230:0
+                     (set_local $1
+                      (i32.add
+                       (get_local $1)
+                       (i32.const 5)
+                      )
+                     )
+                     (i32.store8
+                      (get_local $1)
+                      (get_local $0)
+                     )
+                     ;;@ test.cpp:799:0
+                     (return)
                     )
-                    ;;@ test.cpp:222:0
+                    ;;@ test.cpp:234:0
                     (i32.store
                      (get_local $1)
-                     (i32.const 18)
+                     (i32.const 52)
                     )
-                    ;;@ test.cpp:223:0
+                    ;;@ test.cpp:235:0
                     (set_local $0
                      (i32.shr_u
                       (get_local $3)
@@ -20707,7 +20282,7 @@
                      (get_local $2)
                      (get_local $0)
                     )
-                    ;;@ test.cpp:224:0
+                    ;;@ test.cpp:236:0
                     (set_local $0
                      (i32.and
                       (get_local $3)
@@ -20724,7 +20299,7 @@
                      (get_local $2)
                      (get_local $0)
                     )
-                    ;;@ test.cpp:225:0
+                    ;;@ test.cpp:237:0
                     (set_local $1
                      (i32.add
                       (get_local $1)
@@ -20735,18 +20310,15 @@
                      (get_local $1)
                      (get_local $0)
                     )
-                    (set_global $STACKTOP
-                     (get_local $4)
-                    )
-                    ;;@ test.cpp:791:0
+                    ;;@ test.cpp:799:0
                     (return)
                    )
-                   ;;@ test.cpp:229:0
+                   ;;@ test.cpp:241:0
                    (i32.store
                     (get_local $1)
-                    (i32.const 47)
+                    (i32.const 65)
                    )
-                   ;;@ test.cpp:230:0
+                   ;;@ test.cpp:242:0
                    (set_local $0
                     (i32.shr_u
                      (get_local $3)
@@ -20769,7 +20341,7 @@
                     (get_local $2)
                     (get_local $0)
                    )
-                   ;;@ test.cpp:231:0
+                   ;;@ test.cpp:243:0
                    (set_local $0
                     (i32.and
                      (get_local $3)
@@ -20786,7 +20358,7 @@
                     (get_local $2)
                     (get_local $0)
                    )
-                   ;;@ test.cpp:232:0
+                   ;;@ test.cpp:244:0
                    (set_local $1
                     (i32.add
                      (get_local $1)
@@ -20797,18 +20369,15 @@
                     (get_local $1)
                     (get_local $0)
                    )
-                   (set_global $STACKTOP
-                    (get_local $4)
-                   )
-                   ;;@ test.cpp:791:0
+                   ;;@ test.cpp:799:0
                    (return)
                   )
-                  ;;@ test.cpp:236:0
+                  ;;@ test.cpp:248:0
                   (i32.store
                    (get_local $1)
-                   (i32.const 60)
+                   (i32.const 67)
                   )
-                  ;;@ test.cpp:237:0
+                  ;;@ test.cpp:249:0
                   (set_local $0
                    (i32.shr_u
                     (get_local $3)
@@ -20831,7 +20400,7 @@
                    (get_local $2)
                    (get_local $0)
                   )
-                  ;;@ test.cpp:238:0
+                  ;;@ test.cpp:250:0
                   (set_local $0
                    (i32.and
                     (get_local $3)
@@ -20848,7 +20417,7 @@
                    (get_local $2)
                    (get_local $0)
                   )
-                  ;;@ test.cpp:239:0
+                  ;;@ test.cpp:251:0
                   (set_local $1
                    (i32.add
                     (get_local $1)
@@ -20859,18 +20428,15 @@
                    (get_local $1)
                    (get_local $0)
                   )
-                  (set_global $STACKTOP
-                   (get_local $4)
-                  )
-                  ;;@ test.cpp:791:0
+                  ;;@ test.cpp:799:0
                   (return)
                  )
-                 ;;@ test.cpp:243:0
+                 ;;@ test.cpp:255:0
                  (i32.store
                   (get_local $1)
-                  (i32.const 62)
+                  (i32.const 25)
                  )
-                 ;;@ test.cpp:244:0
+                 ;;@ test.cpp:256:0
                  (set_local $0
                   (i32.shr_u
                    (get_local $3)
@@ -20893,7 +20459,7 @@
                   (get_local $2)
                   (get_local $0)
                  )
-                 ;;@ test.cpp:245:0
+                 ;;@ test.cpp:257:0
                  (set_local $0
                   (i32.and
                    (get_local $3)
@@ -20910,7 +20476,7 @@
                   (get_local $2)
                   (get_local $0)
                  )
-                 ;;@ test.cpp:246:0
+                 ;;@ test.cpp:258:0
                  (set_local $1
                   (i32.add
                    (get_local $1)
@@ -20921,18 +20487,15 @@
                   (get_local $1)
                   (get_local $0)
                  )
-                 (set_global $STACKTOP
-                  (get_local $4)
-                 )
-                 ;;@ test.cpp:791:0
+                 ;;@ test.cpp:799:0
                  (return)
                 )
-                ;;@ test.cpp:250:0
+                ;;@ test.cpp:262:0
                 (i32.store
                  (get_local $1)
-                 (i32.const 20)
+                 (i32.const 17)
                 )
-                ;;@ test.cpp:251:0
+                ;;@ test.cpp:263:0
                 (set_local $0
                  (i32.shr_u
                   (get_local $3)
@@ -20955,7 +20518,7 @@
                  (get_local $2)
                  (get_local $0)
                 )
-                ;;@ test.cpp:252:0
+                ;;@ test.cpp:264:0
                 (set_local $0
                  (i32.and
                   (get_local $3)
@@ -20972,7 +20535,7 @@
                  (get_local $2)
                  (get_local $0)
                 )
-                ;;@ test.cpp:253:0
+                ;;@ test.cpp:265:0
                 (set_local $1
                  (i32.add
                   (get_local $1)
@@ -20983,18 +20546,15 @@
                  (get_local $1)
                  (get_local $0)
                 )
-                (set_global $STACKTOP
-                 (get_local $4)
-                )
-                ;;@ test.cpp:791:0
+                ;;@ test.cpp:799:0
                 (return)
                )
-               ;;@ test.cpp:257:0
+               ;;@ test.cpp:269:0
                (i32.store
                 (get_local $1)
-                (i32.const 12)
+                (i32.const 83)
                )
-               ;;@ test.cpp:258:0
+               ;;@ test.cpp:270:0
                (set_local $0
                 (i32.shr_u
                  (get_local $3)
@@ -21017,7 +20577,7 @@
                 (get_local $2)
                 (get_local $0)
                )
-               ;;@ test.cpp:259:0
+               ;;@ test.cpp:271:0
                (set_local $0
                 (i32.and
                  (get_local $3)
@@ -21034,7 +20594,7 @@
                 (get_local $2)
                 (get_local $0)
                )
-               ;;@ test.cpp:260:0
+               ;;@ test.cpp:272:0
                (set_local $1
                 (i32.add
                  (get_local $1)
@@ -21045,18 +20605,15 @@
                 (get_local $1)
                 (get_local $0)
                )
-               (set_global $STACKTOP
-                (get_local $4)
-               )
-               ;;@ test.cpp:791:0
+               ;;@ test.cpp:799:0
                (return)
               )
-              ;;@ test.cpp:264:0
+              ;;@ test.cpp:276:0
               (i32.store
                (get_local $1)
-               (i32.const 78)
+               (i32.const 81)
               )
-              ;;@ test.cpp:265:0
+              ;;@ test.cpp:277:0
               (set_local $0
                (i32.shr_u
                 (get_local $3)
@@ -21079,7 +20636,7 @@
                (get_local $2)
                (get_local $0)
               )
-              ;;@ test.cpp:266:0
+              ;;@ test.cpp:278:0
               (set_local $0
                (i32.and
                 (get_local $3)
@@ -21096,7 +20653,7 @@
                (get_local $2)
                (get_local $0)
               )
-              ;;@ test.cpp:267:0
+              ;;@ test.cpp:279:0
               (set_local $1
                (i32.add
                 (get_local $1)
@@ -21107,18 +20664,15 @@
                (get_local $1)
                (get_local $0)
               )
-              (set_global $STACKTOP
-               (get_local $4)
-              )
-              ;;@ test.cpp:791:0
+              ;;@ test.cpp:799:0
               (return)
              )
-             ;;@ test.cpp:271:0
+             ;;@ test.cpp:283:0
              (i32.store
               (get_local $1)
-              (i32.const 76)
+              (i32.const 98)
              )
-             ;;@ test.cpp:272:0
+             ;;@ test.cpp:284:0
              (set_local $0
               (i32.shr_u
                (get_local $3)
@@ -21141,24 +20695,13 @@
               (get_local $2)
               (get_local $0)
              )
-             ;;@ test.cpp:273:0
+             ;;@ test.cpp:285:0
              (set_local $0
               (i32.and
                (get_local $3)
                (i32.const 7)
               )
              )
-             (set_local $2
-              (i32.add
-               (get_local $1)
-               (i32.const 4)
-              )
-             )
-             (i32.store8
-              (get_local $2)
-              (get_local $0)
-             )
-             ;;@ test.cpp:274:0
              (set_local $1
               (i32.add
                (get_local $1)
@@ -21169,18 +20712,15 @@
               (get_local $1)
               (get_local $0)
              )
-             (set_global $STACKTOP
-              (get_local $4)
-             )
-             ;;@ test.cpp:791:0
+             ;;@ test.cpp:799:0
              (return)
             )
-            ;;@ test.cpp:278:0
+            ;;@ test.cpp:289:0
             (i32.store
              (get_local $1)
-             (i32.const 93)
+             (i32.const 82)
             )
-            ;;@ test.cpp:279:0
+            ;;@ test.cpp:290:0
             (set_local $0
              (i32.shr_u
               (get_local $3)
@@ -21196,42 +20736,50 @@
             (set_local $2
              (i32.add
               (get_local $1)
-              (i32.const 6)
+              (i32.const 5)
              )
             )
             (i32.store8
              (get_local $2)
              (get_local $0)
             )
-            ;;@ test.cpp:280:0
+            ;;@ test.cpp:291:0
             (set_local $0
              (i32.and
               (get_local $3)
               (i32.const 7)
              )
             )
-            (set_local $1
+            (set_local $2
              (i32.add
               (get_local $1)
-              (i32.const 5)
+              (i32.const 4)
              )
             )
             (i32.store8
-             (get_local $1)
+             (get_local $2)
              (get_local $0)
             )
-            (set_global $STACKTOP
-             (get_local $4)
+            ;;@ test.cpp:292:0
+            (set_local $0
+             (i32.add
+              (get_local $1)
+              (i32.const 8)
+             )
             )
-            ;;@ test.cpp:791:0
+            (i32.store16
+             (get_local $0)
+             (i32.const 0)
+            )
+            ;;@ test.cpp:799:0
             (return)
            )
-           ;;@ test.cpp:284:0
+           ;;@ test.cpp:296:0
            (i32.store
             (get_local $1)
-            (i32.const 77)
+            (i32.const 48)
            )
-           ;;@ test.cpp:285:0
+           ;;@ test.cpp:297:0
            (set_local $0
             (i32.shr_u
              (get_local $3)
@@ -21247,53 +20795,39 @@
            (set_local $2
             (i32.add
              (get_local $1)
-             (i32.const 5)
+             (i32.const 6)
             )
            )
            (i32.store8
             (get_local $2)
             (get_local $0)
            )
-           ;;@ test.cpp:286:0
+           ;;@ test.cpp:298:0
            (set_local $0
             (i32.and
              (get_local $3)
              (i32.const 7)
             )
            )
-           (set_local $2
+           (set_local $1
             (i32.add
              (get_local $1)
-             (i32.const 4)
+             (i32.const 5)
             )
            )
            (i32.store8
-            (get_local $2)
+            (get_local $1)
             (get_local $0)
            )
-           ;;@ test.cpp:287:0
-           (set_local $0
-            (i32.add
-             (get_local $1)
-             (i32.const 8)
-            )
-           )
-           (i32.store16
-            (get_local $0)
-            (i32.const 0)
-           )
-           (set_global $STACKTOP
-            (get_local $4)
-           )
-           ;;@ test.cpp:791:0
+           ;;@ test.cpp:799:0
            (return)
           )
-          ;;@ test.cpp:291:0
+          ;;@ test.cpp:302:0
           (i32.store
            (get_local $1)
-           (i32.const 43)
+           (i32.const 46)
           )
-          ;;@ test.cpp:292:0
+          ;;@ test.cpp:303:0
           (set_local $0
            (i32.shr_u
             (get_local $3)
@@ -21316,7 +20850,7 @@
            (get_local $2)
            (get_local $0)
           )
-          ;;@ test.cpp:293:0
+          ;;@ test.cpp:304:0
           (set_local $0
            (i32.and
             (get_local $3)
@@ -21333,18 +20867,15 @@
            (get_local $1)
            (get_local $0)
           )
-          (set_global $STACKTOP
-           (get_local $4)
-          )
-          ;;@ test.cpp:791:0
+          ;;@ test.cpp:799:0
           (return)
          )
-         ;;@ test.cpp:297:0
+         ;;@ test.cpp:308:0
          (i32.store
           (get_local $1)
-          (i32.const 41)
+          (i32.const 75)
          )
-         ;;@ test.cpp:298:0
+         ;;@ test.cpp:309:0
          (set_local $0
           (i32.shr_u
            (get_local $3)
@@ -21367,13 +20898,24 @@
           (get_local $2)
           (get_local $0)
          )
-         ;;@ test.cpp:299:0
+         ;;@ test.cpp:310:0
          (set_local $0
           (i32.and
            (get_local $3)
            (i32.const 7)
           )
          )
+         (set_local $2
+          (i32.add
+           (get_local $1)
+           (i32.const 4)
+          )
+         )
+         (i32.store8
+          (get_local $2)
+          (get_local $0)
+         )
+         ;;@ test.cpp:311:0
          (set_local $1
           (i32.add
            (get_local $1)
@@ -21384,18 +20926,15 @@
           (get_local $1)
           (get_local $0)
          )
-         (set_global $STACKTOP
-          (get_local $4)
-         )
-         ;;@ test.cpp:791:0
+         ;;@ test.cpp:799:0
          (return)
         )
-        ;;@ test.cpp:303:0
+        ;;@ test.cpp:315:0
         (i32.store
          (get_local $1)
-         (i32.const 70)
+         (i32.const 72)
         )
-        ;;@ test.cpp:304:0
+        ;;@ test.cpp:316:0
         (set_local $0
          (i32.shr_u
           (get_local $3)
@@ -21411,14 +20950,14 @@
         (set_local $2
          (i32.add
           (get_local $1)
-          (i32.const 6)
+          (i32.const 5)
          )
         )
         (i32.store8
          (get_local $2)
          (get_local $0)
         )
-        ;;@ test.cpp:305:0
+        ;;@ test.cpp:317:0
         (set_local $0
          (i32.and
           (get_local $3)
@@ -21435,29 +20974,26 @@
          (get_local $2)
          (get_local $0)
         )
-        ;;@ test.cpp:306:0
+        ;;@ test.cpp:318:0
         (set_local $1
          (i32.add
           (get_local $1)
-          (i32.const 5)
+          (i32.const 6)
          )
         )
         (i32.store8
          (get_local $1)
          (get_local $0)
         )
-        (set_global $STACKTOP
-         (get_local $4)
-        )
-        ;;@ test.cpp:791:0
+        ;;@ test.cpp:799:0
         (return)
        )
-       ;;@ test.cpp:310:0
+       ;;@ test.cpp:322:0
        (i32.store
         (get_local $1)
-        (i32.const 67)
+        (i32.const 41)
        )
-       ;;@ test.cpp:311:0
+       ;;@ test.cpp:323:0
        (set_local $0
         (i32.shr_u
          (get_local $3)
@@ -21473,14 +21009,14 @@
        (set_local $2
         (i32.add
          (get_local $1)
-         (i32.const 5)
+         (i32.const 6)
         )
        )
        (i32.store8
         (get_local $2)
         (get_local $0)
        )
-       ;;@ test.cpp:312:0
+       ;;@ test.cpp:324:0
        (set_local $0
         (i32.and
          (get_local $3)
@@ -21497,29 +21033,26 @@
         (get_local $2)
         (get_local $0)
        )
-       ;;@ test.cpp:313:0
+       ;;@ test.cpp:325:0
        (set_local $1
         (i32.add
          (get_local $1)
-         (i32.const 6)
+         (i32.const 5)
         )
        )
        (i32.store8
         (get_local $1)
         (get_local $0)
        )
-       (set_global $STACKTOP
-        (get_local $4)
-       )
-       ;;@ test.cpp:791:0
+       ;;@ test.cpp:799:0
        (return)
       )
-      ;;@ test.cpp:317:0
+      ;;@ test.cpp:329:0
       (i32.store
        (get_local $1)
-       (i32.const 36)
+       (i32.const 73)
       )
-      ;;@ test.cpp:318:0
+      ;;@ test.cpp:330:0
       (set_local $0
        (i32.shr_u
         (get_local $3)
@@ -21542,322 +21075,1963 @@
        (get_local $2)
        (get_local $0)
       )
-      ;;@ test.cpp:319:0
+      ;;@ test.cpp:331:0
       (set_local $0
        (i32.and
         (get_local $3)
         (i32.const 7)
        )
       )
-      (set_local $2
+      (set_local $1
        (i32.add
         (get_local $1)
         (i32.const 4)
        )
       )
       (i32.store8
+       (get_local $1)
+       (get_local $0)
+      )
+      ;;@ test.cpp:799:0
+      (return)
+     )
+     (br $label$break$L1)
+    )
+    ;;@ test.cpp:339:0
+    (set_local $4
+     (i32.shr_u
+      (get_local $3)
+      (i32.const 6)
+     )
+    )
+    (set_local $2
+     (i32.and
+      (get_local $4)
+      (i32.const 15)
+     )
+    )
+    (if
+     ;;@ test.cpp:359:0
+     (i32.eq
+      (get_local $2)
+      (i32.const 4)
+     )
+     (block
+      ;;@ test.cpp:361:0
+      (i32.store
+       (get_local $1)
+       (i32.const 74)
+      )
+      ;;@ test.cpp:799:0
+      (return)
+     )
+    )
+    ;;@ test.cpp:341:0
+    (set_local $7
+     (i32.and
+      (get_local $4)
+      (i32.const 12)
+     )
+    )
+    (if
+     ;;@ test.cpp:373:0
+     (i32.eq
+      (get_local $7)
+      (i32.const 8)
+     )
+     (block
+      ;;@ test.cpp:374:0
+      (i32.store
+       (get_local $1)
+       (i32.const 69)
+      )
+      ;;@ test.cpp:375:0
+      (set_local $0
+       (i32.shr_u
+        (get_local $3)
+        (i32.const 3)
+       )
+      )
+      (set_local $0
+       (i32.and
+        (get_local $0)
+        (i32.const 15)
+       )
+      )
+      (set_local $2
+       (i32.add
+        (get_local $1)
+        (i32.const 6)
+       )
+      )
+      (i32.store8
        (get_local $2)
        (get_local $0)
       )
-      ;;@ test.cpp:320:0
+      ;;@ test.cpp:376:0
+      (set_local $0
+       (i32.and
+        (get_local $3)
+        (i32.const 7)
+       )
+      )
+      ;;@ test.cpp:377:0
+      (set_local $2
+       (i32.shr_u
+        (get_local $3)
+        (i32.const 4)
+       )
+      )
+      (set_local $2
+       (i32.and
+        (get_local $2)
+        (i32.const 8)
+       )
+      )
+      ;;@ test.cpp:376:0
+      (set_local $0
+       (i32.or
+        (get_local $2)
+        (get_local $0)
+       )
+      )
+      (set_local $0
+       (i32.and
+        (get_local $0)
+        (i32.const 255)
+       )
+      )
       (set_local $1
        (i32.add
         (get_local $1)
-        (i32.const 5)
+        (i32.const 4)
        )
       )
       (i32.store8
        (get_local $1)
        (get_local $0)
       )
-      (set_global $STACKTOP
-       (get_local $4)
-      )
-      ;;@ test.cpp:791:0
+      ;;@ test.cpp:799:0
       (return)
      )
-     ;;@ test.cpp:324:0
-     (i32.store
-      (get_local $1)
-      (i32.const 68)
-     )
-     ;;@ test.cpp:325:0
-     (set_local $0
-      (i32.shr_u
-       (get_local $3)
-       (i32.const 3)
-      )
-     )
-     (set_local $0
-      (i32.and
-       (get_local $0)
-       (i32.const 7)
-      )
-     )
-     (set_local $2
-      (i32.add
-       (get_local $1)
-       (i32.const 6)
-      )
-     )
-     (i32.store8
-      (get_local $2)
-      (get_local $0)
-     )
-     ;;@ test.cpp:326:0
-     (set_local $0
-      (i32.and
-       (get_local $3)
-       (i32.const 7)
-      )
-     )
-     (set_local $1
-      (i32.add
-       (get_local $1)
-       (i32.const 4)
-      )
-     )
-     (i32.store8
-      (get_local $1)
-      (get_local $0)
-     )
-     (set_global $STACKTOP
+    )
+    ;;@ test.cpp:381:0
+    (set_local $4
+     (i32.and
       (get_local $4)
+      (i32.const 14)
      )
-     ;;@ test.cpp:791:0
-     (return)
     )
-    (br $switch-default23)
-   )
-   ;;@ test.cpp:334:0
-   (set_local $2
-    (i32.shr_u
-     (get_local $3)
-     (i32.const 6)
-    )
-   )
-   (set_local $5
-    (i32.and
-     (get_local $2)
-     (i32.const 15)
-    )
-   )
-   (if
-    ;;@ test.cpp:354:0
-    (i32.eq
-     (get_local $5)
-     (i32.const 4)
-    )
-    (block
-     ;;@ test.cpp:356:0
-     (i32.store
-      (get_local $1)
-      (i32.const 69)
-     )
-     (set_global $STACKTOP
-      (get_local $4)
-     )
-     ;;@ test.cpp:791:0
-     (return)
-    )
-   )
-   ;;@ test.cpp:336:0
-   (set_local $5
-    (i32.and
-     (get_local $2)
-     (i32.const 12)
-    )
-   )
-   (if
-    ;;@ test.cpp:368:0
-    (i32.eq
-     (get_local $5)
-     (i32.const 8)
-    )
-    (block
-     ;;@ test.cpp:369:0
-     (i32.store
-      (get_local $1)
-      (i32.const 64)
-     )
-     ;;@ test.cpp:370:0
-     (set_local $0
-      (i32.shr_u
-       (get_local $3)
-       (i32.const 3)
-      )
-     )
-     (set_local $0
-      (i32.and
-       (get_local $0)
-       (i32.const 15)
-      )
-     )
-     (set_local $2
-      (i32.add
-       (get_local $1)
-       (i32.const 6)
-      )
-     )
-     (i32.store8
-      (get_local $2)
-      (get_local $0)
-     )
-     ;;@ test.cpp:371:0
-     (set_local $0
-      (i32.and
-       (get_local $3)
-       (i32.const 7)
-      )
-     )
-     ;;@ test.cpp:372:0
-     (set_local $2
-      (i32.shr_u
-       (get_local $3)
-       (i32.const 4)
-      )
-     )
-     (set_local $2
-      (i32.and
-       (get_local $2)
-       (i32.const 8)
-      )
-     )
-     ;;@ test.cpp:371:0
-     (set_local $0
-      (i32.or
-       (get_local $2)
-       (get_local $0)
-      )
-     )
-     (set_local $0
-      (i32.and
-       (get_local $0)
-       (i32.const 255)
-      )
-     )
-     (set_local $1
-      (i32.add
-       (get_local $1)
-       (i32.const 4)
-      )
-     )
-     (i32.store8
-      (get_local $1)
-      (get_local $0)
-     )
-     (set_global $STACKTOP
-      (get_local $4)
-     )
-     ;;@ test.cpp:791:0
-     (return)
-    )
-   )
-   ;;@ test.cpp:376:0
-   (set_local $2
-    (i32.and
-     (get_local $2)
-     (i32.const 14)
-    )
-   )
-   (block $switch-default21
-    (block $switch-case20
-     (block $switch-case19
-      (br_table $switch-case19 $switch-default21 $switch-case20 $switch-default21
-       (i32.sub
+    (block $switch18
+     (block $switch-default21
+      (block $switch-case20
+       (block $switch-case19
+        (br_table $switch-case19 $switch-default21 $switch-case20 $switch-default21
+         (i32.sub
+          (i32.and
+           (get_local $4)
+           (i32.const 15)
+          )
+          (i32.const 12)
+         )
+        )
+       )
+       ;;@ test.cpp:382:0
+       (i32.store
+        (get_local $1)
+        (i32.const 45)
+       )
+       ;;@ test.cpp:383:0
+       (set_local $0
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 3)
+        )
+       )
+       (set_local $0
         (i32.and
-         (get_local $2)
+         (get_local $0)
          (i32.const 15)
         )
-        (i32.const 12)
+       )
+       (set_local $1
+        (i32.add
+         (get_local $1)
+         (i32.const 6)
+        )
+       )
+       (i32.store8
+        (get_local $1)
+        (get_local $0)
+       )
+       ;;@ test.cpp:799:0
+       (return)
+      )
+      ;;@ test.cpp:388:0
+      (i32.store
+       (get_local $1)
+       (i32.const 44)
+      )
+      ;;@ test.cpp:389:0
+      (set_local $0
+       (i32.shr_u
+        (get_local $3)
+        (i32.const 3)
+       )
+      )
+      (set_local $0
+       (i32.and
+        (get_local $0)
+        (i32.const 15)
+       )
+      )
+      (set_local $1
+       (i32.add
+        (get_local $1)
+        (i32.const 6)
+       )
+      )
+      (i32.store8
+       (get_local $1)
+       (get_local $0)
+      )
+      ;;@ test.cpp:799:0
+      (return)
+     )
+     (br $label$break$L1)
+    )
+   )
+   (set_local $2
+    (get_local $4)
+   )
+  )
+  ;;@ test.cpp:397:0
+  (set_local $4
+   (i32.and
+    (get_local $2)
+    (i32.const 48)
+   )
+  )
+  (block $label$break$L52
+   (if
+    (get_local $4)
+    (block
+     ;;@ test.cpp:411:0
+     (set_local $4
+      (i32.and
+       (get_local $2)
+       (i32.const 62)
+      )
+     )
+     (if
+      (i32.eq
+       (get_local $4)
+       (i32.const 18)
+      )
+      (block
+       ;;@ test.cpp:412:0
+       (i32.store
+        (get_local $1)
+        (i32.const 56)
+       )
+       ;;@ test.cpp:413:0
+       (set_local $0
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 8)
+        )
+       )
+       (set_local $0
+        (i32.and
+         (get_local $0)
+         (i32.const 7)
+        )
+       )
+       (set_local $2
+        (i32.add
+         (get_local $1)
+         (i32.const 7)
+        )
+       )
+       (i32.store8
+        (get_local $2)
+        (get_local $0)
+       )
+       ;;@ test.cpp:414:0
+       (set_local $0
+        (i32.shl
+         (get_local $3)
+         (i32.const 2)
+        )
+       )
+       (set_local $0
+        (i32.and
+         (get_local $0)
+         (i32.const 1020)
+        )
+       )
+       (set_local $1
+        (i32.add
+         (get_local $1)
+         (i32.const 8)
+        )
+       )
+       (i32.store16
+        (get_local $1)
+        (get_local $0)
+       )
+       ;;@ test.cpp:799:0
+       (return)
+      )
+     )
+     ;;@ test.cpp:418:0
+     (set_local $7
+      (i32.and
+       (get_local $2)
+       (i32.const 60)
+      )
+     )
+     (block $label$break$L58
+      (if
+       (i32.ne
+        (get_local $7)
+        (i32.const 20)
+       )
+       (block
+        ;;@ test.cpp:419:0
+        (set_local $2
+         (i32.and
+          (get_local $2)
+          (i32.const 56)
+         )
+        )
+        (block $switch-default29
+         (block $switch-case27
+          (br_table $switch-case27 $switch-default29 $switch-default29 $switch-default29 $switch-default29 $switch-default29 $switch-default29 $switch-default29 $switch-case27 $switch-default29
+           (i32.sub
+            (i32.and
+             (get_local $2)
+             (i32.const 63)
+            )
+            (i32.const 24)
+           )
+          )
+         )
+         (br $label$break$L58)
+        )
+        ;;@ test.cpp:516:0
+        (set_local $2
+         (get_local $4)
+        )
+        (block $switch30
+         (block $switch-default81
+          (block $switch-case32
+           (block $switch-case31
+            (br_table $switch-case31 $switch-default81 $switch-case32 $switch-default81
+             (i32.sub
+              (i32.and
+               (get_local $2)
+               (i32.const 63)
+              )
+              (i32.const 40)
+             )
+            )
+           )
+           ;;@ test.cpp:517:0
+           (i32.store
+            (get_local $1)
+            (i32.const 22)
+           )
+           ;;@ test.cpp:518:0
+           (set_local $0
+            (i32.shr_u
+             (get_local $3)
+             (i32.const 8)
+            )
+           )
+           (set_local $0
+            (i32.and
+             (get_local $0)
+             (i32.const 7)
+            )
+           )
+           (set_local $2
+            (i32.add
+             (get_local $1)
+             (i32.const 4)
+            )
+           )
+           (i32.store8
+            (get_local $2)
+            (get_local $0)
+           )
+           ;;@ test.cpp:519:0
+           (set_local $0
+            (i32.shl
+             (get_local $3)
+             (i32.const 2)
+            )
+           )
+           (set_local $0
+            (i32.and
+             (get_local $0)
+             (i32.const 1020)
+            )
+           )
+           (set_local $1
+            (i32.add
+             (get_local $1)
+             (i32.const 8)
+            )
+           )
+           (i32.store16
+            (get_local $1)
+            (get_local $0)
+           )
+           ;;@ test.cpp:799:0
+           (return)
+          )
+          ;;@ test.cpp:524:0
+          (i32.store
+           (get_local $1)
+           (i32.const 20)
+          )
+          ;;@ test.cpp:525:0
+          (set_local $0
+           (i32.shr_u
+            (get_local $3)
+            (i32.const 8)
+           )
+          )
+          (set_local $0
+           (i32.and
+            (get_local $0)
+            (i32.const 7)
+           )
+          )
+          (set_local $2
+           (i32.add
+            (get_local $1)
+            (i32.const 4)
+           )
+          )
+          (i32.store8
+           (get_local $2)
+           (get_local $0)
+          )
+          ;;@ test.cpp:526:0
+          (set_local $0
+           (i32.shl
+            (get_local $3)
+            (i32.const 2)
+           )
+          )
+          (set_local $0
+           (i32.and
+            (get_local $0)
+            (i32.const 1020)
+           )
+          )
+          (set_local $1
+           (i32.add
+            (get_local $1)
+            (i32.const 8)
+           )
+          )
+          (i32.store16
+           (get_local $1)
+           (get_local $0)
+          )
+          ;;@ test.cpp:799:0
+          (return)
+         )
+         (if
+          ;;@ test.cpp:530:0
+          (i32.ne
+           (get_local $7)
+           (i32.const 44)
+          )
+          (block
+           ;;@ test.cpp:655:0
+           (set_local $2
+            (get_local $4)
+           )
+           (block $switch-default36
+            (block $switch-case34
+             (br_table $switch-case34 $switch-default36 $switch-case34 $switch-default36
+              (i32.sub
+               (i32.and
+                (get_local $2)
+                (i32.const 63)
+               )
+               (i32.const 48)
+              )
+             )
+            )
+            (br $label$break$L52)
+           )
+           (if
+            ;;@ test.cpp:663:0
+            (i32.ne
+             (get_local $7)
+             (i32.const 52)
+            )
+            (block
+             ;;@ test.cpp:739:0
+             (br_if $label$break$L52
+              (i32.ne
+               (get_local $4)
+               (i32.const 56)
+              )
+             )
+             ;;@ test.cpp:740:0
+             (i32.store
+              (get_local $1)
+              (i32.const 26)
+             )
+             ;;@ test.cpp:741:0
+             (set_local $0
+              (i32.shl
+               (get_local $3)
+               (i32.const 1)
+              )
+             )
+             (set_local $0
+              (i32.and
+               (get_local $0)
+               (i32.const 4094)
+              )
+             )
+             (set_local $1
+              (i32.add
+               (get_local $1)
+               (i32.const 8)
+              )
+             )
+             (i32.store16
+              (get_local $1)
+              (get_local $0)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+           )
+           ;;@ test.cpp:664:0
+           (set_local $4
+            (i32.shr_u
+             (get_local $3)
+             (i32.const 8)
+            )
+           )
+           (set_local $6
+            (i32.and
+             (get_local $4)
+             (i32.const 15)
+            )
+           )
+           ;;@ test.cpp:666:0
+           (set_local $7
+            (i32.eq
+             (get_local $6)
+             (i32.const 15)
+            )
+           )
+           ;;@ test.cpp:668:0
+           (set_local $2
+            (i32.and
+             (get_local $3)
+             (i32.const 255)
+            )
+           )
+           (if
+            (get_local $7)
+            (block
+             ;;@ test.cpp:667:0
+             (i32.store
+              (get_local $1)
+              (i32.const 95)
+             )
+             ;;@ test.cpp:668:0
+             (set_local $0
+              (i32.add
+               (get_local $1)
+               (i32.const 8)
+              )
+             )
+             (i32.store16
+              (get_local $0)
+              (get_local $2)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+           )
+           ;;@ test.cpp:671:0
+           (set_local $6
+            (i32.eq
+             (get_local $6)
+             (i32.const 14)
+            )
+           )
+           ;;@ test.cpp:673:0
+           (set_local $2
+            (i32.shl
+             (get_local $2)
+             (i32.const 1)
+            )
+           )
+           (set_local $2
+            (i32.and
+             (get_local $2)
+             (i32.const 65535)
+            )
+           )
+           (if
+            (get_local $6)
+            (block
+             ;;@ test.cpp:672:0
+             (i32.store
+              (get_local $1)
+              (i32.const 99)
+             )
+             ;;@ test.cpp:673:0
+             (set_local $0
+              (i32.add
+               (get_local $1)
+               (i32.const 8)
+              )
+             )
+             (i32.store16
+              (get_local $0)
+              (get_local $2)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+           )
+           ;;@ test.cpp:677:0
+           (set_local $6
+            (i32.add
+             (get_local $1)
+             (i32.const 8)
+            )
+           )
+           (i32.store16
+            (get_local $6)
+            (get_local $2)
+           )
+           ;;@ test.cpp:678:0
+           (set_local $2
+            (i32.and
+             (get_local $4)
+             (i32.const 255)
+            )
+           )
+           (block $do-once37
+            (block $switch-default54
+             (block $switch-case53
+              (block $switch-case52
+               (block $switch-case51
+                (block $switch-case50
+                 (block $switch-case49
+                  (block $switch-case48
+                   (block $switch-case47
+                    (block $switch-case46
+                     (block $switch-case45
+                      (block $switch-case44
+                       (block $switch-case43
+                        (block $switch-case42
+                         (block $switch-case41
+                          (block $switch-case40
+                           (br_table $switch-case40 $switch-case41 $switch-case42 $switch-case43 $switch-case44 $switch-case45 $switch-case46 $switch-case47 $switch-case48 $switch-case49 $switch-case50 $switch-case51 $switch-case52 $switch-case53 $switch-default54
+                            (i32.and
+                             (get_local $2)
+                             (i32.const 15)
+                            )
+                           )
+                          )
+                          (set_local $2
+                           (i32.const 27)
+                          )
+                          (br $do-once37)
+                         )
+                         (set_local $2
+                          (i32.const 28)
+                         )
+                         (br $do-once37)
+                        )
+                        (set_local $2
+                         (i32.const 29)
+                        )
+                        (br $do-once37)
+                       )
+                       (set_local $2
+                        (i32.const 30)
+                       )
+                       (br $do-once37)
+                      )
+                      (set_local $2
+                       (i32.const 31)
+                      )
+                      (br $do-once37)
+                     )
+                     (set_local $2
+                      (i32.const 32)
+                     )
+                     (br $do-once37)
+                    )
+                    (set_local $2
+                     (i32.const 33)
+                    )
+                    (br $do-once37)
+                   )
+                   (set_local $2
+                    (i32.const 34)
+                   )
+                   (br $do-once37)
+                  )
+                  (set_local $2
+                   (i32.const 35)
+                  )
+                  (br $do-once37)
+                 )
+                 (set_local $2
+                  (i32.const 36)
+                 )
+                 (br $do-once37)
+                )
+                (set_local $2
+                 (i32.const 37)
+                )
+                (br $do-once37)
+               )
+               (set_local $2
+                (i32.const 38)
+               )
+               (br $do-once37)
+              )
+              (set_local $2
+               (i32.const 39)
+              )
+              (br $do-once37)
+             )
+             (set_local $2
+              (i32.const 40)
+             )
+             (br $do-once37)
+            )
+            (br $label$break$L52)
+           )
+           (i32.store
+            (get_local $1)
+            (get_local $2)
+           )
+           (br $label$break$L52)
+          )
+         )
+         ;;@ test.cpp:531:0
+         (set_local $6
+          (i32.shr_u
+           (get_local $3)
+           (i32.const 5)
+          )
+         )
+         ;;@ test.cpp:533:0
+         (set_local $2
+          (i32.and
+           (get_local $3)
+           (i32.const 3968)
+          )
+         )
+         (block $switch55
+          (block $switch-default80
+           (block $switch-case57
+            (block $switch-case56
+             (br_table $switch-case56 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-default80 $switch-case57 $switch-default80
+              (i32.and
+               (get_local $2)
+               (i32.const 4095)
+              )
+             )
+            )
+            ;;@ test.cpp:534:0
+            (i32.store
+             (get_local $1)
+             (i32.const 20)
+            )
+            ;;@ test.cpp:535:0
+            (set_local $0
+             (i32.add
+              (get_local $1)
+              (i32.const 4)
+             )
+            )
+            (i32.store8
+             (get_local $0)
+             (i32.const 13)
+            )
+            ;;@ test.cpp:536:0
+            (set_local $0
+             (i32.shl
+              (get_local $3)
+              (i32.const 2)
+             )
+            )
+            (set_local $0
+             (i32.and
+              (get_local $0)
+              (i32.const 508)
+             )
+            )
+            (set_local $1
+             (i32.add
+              (get_local $1)
+              (i32.const 8)
+             )
+            )
+            (i32.store16
+             (get_local $1)
+             (get_local $0)
+            )
+            ;;@ test.cpp:799:0
+            (return)
+           )
+           ;;@ test.cpp:541:0
+           (i32.store
+            (get_local $1)
+            (i32.const 94)
+           )
+           ;;@ test.cpp:542:0
+           (set_local $0
+            (i32.add
+             (get_local $1)
+             (i32.const 4)
+            )
+           )
+           (i32.store8
+            (get_local $0)
+            (i32.const 13)
+           )
+           ;;@ test.cpp:543:0
+           (set_local $0
+            (i32.shl
+             (get_local $3)
+             (i32.const 2)
+            )
+           )
+           (set_local $0
+            (i32.and
+             (get_local $0)
+             (i32.const 508)
+            )
+           )
+           (set_local $1
+            (i32.add
+             (get_local $1)
+             (i32.const 8)
+            )
+           )
+           (i32.store16
+            (get_local $1)
+            (get_local $0)
+           )
+           ;;@ test.cpp:799:0
+           (return)
+          )
+          ;;@ test.cpp:547:0
+          (set_local $2
+           (i32.and
+            (get_local $6)
+            (i32.const 126)
+           )
+          )
+          (set_local $4
+           (get_local $2)
+          )
+          (block $switch58
+           (block $switch-default79
+            (block $switch-case62
+             (block $switch-case61
+              (block $switch-case60
+               (block $switch-case59
+                (br_table $switch-case59 $switch-default79 $switch-case60 $switch-default79 $switch-case61 $switch-default79 $switch-case62 $switch-default79
+                 (i32.sub
+                  (i32.and
+                   (get_local $4)
+                   (i32.const 127)
+                  )
+                  (i32.const 16)
+                 )
+                )
+               )
+               ;;@ test.cpp:548:0
+               (i32.store
+                (get_local $1)
+                (i32.const 97)
+               )
+               ;;@ test.cpp:549:0
+               (set_local $0
+                (i32.shr_u
+                 (get_local $3)
+                 (i32.const 3)
+                )
+               )
+               (set_local $0
+                (i32.and
+                 (get_local $0)
+                 (i32.const 7)
+                )
+               )
+               (set_local $2
+                (i32.add
+                 (get_local $1)
+                 (i32.const 6)
+                )
+               )
+               (i32.store8
+                (get_local $2)
+                (get_local $0)
+               )
+               ;;@ test.cpp:550:0
+               (set_local $0
+                (i32.and
+                 (get_local $3)
+                 (i32.const 7)
+                )
+               )
+               (set_local $1
+                (i32.add
+                 (get_local $1)
+                 (i32.const 4)
+                )
+               )
+               (i32.store8
+                (get_local $1)
+                (get_local $0)
+               )
+               ;;@ test.cpp:799:0
+               (return)
+              )
+              ;;@ test.cpp:555:0
+              (i32.store
+               (get_local $1)
+               (i32.const 96)
+              )
+              ;;@ test.cpp:556:0
+              (set_local $0
+               (i32.shr_u
+                (get_local $3)
+                (i32.const 3)
+               )
+              )
+              (set_local $0
+               (i32.and
+                (get_local $0)
+                (i32.const 7)
+               )
+              )
+              (set_local $2
+               (i32.add
+                (get_local $1)
+                (i32.const 6)
+               )
+              )
+              (i32.store8
+               (get_local $2)
+               (get_local $0)
+              )
+              ;;@ test.cpp:557:0
+              (set_local $0
+               (i32.and
+                (get_local $3)
+                (i32.const 7)
+               )
+              )
+              (set_local $1
+               (i32.add
+                (get_local $1)
+                (i32.const 4)
+               )
+              )
+              (i32.store8
+               (get_local $1)
+               (get_local $0)
+              )
+              ;;@ test.cpp:799:0
+              (return)
+             )
+             ;;@ test.cpp:562:0
+             (i32.store
+              (get_local $1)
+              (i32.const 101)
+             )
+             ;;@ test.cpp:563:0
+             (set_local $0
+              (i32.shr_u
+               (get_local $3)
+               (i32.const 3)
+              )
+             )
+             (set_local $0
+              (i32.and
+               (get_local $0)
+               (i32.const 7)
+              )
+             )
+             (set_local $2
+              (i32.add
+               (get_local $1)
+               (i32.const 6)
+              )
+             )
+             (i32.store8
+              (get_local $2)
+              (get_local $0)
+             )
+             ;;@ test.cpp:564:0
+             (set_local $0
+              (i32.and
+               (get_local $3)
+               (i32.const 7)
+              )
+             )
+             (set_local $1
+              (i32.add
+               (get_local $1)
+               (i32.const 4)
+              )
+             )
+             (i32.store8
+              (get_local $1)
+              (get_local $0)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+            ;;@ test.cpp:569:0
+            (i32.store
+             (get_local $1)
+             (i32.const 100)
+            )
+            ;;@ test.cpp:570:0
+            (set_local $0
+             (i32.shr_u
+              (get_local $3)
+              (i32.const 3)
+             )
+            )
+            (set_local $0
+             (i32.and
+              (get_local $0)
+              (i32.const 7)
+             )
+            )
+            (set_local $2
+             (i32.add
+              (get_local $1)
+              (i32.const 6)
+             )
+            )
+            (i32.store8
+             (get_local $2)
+             (get_local $0)
+            )
+            ;;@ test.cpp:571:0
+            (set_local $0
+             (i32.and
+              (get_local $3)
+              (i32.const 7)
+             )
+            )
+            (set_local $1
+             (i32.add
+              (get_local $1)
+              (i32.const 4)
+             )
+            )
+            (i32.store8
+             (get_local $1)
+             (get_local $0)
+            )
+            ;;@ test.cpp:799:0
+            (return)
+           )
+           ;;@ test.cpp:575:0
+           (set_local $4
+            (i32.and
+             (get_local $6)
+             (i32.const 112)
+            )
+           )
+           (if
+            (i32.eq
+             (get_local $4)
+             (i32.const 32)
+            )
+            (block
+             ;;@ test.cpp:576:0
+             (i32.store
+              (get_local $1)
+              (i32.const 76)
+             )
+             ;;@ test.cpp:578:0
+             (set_local $0
+              (i32.and
+               (get_local $3)
+               (i32.const 255)
+              )
+             )
+             ;;@ test.cpp:579:0
+             (set_local $2
+              (i32.shl
+               (get_local $3)
+               (i32.const 6)
+              )
+             )
+             (set_local $2
+              (i32.and
+               (get_local $2)
+               (i32.const 16384)
+              )
+             )
+             ;;@ test.cpp:578:0
+             (set_local $0
+              (i32.or
+               (get_local $2)
+               (get_local $0)
+              )
+             )
+             (set_local $0
+              (i32.and
+               (get_local $0)
+               (i32.const 65535)
+              )
+             )
+             (set_local $1
+              (i32.add
+               (get_local $1)
+               (i32.const 8)
+              )
+             )
+             (i32.store16
+              (get_local $1)
+              (get_local $0)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+           )
+           (block $switch63
+            (block $switch-default78
+             (block $switch-case66
+              (block $switch-case65
+               (block $switch-case64
+                ;;@ test.cpp:590:0
+                (br_table $switch-case64 $switch-default78 $switch-case65 $switch-default78 $switch-default78 $switch-default78 $switch-case66 $switch-default78
+                 (i32.sub
+                  (i32.and
+                   (get_local $2)
+                   (i32.const 127)
+                  )
+                  (i32.const 80)
+                 )
+                )
+               )
+               ;;@ test.cpp:591:0
+               (i32.store
+                (get_local $1)
+                (i32.const 78)
+               )
+               ;;@ test.cpp:592:0
+               (set_local $0
+                (i32.shr_u
+                 (get_local $3)
+                 (i32.const 3)
+                )
+               )
+               (set_local $0
+                (i32.and
+                 (get_local $0)
+                 (i32.const 7)
+                )
+               )
+               (set_local $2
+                (i32.add
+                 (get_local $1)
+                 (i32.const 6)
+                )
+               )
+               (i32.store8
+                (get_local $2)
+                (get_local $0)
+               )
+               ;;@ test.cpp:593:0
+               (set_local $0
+                (i32.and
+                 (get_local $3)
+                 (i32.const 7)
+                )
+               )
+               (set_local $1
+                (i32.add
+                 (get_local $1)
+                 (i32.const 4)
+                )
+               )
+               (i32.store8
+                (get_local $1)
+                (get_local $0)
+               )
+               ;;@ test.cpp:799:0
+               (return)
+              )
+              ;;@ test.cpp:598:0
+              (i32.store
+               (get_local $1)
+               (i32.const 79)
+              )
+              ;;@ test.cpp:599:0
+              (set_local $0
+               (i32.shr_u
+                (get_local $3)
+                (i32.const 3)
+               )
+              )
+              (set_local $0
+               (i32.and
+                (get_local $0)
+                (i32.const 7)
+               )
+              )
+              (set_local $2
+               (i32.add
+                (get_local $1)
+                (i32.const 6)
+               )
+              )
+              (i32.store8
+               (get_local $2)
+               (get_local $0)
+              )
+              ;;@ test.cpp:600:0
+              (set_local $0
+               (i32.and
+                (get_local $3)
+                (i32.const 7)
+               )
+              )
+              (set_local $1
+               (i32.add
+                (get_local $1)
+                (i32.const 4)
+               )
+              )
+              (i32.store8
+               (get_local $1)
+               (get_local $0)
+              )
+              ;;@ test.cpp:799:0
+              (return)
+             )
+             ;;@ test.cpp:605:0
+             (i32.store
+              (get_local $1)
+              (i32.const 80)
+             )
+             ;;@ test.cpp:606:0
+             (set_local $0
+              (i32.shr_u
+               (get_local $3)
+               (i32.const 3)
+              )
+             )
+             (set_local $0
+              (i32.and
+               (get_local $0)
+               (i32.const 7)
+              )
+             )
+             (set_local $2
+              (i32.add
+               (get_local $1)
+               (i32.const 6)
+              )
+             )
+             (i32.store8
+              (get_local $2)
+              (get_local $0)
+             )
+             ;;@ test.cpp:607:0
+             (set_local $0
+              (i32.and
+               (get_local $3)
+               (i32.const 7)
+              )
+             )
+             (set_local $1
+              (i32.add
+               (get_local $1)
+               (i32.const 4)
+              )
+             )
+             (i32.store8
+              (get_local $1)
+              (get_local $0)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+            (if
+             ;;@ test.cpp:611:0
+             (i32.eq
+              (get_local $4)
+              (i32.const 96)
+             )
+             (block
+              ;;@ test.cpp:612:0
+              (i32.store
+               (get_local $1)
+               (i32.const 77)
+              )
+              ;;@ test.cpp:614:0
+              (set_local $0
+               (i32.and
+                (get_local $3)
+                (i32.const 255)
+               )
+              )
+              ;;@ test.cpp:615:0
+              (set_local $2
+               (i32.shl
+                (get_local $3)
+                (i32.const 7)
+               )
+              )
+              (set_local $2
+               (i32.and
+                (get_local $2)
+                (i32.const 32768)
+               )
+              )
+              ;;@ test.cpp:614:0
+              (set_local $0
+               (i32.or
+                (get_local $2)
+                (get_local $0)
+               )
+              )
+              (set_local $0
+               (i32.and
+                (get_local $0)
+                (i32.const 65535)
+               )
+              )
+              (set_local $1
+               (i32.add
+                (get_local $1)
+                (i32.const 8)
+               )
+              )
+              (i32.store16
+               (get_local $1)
+               (get_local $0)
+              )
+              ;;@ test.cpp:799:0
+              (return)
+             )
+            )
+            ;;@ test.cpp:619:0
+            (set_local $2
+             (i32.shr_u
+              (i32.and
+               (get_local $5)
+               (i32.const 65535)
+              )
+              (i32.const 8)
+             )
+            )
+            (block $switch67
+             (block $switch-default70
+              (block $switch-case69
+               (block $switch-case68
+                (br_table $switch-case68 $switch-case69 $switch-default70
+                 (i32.sub
+                  (i32.shr_s
+                   (i32.shl
+                    (get_local $2)
+                    (i32.const 24)
+                   )
+                   (i32.const 24)
+                  )
+                  (i32.const -66)
+                 )
+                )
+               )
+               ;;@ test.cpp:620:0
+               (i32.store
+                (get_local $1)
+                (i32.const 42)
+               )
+               ;;@ test.cpp:621:0
+               (set_local $0
+                (i32.and
+                 (get_local $3)
+                 (i32.const 255)
+                )
+               )
+               (set_local $1
+                (i32.add
+                 (get_local $1)
+                 (i32.const 8)
+                )
+               )
+               (i32.store16
+                (get_local $1)
+                (get_local $0)
+               )
+               ;;@ test.cpp:799:0
+               (return)
+              )
+              (br $switch67)
+             )
+             (br $label$break$L52)
+            )
+            ;;@ test.cpp:628:0
+            (set_local $0
+             (i32.and
+              (get_local $5)
+              (i32.const 255)
+             )
+            )
+            (if
+             (get_local $0)
+             ;;@ test.cpp:799:0
+             (return)
+            )
+            ;;@ test.cpp:626:0
+            (set_local $0
+             (i32.shr_u
+              (i32.and
+               (get_local $5)
+               (i32.const 65535)
+              )
+              (i32.const 4)
+             )
+            )
+            (block $switch71
+             (block $switch-default77
+              (block $switch-case76
+               (block $switch-case75
+                (block $switch-case74
+                 (block $switch-case73
+                  (block $switch-case72
+                   ;;@ test.cpp:632:0
+                   (br_table $switch-case72 $switch-case73 $switch-case74 $switch-case75 $switch-case76 $switch-default77
+                    (i32.shr_s
+                     (i32.shl
+                      (i32.and
+                       (get_local $0)
+                       (i32.const 255)
+                      )
+                      (i32.const 24)
+                     )
+                     (i32.const 24)
+                    )
+                   )
+                  )
+                  (set_local $0
+                   (i32.const 74)
+                  )
+                  (br $switch71)
+                 )
+                 (set_local $0
+                  (i32.const 104)
+                 )
+                 (br $switch71)
+                )
+                (set_local $0
+                 (i32.const 102)
+                )
+                (br $switch71)
+               )
+               (set_local $0
+                (i32.const 103)
+               )
+               (br $switch71)
+              )
+              (set_local $0
+               (i32.const 84)
+              )
+              (br $switch71)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+            (i32.store
+             (get_local $1)
+             (get_local $0)
+            )
+            (return)
+           )
+          )
+         )
+        )
        )
       )
      )
-     ;;@ test.cpp:377:0
-     (i32.store
-      (get_local $1)
-      (i32.const 40)
-     )
-     ;;@ test.cpp:378:0
-     (set_local $0
-      (i32.shr_u
-       (get_local $3)
-       (i32.const 3)
-      )
-     )
+     ;;@ test.cpp:424:0
      (set_local $0
       (i32.and
-       (get_local $0)
-       (i32.const 15)
+       (get_local $5)
+       (i32.const -4096)
       )
      )
-     (set_local $1
-      (i32.add
-       (get_local $1)
-       (i32.const 6)
+     (if
+      (i32.eq
+       (i32.and
+        (get_local $0)
+        (i32.const 65535)
+       )
+       (i32.const 20480)
+      )
+      (block
+       ;;@ test.cpp:425:0
+       (set_local $0
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 6)
+        )
+       )
+       (set_local $0
+        (i32.and
+         (get_local $0)
+         (i32.const 7)
+        )
+       )
+       (set_local $2
+        (i32.add
+         (get_local $1)
+         (i32.const 6)
+        )
+       )
+       (i32.store8
+        (get_local $2)
+        (get_local $0)
+       )
+       ;;@ test.cpp:426:0
+       (set_local $0
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 3)
+        )
+       )
+       (set_local $0
+        (i32.and
+         (get_local $0)
+         (i32.const 7)
+        )
+       )
+       (set_local $2
+        (i32.add
+         (get_local $1)
+         (i32.const 5)
+        )
+       )
+       (i32.store8
+        (get_local $2)
+        (get_local $0)
+       )
+       ;;@ test.cpp:427:0
+       (set_local $0
+        (i32.and
+         (get_local $3)
+         (i32.const 7)
+        )
+       )
+       (set_local $2
+        (i32.add
+         (get_local $1)
+         (i32.const 7)
+        )
+       )
+       (i32.store8
+        (get_local $2)
+        (get_local $0)
+       )
+       ;;@ test.cpp:428:0
+       (set_local $0
+        (i32.shr_u
+         (i32.and
+          (get_local $5)
+          (i32.const 65535)
+         )
+         (i32.const 9)
+        )
+       )
+       (block $switch-default91
+        (block $switch-case90
+         (block $switch-case89
+          (block $switch-case88
+           (block $switch-case87
+            (block $switch-case86
+             (block $switch-case85
+              (block $switch-case84
+               (block $switch-case83
+                (br_table $switch-case83 $switch-case84 $switch-case85 $switch-case86 $switch-case87 $switch-case88 $switch-case89 $switch-case90 $switch-default91
+                 (i32.and
+                  (get_local $0)
+                  (i32.const 7)
+                 )
+                )
+               )
+               (set_local $6
+                (i32.const 87)
+               )
+               (br $switch-default91)
+              )
+              (set_local $6
+               (i32.const 91)
+              )
+              (br $switch-default91)
+             )
+             (set_local $6
+              (i32.const 89)
+             )
+             (br $switch-default91)
+            )
+            (set_local $6
+             (i32.const 62)
+            )
+            (br $switch-default91)
+           )
+           (set_local $6
+            (i32.const 57)
+           )
+           (br $switch-default91)
+          )
+          (set_local $6
+           (i32.const 61)
+          )
+          (br $switch-default91)
+         )
+         (set_local $6
+          (i32.const 59)
+         )
+         (br $switch-default91)
+        )
+        (set_local $6
+         (i32.const 63)
+        )
+       )
+       (i32.store
+        (get_local $1)
+        (get_local $6)
+       )
+       ;;@ test.cpp:799:0
+       (return)
       )
      )
-     (i32.store8
-      (get_local $1)
+     ;;@ test.cpp:465:0
+     (set_local $0
+      (i32.shr_u
+       (i32.and
+        (get_local $5)
+        (i32.const 65535)
+       )
+       (i32.const 11)
+      )
+     )
+     ;;@ test.cpp:467:0
+     (set_local $2
       (get_local $0)
      )
-     (set_global $STACKTOP
-      (get_local $4)
+     (if
+      (i32.lt_s
+       (i32.and
+        (get_local $5)
+        (i32.const 65535)
+       )
+       (i32.const 36864)
+      )
+      (block
+       ;;@ test.cpp:468:0
+       (set_local $4
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 6)
+        )
+       )
+       (set_local $4
+        (i32.and
+         (get_local $4)
+         (i32.const 273)
+        )
+       )
+       (set_local $5
+        (i32.add
+         (get_local $1)
+         (i32.const 8)
+        )
+       )
+       (i32.store16
+        (get_local $5)
+        (get_local $4)
+       )
+       ;;@ test.cpp:469:0
+       (set_local $4
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 3)
+        )
+       )
+       (set_local $4
+        (i32.and
+         (get_local $4)
+         (i32.const 17)
+        )
+       )
+       (set_local $5
+        (i32.add
+         (get_local $1)
+         (i32.const 5)
+        )
+       )
+       (i32.store8
+        (get_local $5)
+        (get_local $4)
+       )
+       ;;@ test.cpp:470:0
+       (set_local $4
+        (i32.and
+         (get_local $3)
+         (i32.const 17)
+        )
+       )
+       (set_local $5
+        (i32.add
+         (get_local $1)
+         (i32.const 7)
+        )
+       )
+       (i32.store8
+        (get_local $5)
+        (get_local $4)
+       )
+      )
      )
-     ;;@ test.cpp:791:0
-     (return)
-    )
-    ;;@ test.cpp:383:0
-    (i32.store
-     (get_local $1)
-     (i32.const 39)
-    )
-    ;;@ test.cpp:384:0
-    (set_local $0
-     (i32.shr_u
-      (get_local $3)
-      (i32.const 3)
+     ;;@ test.cpp:472:0
+     (call $__Z9printBitsjj
+      (i32.const 5)
+      (get_local $2)
+     )
+     (block $switch92
+      (block $switch-default101
+       (block $switch-case100
+        (block $switch-case99
+         (block $switch-case98
+          (block $switch-case97
+           (block $switch-case96
+            (block $switch-case95
+             (block $switch-case94
+              (block $switch-case93
+               ;;@ test.cpp:473:0
+               (br_table $switch-case93 $switch-case94 $switch-case95 $switch-case96 $switch-case97 $switch-case98 $switch-case99 $switch-case100 $switch-default101
+                (i32.sub
+                 (i32.and
+                  (get_local $0)
+                  (i32.const 31)
+                 )
+                 (i32.const 12)
+                )
+               )
+              )
+              ;;@ test.cpp:476:0
+              (i32.store
+               (get_local $1)
+               (i32.const 86)
+              )
+              ;;@ test.cpp:799:0
+              (return)
+             )
+             ;;@ test.cpp:480:0
+             (i32.store
+              (get_local $1)
+              (i32.const 55)
+             )
+             ;;@ test.cpp:799:0
+             (return)
+            )
+            ;;@ test.cpp:484:0
+            (i32.store
+             (get_local $1)
+             (i32.const 88)
+            )
+            ;;@ test.cpp:799:0
+            (return)
+           )
+           ;;@ test.cpp:488:0
+           (i32.store
+            (get_local $1)
+            (i32.const 58)
+           )
+           ;;@ test.cpp:799:0
+           (return)
+          )
+          ;;@ test.cpp:492:0
+          (i32.store
+           (get_local $1)
+           (i32.const 90)
+          )
+          ;;@ test.cpp:799:0
+          (return)
+         )
+         ;;@ test.cpp:496:0
+         (i32.store
+          (get_local $1)
+          (i32.const 60)
+         )
+         ;;@ test.cpp:799:0
+         (return)
+        )
+        ;;@ test.cpp:500:0
+        (i32.store
+         (get_local $1)
+         (i32.const 86)
+        )
+        ;;@ test.cpp:501:0
+        (set_local $0
+         (i32.and
+          (get_local $3)
+          (i32.const 255)
+         )
+        )
+        (set_local $2
+         (i32.add
+          (get_local $1)
+          (i32.const 8)
+         )
+        )
+        (i32.store16
+         (get_local $2)
+         (get_local $0)
+        )
+        ;;@ test.cpp:502:0
+        (set_local $0
+         (i32.add
+          (get_local $1)
+          (i32.const 5)
+         )
+        )
+        (i32.store8
+         (get_local $0)
+         (i32.const 13)
+        )
+        ;;@ test.cpp:503:0
+        (set_local $0
+         (i32.shr_u
+          (get_local $3)
+          (i32.const 8)
+         )
+        )
+        (set_local $0
+         (i32.and
+          (get_local $0)
+          (i32.const 17)
+         )
+        )
+        (set_local $1
+         (i32.add
+          (get_local $1)
+          (i32.const 7)
+         )
+        )
+        (i32.store8
+         (get_local $1)
+         (get_local $0)
+        )
+        ;;@ test.cpp:799:0
+        (return)
+       )
+       ;;@ test.cpp:507:0
+       (i32.store
+        (get_local $1)
+        (i32.const 55)
+       )
+       ;;@ test.cpp:508:0
+       (set_local $0
+        (i32.and
+         (get_local $3)
+         (i32.const 255)
+        )
+       )
+       (set_local $2
+        (i32.add
+         (get_local $1)
+         (i32.const 8)
+        )
+       )
+       (i32.store16
+        (get_local $2)
+        (get_local $0)
+       )
+       ;;@ test.cpp:509:0
+       (set_local $0
+        (i32.add
+         (get_local $1)
+         (i32.const 5)
+        )
+       )
+       (i32.store8
+        (get_local $0)
+        (i32.const 13)
+       )
+       ;;@ test.cpp:510:0
+       (set_local $0
+        (i32.shr_u
+         (get_local $3)
+         (i32.const 8)
+        )
+       )
+       (set_local $0
+        (i32.and
+         (get_local $0)
+         (i32.const 17)
+        )
+       )
+       (set_local $1
+        (i32.add
+         (get_local $1)
+         (i32.const 7)
+        )
+       )
+       (i32.store8
+        (get_local $1)
+        (get_local $0)
+       )
+       ;;@ test.cpp:799:0
+       (return)
+      )
+      (return)
      )
     )
-    (set_local $0
-     (i32.and
-      (get_local $0)
-      (i32.const 15)
-     )
-    )
-    (set_local $1
-     (i32.add
-      (get_local $1)
-      (i32.const 6)
-     )
-    )
-    (i32.store8
-     (get_local $1)
-     (get_local $0)
-    )
-    (set_global $STACKTOP
-     (get_local $4)
-    )
-    ;;@ test.cpp:791:0
-    (return)
    )
   )
-  ;;@ test.cpp:741:0
+  ;;@ test.cpp:747:0
   (set_local $0
    (i32.add
     (get_local $0)
     (i32.const 2)
    )
   )
-  (set_local $5
+  (set_local $4
    (call $__Z13fetchHalfwordj
     (get_local $0)
    )
   )
-  ;;@ test.cpp:744:0
+  ;;@ test.cpp:750:0
   (set_local $0
    (i32.and
-    (get_local $6)
+    (get_local $5)
     (i32.const -2048)
    )
   )
@@ -21872,11 +23046,11 @@
   )
   (set_local $2
    (i32.and
-    (get_local $5)
+    (get_local $4)
     (i32.const 65535)
    )
   )
-  (set_local $7
+  (set_local $6
    (i32.shr_u
     (get_local $2)
     (i32.const 15)
@@ -21884,50 +23058,50 @@
   )
   (set_local $0
    (i32.and
-    (get_local $7)
+    (get_local $6)
     (get_local $0)
    )
   )
   (if
    (get_local $0)
    (block
-    ;;@ test.cpp:746:0
+    ;;@ test.cpp:752:0
     (set_local $0
      (i32.shr_u
       (get_local $2)
       (i32.const 12)
      )
     )
-    ;;@ test.cpp:756:0
-    (set_local $6
+    ;;@ test.cpp:762:0
+    (set_local $5
      (i32.eq
       (i32.and
-       (get_local $6)
+       (get_local $5)
        (i32.const 65535)
       )
       (i32.const 62447)
      )
     )
-    ;;@ test.cpp:757:0
-    (set_local $7
+    ;;@ test.cpp:763:0
+    (set_local $6
      (i32.eq
       (get_local $0)
       (i32.const 8)
      )
     )
     (if
-     ;;@ test.cpp:756:0
+     ;;@ test.cpp:762:0
      (i32.and
+      (get_local $5)
       (get_local $6)
-      (get_local $7)
      )
      (block
-      ;;@ test.cpp:758:0
+      ;;@ test.cpp:764:0
       (i32.store
        (get_local $1)
-       (i32.const 65)
+       (i32.const 70)
       )
-      ;;@ test.cpp:759:0
+      ;;@ test.cpp:765:0
       (set_local $0
        (i32.shr_u
         (get_local $2)
@@ -21950,10 +23124,10 @@
        (get_local $2)
        (get_local $0)
       )
-      ;;@ test.cpp:760:0
+      ;;@ test.cpp:766:0
       (set_local $0
        (i32.and
-        (get_local $5)
+        (get_local $4)
         (i32.const 255)
        )
       )
@@ -21967,31 +23141,28 @@
        (get_local $1)
        (get_local $0)
       )
-      (set_global $STACKTOP
-       (get_local $4)
-      )
-      ;;@ test.cpp:791:0
+      ;;@ test.cpp:799:0
       (return)
      )
     )
-    ;;@ test.cpp:746:0
-    (set_local $6
+    ;;@ test.cpp:752:0
+    (set_local $4
      (i32.and
       (get_local $0)
       (i32.const 7)
      )
     )
-    ;;@ test.cpp:745:0
+    ;;@ test.cpp:751:0
     (set_local $5
      (i32.and
       (get_local $2)
       (i32.const 2032)
      )
     )
-    ;;@ test.cpp:764:0
-    (set_local $6
+    ;;@ test.cpp:770:0
+    (set_local $4
      (i32.eq
-      (get_local $6)
+      (get_local $4)
       (i32.const 2)
      )
     )
@@ -22004,22 +23175,19 @@
     (if
      (i32.and
       (get_local $5)
-      (get_local $6)
+      (get_local $4)
      )
      (block
-      ;;@ test.cpp:765:0
+      ;;@ test.cpp:771:0
       (i32.store
        (get_local $1)
-       (i32.const 94)
+       (i32.const 99)
       )
-      (set_global $STACKTOP
-       (get_local $4)
-      )
-      ;;@ test.cpp:791:0
+      ;;@ test.cpp:799:0
       (return)
      )
     )
-    ;;@ test.cpp:769:0
+    ;;@ test.cpp:775:0
     (set_local $0
      (i32.and
       (get_local $0)
@@ -22032,19 +23200,19 @@
       (i32.const 5)
      )
      (block
-      ;;@ test.cpp:770:0
+      ;;@ test.cpp:776:0
       (i32.store
        (get_local $1)
-       (i32.const 38)
+       (i32.const 43)
       )
-      ;;@ test.cpp:779:0
+      ;;@ test.cpp:785:0
       (set_local $0
        (i32.shl
         (get_local $3)
         (i32.const 12)
        )
       )
-      ;;@ test.cpp:780:0
+      ;;@ test.cpp:786:0
       (set_local $2
        (i32.shl
         (get_local $2)
@@ -22057,14 +23225,14 @@
         (i32.const 4094)
        )
       )
-      ;;@ test.cpp:779:0
+      ;;@ test.cpp:785:0
       (set_local $0
        (i32.or
         (get_local $2)
         (get_local $0)
        )
       )
-      ;;@ test.cpp:785:0
+      ;;@ test.cpp:791:0
       (set_local $0
        (i32.and
         (get_local $0)
@@ -22081,48 +23249,85 @@
        (get_local $1)
        (get_local $0)
       )
-      (set_global $STACKTOP
-       (get_local $4)
-      )
-      ;;@ test.cpp:791:0
+      ;;@ test.cpp:799:0
       (return)
      )
     )
    )
   )
-  ;;@ test.cpp:790:0
+  ;;@ test.cpp:796:0
+  (set_local $0
+   (i32.load
+    (get_local $1)
+   )
+  )
+  (if
+   (get_local $0)
+   ;;@ test.cpp:799:0
+   (return)
+  )
+  ;;@ test.cpp:797:0
   (i32.store
    (get_local $1)
-   (i32.const 94)
-  )
-  (set_global $STACKTOP
-   (get_local $4)
+   (i32.const 99)
   )
  )
- (func $__Z7printOpR14simple_op_args (; 124 ;) (param $0 i32)
+ (func $__Z7printOpR14simple_op_args (; 127 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
-  (set_local $2
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  (set_local $8
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 32)
+   )
+  )
+  (set_local $5
+   (get_local $8)
+  )
+  (i64.store align=4
+   (tee_local $4
+    (i32.add
+     (get_local $8)
+     (i32.const 12)
+    )
+   )
+   (i64.const 0)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1314:0
+  (i32.store offset=8
+   (get_local $4)
+   (i32.const 0)
+  )
+  (set_local $7
    (i32.load
     (get_local $0)
    )
   )
-  (set_local $0
+  (set_local $2
    (i32.const 0)
   )
   (block $__rjto$0
    (block $__rjti$0
     (loop $while-in
      (block $while-out
-      ;;@ test.cpp:797:0
+      ;;@ test.cpp:807:0
       (set_local $1
        (i32.add
         (i32.mul
-         (get_local $0)
+         (get_local $2)
          (i32.const 20)
         )
-        (i32.const 4756)
+        (i32.const 5272)
        )
       )
       (set_local $1
@@ -22133,13 +23338,13 @@
       (set_local $3
        (i32.eq
         (get_local $1)
-        (get_local $2)
+        (get_local $7)
        )
       )
-      ;;@ test.cpp:796:0
+      ;;@ test.cpp:806:0
       (set_local $1
        (i32.add
-        (get_local $0)
+        (get_local $2)
         (i32.const 1)
        )
       )
@@ -22152,7 +23357,7 @@
         (i32.const 90)
        )
       )
-      (set_local $0
+      (set_local $2
        (get_local $1)
       )
       (br $while-in)
@@ -22160,59 +23365,577 @@
     )
     (br $__rjto$0)
    )
-   ;;@ test.cpp:803:0
+   ;;@ test.cpp:824:0
+   (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev
+    (get_local $4)
+   )
+   (set_global $STACKTOP
+    (get_local $8)
+   )
    (return)
   )
-  ;;@ test.cpp:798:0
-  (set_local $0
+  ;;@ test.cpp:808:0
+  (set_local $2
    (i32.add
     (i32.mul
-     (get_local $0)
+     (get_local $2)
      (i32.const 20)
     )
-    (i32.const 4744)
+    (i32.const 5260)
+   )
+  )
+  (drop
+   (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSERKS5_
+    (get_local $4)
+    (get_local $2)
    )
   )
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
-  (set_local $1
+  (set_local $7
    (i32.add
-    (get_local $0)
+    (get_local $4)
     (i32.const 11)
    )
   )
   (set_local $1
    (i32.load8_s
-    (get_local $1)
+    (get_local $7)
    )
   )
-  (if
-   (i32.lt_s
+  (block $__rjto$1
+   (block $__rjti$1
+    (if
+     (i32.lt_s
+      (get_local $1)
+      (i32.const 0)
+     )
+     (block
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1295:0
+      (set_local $2
+       (i32.load
+        (get_local $4)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
+      (set_local $1
+       (i32.load8_s
+        (get_local $7)
+       )
+      )
+      (br_if $__rjti$1
+       (i32.ge_s
+        (get_local $1)
+        (i32.const 0)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1275:0
+      (set_local $1
+       (i32.add
+        (get_local $4)
+        (i32.const 4)
+       )
+      )
+      (set_local $1
+       (i32.load
+        (get_local $1)
+       )
+      )
+     )
+     (block
+      (set_local $2
+       (get_local $4)
+      )
+      (br $__rjti$1)
+     )
+    )
+    (br $__rjto$1)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1247:0
+   (set_local $1
+    (i32.and
+     (get_local $1)
+     (i32.const 255)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:3078:0
+  (set_local $3
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2566)
+   )
+  )
+  (block $__rjto$2
+   (block $__rjti$2
+    (if
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:695:0
+     (get_local $3)
+     (block
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:699:0
+      (set_local $6
+       (i32.add
+        (get_local $2)
+        (get_local $1)
+       )
+      )
+      (set_local $1
+       (i32.add
+        (get_local $3)
+        (i32.const 2566)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:698:0
+      (set_local $1
+       (call $__ZNSt3__218__search_substringIcNS_11char_traitsIcEEEEPKT_S5_S5_S5_S5_
+        (get_local $2)
+        (get_local $6)
+        (i32.const 2566)
+        (get_local $1)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:701:0
+      (set_local $3
+       (i32.eq
+        (get_local $1)
+        (get_local $6)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:703:0
+      (set_local $2
+       (i32.sub
+        (get_local $1)
+        (get_local $2)
+       )
+      )
+      ;;@ test.cpp:810:0
+      (br_if $__rjti$2
+       (i32.eqz
+        (i32.or
+         (get_local $3)
+         (i32.eq
+          (get_local $2)
+          (i32.const -1)
+         )
+        )
+       )
+      )
+     )
+     (block
+      (set_local $2
+       (i32.const 0)
+      )
+      (br $__rjti$2)
+     )
+    )
+    (br $__rjto$2)
+   )
+   ;;@ test.cpp:811:0
+   (drop
+    (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKc
+     (get_local $4)
+     (get_local $2)
+     (i32.const 3)
+     (i32.const 2570)
+    )
+   )
+   ;;@ test.cpp:812:0
+   (set_local $1
+    (i32.add
+     (get_local $0)
+     (i32.const 7)
+    )
+   )
+   (set_local $1
+    (i32.load8_s
+     (get_local $1)
+    )
+   )
+   (set_local $1
+    (i32.and
+     (get_local $1)
+     (i32.const 255)
+    )
+   )
+   (call $__ZNSt3__29to_stringEi
+    (get_local $5)
     (get_local $1)
-    (i32.const 0)
+   )
+   (set_local $9
+    (i32.add
+     (get_local $2)
+     (i32.const 1)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
+   (set_local $2
+    (i32.add
+     (get_local $5)
+     (i32.const 11)
+    )
+   )
+   (set_local $3
+    (i32.load8_s
+     (get_local $2)
+    )
+   )
+   (set_local $6
+    (i32.lt_s
+     (get_local $3)
+     (i32.const 0)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1295:0
+   (set_local $2
+    (i32.load
+     (get_local $5)
+    )
+   )
+   (if
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1307:0
+    (i32.eqz
+     (get_local $6)
+    )
+    (set_local $2
+     (get_local $5)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1275:0
+   (set_local $1
+    (i32.add
+     (get_local $5)
+     (i32.const 4)
+    )
+   )
+   (set_local $1
+    (i32.load
+     (get_local $1)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1247:0
+   (set_local $3
+    (i32.and
+     (get_local $3)
+     (i32.const 255)
+    )
+   )
+   (if
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:893:0
+    (i32.eqz
+     (get_local $6)
+    )
+    (set_local $1
+     (get_local $3)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:2634:0
+   (drop
+    (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKcj
+     (get_local $4)
+     (get_local $9)
+     (i32.const 0)
+     (get_local $2)
+     (get_local $1)
+    )
+   )
+   ;;@ test.cpp:812:0
+   (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev
+    (get_local $5)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
+  (set_local $1
+   (i32.load8_s
+    (get_local $7)
+   )
+  )
+  (block $__rjto$3
+   (block $__rjti$3
+    (if
+     (i32.lt_s
+      (get_local $1)
+      (i32.const 0)
+     )
+     (block
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1295:0
+      (set_local $2
+       (i32.load
+        (get_local $4)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
+      (set_local $1
+       (i32.load8_s
+        (get_local $7)
+       )
+      )
+      (br_if $__rjti$3
+       (i32.ge_s
+        (get_local $1)
+        (i32.const 0)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1275:0
+      (set_local $1
+       (i32.add
+        (get_local $4)
+        (i32.const 4)
+       )
+      )
+      (set_local $1
+       (i32.load
+        (get_local $1)
+       )
+      )
+     )
+     (block
+      (set_local $2
+       (get_local $4)
+      )
+      (br $__rjti$3)
+     )
+    )
+    (br $__rjto$3)
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1247:0
+   (set_local $1
+    (i32.and
+     (get_local $1)
+     (i32.const 255)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:3078:0
+  (set_local $3
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (i32.const 2572)
+   )
+  )
+  (block $__rjto$4
+   (block $__rjti$4
+    (if
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:695:0
+     (get_local $3)
+     (block
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:699:0
+      (set_local $6
+       (i32.add
+        (get_local $2)
+        (get_local $1)
+       )
+      )
+      (set_local $1
+       (i32.add
+        (get_local $3)
+        (i32.const 2572)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:698:0
+      (set_local $1
+       (call $__ZNSt3__218__search_substringIcNS_11char_traitsIcEEEEPKT_S5_S5_S5_S5_
+        (get_local $2)
+        (get_local $6)
+        (i32.const 2572)
+        (get_local $1)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:701:0
+      (set_local $3
+       (i32.eq
+        (get_local $1)
+        (get_local $6)
+       )
+      )
+      ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:703:0
+      (set_local $2
+       (i32.sub
+        (get_local $1)
+        (get_local $2)
+       )
+      )
+      ;;@ test.cpp:815:0
+      (br_if $__rjti$4
+       (i32.eqz
+        (i32.or
+         (get_local $3)
+         (i32.eq
+          (get_local $2)
+          (i32.const -1)
+         )
+        )
+       )
+      )
+     )
+     (block
+      (set_local $2
+       (i32.const 0)
+      )
+      (br $__rjti$4)
+     )
+    )
+    (br $__rjto$4)
+   )
+   ;;@ test.cpp:816:0
+   (drop
+    (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKc
+     (get_local $4)
+     (get_local $2)
+     (i32.const 4)
+     (i32.const 2577)
+    )
+   )
+   ;;@ test.cpp:817:0
+   (set_local $0
+    (i32.add
+     (get_local $0)
+     (i32.const 8)
+    )
+   )
+   (set_local $0
+    (i32.load16_s
+     (get_local $0)
+    )
+   )
+   (set_local $0
+    (i32.and
+     (get_local $0)
+     (i32.const 65535)
+    )
+   )
+   (call $__ZNSt3__29to_stringEi
+    (get_local $5)
+    (get_local $0)
+   )
+   (set_local $6
+    (i32.add
+     (get_local $2)
+     (i32.const 1)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
+   (set_local $0
+    (i32.add
+     (get_local $5)
+     (i32.const 11)
+    )
+   )
+   (set_local $1
+    (i32.load8_s
+     (get_local $0)
+    )
+   )
+   (set_local $3
+    (i32.lt_s
+     (get_local $1)
+     (i32.const 0)
+    )
    )
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1295:0
    (set_local $0
     (i32.load
-     (get_local $0)
+     (get_local $5)
     )
    )
+   (if
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1307:0
+    (i32.eqz
+     (get_local $3)
+    )
+    (set_local $0
+     (get_local $5)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1275:0
+   (set_local $2
+    (i32.add
+     (get_local $5)
+     (i32.const 4)
+    )
+   )
+   (set_local $2
+    (i32.load
+     (get_local $2)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1247:0
+   (set_local $1
+    (i32.and
+     (get_local $1)
+     (i32.const 255)
+    )
+   )
+   (if
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:893:0
+    (i32.eqz
+     (get_local $3)
+    )
+    (set_local $2
+     (get_local $1)
+    )
+   )
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:2634:0
+   (drop
+    (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKcj
+     (get_local $4)
+     (get_local $6)
+     (i32.const 0)
+     (get_local $0)
+     (get_local $2)
+    )
+   )
+   ;;@ test.cpp:817:0
+   (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev
+    (get_local $5)
+   )
   )
-  ;;@ test.cpp:798:0
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1213:0
+  (set_local $0
+   (i32.load8_s
+    (get_local $7)
+   )
+  )
+  (set_local $2
+   (i32.lt_s
+    (get_local $0)
+    (i32.const 0)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1295:0
+  (set_local $0
+   (i32.load
+    (get_local $4)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string:1307:0
+   (i32.eqz
+    (get_local $2)
+   )
+   (set_local $0
+    (get_local $4)
+   )
+  )
+  ;;@ test.cpp:819:0
   (drop
    (call $_puts
     (get_local $0)
    )
   )
+  ;;@ test.cpp:824:0
+  (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev
+   (get_local $4)
+  )
+  (set_global $STACKTOP
+   (get_local $8)
+  )
  )
- (func $__Z11LoadWritePCj (; 125 ;) (param $0 i32)
-  ;;@ test.cpp:853:0
+ (func $__Z11LoadWritePCj (; 128 ;) (param $0 i32)
+  ;;@ test.cpp:878:0
   (call $__Z9BXWritePCj
    (get_local $0)
   )
  )
- (func $__Z9BXWritePCj (; 126 ;) (param $0 i32)
+ (func $__Z9BXWritePCj (; 129 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1099:0
+  ;;@ test.cpp:1125:0
   (set_local $1
    (i32.and
     (get_local $0)
@@ -22220,26 +23943,26 @@
    )
   )
   (i32.store
-   (i32.const 6600)
+   (i32.const 7116)
    (get_local $1)
   )
  )
- (func $__Z13BranchWritePCj (; 127 ;) (param $0 i32)
-  ;;@ test.cpp:1060:0
+ (func $__Z13BranchWritePCj (; 130 ;) (param $0 i32)
+  ;;@ test.cpp:1086:0
   (i32.store
-   (i32.const 6600)
+   (i32.const 7116)
    (get_local $0)
   )
  )
- (func $__Z10ALUWritePCj (; 128 ;) (param $0 i32)
-  ;;@ test.cpp:1064:0
+ (func $__Z10ALUWritePCj (; 131 ;) (param $0 i32)
+  ;;@ test.cpp:1090:0
   (call $__Z13BranchWritePCj
    (get_local $0)
   )
  )
- (func $__Z10BLXWritePCj (; 129 ;) (param $0 i32)
+ (func $__Z10BLXWritePCj (; 132 ;) (param $0 i32)
   (local $1 i32)
-  ;;@ test.cpp:1079:0
+  ;;@ test.cpp:1105:0
   (set_local $1
    (i32.and
     (get_local $0)
@@ -22247,13 +23970,13 @@
    )
   )
   (i32.store
-   (i32.const 6600)
+   (i32.const 7116)
    (get_local $1)
   )
  )
- (func $__ZL12AddWithCarryjjb (; 130 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $__ZL12AddWithCarryjjb (; 133 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
-  ;;@ test.cpp:845:0
+  ;;@ test.cpp:870:0
   (set_local $3
    (i32.add
     (get_local $1)
@@ -22272,7 +23995,7 @@
     (get_local $2)
    )
   )
-  ;;@ test.cpp:846:0
+  ;;@ test.cpp:871:0
   (set_local $0
    (i32.and
     (get_local $0)
@@ -22316,14 +24039,14 @@
    )
   )
   (i32.store8
-   (i32.const 2071557)
+   (i32.const 2072073)
    (get_local $0)
   )
-  ;;@ test.cpp:848:0
+  ;;@ test.cpp:873:0
   (get_local $2)
  )
- (func $__Z19CallFunctionPointerPFviiE (; 131 ;) (param $0 i32)
-  ;;@ test.cpp:1754:0
+ (func $__Z19CallFunctionPointerPFviiE (; 134 ;) (param $0 i32)
+  ;;@ test.cpp:1780:0
   (call_indirect (type $FUNCSIG$vii)
    (i32.const 3)
    (i32.const 5)
@@ -22332,11 +24055,11 @@
      (get_local $0)
      (i32.const 15)
     )
-    (i32.const 176)
+    (i32.const 192)
    )
   )
  )
- (func $__ZNSt3__211char_traitsIcE6lengthEPKc (; 132 ;) (param $0 i32) (result i32)
+ (func $__ZNSt3__211char_traitsIcE6lengthEPKc (; 135 ;) (param $0 i32) (result i32)
   (local $1 i32)
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:215:0
   (set_local $1
@@ -22346,7 +24069,7 @@
   )
   (get_local $1)
  )
- (func $__ZNSt3__211char_traitsIcE4copyEPcPKcj (; 133 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $__ZNSt3__211char_traitsIcE4copyEPcPKcj (; 136 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (if
    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:223:0
    (get_local $2)
@@ -22360,7 +24083,7 @@
   )
   (get_local $0)
  )
- (func $__ZNSt3__211char_traitsIcE6assignERcRKc (; 134 ;) (param $0 i32) (param $1 i32)
+ (func $__ZNSt3__211char_traitsIcE6assignERcRKc (; 137 ;) (param $0 i32) (param $1 i32)
   (local $2 i32)
   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:206:0
   (set_local $2
@@ -22373,10 +24096,259 @@
    (get_local $2)
   )
  )
- (func $__GLOBAL__sub_I_test_cpp (; 135 ;)
+ (func $__ZNSt3__218__search_substringIcNS_11char_traitsIcEEEEPKT_S5_S5_S5_S5_ (; 138 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (set_local $6
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $7
+   (get_local $6)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:654:0
+  (set_local $5
+   (get_local $2)
+  )
+  (set_local $4
+   (i32.sub
+    (get_local $3)
+    (get_local $5)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:655:0
+   (i32.eqz
+    (get_local $4)
+   )
+   (block
+    (set_local $1
+     (get_local $0)
+    )
+    (set_global $STACKTOP
+     (get_local $6)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:685:0
+    (return
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:658:0
+  (set_local $5
+   (get_local $1)
+  )
+  (set_local $3
+   (get_local $0)
+  )
+  (set_local $3
+   (i32.sub
+    (get_local $5)
+    (get_local $3)
+   )
+  )
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:659:0
+   (i32.lt_s
+    (get_local $3)
+    (get_local $4)
+   )
+   (block
+    (set_global $STACKTOP
+     (get_local $6)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:685:0
+    (return
+     (get_local $1)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:663:0
+  (set_local $3
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (i32.store8
+   (get_local $7)
+   (get_local $3)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:671:0
+  (set_local $8
+   (i32.sub
+    (i32.const 1)
+    (get_local $4)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:665:0
+  (set_local $3
+   (get_local $0)
+  )
+  (set_local $3
+   (i32.sub
+    (get_local $5)
+    (get_local $3)
+   )
+  )
+  (block $label$break$L7
+   (if
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:667:0
+    (i32.ge_s
+     (get_local $3)
+     (get_local $4)
+    )
+    (loop $while-in
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:671:0
+     (set_local $3
+      (i32.add
+       (get_local $8)
+       (get_local $3)
+      )
+     )
+     (set_local $0
+      (call $__ZNSt3__211char_traitsIcE4findEPKcjRS2_
+       (get_local $0)
+       (get_local $3)
+       (get_local $7)
+      )
+     )
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:672:0
+     (br_if $label$break$L7
+      (i32.eqz
+       (get_local $0)
+      )
+     )
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:680:0
+     (set_local $3
+      (call $__ZNSt3__211char_traitsIcE7compareEPKcS3_j
+       (get_local $0)
+       (get_local $2)
+       (get_local $4)
+      )
+     )
+     (if
+      (i32.eqz
+       (get_local $3)
+      )
+      (block
+       (set_local $1
+        (get_local $0)
+       )
+       (br $label$break$L7)
+      )
+     )
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:683:0
+     (set_local $0
+      (i32.add
+       (get_local $0)
+       (i32.const 1)
+      )
+     )
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:665:0
+     (set_local $3
+      (get_local $0)
+     )
+     (set_local $3
+      (i32.sub
+       (get_local $5)
+       (get_local $3)
+      )
+     )
+     ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:667:0
+     (br_if $while-in
+      (i32.ge_s
+       (get_local $3)
+       (get_local $4)
+      )
+     )
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $6)
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:685:0
+  (get_local $1)
+ )
+ (func $__ZNSt3__211char_traitsIcE4findEPKcjRS2_ (; 139 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (if
+   ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:266:0
+   (i32.eqz
+    (get_local $1)
+   )
+   (block
+    (set_local $0
+     (i32.const 0)
+    )
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:281:0
+    (return
+     (get_local $0)
+    )
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:271:0
+  (set_local $2
+   (i32.load8_s
+    (get_local $2)
+   )
+  )
+  (set_local $2
+   (call $__ZNSt3__211char_traitsIcE11to_int_typeEc
+    (get_local $2)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/string.h:95:0
+  (set_local $0
+   (call $_memchr
+    (get_local $0)
+    (get_local $2)
+    (get_local $1)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:281:0
+  (get_local $0)
+ )
+ (func $__ZNSt3__211char_traitsIcE7compareEPKcS3_j (; 140 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (set_local $3
+   (if (result i32)
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:244:0
+    (get_local $2)
+    ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:249:0
+    (call $_memcmp
+     (get_local $0)
+     (get_local $1)
+     (get_local $2)
+    )
+    (i32.const 0)
+   )
+  )
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:260:0
+  (get_local $3)
+ )
+ (func $__ZNSt3__211char_traitsIcE11to_int_typeEc (; 141 ;) (param $0 i32) (result i32)
+  (local $1 i32)
+  ;;@ /Users/jgoebel/git/arduino/emsdk/emscripten/incoming/system/include/libcxx/__string:233:0
+  (set_local $1
+   (i32.and
+    (get_local $0)
+    (i32.const 255)
+   )
+  )
+  (get_local $1)
+ )
+ (func $__GLOBAL__sub_I_test_cpp (; 142 ;)
   (call $___cxx_global_var_init)
  )
- (func $_malloc (; 136 ;) (param $0 i32) (result i32)
+ (func $_malloc (; 143 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -22431,7 +24403,7 @@
         (i32.shr_u
          (tee_local $7
           (i32.load
-           (i32.const 1776076)
+           (i32.const 1776592)
           )
          )
          (tee_local $0
@@ -22479,7 +24451,7 @@
                   )
                   (i32.const 3)
                  )
-                 (i32.const 1776116)
+                 (i32.const 1776632)
                 )
                )
                (i32.const 8)
@@ -22498,7 +24470,7 @@
          (get_local $0)
         )
         (i32.store
-         (i32.const 1776076)
+         (i32.const 1776592)
          (i32.and
           (get_local $7)
           (i32.xor
@@ -22515,7 +24487,7 @@
           (i32.lt_u
            (get_local $0)
            (i32.load
-            (i32.const 1776092)
+            (i32.const 1776608)
            )
           )
           (call $_abort)
@@ -22588,7 +24560,7 @@
        (get_local $3)
        (tee_local $16
         (i32.load
-         (i32.const 1776084)
+         (i32.const 1776600)
         )
        )
       )
@@ -22721,7 +24693,7 @@
                     )
                     (i32.const 3)
                    )
-                   (i32.const 1776116)
+                   (i32.const 1776632)
                   )
                  )
                  (i32.const 8)
@@ -22740,7 +24712,7 @@
            (get_local $0)
           )
           (i32.store
-           (i32.const 1776076)
+           (i32.const 1776592)
            (tee_local $1
             (i32.and
              (get_local $7)
@@ -22759,7 +24731,7 @@
             (i32.lt_u
              (get_local $0)
              (i32.load
-              (i32.const 1776092)
+              (i32.const 1776608)
              )
             )
             (call $_abort)
@@ -22832,7 +24804,7 @@
           (block
            (set_local $3
             (i32.load
-             (i32.const 1776096)
+             (i32.const 1776612)
             )
            )
            (set_local $0
@@ -22846,7 +24818,7 @@
               )
               (i32.const 3)
              )
-             (i32.const 1776116)
+             (i32.const 1776632)
             )
            )
            (if
@@ -22872,7 +24844,7 @@
                )
               )
               (i32.load
-               (i32.const 1776092)
+               (i32.const 1776608)
               )
              )
              (call $_abort)
@@ -22887,7 +24859,7 @@
             )
             (block
              (i32.store
-              (i32.const 1776076)
+              (i32.const 1776592)
               (i32.or
                (get_local $1)
                (get_local $2)
@@ -22923,11 +24895,11 @@
           )
          )
          (i32.store
-          (i32.const 1776084)
+          (i32.const 1776600)
           (get_local $4)
          )
          (i32.store
-          (i32.const 1776096)
+          (i32.const 1776612)
           (get_local $5)
          )
          (set_global $STACKTOP
@@ -22941,7 +24913,7 @@
        (if
         (tee_local $10
          (i32.load
-          (i32.const 1776080)
+          (i32.const 1776596)
          )
         )
         (block
@@ -23046,7 +25018,7 @@
                  )
                  (i32.const 2)
                 )
-                (i32.const 1776380)
+                (i32.const 1776896)
                )
               )
              )
@@ -23136,7 +25108,7 @@
            (get_local $1)
            (tee_local $15
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
           )
@@ -23339,7 +25311,7 @@
                   )
                   (i32.const 2)
                  )
-                 (i32.const 1776380)
+                 (i32.const 1776896)
                 )
                )
               )
@@ -23355,7 +25327,7 @@
                )
                (block
                 (i32.store
-                 (i32.const 1776080)
+                 (i32.const 1776596)
                  (i32.and
                   (get_local $10)
                   (i32.xor
@@ -23375,7 +25347,7 @@
               (i32.lt_u
                (get_local $12)
                (i32.load
-                (i32.const 1776092)
+                (i32.const 1776608)
                )
               )
               (call $_abort)
@@ -23411,7 +25383,7 @@
               (get_local $4)
               (tee_local $2
                (i32.load
-                (i32.const 1776092)
+                (i32.const 1776608)
                )
               )
              )
@@ -23455,7 +25427,7 @@
               (i32.lt_u
                (get_local $0)
                (i32.load
-                (i32.const 1776092)
+                (i32.const 1776608)
                )
               )
               (call $_abort)
@@ -23537,7 +25509,7 @@
             (block
              (set_local $4
               (i32.load
-               (i32.const 1776096)
+               (i32.const 1776612)
               )
              )
              (set_local $0
@@ -23551,7 +25523,7 @@
                 )
                 (i32.const 3)
                )
-               (i32.const 1776116)
+               (i32.const 1776632)
               )
              )
              (if
@@ -23577,7 +25549,7 @@
                  )
                 )
                 (i32.load
-                 (i32.const 1776092)
+                 (i32.const 1776608)
                 )
                )
                (call $_abort)
@@ -23592,7 +25564,7 @@
               )
               (block
                (i32.store
-                (i32.const 1776076)
+                (i32.const 1776592)
                 (i32.or
                  (get_local $7)
                  (get_local $2)
@@ -23628,11 +25600,11 @@
             )
            )
            (i32.store
-            (i32.const 1776084)
+            (i32.const 1776600)
             (get_local $6)
            )
            (i32.store
-            (i32.const 1776096)
+            (i32.const 1776612)
             (get_local $9)
            )
           )
@@ -23680,7 +25652,7 @@
       (if
        (tee_local $6
         (i32.load
-         (i32.const 1776080)
+         (i32.const 1776596)
         )
        )
        (block
@@ -23796,7 +25768,7 @@
                )
                (i32.const 2)
               )
-              (i32.const 1776380)
+              (i32.const 1776896)
              )
             )
            )
@@ -24066,7 +26038,7 @@
                  )
                  (i32.const 2)
                 )
-                (i32.const 1776380)
+                (i32.const 1776896)
                )
               )
              )
@@ -24138,7 +26110,7 @@
            (get_local $3)
            (i32.sub
             (i32.load
-             (i32.const 1776084)
+             (i32.const 1776600)
             )
             (get_local $4)
            )
@@ -24149,7 +26121,7 @@
              (get_local $5)
              (tee_local $15
               (i32.load
-               (i32.const 1776092)
+               (i32.const 1776608)
               )
              )
             )
@@ -24352,7 +26324,7 @@
                     )
                     (i32.const 2)
                    )
-                   (i32.const 1776380)
+                   (i32.const 1776896)
                   )
                  )
                 )
@@ -24368,7 +26340,7 @@
                  )
                  (block
                   (i32.store
-                   (i32.const 1776080)
+                   (i32.const 1776596)
                    (tee_local $2
                     (i32.and
                      (get_local $6)
@@ -24390,7 +26362,7 @@
                 (i32.lt_u
                  (get_local $10)
                  (i32.load
-                  (i32.const 1776092)
+                  (i32.const 1776608)
                  )
                 )
                 (call $_abort)
@@ -24432,7 +26404,7 @@
                 (get_local $8)
                 (tee_local $1
                  (i32.load
-                  (i32.const 1776092)
+                  (i32.const 1776608)
                  )
                 )
                )
@@ -24476,7 +26448,7 @@
                 (i32.lt_u
                  (get_local $0)
                  (i32.load
-                  (i32.const 1776092)
+                  (i32.const 1776608)
                  )
                 )
                 (call $_abort)
@@ -24581,14 +26553,14 @@
                    (get_local $1)
                    (i32.const 3)
                   )
-                  (i32.const 1776116)
+                  (i32.const 1776632)
                  )
                 )
                 (if
                  (i32.and
                   (tee_local $2
                    (i32.load
-                    (i32.const 1776076)
+                    (i32.const 1776592)
                    )
                   )
                   (tee_local $1
@@ -24611,7 +26583,7 @@
                     )
                    )
                    (i32.load
-                    (i32.const 1776092)
+                    (i32.const 1776608)
                    )
                   )
                   (call $_abort)
@@ -24626,7 +26598,7 @@
                  )
                  (block
                   (i32.store
-                   (i32.const 1776076)
+                   (i32.const 1776592)
                    (i32.or
                     (get_local $2)
                     (get_local $1)
@@ -24764,7 +26736,7 @@
                  )
                  (i32.const 2)
                 )
-                (i32.const 1776380)
+                (i32.const 1776896)
                )
               )
               (i32.store offset=28
@@ -24798,7 +26770,7 @@
                )
                (block
                 (i32.store
-                 (i32.const 1776080)
+                 (i32.const 1776596)
                  (i32.or
                   (get_local $2)
                   (get_local $4)
@@ -24907,7 +26879,7 @@
                  (i32.lt_u
                   (get_local $2)
                   (i32.load
-                   (i32.const 1776092)
+                   (i32.const 1776608)
                   )
                  )
                  (call $_abort)
@@ -24948,7 +26920,7 @@
                   )
                   (tee_local $3
                    (i32.load
-                    (i32.const 1776092)
+                    (i32.const 1776608)
                    )
                   )
                  )
@@ -25016,7 +26988,7 @@
    (i32.ge_u
     (tee_local $3
      (i32.load
-      (i32.const 1776084)
+      (i32.const 1776600)
      )
     )
     (get_local $2)
@@ -25024,7 +26996,7 @@
    (block
     (set_local $0
      (i32.load
-      (i32.const 1776096)
+      (i32.const 1776612)
      )
     )
     (if
@@ -25039,7 +27011,7 @@
      )
      (block
       (i32.store
-       (i32.const 1776096)
+       (i32.const 1776612)
        (tee_local $3
         (i32.add
          (get_local $0)
@@ -25048,7 +27020,7 @@
        )
       )
       (i32.store
-       (i32.const 1776084)
+       (i32.const 1776600)
        (get_local $1)
       )
       (i32.store offset=4
@@ -25075,11 +27047,11 @@
      )
      (block
       (i32.store
-       (i32.const 1776084)
+       (i32.const 1776600)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776096)
+       (i32.const 1776612)
        (i32.const 0)
       )
       (i32.store offset=4
@@ -25123,14 +27095,14 @@
    (i32.gt_u
     (tee_local $1
      (i32.load
-      (i32.const 1776088)
+      (i32.const 1776604)
      )
     )
     (get_local $2)
    )
    (block
     (i32.store
-     (i32.const 1776088)
+     (i32.const 1776604)
      (tee_local $1
       (i32.sub
        (get_local $1)
@@ -25139,12 +27111,12 @@
      )
     )
     (i32.store
-     (i32.const 1776100)
+     (i32.const 1776616)
      (tee_local $3
       (i32.add
        (tee_local $0
         (i32.load
-         (i32.const 1776100)
+         (i32.const 1776616)
         )
        )
        (get_local $2)
@@ -25191,34 +27163,34 @@
         (tee_local $0
          (if (result i32)
           (i32.load
-           (i32.const 1776548)
+           (i32.const 1777064)
           )
           (i32.load
-           (i32.const 1776556)
+           (i32.const 1777072)
           )
           (block (result i32)
            (i32.store
-            (i32.const 1776556)
+            (i32.const 1777072)
             (i32.const 4096)
            )
            (i32.store
-            (i32.const 1776552)
+            (i32.const 1777068)
             (i32.const 4096)
            )
            (i32.store
-            (i32.const 1776560)
+            (i32.const 1777076)
             (i32.const -1)
            )
            (i32.store
-            (i32.const 1776564)
+            (i32.const 1777080)
             (i32.const -1)
            )
            (i32.store
-            (i32.const 1776568)
+            (i32.const 1777084)
             (i32.const 0)
            )
            (i32.store
-            (i32.const 1776520)
+            (i32.const 1777036)
             (i32.const 0)
            )
            (i32.store
@@ -25234,7 +27206,7 @@
             )
            )
            (i32.store
-            (i32.const 1776548)
+            (i32.const 1777064)
             (get_local $0)
            )
            (i32.const 4096)
@@ -25271,7 +27243,7 @@
   (if
    (tee_local $0
     (i32.load
-     (i32.const 1776516)
+     (i32.const 1777032)
     )
    )
    (if
@@ -25281,7 +27253,7 @@
        (i32.add
         (tee_local $3
          (i32.load
-          (i32.const 1776508)
+          (i32.const 1777024)
          )
         )
         (get_local $4)
@@ -25309,7 +27281,7 @@
     (if
      (i32.and
       (i32.load
-       (i32.const 1776520)
+       (i32.const 1777036)
       )
       (i32.const 4)
      )
@@ -25324,13 +27296,13 @@
           (i32.eqz
            (tee_local $0
             (i32.load
-             (i32.const 1776100)
+             (i32.const 1776616)
             )
            )
           )
          )
          (set_local $3
-          (i32.const 1776524)
+          (i32.const 1777040)
          )
          (loop $while-in34
           (block $while-out33
@@ -25434,7 +27406,7 @@
                (i32.add
                 (tee_local $3
                  (i32.load
-                  (i32.const 1776552)
+                  (i32.const 1777068)
                  )
                 )
                 (i32.const -1)
@@ -25469,7 +27441,7 @@
             )
             (tee_local $8
              (i32.load
-              (i32.const 1776508)
+              (i32.const 1777024)
              )
             )
            )
@@ -25489,7 +27461,7 @@
             (if
              (tee_local $7
               (i32.load
-               (i32.const 1776516)
+               (i32.const 1777032)
               )
              )
              (if
@@ -25584,7 +27556,7 @@
             )
             (tee_local $3
              (i32.load
-              (i32.const 1776556)
+              (i32.const 1777072)
              )
             )
            )
@@ -25626,10 +27598,10 @@
        )
       )
       (i32.store
-       (i32.const 1776520)
+       (i32.const 1777036)
        (i32.or
         (i32.load
-         (i32.const 1776520)
+         (i32.const 1777036)
         )
         (i32.const 4)
        )
@@ -25712,11 +27684,11 @@
     (br $__rjto$13)
    )
    (i32.store
-    (i32.const 1776508)
+    (i32.const 1777024)
     (tee_local $3
      (i32.add
       (i32.load
-       (i32.const 1776508)
+       (i32.const 1777024)
       )
       (get_local $1)
      )
@@ -25726,11 +27698,11 @@
     (i32.gt_u
      (get_local $3)
      (i32.load
-      (i32.const 1776512)
+      (i32.const 1777028)
      )
     )
     (i32.store
-     (i32.const 1776512)
+     (i32.const 1777028)
      (get_local $3)
     )
    )
@@ -25738,12 +27710,12 @@
     (if
      (tee_local $6
       (i32.load
-       (i32.const 1776100)
+       (i32.const 1776616)
       )
      )
      (block
       (set_local $3
-       (i32.const 1776524)
+       (i32.const 1777040)
       )
       (block $__rjto$10
        (block $__rjti$10
@@ -25812,7 +27784,7 @@
           )
           (set_local $4
            (i32.load
-            (i32.const 1776088)
+            (i32.const 1776604)
            )
           )
           (set_local $0
@@ -25830,7 +27802,7 @@
            )
           )
           (i32.store
-           (i32.const 1776100)
+           (i32.const 1776616)
            (tee_local $3
             (i32.add
              (get_local $6)
@@ -25848,7 +27820,7 @@
            )
           )
           (i32.store
-           (i32.const 1776088)
+           (i32.const 1776604)
            (tee_local $0
             (i32.add
              (get_local $4)
@@ -25874,9 +27846,9 @@
            (i32.const 40)
           )
           (i32.store
-           (i32.const 1776104)
+           (i32.const 1776620)
            (i32.load
-            (i32.const 1776564)
+            (i32.const 1777080)
            )
           )
           (br $do-once39)
@@ -25889,13 +27861,13 @@
         (get_local $0)
         (tee_local $3
          (i32.load
-          (i32.const 1776092)
+          (i32.const 1776608)
          )
         )
        )
        (block
         (i32.store
-         (i32.const 1776092)
+         (i32.const 1776608)
          (get_local $0)
         )
         (set_local $3
@@ -25910,7 +27882,7 @@
        )
       )
       (set_local $4
-       (i32.const 1776524)
+       (i32.const 1777040)
       )
       (block $__rjto$11
        (block $__rjti$11
@@ -26045,18 +28017,18 @@
            )
            (block
             (i32.store
-             (i32.const 1776088)
+             (i32.const 1776604)
              (tee_local $0
               (i32.add
                (i32.load
-                (i32.const 1776088)
+                (i32.const 1776604)
                )
                (get_local $8)
               )
              )
             )
             (i32.store
-             (i32.const 1776100)
+             (i32.const 1776616)
              (get_local $7)
             )
             (i32.store offset=4
@@ -26072,23 +28044,23 @@
              (i32.eq
               (get_local $5)
               (i32.load
-               (i32.const 1776096)
+               (i32.const 1776612)
               )
              )
              (block
               (i32.store
-               (i32.const 1776084)
+               (i32.const 1776600)
                (tee_local $0
                 (i32.add
                  (i32.load
-                  (i32.const 1776084)
+                  (i32.const 1776600)
                  )
                  (get_local $8)
                 )
                )
               )
               (i32.store
-               (i32.const 1776096)
+               (i32.const 1776612)
                (get_local $7)
               )
               (i32.store offset=4
@@ -26160,7 +28132,7 @@
                         (get_local $4)
                         (i32.const 3)
                        )
-                       (i32.const 1776116)
+                       (i32.const 1776632)
                       )
                      )
                     )
@@ -26191,10 +28163,10 @@
                    )
                    (block
                     (i32.store
-                     (i32.const 1776076)
+                     (i32.const 1776592)
                      (i32.and
                       (i32.load
-                       (i32.const 1776076)
+                       (i32.const 1776592)
                       )
                       (i32.xor
                        (i32.shl
@@ -26449,7 +28421,7 @@
                          )
                          (i32.const 2)
                         )
-                        (i32.const 1776380)
+                        (i32.const 1776896)
                        )
                       )
                      )
@@ -26463,10 +28435,10 @@
                       (get_local $11)
                      )
                      (i32.store
-                      (i32.const 1776080)
+                      (i32.const 1776596)
                       (i32.and
                        (i32.load
-                        (i32.const 1776080)
+                        (i32.const 1776596)
                        )
                        (i32.xor
                         (i32.shl
@@ -26483,7 +28455,7 @@
                      (i32.lt_u
                       (get_local $6)
                       (i32.load
-                       (i32.const 1776092)
+                       (i32.const 1776608)
                       )
                      )
                      (call $_abort)
@@ -26520,7 +28492,7 @@
                     (get_local $11)
                     (tee_local $2
                      (i32.load
-                      (i32.const 1776092)
+                      (i32.const 1776608)
                      )
                     )
                    )
@@ -26572,7 +28544,7 @@
                    (i32.lt_u
                     (get_local $0)
                     (i32.load
-                     (i32.const 1776092)
+                     (i32.const 1776608)
                     )
                    )
                    (call $_abort)
@@ -26650,7 +28622,7 @@
                  (get_local $2)
                  (i32.const 3)
                 )
-                (i32.const 1776116)
+                (i32.const 1776632)
                )
               )
               (block $do-once62
@@ -26658,7 +28630,7 @@
                 (i32.and
                  (tee_local $1
                   (i32.load
-                   (i32.const 1776076)
+                   (i32.const 1776592)
                   )
                  )
                  (tee_local $2
@@ -26682,7 +28654,7 @@
                     )
                    )
                    (i32.load
-                    (i32.const 1776092)
+                    (i32.const 1776608)
                    )
                   )
                   (block
@@ -26699,7 +28671,7 @@
                 )
                 (block
                  (i32.store
-                  (i32.const 1776076)
+                  (i32.const 1776592)
                   (i32.or
                    (get_local $1)
                    (get_local $2)
@@ -26844,7 +28816,7 @@
                )
                (i32.const 2)
               )
-              (i32.const 1776380)
+              (i32.const 1776896)
              )
             )
             (i32.store offset=28
@@ -26869,7 +28841,7 @@
               (i32.and
                (tee_local $1
                 (i32.load
-                 (i32.const 1776080)
+                 (i32.const 1776596)
                 )
                )
                (tee_local $3
@@ -26882,7 +28854,7 @@
              )
              (block
               (i32.store
-               (i32.const 1776080)
+               (i32.const 1776596)
                (i32.or
                 (get_local $1)
                 (get_local $3)
@@ -26991,7 +28963,7 @@
                (i32.lt_u
                 (get_local $2)
                 (i32.load
-                 (i32.const 1776092)
+                 (i32.const 1776608)
                 )
                )
                (call $_abort)
@@ -27032,7 +29004,7 @@
                 )
                 (tee_local $3
                  (i32.load
-                  (i32.const 1776092)
+                  (i32.const 1776608)
                  )
                 )
                )
@@ -27082,7 +29054,7 @@
        )
       )
       (set_local $3
-       (i32.const 1776524)
+       (i32.const 1777040)
       )
       (loop $while-in69
        (block $while-out68
@@ -27195,7 +29167,7 @@
        )
       )
       (i32.store
-       (i32.const 1776100)
+       (i32.const 1776616)
        (tee_local $7
         (i32.add
          (get_local $0)
@@ -27213,7 +29185,7 @@
        )
       )
       (i32.store
-       (i32.const 1776088)
+       (i32.const 1776604)
        (tee_local $5
         (i32.sub
          (get_local $10)
@@ -27236,9 +29208,9 @@
        (i32.const 40)
       )
       (i32.store
-       (i32.const 1776104)
+       (i32.const 1776620)
        (i32.load
-        (i32.const 1776564)
+        (i32.const 1777080)
        )
       )
       (i32.store
@@ -27253,29 +29225,29 @@
       (i64.store align=4
        (get_local $8)
        (i64.load align=4
-        (i32.const 1776524)
+        (i32.const 1777040)
        )
       )
       (i64.store offset=8 align=4
        (get_local $8)
        (i64.load align=4
-        (i32.const 1776532)
+        (i32.const 1777048)
        )
       )
       (i32.store
-       (i32.const 1776524)
+       (i32.const 1777040)
        (get_local $0)
       )
       (i32.store
-       (i32.const 1776528)
+       (i32.const 1777044)
        (get_local $1)
       )
       (i32.store
-       (i32.const 1776536)
+       (i32.const 1777052)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776532)
+       (i32.const 1777048)
        (get_local $8)
       )
       (set_local $0
@@ -27356,14 +29328,14 @@
              (get_local $1)
              (i32.const 3)
             )
-            (i32.const 1776116)
+            (i32.const 1776632)
            )
           )
           (if
            (i32.and
             (tee_local $3
              (i32.load
-              (i32.const 1776076)
+              (i32.const 1776592)
              )
             )
             (tee_local $1
@@ -27386,7 +29358,7 @@
               )
              )
              (i32.load
-              (i32.const 1776092)
+              (i32.const 1776608)
              )
             )
             (call $_abort)
@@ -27401,7 +29373,7 @@
            )
            (block
             (i32.store
-             (i32.const 1776076)
+             (i32.const 1776592)
              (i32.or
               (get_local $3)
               (get_local $1)
@@ -27539,7 +29511,7 @@
            )
            (i32.const 2)
           )
-          (i32.const 1776380)
+          (i32.const 1776896)
          )
         )
         (i32.store offset=28
@@ -27559,7 +29531,7 @@
           (i32.and
            (tee_local $3
             (i32.load
-             (i32.const 1776080)
+             (i32.const 1776596)
             )
            )
            (tee_local $4
@@ -27572,7 +29544,7 @@
          )
          (block
           (i32.store
-           (i32.const 1776080)
+           (i32.const 1776596)
            (i32.or
             (get_local $3)
             (get_local $4)
@@ -27681,7 +29653,7 @@
            (i32.lt_u
             (get_local $1)
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
            (call $_abort)
@@ -27722,7 +29694,7 @@
             )
             (tee_local $4
              (i32.load
-              (i32.const 1776092)
+              (i32.const 1776608)
              )
             )
            )
@@ -27765,7 +29737,7 @@
         (i32.eqz
          (tee_local $3
           (i32.load
-           (i32.const 1776092)
+           (i32.const 1776608)
           )
          )
         )
@@ -27775,30 +29747,30 @@
         )
        )
        (i32.store
-        (i32.const 1776092)
+        (i32.const 1776608)
         (get_local $0)
        )
       )
       (i32.store
-       (i32.const 1776524)
+       (i32.const 1777040)
        (get_local $0)
       )
       (i32.store
-       (i32.const 1776528)
+       (i32.const 1777044)
        (get_local $1)
       )
       (i32.store
-       (i32.const 1776536)
+       (i32.const 1777052)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776112)
+       (i32.const 1776628)
        (i32.load
-        (i32.const 1776548)
+        (i32.const 1777064)
        )
       )
       (i32.store
-       (i32.const 1776108)
+       (i32.const 1776624)
        (i32.const -1)
       )
       (set_local $3
@@ -27812,7 +29784,7 @@
            (get_local $3)
            (i32.const 3)
           )
-          (i32.const 1776116)
+          (i32.const 1776632)
          )
         )
         (get_local $4)
@@ -27854,7 +29826,7 @@
        )
       )
       (i32.store
-       (i32.const 1776100)
+       (i32.const 1776616)
        (tee_local $0
         (i32.add
          (get_local $0)
@@ -27872,7 +29844,7 @@
        )
       )
       (i32.store
-       (i32.const 1776088)
+       (i32.const 1776604)
        (tee_local $1
         (i32.sub
          (get_local $3)
@@ -27895,9 +29867,9 @@
        (i32.const 40)
       )
       (i32.store
-       (i32.const 1776104)
+       (i32.const 1776620)
        (i32.load
-        (i32.const 1776564)
+        (i32.const 1777080)
        )
       )
      )
@@ -27907,14 +29879,14 @@
     (i32.gt_u
      (tee_local $0
       (i32.load
-       (i32.const 1776088)
+       (i32.const 1776604)
       )
      )
      (get_local $2)
     )
     (block
      (i32.store
-      (i32.const 1776088)
+      (i32.const 1776604)
       (tee_local $1
        (i32.sub
         (get_local $0)
@@ -27923,12 +29895,12 @@
       )
      )
      (i32.store
-      (i32.const 1776100)
+      (i32.const 1776616)
       (tee_local $3
        (i32.add
         (tee_local $0
          (i32.load
-          (i32.const 1776100)
+          (i32.const 1776616)
          )
         )
         (get_local $2)
@@ -27970,7 +29942,7 @@
   )
   (i32.const 0)
  )
- (func $_free (; 137 ;) (param $0 i32)
+ (func $_free (; 144 ;) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -28003,7 +29975,7 @@
     )
     (tee_local $12
      (i32.load
-      (i32.const 1776092)
+      (i32.const 1776608)
      )
     )
    )
@@ -28093,7 +30065,7 @@
       (i32.eq
        (get_local $0)
        (i32.load
-        (i32.const 1776096)
+        (i32.const 1776612)
        )
       )
       (block
@@ -28128,7 +30100,7 @@
         )
        )
        (i32.store
-        (i32.const 1776084)
+        (i32.const 1776600)
         (get_local $3)
        )
        (i32.store
@@ -28185,7 +30157,7 @@
             (get_local $5)
             (i32.const 3)
            )
-           (i32.const 1776116)
+           (i32.const 1776632)
           )
          )
         )
@@ -28215,10 +30187,10 @@
         )
         (block
          (i32.store
-          (i32.const 1776076)
+          (i32.const 1776592)
           (i32.and
            (i32.load
-            (i32.const 1776076)
+            (i32.const 1776592)
            )
            (i32.xor
             (i32.shl
@@ -28484,7 +30456,7 @@
              )
              (i32.const 2)
             )
-            (i32.const 1776380)
+            (i32.const 1776896)
            )
           )
          )
@@ -28500,10 +30472,10 @@
           )
           (block
            (i32.store
-            (i32.const 1776080)
+            (i32.const 1776596)
             (i32.and
              (i32.load
-              (i32.const 1776080)
+              (i32.const 1776596)
              )
              (i32.xor
               (i32.shl
@@ -28531,7 +30503,7 @@
          (i32.lt_u
           (get_local $13)
           (i32.load
-           (i32.const 1776092)
+           (i32.const 1776608)
           )
          )
          (call $_abort)
@@ -28579,7 +30551,7 @@
          (get_local $8)
          (tee_local $6
           (i32.load
-           (i32.const 1776092)
+           (i32.const 1776608)
           )
          )
         )
@@ -28628,7 +30600,7 @@
          (i32.lt_u
           (get_local $5)
           (i32.load
-           (i32.const 1776092)
+           (i32.const 1776608)
           )
          )
          (call $_abort)
@@ -28736,30 +30708,30 @@
    (block
     (set_local $3
      (i32.load
-      (i32.const 1776096)
+      (i32.const 1776612)
      )
     )
     (if
      (i32.eq
       (get_local $7)
       (i32.load
-       (i32.const 1776100)
+       (i32.const 1776616)
       )
      )
      (block
       (i32.store
-       (i32.const 1776088)
+       (i32.const 1776604)
        (tee_local $0
         (i32.add
          (i32.load
-          (i32.const 1776088)
+          (i32.const 1776604)
          )
          (get_local $1)
         )
        )
       )
       (i32.store
-       (i32.const 1776100)
+       (i32.const 1776616)
        (get_local $2)
       )
       (i32.store offset=4
@@ -28777,11 +30749,11 @@
        (return)
       )
       (i32.store
-       (i32.const 1776096)
+       (i32.const 1776612)
        (i32.const 0)
       )
       (i32.store
-       (i32.const 1776084)
+       (i32.const 1776600)
        (i32.const 0)
       )
       (return)
@@ -28794,18 +30766,18 @@
      )
      (block
       (i32.store
-       (i32.const 1776084)
+       (i32.const 1776600)
        (tee_local $0
         (i32.add
          (i32.load
-          (i32.const 1776084)
+          (i32.const 1776600)
          )
          (get_local $1)
         )
        )
       )
       (i32.store
-       (i32.const 1776096)
+       (i32.const 1776612)
        (get_local $4)
       )
       (i32.store offset=4
@@ -28865,7 +30837,7 @@
             (get_local $5)
             (i32.const 3)
            )
-           (i32.const 1776116)
+           (i32.const 1776632)
           )
          )
         )
@@ -28874,7 +30846,7 @@
           (i32.lt_u
            (get_local $3)
            (i32.load
-            (i32.const 1776092)
+            (i32.const 1776608)
            )
           )
           (call $_abort)
@@ -28897,10 +30869,10 @@
         )
         (block
          (i32.store
-          (i32.const 1776076)
+          (i32.const 1776592)
           (i32.and
            (i32.load
-            (i32.const 1776076)
+            (i32.const 1776592)
            )
            (i32.xor
             (i32.shl
@@ -28930,7 +30902,7 @@
           (i32.lt_u
            (get_local $1)
            (i32.load
-            (i32.const 1776092)
+            (i32.const 1776608)
            )
           )
           (call $_abort)
@@ -29063,7 +31035,7 @@
            (i32.lt_u
             (get_local $1)
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
            (call $_abort)
@@ -29087,7 +31059,7 @@
              )
             )
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
            (call $_abort)
@@ -29153,7 +31125,7 @@
                )
                (i32.const 2)
               )
-              (i32.const 1776380)
+              (i32.const 1776896)
              )
             )
            )
@@ -29169,10 +31141,10 @@
             )
             (block
              (i32.store
-              (i32.const 1776080)
+              (i32.const 1776596)
               (i32.and
                (i32.load
-                (i32.const 1776080)
+                (i32.const 1776596)
                )
                (i32.xor
                 (i32.shl
@@ -29191,7 +31163,7 @@
            (i32.lt_u
             (get_local $8)
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
            (call $_abort)
@@ -29227,7 +31199,7 @@
            (get_local $10)
            (tee_local $1
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
           )
@@ -29276,7 +31248,7 @@
            (i32.lt_u
             (get_local $0)
             (i32.load
-             (i32.const 1776092)
+             (i32.const 1776608)
             )
            )
            (call $_abort)
@@ -29315,12 +31287,12 @@
      (i32.eq
       (get_local $2)
       (i32.load
-       (i32.const 1776096)
+       (i32.const 1776612)
       )
      )
      (block
       (i32.store
-       (i32.const 1776084)
+       (i32.const 1776600)
        (get_local $6)
       )
       (return)
@@ -29349,14 +31321,14 @@
        (get_local $4)
        (i32.const 3)
       )
-      (i32.const 1776116)
+      (i32.const 1776632)
      )
     )
     (if
      (i32.and
       (tee_local $1
        (i32.load
-        (i32.const 1776076)
+        (i32.const 1776592)
        )
       )
       (tee_local $4
@@ -29379,7 +31351,7 @@
         )
        )
        (i32.load
-        (i32.const 1776092)
+        (i32.const 1776608)
        )
       )
       (call $_abort)
@@ -29394,7 +31366,7 @@
      )
      (block
       (i32.store
-       (i32.const 1776076)
+       (i32.const 1776592)
        (i32.or
         (get_local $1)
         (get_local $4)
@@ -29532,7 +31504,7 @@
      )
      (i32.const 2)
     )
-    (i32.const 1776380)
+    (i32.const 1776896)
    )
   )
   (i32.store offset=28
@@ -29552,7 +31524,7 @@
     (i32.and
      (tee_local $3
       (i32.load
-       (i32.const 1776080)
+       (i32.const 1776596)
       )
      )
      (tee_local $5
@@ -29647,7 +31619,7 @@
         (i32.lt_u
          (get_local $4)
          (i32.load
-          (i32.const 1776092)
+          (i32.const 1776608)
          )
         )
         (call $_abort)
@@ -29688,7 +31660,7 @@
          )
          (tee_local $3
           (i32.load
-           (i32.const 1776092)
+           (i32.const 1776608)
           )
          )
         )
@@ -29725,7 +31697,7 @@
     )
     (block
      (i32.store
-      (i32.const 1776080)
+      (i32.const 1776596)
       (i32.or
        (get_local $3)
        (get_local $5)
@@ -29751,11 +31723,11 @@
    )
   )
   (i32.store
-   (i32.const 1776108)
+   (i32.const 1776624)
    (tee_local $0
     (i32.add
      (i32.load
-      (i32.const 1776108)
+      (i32.const 1776624)
      )
      (i32.const -1)
     )
@@ -29765,7 +31737,7 @@
    (get_local $0)
    (return)
    (set_local $0
-    (i32.const 1776532)
+    (i32.const 1777048)
    )
   )
   (loop $while-in19
@@ -29784,14 +31756,14 @@
    )
   )
   (i32.store
-   (i32.const 1776108)
+   (i32.const 1776624)
    (i32.const -1)
   )
  )
- (func $_emscripten_get_global_libc (; 138 ;) (result i32)
-  (i32.const 1776572)
+ (func $_emscripten_get_global_libc (; 145 ;) (result i32)
+  (i32.const 1777088)
  )
- (func $___stdio_close (; 139 ;) (param $0 i32) (result i32)
+ (func $___stdio_close (; 146 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (set_local $1
@@ -29826,7 +31798,7 @@
   )
   (get_local $0)
  )
- (func $___stdio_write (; 140 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $___stdio_write (; 147 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -30122,7 +32094,7 @@
   )
   (get_local $2)
  )
- (func $___stdio_seek (; 141 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $___stdio_seek (; 148 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (set_local $4
@@ -30191,7 +32163,7 @@
   )
   (get_local $0)
  )
- (func $___syscall_ret (; 142 ;) (param $0 i32) (result i32)
+ (func $___syscall_ret (; 149 ;) (param $0 i32) (result i32)
   (if (result i32)
    (i32.gt_u
     (get_local $0)
@@ -30210,22 +32182,22 @@
    (get_local $0)
   )
  )
- (func $___errno_location (; 143 ;) (result i32)
+ (func $___errno_location (; 150 ;) (result i32)
   (i32.add
    (call $___pthread_self_85)
    (i32.const 64)
   )
  )
- (func $___pthread_self_85 (; 144 ;) (result i32)
+ (func $___pthread_self_85 (; 151 ;) (result i32)
   (call $_pthread_self)
  )
- (func $_pthread_self (; 145 ;) (result i32)
-  (i32.const 1024)
+ (func $_pthread_self (; 152 ;) (result i32)
+  (i32.const 1112)
  )
- (func $_dummy (; 146 ;) (param $0 i32) (result i32)
+ (func $_dummy (; 153 ;) (param $0 i32) (result i32)
   (get_local $0)
  )
- (func $___stdout_write (; 147 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $___stdout_write (; 154 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -30249,7 +32221,7 @@
   )
   (i32.store offset=36
    (get_local $0)
-   (i32.const 14)
+   (i32.const 16)
   )
   (if
    (i32.eqz
@@ -30299,7 +32271,7 @@
   )
   (get_local $0)
  )
- (func $_strcmp (; 148 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $_strcmp (; 155 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (if
@@ -30380,7 +32352,7 @@
    )
   )
  )
- (func $_strlen (; 149 ;) (param $0 i32) (result i32)
+ (func $_strlen (; 156 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -30485,7 +32457,7 @@
    (get_local $2)
   )
  )
- (func $_fputs (; 150 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $_fputs (; 157 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (i32.shr_s
    (i32.shl
@@ -30507,7 +32479,7 @@
    (i32.const 31)
   )
  )
- (func $_fwrite (; 151 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+ (func $_fwrite (; 158 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
   (local $4 i32)
   (local $5 i32)
   (set_local $4
@@ -30577,13 +32549,13 @@
   )
   (get_local $2)
  )
- (func $___unlockfile (; 152 ;) (param $0 i32)
+ (func $___unlockfile (; 159 ;) (param $0 i32)
   (nop)
  )
- (func $___lockfile (; 153 ;) (param $0 i32) (result i32)
+ (func $___lockfile (; 160 ;) (param $0 i32) (result i32)
   (i32.const 0)
  )
- (func $___overflow (; 154 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $___overflow (; 161 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -30696,7 +32668,7 @@
          (i32.load offset=36
           (get_local $0)
          )
-         (i32.const 15)
+         (i32.const 31)
         )
         (i32.const 16)
        )
@@ -30715,7 +32687,7 @@
   )
   (get_local $1)
  )
- (func $___towrite (; 155 ;) (param $0 i32) (result i32)
+ (func $___towrite (; 162 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (set_local $1
@@ -30793,7 +32765,7 @@
    )
   )
  )
- (func $___fwritex (; 156 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $___fwritex (; 163 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -30861,7 +32833,7 @@
          (i32.load offset=36
           (get_local $2)
          )
-         (i32.const 15)
+         (i32.const 31)
         )
         (i32.const 16)
        )
@@ -30927,7 +32899,7 @@
              (i32.load offset=36
               (get_local $2)
              )
-             (i32.const 15)
+             (i32.const 31)
             )
             (i32.const 16)
            )
@@ -30984,7 +32956,7 @@
   )
   (get_local $2)
  )
- (func $___lctrans_impl (; 157 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $___lctrans_impl (; 164 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (if (result i32)
    (tee_local $2
@@ -31006,7 +32978,7 @@
    (get_local $0)
   )
  )
- (func $___mo_lookup (; 158 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $___mo_lookup (; 165 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -31338,7 +33310,7 @@
   )
   (get_local $1)
  )
- (func $_swapc (; 159 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $_swapc (; 166 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (set_local $2
    (call $_llvm_bswap_i32
@@ -31351,7 +33323,7 @@
    (get_local $0)
   )
  )
- (func $_memchr (; 160 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $_memchr (; 167 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -31570,7 +33542,7 @@
    (i32.const 0)
   )
  )
- (func $_vfprintf (; 161 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $_vfprintf (; 168 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -31779,7 +33751,7 @@
             (i32.load offset=36
              (get_local $0)
             )
-            (i32.const 15)
+            (i32.const 31)
            )
            (i32.const 16)
           )
@@ -31852,7 +33824,7 @@
   )
   (get_local $1)
  )
- (func $_printf_core (; 162 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (result i32)
+ (func $_printf_core (; 169 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (result i32)
   (local $5 i32)
   (local $6 i32)
   (local $7 i32)
@@ -32632,7 +34604,7 @@
                  (get_local $6)
                 )
                )
-               (i32.const 2248)
+               (i32.const 2572)
               )
              )
             )
@@ -33003,7 +34975,7 @@
                        (i32.const 0)
                       )
                       (set_local $6
-                       (i32.const 2777)
+                       (i32.const 3101)
                       )
                       (if
                        (i32.eqz
@@ -33049,7 +35021,7 @@
                         (i32.const 1)
                        )
                        (set_local $6
-                        (i32.const 2777)
+                        (i32.const 3101)
                        )
                        (br $__rjti$4)
                       )
@@ -33068,8 +35040,8 @@
                           (get_local $8)
                           (i32.const 1)
                          )
-                         (i32.const 2779)
-                         (i32.const 2777)
+                         (i32.const 3103)
+                         (i32.const 3101)
                         )
                        )
                        (set_local $9
@@ -33086,7 +35058,7 @@
                          (get_local $1)
                         )
                         (set_local $6
-                         (i32.const 2778)
+                         (i32.const 3102)
                         )
                        )
                        (br $__rjti$4)
@@ -33097,7 +35069,7 @@
                      (i32.const 0)
                     )
                     (set_local $6
-                     (i32.const 2777)
+                     (i32.const 3101)
                     )
                     (set_local $17
                      (i64.load
@@ -33119,7 +35091,7 @@
                     (i32.const 0)
                    )
                    (set_local $14
-                    (i32.const 2777)
+                    (i32.const 3101)
                    )
                    (set_local $6
                     (get_local $18)
@@ -33150,7 +35122,7 @@
                    )
                   )
                   (set_local $1
-                   (i32.const 2787)
+                   (i32.const 3111)
                   )
                  )
                  (br $__rjti$5)
@@ -33229,7 +35201,7 @@
               (i32.const 0)
              )
              (set_local $14
-              (i32.const 2777)
+              (i32.const 3101)
              )
              (set_local $6
               (get_local $18)
@@ -33256,7 +35228,7 @@
                (get_local $6)
                (i32.const 4)
               )
-              (i32.const 2777)
+              (i32.const 3101)
              )
             )
             (if
@@ -33275,7 +35247,7 @@
               )
              )
              (set_local $6
-              (i32.const 2777)
+              (i32.const 3101)
              )
             )
             (set_local $9
@@ -33330,7 +35302,7 @@
            (i32.const 0)
           )
           (set_local $14
-           (i32.const 2777)
+           (i32.const 3101)
           )
           (if
            (i32.eqz
@@ -33770,7 +35742,7 @@
   )
   (get_local $11)
  )
- (func $_out_669 (; 163 ;) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $_out_669 (; 170 ;) (param $0 i32) (param $1 i32) (param $2 i32)
   (if
    (i32.eqz
     (i32.and
@@ -33789,7 +35761,7 @@
    )
   )
  )
- (func $_getint_670 (; 164 ;) (param $0 i32) (result i32)
+ (func $_getint_670 (; 171 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -33863,7 +35835,7 @@
   )
   (get_local $1)
  )
- (func $_pop_arg_672 (; 165 ;) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $_pop_arg_672 (; 172 ;) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 f64)
   (local $5 i64)
@@ -34209,7 +36181,7 @@
    )
   )
  )
- (func $_fmt_x (; 166 ;) (param $0 i64) (param $1 i32) (param $2 i32) (result i32)
+ (func $_fmt_x (; 173 ;) (param $0 i64) (param $1 i32) (param $2 i32) (result i32)
   (if
    (i64.ne
     (get_local $0)
@@ -34232,7 +36204,7 @@
          )
          (i32.const 15)
         )
-        (i32.const 2829)
+        (i32.const 3153)
        )
       )
       (get_local $2)
@@ -34253,7 +36225,7 @@
   )
   (get_local $1)
  )
- (func $_fmt_o (; 167 ;) (param $0 i64) (param $1 i32) (result i32)
+ (func $_fmt_o (; 174 ;) (param $0 i64) (param $1 i32) (result i32)
   (if
    (i64.ne
     (get_local $0)
@@ -34292,7 +36264,7 @@
   )
   (get_local $1)
  )
- (func $_fmt_u (; 168 ;) (param $0 i64) (param $1 i32) (result i32)
+ (func $_fmt_u (; 175 ;) (param $0 i64) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i64)
   (local $4 i32)
@@ -34394,7 +36366,7 @@
   )
   (get_local $1)
  )
- (func $_strerror (; 169 ;) (param $0 i32) (result i32)
+ (func $_strerror (; 176 ;) (param $0 i32) (result i32)
   (call $___strerror_l
    (get_local $0)
    (i32.load offset=188
@@ -34402,7 +36374,7 @@
    )
   )
  )
- (func $_pad_675 (; 170 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+ (func $_pad_675 (; 177 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
   (local $5 i32)
   (local $6 i32)
   (set_local $6
@@ -34499,7 +36471,7 @@
    (get_local $6)
   )
  )
- (func $_wctomb (; 171 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $_wctomb (; 178 ;) (param $0 i32) (param $1 i32) (result i32)
   (if (result i32)
    (get_local $0)
    (call $_wcrtomb
@@ -34510,7 +36482,7 @@
    (i32.const 0)
   )
  )
- (func $_fmt_fp (; 172 ;) (param $0 i32) (param $1 f64) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (result i32)
+ (func $_fmt_fp (; 179 ;) (param $0 i32) (param $1 f64) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (result i32)
   (local $6 i32)
   (local $7 i32)
   (local $8 i32)
@@ -34593,7 +36565,7 @@
      (i32.const 1)
     )
     (set_local $14
-     (i32.const 2794)
+     (i32.const 3118)
     )
    )
    (block
@@ -34611,8 +36583,8 @@
        (get_local $4)
        (i32.const 1)
       )
-      (i32.const 2800)
-      (i32.const 2795)
+      (i32.const 3124)
+      (i32.const 3119)
      )
     )
     (set_local $18
@@ -34629,7 +36601,7 @@
       (get_local $7)
      )
      (set_local $14
-      (i32.const 2797)
+      (i32.const 3121)
      )
     )
    )
@@ -34868,7 +36840,7 @@
                (get_local $1)
               )
              )
-             (i32.const 2829)
+             (i32.const 3153)
             )
            )
            (get_local $11)
@@ -36451,7 +38423,7 @@
          (get_local $16)
          (call $_out_669
           (get_local $0)
-          (i32.const 2845)
+          (i32.const 3169)
           (i32.const 1)
          )
         )
@@ -36675,7 +38647,7 @@
               )
               (call $_out_669
                (get_local $0)
-               (i32.const 2845)
+               (i32.const 3169)
                (i32.const 1)
               )
               (set_local $3
@@ -36804,8 +38776,8 @@
           (i32.const 0)
          )
         )
-        (i32.const 2813)
-        (i32.const 2817)
+        (i32.const 3137)
+        (i32.const 3141)
        )
       )
       (set_local $10
@@ -36820,8 +38792,8 @@
       (set_local $7
        (if (result i32)
         (get_local $3)
-        (i32.const 2821)
-        (i32.const 2825)
+        (i32.const 3145)
+        (i32.const 3149)
        )
       )
       (call $_pad_675
@@ -36880,18 +38852,18 @@
    (get_local $0)
   )
  )
- (func $___DOUBLE_BITS_676 (; 173 ;) (param $0 f64) (result i64)
+ (func $___DOUBLE_BITS_676 (; 180 ;) (param $0 f64) (result i64)
   (i64.reinterpret/f64
    (get_local $0)
   )
  )
- (func $_frexpl (; 174 ;) (param $0 f64) (param $1 i32) (result f64)
+ (func $_frexpl (; 181 ;) (param $0 f64) (param $1 i32) (result f64)
   (call $_frexp
    (get_local $0)
    (get_local $1)
   )
  )
- (func $_frexp (; 175 ;) (param $0 f64) (param $1 i32) (result f64)
+ (func $_frexp (; 182 ;) (param $0 f64) (param $1 i32) (result f64)
   (local $2 i64)
   (local $3 i64)
   (block $switch
@@ -36973,7 +38945,7 @@
   )
   (get_local $0)
  )
- (func $_wcrtomb (; 176 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $_wcrtomb (; 183 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (block $do-once (result i32)
    (if (result i32)
     (get_local $0)
@@ -37183,7 +39155,7 @@
    )
   )
  )
- (func $___strerror_l (; 177 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $___strerror_l (; 184 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (set_local $2
@@ -37199,7 +39171,7 @@
          (i32.load8_u
           (i32.add
            (get_local $2)
-           (i32.const 2847)
+           (i32.const 3171)
           )
          )
          (get_local $0)
@@ -37217,7 +39189,7 @@
         )
        )
        (set_local $0
-        (i32.const 2935)
+        (i32.const 3259)
        )
        (set_local $2
         (i32.const 87)
@@ -37230,12 +39202,12 @@
      (get_local $2)
      (block
       (set_local $0
-       (i32.const 2935)
+       (i32.const 3259)
       )
       (br $__rjti$1)
      )
      (set_local $0
-      (i32.const 2935)
+      (i32.const 3259)
      )
     )
     (br $__rjto$1)
@@ -37280,13 +39252,403 @@
    )
   )
  )
- (func $___lctrans (; 178 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $___lctrans (; 185 ;) (param $0 i32) (param $1 i32) (result i32)
   (call $___lctrans_impl
    (get_local $0)
    (get_local $1)
   )
  )
- (func $_printf (; 179 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $_memcmp (; 186 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (tee_local $0
+   (block $label$break$L1 (result i32)
+    (if (result i32)
+     (get_local $2)
+     (block (result i32)
+      (loop $while-in
+       (if
+        (i32.eq
+         (tee_local $3
+          (i32.load8_s
+           (get_local $0)
+          )
+         )
+         (tee_local $4
+          (i32.load8_s
+           (get_local $1)
+          )
+         )
+        )
+        (block
+         (set_local $0
+          (i32.add
+           (get_local $0)
+           (i32.const 1)
+          )
+         )
+         (set_local $1
+          (i32.add
+           (get_local $1)
+           (i32.const 1)
+          )
+         )
+         (drop
+          (br_if $label$break$L1
+           (i32.const 0)
+           (i32.eqz
+            (tee_local $2
+             (i32.add
+              (get_local $2)
+              (i32.const -1)
+             )
+            )
+           )
+          )
+         )
+         (br $while-in)
+        )
+       )
+      )
+      (i32.sub
+       (i32.and
+        (get_local $3)
+        (i32.const 255)
+       )
+       (i32.and
+        (get_local $4)
+        (i32.const 255)
+       )
+      )
+     )
+     (i32.const 0)
+    )
+   )
+  )
+ )
+ (func $_snprintf (; 187 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+  (local $4 i32)
+  (local $5 i32)
+  (set_local $4
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (i32.store
+   (tee_local $5
+    (get_local $4)
+   )
+   (get_local $3)
+  )
+  (set_local $0
+   (call $_vsnprintf
+    (get_local $0)
+    (get_local $1)
+    (get_local $2)
+    (get_local $5)
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $4)
+  )
+  (get_local $0)
+ )
+ (func $_vsnprintf (; 188 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (set_local $6
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 128)
+   )
+  )
+  (set_local $5
+   (i32.add
+    (get_local $6)
+    (i32.const 124)
+   )
+  )
+  (i64.store align=4
+   (tee_local $4
+    (get_local $6)
+   )
+   (i64.load align=4
+    (i32.const 1484)
+   )
+  )
+  (i64.store offset=8 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1492)
+   )
+  )
+  (i64.store offset=16 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1500)
+   )
+  )
+  (i64.store offset=24 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1508)
+   )
+  )
+  (i64.store offset=32 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1516)
+   )
+  )
+  (i64.store offset=40 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1524)
+   )
+  )
+  (i64.store offset=48 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1532)
+   )
+  )
+  (i64.store offset=56 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1540)
+   )
+  )
+  (i64.store offset=64 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1548)
+   )
+  )
+  (i64.store offset=72 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1556)
+   )
+  )
+  (i64.store offset=80 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1564)
+   )
+  )
+  (i64.store offset=88 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1572)
+   )
+  )
+  (i64.store offset=96 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1580)
+   )
+  )
+  (i64.store offset=104 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1588)
+   )
+  )
+  (i64.store offset=112 align=4
+   (get_local $4)
+   (i64.load align=4
+    (i32.const 1596)
+   )
+  )
+  (i32.store offset=120
+   (get_local $4)
+   (i32.load
+    (i32.const 1604)
+   )
+  )
+  (block $__rjto$0
+   (block $__rjti$0
+    (if
+     (i32.gt_u
+      (i32.add
+       (get_local $1)
+       (i32.const -1)
+      )
+      (i32.const 2147483646)
+     )
+     (if
+      (get_local $1)
+      (block
+       (i32.store
+        (call $___errno_location)
+        (i32.const 75)
+       )
+       (set_local $0
+        (i32.const -1)
+       )
+      )
+      (block
+       (set_local $0
+        (get_local $5)
+       )
+       (set_local $5
+        (i32.const 1)
+       )
+       (br $__rjti$0)
+      )
+     )
+     (block
+      (set_local $5
+       (get_local $1)
+      )
+      (br $__rjti$0)
+     )
+    )
+    (br $__rjto$0)
+   )
+   (i32.store offset=48
+    (get_local $4)
+    (if (result i32)
+     (i32.gt_u
+      (get_local $5)
+      (tee_local $1
+       (i32.sub
+        (i32.const -2)
+        (get_local $0)
+       )
+      )
+     )
+     (get_local $1)
+     (tee_local $1
+      (get_local $5)
+     )
+    )
+   )
+   (i32.store
+    (tee_local $7
+     (i32.add
+      (get_local $4)
+      (i32.const 20)
+     )
+    )
+    (get_local $0)
+   )
+   (i32.store offset=44
+    (get_local $4)
+    (get_local $0)
+   )
+   (i32.store
+    (tee_local $5
+     (i32.add
+      (get_local $4)
+      (i32.const 16)
+     )
+    )
+    (tee_local $0
+     (i32.add
+      (get_local $0)
+      (get_local $1)
+     )
+    )
+   )
+   (i32.store offset=28
+    (get_local $4)
+    (get_local $0)
+   )
+   (set_local $0
+    (call $_vfprintf
+     (get_local $4)
+     (get_local $2)
+     (get_local $3)
+    )
+   )
+   (if
+    (get_local $1)
+    (i32.store8
+     (i32.add
+      (tee_local $1
+       (i32.load
+        (get_local $7)
+       )
+      )
+      (i32.shr_s
+       (i32.shl
+        (i32.eq
+         (get_local $1)
+         (i32.load
+          (get_local $5)
+         )
+        )
+        (i32.const 31)
+       )
+       (i32.const 31)
+      )
+     )
+     (i32.const 0)
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $6)
+  )
+  (get_local $0)
+ )
+ (func $_sn_write (; 189 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (if
+   (i32.gt_u
+    (tee_local $0
+     (i32.sub
+      (i32.load offset=16
+       (get_local $0)
+      )
+      (tee_local $4
+       (i32.load
+        (tee_local $3
+         (i32.add
+          (get_local $0)
+          (i32.const 20)
+         )
+        )
+       )
+      )
+     )
+    )
+    (get_local $2)
+   )
+   (set_local $0
+    (get_local $2)
+   )
+  )
+  (drop
+   (call $_memcpy
+    (get_local $4)
+    (get_local $1)
+    (get_local $0)
+   )
+  )
+  (i32.store
+   (get_local $3)
+   (i32.add
+    (i32.load
+     (get_local $3)
+    )
+    (get_local $0)
+   )
+  )
+  (get_local $2)
+ )
+ (func $_printf (; 190 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (set_local $2
@@ -37307,7 +39669,7 @@
   (set_local $0
    (call $_vfprintf
     (i32.load
-     (i32.const 1268)
+     (i32.const 1356)
     )
     (get_local $0)
     (get_local $3)
@@ -37318,15 +39680,15 @@
   )
   (get_local $0)
  )
- (func $_putchar (; 180 ;) (param $0 i32) (result i32)
+ (func $_putchar (; 191 ;) (param $0 i32) (result i32)
   (call $_fputc
    (get_local $0)
    (i32.load
-    (i32.const 1268)
+    (i32.const 1356)
    )
   )
  )
- (func $_fputc (; 181 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $_fputc (; 192 ;) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -37460,7 +39822,7 @@
   )
   (get_local $2)
  )
- (func $_puts (; 182 ;) (param $0 i32) (result i32)
+ (func $_puts (; 193 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -37470,7 +39832,7 @@
      (i32.load offset=76
       (tee_local $1
        (i32.load
-        (i32.const 1268)
+        (i32.const 1356)
        )
       )
      )
@@ -37562,7 +39924,7 @@
   )
   (get_local $0)
  )
- (func $__Znwj (; 183 ;) (param $0 i32) (result i32)
+ (func $__Znwj (; 194 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (if
    (i32.eqz
@@ -37598,7 +39960,7 @@
          (get_local $1)
          (i32.const 15)
         )
-        (i32.const 32)
+        (i32.const 48)
        )
       )
       (br $while-in)
@@ -37611,25 +39973,2695 @@
   )
   (get_local $0)
  )
- (func $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv (; 184 ;) (param $0 i32)
+ (func $__ZdlPv (; 195 ;) (param $0 i32)
+  (call $_free
+   (get_local $0)
+  )
+ )
+ (func $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv (; 196 ;) (param $0 i32)
   (call $_abort)
  )
- (func $__ZSt15get_new_handlerv (; 185 ;) (result i32)
-  (local $0 i32)
-  (i32.store
-   (i32.const 1776636)
-   (tee_local $0
-    (i32.load
-     (i32.const 1776636)
+ (func $__ZNSt3__211char_traitsIcE6assignEPcjc (; 197 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (if
+   (get_local $1)
+   (drop
+    (call $_memset
+     (get_local $0)
+     (i32.and
+      (call $__ZNSt3__211char_traitsIcE11to_int_typeEc
+       (get_local $2)
+      )
+      (i32.const 255)
+     )
+     (get_local $1)
     )
    )
   )
   (get_local $0)
  )
- (func $runPostSets (; 186 ;)
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev (; 198 ;) (param $0 i32)
+  (if
+   (i32.lt_s
+    (i32.load8_s offset=11
+     (get_local $0)
+    )
+    (i32.const 0)
+   )
+   (call $__ZdlPv
+    (i32.load
+     (get_local $0)
+    )
+   )
+  )
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSERKS5_ (; 199 ;) (param $0 i32) (param $1 i32) (result i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (if
+   (i32.ne
+    (get_local $0)
+    (get_local $1)
+   )
+   (block
+    (set_local $2
+     (i32.load
+      (get_local $1)
+     )
+    )
+    (if
+     (i32.eqz
+      (tee_local $4
+       (i32.lt_s
+        (tee_local $3
+         (i32.load8_s offset=11
+          (get_local $1)
+         )
+        )
+        (i32.const 0)
+       )
+      )
+     )
+     (set_local $2
+      (get_local $1)
+     )
+    )
+    (set_local $5
+     (i32.load offset=4
+      (get_local $1)
+     )
+    )
+    (set_local $1
+     (i32.and
+      (get_local $3)
+      (i32.const 255)
+     )
+    )
+    (drop
+     (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKcj
+      (get_local $0)
+      (get_local $2)
+      (if (result i32)
+       (get_local $4)
+       (get_local $5)
+       (get_local $1)
+      )
+     )
+    )
+   )
+  )
+  (get_local $0)
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6assignEPKcj (; 200 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (set_local $5
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $3
+   (get_local $5)
+  )
+  (if
+   (i32.lt_u
+    (tee_local $4
+     (if (result i32)
+      (tee_local $7
+       (i32.lt_s
+        (tee_local $8
+         (i32.load8_s
+          (tee_local $6
+           (i32.add
+            (get_local $0)
+            (i32.const 11)
+           )
+          )
+         )
+        )
+        (i32.const 0)
+       )
+      )
+      (i32.add
+       (i32.and
+        (i32.load offset=8
+         (get_local $0)
+        )
+        (i32.const 2147483647)
+       )
+       (i32.const -1)
+      )
+      (i32.const 10)
+     )
+    )
+    (get_local $2)
+   )
+   (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE21__grow_by_and_replaceEjjjjjjPKc
+    (get_local $0)
+    (get_local $4)
+    (i32.sub
+     (get_local $2)
+     (get_local $4)
+    )
+    (tee_local $3
+     (if (result i32)
+      (get_local $7)
+      (i32.load offset=4
+       (get_local $0)
+      )
+      (i32.and
+       (get_local $8)
+       (i32.const 255)
+      )
+     )
+    )
+    (i32.const 0)
+    (get_local $3)
+    (get_local $2)
+    (get_local $1)
+   )
+   (block
+    (drop
+     (call $__ZNSt3__211char_traitsIcE4moveEPcPKcj
+      (tee_local $4
+       (if (result i32)
+        (get_local $7)
+        (i32.load
+         (get_local $0)
+        )
+        (get_local $0)
+       )
+      )
+      (get_local $1)
+      (get_local $2)
+     )
+    )
+    (i32.store8
+     (get_local $3)
+     (i32.const 0)
+    )
+    (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+     (i32.add
+      (get_local $4)
+      (get_local $2)
+     )
+     (get_local $3)
+    )
+    (if
+     (i32.lt_s
+      (i32.load8_s
+       (get_local $6)
+      )
+      (i32.const 0)
+     )
+     (i32.store offset=4
+      (get_local $0)
+      (get_local $2)
+     )
+     (i32.store8
+      (get_local $6)
+      (get_local $2)
+     )
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $5)
+  )
+  (get_local $0)
+ )
+ (func $__ZNSt3__211char_traitsIcE4moveEPcPKcj (; 201 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (if
+   (get_local $2)
+   (drop
+    (call $_memmove
+     (get_local $0)
+     (get_local $1)
+     (get_local $2)
+    )
+   )
+  )
+  (get_local $0)
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE21__grow_by_and_replaceEjjjjjjPKc (; 202 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (param $6 i32) (param $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  (local $10 i32)
+  (local $11 i32)
+  (set_local $10
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $11
+   (get_local $10)
+  )
+  (if
+   (i32.lt_u
+    (i32.sub
+     (i32.const -18)
+     (get_local $1)
+    )
+    (get_local $2)
+   )
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (get_local $0)
+   )
+  )
+  (set_local $9
+   (if (result i32)
+    (i32.lt_s
+     (i32.load8_s offset=11
+      (get_local $0)
+     )
+     (i32.const 0)
+    )
+    (i32.load
+     (get_local $0)
+    )
+    (get_local $0)
+   )
+  )
+  (if
+   (i32.lt_u
+    (get_local $1)
+    (i32.const 2147483623)
+   )
+   (block
+    (set_local $2
+     (i32.and
+      (i32.add
+       (if (result i32)
+        (i32.lt_u
+         (tee_local $2
+          (i32.add
+           (get_local $2)
+           (get_local $1)
+          )
+         )
+         (tee_local $8
+          (i32.shl
+           (get_local $1)
+           (i32.const 1)
+          )
+         )
+        )
+        (get_local $8)
+        (tee_local $8
+         (get_local $2)
+        )
+       )
+       (i32.const 16)
+      )
+      (i32.const -16)
+     )
+    )
+    (if
+     (i32.lt_u
+      (get_local $8)
+      (i32.const 11)
+     )
+     (set_local $2
+      (i32.const 11)
+     )
+    )
+   )
+   (set_local $2
+    (i32.const -17)
+   )
+  )
+  (set_local $8
+   (call $__Znwj
+    (get_local $2)
+   )
+  )
+  (if
+   (get_local $4)
+   (drop
+    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+     (get_local $8)
+     (get_local $9)
+     (get_local $4)
+    )
+   )
+  )
+  (if
+   (get_local $6)
+   (drop
+    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+     (i32.add
+      (get_local $8)
+      (get_local $4)
+     )
+     (get_local $7)
+     (get_local $6)
+    )
+   )
+  )
+  (if
+   (tee_local $3
+    (i32.sub
+     (tee_local $7
+      (i32.sub
+       (get_local $3)
+       (get_local $5)
+      )
+     )
+     (get_local $4)
+    )
+   )
+   (drop
+    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+     (i32.add
+      (i32.add
+       (get_local $8)
+       (get_local $4)
+      )
+      (get_local $6)
+     )
+     (i32.add
+      (i32.add
+       (get_local $9)
+       (get_local $4)
+      )
+      (get_local $5)
+     )
+     (get_local $3)
+    )
+   )
+  )
+  (if
+   (i32.ne
+    (get_local $1)
+    (i32.const 10)
+   )
+   (call $__ZdlPv
+    (get_local $9)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $8)
+  )
+  (i32.store offset=8
+   (get_local $0)
+   (i32.or
+    (get_local $2)
+    (i32.const -2147483648)
+   )
+  )
+  (i32.store offset=4
+   (get_local $0)
+   (tee_local $0
+    (i32.add
+     (get_local $7)
+     (get_local $6)
+    )
+   )
+  )
+  (i32.store8
+   (get_local $11)
+   (i32.const 0)
+  )
+  (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+   (i32.add
+    (get_local $8)
+    (get_local $0)
+   )
+   (get_local $11)
+  )
+  (set_global $STACKTOP
+   (get_local $10)
+  )
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6resizeEjc (; 203 ;) (param $0 i32) (param $1 i32) (param $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (set_local $5
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $3
+   (get_local $5)
+  )
+  (if
+   (i32.lt_u
+    (tee_local $4
+     (if (result i32)
+      (tee_local $7
+       (i32.lt_s
+        (tee_local $4
+         (i32.load8_s
+          (tee_local $6
+           (i32.add
+            (get_local $0)
+            (i32.const 11)
+           )
+          )
+         )
+        )
+        (i32.const 0)
+       )
+      )
+      (i32.load offset=4
+       (get_local $0)
+      )
+      (i32.and
+       (get_local $4)
+       (i32.const 255)
+      )
+     )
+    )
+    (get_local $1)
+   )
+   (drop
+    (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEjc
+     (get_local $0)
+     (i32.sub
+      (get_local $1)
+      (get_local $4)
+     )
+     (get_local $2)
+    )
+   )
+   (if
+    (get_local $7)
+    (block
+     (set_local $2
+      (i32.add
+       (i32.load
+        (get_local $0)
+       )
+       (get_local $1)
+      )
+     )
+     (i32.store8
+      (get_local $3)
+      (i32.const 0)
+     )
+     (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+      (get_local $2)
+      (get_local $3)
+     )
+     (i32.store offset=4
+      (get_local $0)
+      (get_local $1)
+     )
+    )
+    (block
+     (i32.store8
+      (get_local $3)
+      (i32.const 0)
+     )
+     (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+      (i32.add
+       (get_local $0)
+       (get_local $1)
+      )
+      (get_local $3)
+     )
+     (i32.store8
+      (get_local $6)
+      (get_local $1)
+     )
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $5)
+  )
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEjc (; 204 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  (set_local $8
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $9
+   (get_local $8)
+  )
+  (if
+   (get_local $1)
+   (block
+    (set_local $6
+     (i32.add
+      (tee_local $5
+       (if (result i32)
+        (i32.lt_s
+         (tee_local $3
+          (i32.load8_s
+           (tee_local $7
+            (i32.add
+             (get_local $0)
+             (i32.const 11)
+            )
+           )
+          )
+         )
+         (i32.const 0)
+        )
+        (block (result i32)
+         (set_local $4
+          (i32.add
+           (i32.and
+            (i32.load offset=8
+             (get_local $0)
+            )
+            (i32.const 2147483647)
+           )
+           (i32.const -1)
+          )
+         )
+         (i32.load offset=4
+          (get_local $0)
+         )
+        )
+        (block (result i32)
+         (set_local $4
+          (i32.const 10)
+         )
+         (i32.and
+          (get_local $3)
+          (i32.const 255)
+         )
+        )
+       )
+      )
+      (get_local $1)
+     )
+    )
+    (if
+     (i32.lt_u
+      (i32.sub
+       (get_local $4)
+       (get_local $5)
+      )
+      (get_local $1)
+     )
+     (block
+      (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__grow_byEjjjjjj
+       (get_local $0)
+       (get_local $4)
+       (i32.sub
+        (get_local $6)
+        (get_local $4)
+       )
+       (get_local $5)
+       (get_local $5)
+       (i32.const 0)
+       (i32.const 0)
+      )
+      (set_local $3
+       (i32.load8_s
+        (get_local $7)
+       )
+      )
+     )
+    )
+    (drop
+     (call $__ZNSt3__211char_traitsIcE6assignEPcjc
+      (i32.add
+       (tee_local $3
+        (if (result i32)
+         (i32.lt_s
+          (i32.shr_s
+           (i32.shl
+            (get_local $3)
+            (i32.const 24)
+           )
+           (i32.const 24)
+          )
+          (i32.const 0)
+         )
+         (i32.load
+          (get_local $0)
+         )
+         (get_local $0)
+        )
+       )
+       (get_local $5)
+      )
+      (get_local $1)
+      (get_local $2)
+     )
+    )
+    (if
+     (i32.lt_s
+      (i32.load8_s
+       (get_local $7)
+      )
+      (i32.const 0)
+     )
+     (i32.store offset=4
+      (get_local $0)
+      (get_local $6)
+     )
+     (i32.store8
+      (get_local $7)
+      (get_local $6)
+     )
+    )
+    (i32.store8
+     (get_local $9)
+     (i32.const 0)
+    )
+    (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+     (i32.add
+      (get_local $3)
+      (get_local $6)
+     )
+     (get_local $9)
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $8)
+  )
+  (get_local $0)
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE9__grow_byEjjjjjj (; 205 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (param $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (if
+   (i32.lt_u
+    (i32.sub
+     (i32.const -17)
+     (get_local $1)
+    )
+    (get_local $2)
+   )
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (get_local $0)
+   )
+  )
+  (set_local $8
+   (if (result i32)
+    (i32.lt_s
+     (i32.load8_s offset=11
+      (get_local $0)
+     )
+     (i32.const 0)
+    )
+    (i32.load
+     (get_local $0)
+    )
+    (get_local $0)
+   )
+  )
+  (set_local $7
+   (call $__Znwj
+    (tee_local $2
+     (if (result i32)
+      (i32.lt_u
+       (get_local $1)
+       (i32.const 2147483623)
+      )
+      (block (result i32)
+       (set_local $7
+        (i32.and
+         (i32.add
+          (if (result i32)
+           (i32.lt_u
+            (tee_local $7
+             (i32.add
+              (get_local $2)
+              (get_local $1)
+             )
+            )
+            (tee_local $2
+             (i32.shl
+              (get_local $1)
+              (i32.const 1)
+             )
+            )
+           )
+           (get_local $2)
+           (tee_local $2
+            (get_local $7)
+           )
+          )
+          (i32.const 16)
+         )
+         (i32.const -16)
+        )
+       )
+       (if (result i32)
+        (i32.lt_u
+         (get_local $2)
+         (i32.const 11)
+        )
+        (i32.const 11)
+        (get_local $7)
+       )
+      )
+      (i32.const -17)
+     )
+    )
+   )
+  )
+  (if
+   (get_local $4)
+   (drop
+    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+     (get_local $7)
+     (get_local $8)
+     (get_local $4)
+    )
+   )
+  )
+  (if
+   (tee_local $3
+    (i32.sub
+     (i32.sub
+      (get_local $3)
+      (get_local $5)
+     )
+     (get_local $4)
+    )
+   )
+   (drop
+    (call $__ZNSt3__211char_traitsIcE4copyEPcPKcj
+     (i32.add
+      (i32.add
+       (get_local $7)
+       (get_local $4)
+      )
+      (get_local $6)
+     )
+     (i32.add
+      (i32.add
+       (get_local $8)
+       (get_local $4)
+      )
+      (get_local $5)
+     )
+     (get_local $3)
+    )
+   )
+  )
+  (if
+   (i32.ne
+    (get_local $1)
+    (i32.const 10)
+   )
+   (call $__ZdlPv
+    (get_local $8)
+   )
+  )
+  (i32.store
+   (get_local $0)
+   (get_local $7)
+  )
+  (i32.store offset=8
+   (get_local $0)
+   (i32.or
+    (get_local $2)
+    (i32.const -2147483648)
+   )
+  )
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKcj (; 206 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (result i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  (local $10 i32)
+  (local $11 i32)
+  (set_local $9
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $10
+   (get_local $9)
+  )
+  (if
+   (i32.lt_u
+    (tee_local $7
+     (if (result i32)
+      (tee_local $6
+       (i32.lt_s
+        (tee_local $5
+         (i32.load8_s
+          (tee_local $11
+           (i32.add
+            (get_local $0)
+            (i32.const 11)
+           )
+          )
+         )
+        )
+        (i32.const 0)
+       )
+      )
+      (i32.load offset=4
+       (get_local $0)
+      )
+      (i32.and
+       (get_local $5)
+       (i32.const 255)
+      )
+     )
+    )
+    (get_local $1)
+   )
+   (call $__ZNKSt3__221__basic_string_commonILb1EE20__throw_length_errorEv
+    (get_local $0)
+   )
+  )
+  (if
+   (i32.lt_u
+    (tee_local $5
+     (i32.sub
+      (get_local $7)
+      (get_local $1)
+     )
+    )
+    (get_local $2)
+   )
+   (set_local $2
+    (get_local $5)
+   )
+  )
+  (if
+   (i32.lt_u
+    (i32.add
+     (i32.sub
+      (get_local $2)
+      (get_local $7)
+     )
+     (tee_local $8
+      (if (result i32)
+       (get_local $6)
+       (i32.add
+        (i32.and
+         (i32.load offset=8
+          (get_local $0)
+         )
+         (i32.const 2147483647)
+        )
+        (i32.const -1)
+       )
+       (i32.const 10)
+      )
+     )
+    )
+    (get_local $4)
+   )
+   (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE21__grow_by_and_replaceEjjjjjjPKc
+    (get_local $0)
+    (get_local $8)
+    (i32.sub
+     (i32.sub
+      (i32.add
+       (get_local $7)
+       (get_local $4)
+      )
+      (get_local $2)
+     )
+     (get_local $8)
+    )
+    (get_local $7)
+    (get_local $1)
+    (get_local $2)
+    (get_local $4)
+    (get_local $3)
+   )
+   (block
+    (set_local $6
+     (if (result i32)
+      (get_local $6)
+      (i32.load
+       (get_local $0)
+      )
+      (get_local $0)
+     )
+    )
+    (block $__rjto$0
+     (if
+      (i32.eq
+       (get_local $2)
+       (get_local $4)
+      )
+      (set_local $2
+       (get_local $4)
+      )
+      (if
+       (tee_local $8
+        (i32.sub
+         (get_local $5)
+         (get_local $2)
+        )
+       )
+       (block
+        (set_local $5
+         (i32.add
+          (get_local $6)
+          (get_local $1)
+         )
+        )
+        (if
+         (i32.gt_u
+          (get_local $2)
+          (get_local $4)
+         )
+         (block
+          (drop
+           (call $__ZNSt3__211char_traitsIcE4moveEPcPKcj
+            (get_local $5)
+            (get_local $3)
+            (get_local $4)
+           )
+          )
+          (drop
+           (call $__ZNSt3__211char_traitsIcE4moveEPcPKcj
+            (i32.add
+             (get_local $5)
+             (get_local $4)
+            )
+            (i32.add
+             (get_local $5)
+             (get_local $2)
+            )
+            (get_local $8)
+           )
+          )
+          (br $__rjto$0)
+         )
+        )
+        (if
+         (i32.and
+          (i32.lt_u
+           (get_local $5)
+           (get_local $3)
+          )
+          (i32.gt_u
+           (i32.add
+            (get_local $6)
+            (get_local $7)
+           )
+           (get_local $3)
+          )
+         )
+         (if
+          (i32.gt_u
+           (i32.add
+            (get_local $5)
+            (get_local $2)
+           )
+           (get_local $3)
+          )
+          (block
+           (drop
+            (call $__ZNSt3__211char_traitsIcE4moveEPcPKcj
+             (get_local $5)
+             (get_local $3)
+             (get_local $2)
+            )
+           )
+           (set_local $1
+            (i32.add
+             (get_local $2)
+             (get_local $1)
+            )
+           )
+           (set_local $3
+            (i32.add
+             (get_local $3)
+             (get_local $4)
+            )
+           )
+           (set_local $4
+            (i32.sub
+             (get_local $4)
+             (get_local $2)
+            )
+           )
+           (set_local $2
+            (i32.const 0)
+           )
+          )
+          (set_local $3
+           (i32.add
+            (get_local $3)
+            (i32.sub
+             (get_local $4)
+             (get_local $2)
+            )
+           )
+          )
+         )
+        )
+        (drop
+         (call $__ZNSt3__211char_traitsIcE4moveEPcPKcj
+          (i32.add
+           (tee_local $5
+            (i32.add
+             (get_local $6)
+             (get_local $1)
+            )
+           )
+           (get_local $4)
+          )
+          (i32.add
+           (get_local $5)
+           (get_local $2)
+          )
+          (get_local $8)
+         )
+        )
+       )
+      )
+     )
+     (drop
+      (call $__ZNSt3__211char_traitsIcE4moveEPcPKcj
+       (i32.add
+        (get_local $6)
+        (get_local $1)
+       )
+       (get_local $3)
+       (get_local $4)
+      )
+     )
+    )
+    (set_local $1
+     (i32.add
+      (i32.sub
+       (get_local $4)
+       (get_local $2)
+      )
+      (get_local $7)
+     )
+    )
+    (if
+     (i32.lt_s
+      (i32.load8_s
+       (get_local $11)
+      )
+      (i32.const 0)
+     )
+     (i32.store offset=4
+      (get_local $0)
+      (get_local $1)
+     )
+     (i32.store8
+      (get_local $11)
+      (get_local $1)
+     )
+    )
+    (i32.store8
+     (get_local $10)
+     (i32.const 0)
+    )
+    (call $__ZNSt3__211char_traitsIcE6assignERcRKc
+     (i32.add
+      (get_local $6)
+      (get_local $1)
+     )
+     (get_local $10)
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $9)
+  )
+  (get_local $0)
+ )
+ (func $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKc (; 207 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+  (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7replaceEjjPKcj
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (call $__ZNSt3__211char_traitsIcE6lengthEPKc
+    (get_local $3)
+   )
+  )
+ )
+ (func $__ZNSt3__29to_stringEi (; 208 ;) (param $0 i32) (param $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (set_local $2
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (call $__ZNKSt3__212_GLOBAL__N_114initial_stringINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEiLb0EEclEv
+   (tee_local $3
+    (get_local $2)
+   )
+  )
+  (call $__ZNSt3__212_GLOBAL__N_19as_stringINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPFiPcjPKczEiEET_T0_SD_PKNSD_10value_typeET1_
+   (get_local $0)
+   (get_local $3)
+   (get_local $1)
+  )
+  (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED2Ev
+   (get_local $3)
+  )
+  (set_global $STACKTOP
+   (get_local $2)
+  )
+ )
+ (func $__ZNKSt3__212_GLOBAL__N_114initial_stringINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEiLb0EEclEv (; 209 ;) (param $0 i32)
+  (local $1 i32)
+  (i64.store align=4
+   (get_local $0)
+   (i64.const 0)
+  )
+  (i32.store offset=8
+   (get_local $0)
+   (i32.const 0)
+  )
+  (set_local $1
+   (i32.const 0)
+  )
+  (loop $while-in
+   (if
+    (i32.ne
+     (get_local $1)
+     (i32.const 3)
+    )
+    (block
+     (i32.store
+      (i32.add
+       (get_local $0)
+       (i32.shl
+        (get_local $1)
+        (i32.const 2)
+       )
+      )
+      (i32.const 0)
+     )
+     (set_local $1
+      (i32.add
+       (get_local $1)
+       (i32.const 1)
+      )
+     )
+     (br $while-in)
+    )
+   )
+  )
+  (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6resizeEjc
+   (get_local $0)
+   (tee_local $1
+    (if (result i32)
+     (i32.lt_s
+      (i32.load8_s offset=11
+       (get_local $0)
+      )
+      (i32.const 0)
+     )
+     (i32.add
+      (i32.and
+       (i32.load offset=8
+        (get_local $0)
+       )
+       (i32.const 2147483647)
+      )
+      (i32.const -1)
+     )
+     (i32.const 10)
+    )
+   )
+   (i32.const 0)
+  )
+ )
+ (func $__ZNSt3__212_GLOBAL__N_19as_stringINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPFiPcjPKczEiEET_T0_SD_PKNSD_10value_typeET1_ (; 210 ;) (param $0 i32) (param $1 i32) (param $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (set_local $5
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (set_local $6
+   (get_local $5)
+  )
+  (set_local $4
+   (if (result i32)
+    (i32.lt_s
+     (tee_local $3
+      (i32.load8_s
+       (tee_local $7
+        (i32.add
+         (get_local $1)
+         (i32.const 11)
+        )
+       )
+      )
+     )
+     (i32.const 0)
+    )
+    (i32.load offset=4
+     (get_local $1)
+    )
+    (i32.and
+     (get_local $3)
+     (i32.const 255)
+    )
+   )
+  )
+  (loop $while-in
+   (block $while-out
+    (set_local $3
+     (if (result i32)
+      (i32.lt_s
+       (i32.shr_s
+        (i32.shl
+         (get_local $3)
+         (i32.const 24)
+        )
+        (i32.const 24)
+       )
+       (i32.const 0)
+      )
+      (i32.load
+       (get_local $1)
+      )
+      (get_local $1)
+     )
+    )
+    (i32.store
+     (get_local $6)
+     (get_local $2)
+    )
+    (set_local $4
+     (if (result i32)
+      (i32.gt_s
+       (tee_local $3
+        (call $_snprintf
+         (get_local $3)
+         (i32.add
+          (get_local $4)
+          (i32.const 1)
+         )
+         (i32.const 5063)
+         (get_local $6)
+        )
+       )
+       (i32.const -1)
+      )
+      (block (result i32)
+       (br_if $while-out
+        (i32.le_u
+         (get_local $3)
+         (get_local $4)
+        )
+       )
+       (get_local $3)
+      )
+      (i32.or
+       (i32.shl
+        (get_local $4)
+        (i32.const 1)
+       )
+       (i32.const 1)
+      )
+     )
+    )
+    (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6resizeEjc
+     (get_local $1)
+     (get_local $4)
+     (i32.const 0)
+    )
+    (set_local $3
+     (i32.load8_s
+      (get_local $7)
+     )
+    )
+    (br $while-in)
+   )
+  )
+  (call $__ZNSt3__212basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6resizeEjc
+   (get_local $1)
+   (get_local $3)
+   (i32.const 0)
+  )
+  (i64.store align=4
+   (get_local $0)
+   (i64.load align=4
+    (get_local $1)
+   )
+  )
+  (i32.store offset=8
+   (get_local $0)
+   (i32.load offset=8
+    (get_local $1)
+   )
+  )
+  (set_local $0
+   (i32.const 0)
+  )
+  (loop $while-in1
+   (if
+    (i32.ne
+     (get_local $0)
+     (i32.const 3)
+    )
+    (block
+     (i32.store
+      (i32.add
+       (get_local $1)
+       (i32.shl
+        (get_local $0)
+        (i32.const 2)
+       )
+      )
+      (i32.const 0)
+     )
+     (set_local $0
+      (i32.add
+       (get_local $0)
+       (i32.const 1)
+      )
+     )
+     (br $while-in1)
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $5)
+  )
+ )
+ (func $__ZN10__cxxabiv117__class_type_infoD0Ev (; 211 ;) (param $0 i32)
+  (call $___unlockfile
+   (get_local $0)
+  )
+  (call $__ZdlPv
+   (get_local $0)
+  )
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info9can_catchEPKNS_16__shim_type_infoERPv (; 212 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (set_local $5
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 64)
+   )
+  )
+  (set_local $3
+   (get_local $5)
+  )
+  (set_local $0
+   (if (result i32)
+    (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+     (get_local $0)
+     (get_local $1)
+     (i32.const 0)
+    )
+    (i32.const 1)
+    (if (result i32)
+     (get_local $1)
+     (if (result i32)
+      (tee_local $1
+       (call $___dynamic_cast
+        (get_local $1)
+        (i32.const 1040)
+        (i32.const 1024)
+        (i32.const 0)
+       )
+      )
+      (block (result i32)
+       (i64.store align=4
+        (tee_local $4
+         (i32.add
+          (get_local $3)
+          (i32.const 4)
+         )
+        )
+        (i64.const 0)
+       )
+       (i64.store offset=8 align=4
+        (get_local $4)
+        (i64.const 0)
+       )
+       (i64.store offset=16 align=4
+        (get_local $4)
+        (i64.const 0)
+       )
+       (i64.store offset=24 align=4
+        (get_local $4)
+        (i64.const 0)
+       )
+       (i64.store offset=32 align=4
+        (get_local $4)
+        (i64.const 0)
+       )
+       (i64.store offset=40 align=4
+        (get_local $4)
+        (i64.const 0)
+       )
+       (i32.store offset=48
+        (get_local $4)
+        (i32.const 0)
+       )
+       (i32.store
+        (get_local $3)
+        (get_local $1)
+       )
+       (i32.store offset=8
+        (get_local $3)
+        (get_local $0)
+       )
+       (i32.store offset=12
+        (get_local $3)
+        (i32.const -1)
+       )
+       (i32.store offset=48
+        (get_local $3)
+        (i32.const 1)
+       )
+       (call_indirect (type $FUNCSIG$viiii)
+        (get_local $1)
+        (get_local $3)
+        (i32.load
+         (get_local $2)
+        )
+        (i32.const 1)
+        (i32.add
+         (i32.and
+          (i32.load offset=28
+           (i32.load
+            (get_local $1)
+           )
+          )
+          (i32.const 15)
+         )
+         (i32.const 208)
+        )
+       )
+       (if (result i32)
+        (i32.eq
+         (i32.load offset=24
+          (get_local $3)
+         )
+         (i32.const 1)
+        )
+        (block (result i32)
+         (i32.store
+          (get_local $2)
+          (i32.load offset=16
+           (get_local $3)
+          )
+         )
+         (i32.const 1)
+        )
+        (i32.const 0)
+       )
+      )
+      (i32.const 0)
+     )
+     (i32.const 0)
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $5)
+  )
+  (get_local $0)
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib (; 213 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (if
+   (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+    (get_local $0)
+    (i32.load offset=8
+     (get_local $1)
+    )
+    (get_local $5)
+   )
+   (call $__ZNK10__cxxabiv117__class_type_info29process_static_type_above_dstEPNS_19__dynamic_cast_infoEPKvS4_i
+    (i32.const 0)
+    (get_local $1)
+    (get_local $2)
+    (get_local $3)
+    (get_local $4)
+   )
+  )
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib (; 214 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (block $do-once
+   (if
+    (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+     (get_local $0)
+     (i32.load offset=8
+      (get_local $1)
+     )
+     (get_local $4)
+    )
+    (call $__ZNK10__cxxabiv117__class_type_info29process_static_type_below_dstEPNS_19__dynamic_cast_infoEPKvi
+     (i32.const 0)
+     (get_local $1)
+     (get_local $2)
+     (get_local $3)
+    )
+    (if
+     (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+      (get_local $0)
+      (i32.load
+       (get_local $1)
+      )
+      (get_local $4)
+     )
+     (block
+      (set_local $0
+       (i32.add
+        (get_local $1)
+        (i32.const 32)
+       )
+      )
+      (if
+       (i32.ne
+        (i32.load offset=16
+         (get_local $1)
+        )
+        (get_local $2)
+       )
+       (if
+        (i32.ne
+         (i32.load
+          (tee_local $4
+           (i32.add
+            (get_local $1)
+            (i32.const 20)
+           )
+          )
+         )
+         (get_local $2)
+        )
+        (block
+         (i32.store
+          (get_local $0)
+          (get_local $3)
+         )
+         (i32.store
+          (get_local $4)
+          (get_local $2)
+         )
+         (i32.store
+          (tee_local $0
+           (i32.add
+            (get_local $1)
+            (i32.const 40)
+           )
+          )
+          (i32.add
+           (i32.load
+            (get_local $0)
+           )
+           (i32.const 1)
+          )
+         )
+         (if
+          (i32.eq
+           (i32.load offset=36
+            (get_local $1)
+           )
+           (i32.const 1)
+          )
+          (if
+           (i32.eq
+            (i32.load offset=24
+             (get_local $1)
+            )
+            (i32.const 2)
+           )
+           (i32.store8 offset=54
+            (get_local $1)
+            (i32.const 1)
+           )
+          )
+         )
+         (i32.store offset=44
+          (get_local $1)
+          (i32.const 4)
+         )
+         (br $do-once)
+        )
+       )
+      )
+      (if
+       (i32.eq
+        (get_local $3)
+        (i32.const 1)
+       )
+       (i32.store
+        (get_local $0)
+        (i32.const 1)
+       )
+      )
+     )
+    )
+   )
+  )
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi (; 215 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (if
+   (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+    (get_local $0)
+    (i32.load offset=8
+     (get_local $1)
+    )
+    (i32.const 0)
+   )
+   (call $__ZNK10__cxxabiv117__class_type_info24process_found_base_classEPNS_19__dynamic_cast_infoEPvi
+    (i32.const 0)
+    (get_local $1)
+    (get_local $2)
+    (get_local $3)
+   )
+  )
+ )
+ (func $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b (; 216 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (i32.eq
+   (get_local $0)
+   (get_local $1)
+  )
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info24process_found_base_classEPNS_19__dynamic_cast_infoEPvi (; 217 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (set_local $4
+   (i32.add
+    (get_local $1)
+    (i32.const 36)
+   )
+  )
+  (set_local $0
+   (i32.add
+    (get_local $1)
+    (i32.const 24)
+   )
+  )
+  (block $do-once
+   (if
+    (tee_local $6
+     (i32.load
+      (tee_local $5
+       (i32.add
+        (get_local $1)
+        (i32.const 16)
+       )
+      )
+     )
+    )
+    (block
+     (if
+      (i32.ne
+       (get_local $6)
+       (get_local $2)
+      )
+      (block
+       (i32.store
+        (get_local $4)
+        (i32.add
+         (i32.load
+          (get_local $4)
+         )
+         (i32.const 1)
+        )
+       )
+       (i32.store
+        (get_local $0)
+        (i32.const 2)
+       )
+       (i32.store8 offset=54
+        (get_local $1)
+        (i32.const 1)
+       )
+       (br $do-once)
+      )
+     )
+     (if
+      (i32.eq
+       (i32.load
+        (get_local $0)
+       )
+       (i32.const 2)
+      )
+      (i32.store
+       (get_local $0)
+       (get_local $3)
+      )
+     )
+    )
+    (block
+     (i32.store
+      (get_local $5)
+      (get_local $2)
+     )
+     (i32.store
+      (get_local $0)
+      (get_local $3)
+     )
+     (i32.store
+      (get_local $4)
+      (i32.const 1)
+     )
+    )
+   )
+  )
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info29process_static_type_below_dstEPNS_19__dynamic_cast_infoEPKvi (; 218 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (local $4 i32)
+  (if
+   (i32.eq
+    (i32.load offset=4
+     (get_local $1)
+    )
+    (get_local $2)
+   )
+   (if
+    (i32.ne
+     (i32.load
+      (tee_local $4
+       (i32.add
+        (get_local $1)
+        (i32.const 28)
+       )
+      )
+     )
+     (i32.const 1)
+    )
+    (i32.store
+     (get_local $4)
+     (get_local $3)
+    )
+   )
+  )
+ )
+ (func $__ZNK10__cxxabiv117__class_type_info29process_static_type_above_dstEPNS_19__dynamic_cast_infoEPKvS4_i (; 219 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (i32.store8 offset=53
+   (get_local $1)
+   (i32.const 1)
+  )
+  (block $do-once
+   (if
+    (i32.eq
+     (i32.load offset=4
+      (get_local $1)
+     )
+     (get_local $3)
+    )
+    (block
+     (i32.store8 offset=52
+      (get_local $1)
+      (i32.const 1)
+     )
+     (set_local $3
+      (i32.add
+       (get_local $1)
+       (i32.const 54)
+      )
+     )
+     (set_local $6
+      (i32.add
+       (get_local $1)
+       (i32.const 48)
+      )
+     )
+     (set_local $5
+      (i32.add
+       (get_local $1)
+       (i32.const 24)
+      )
+     )
+     (set_local $0
+      (i32.add
+       (get_local $1)
+       (i32.const 36)
+      )
+     )
+     (if
+      (i32.eqz
+       (tee_local $7
+        (i32.load
+         (tee_local $1
+          (i32.add
+           (get_local $1)
+           (i32.const 16)
+          )
+         )
+        )
+       )
+      )
+      (block
+       (i32.store
+        (get_local $1)
+        (get_local $2)
+       )
+       (i32.store
+        (get_local $5)
+        (get_local $4)
+       )
+       (i32.store
+        (get_local $0)
+        (i32.const 1)
+       )
+       (br_if $do-once
+        (i32.eqz
+         (i32.and
+          (i32.eq
+           (i32.load
+            (get_local $6)
+           )
+           (i32.const 1)
+          )
+          (i32.eq
+           (get_local $4)
+           (i32.const 1)
+          )
+         )
+        )
+       )
+       (i32.store8
+        (get_local $3)
+        (i32.const 1)
+       )
+       (br $do-once)
+      )
+     )
+     (if
+      (i32.ne
+       (get_local $7)
+       (get_local $2)
+      )
+      (block
+       (i32.store
+        (get_local $0)
+        (i32.add
+         (i32.load
+          (get_local $0)
+         )
+         (i32.const 1)
+        )
+       )
+       (i32.store8
+        (get_local $3)
+        (i32.const 1)
+       )
+       (br $do-once)
+      )
+     )
+     (if
+      (i32.eq
+       (tee_local $0
+        (i32.load
+         (get_local $5)
+        )
+       )
+       (i32.const 2)
+      )
+      (i32.store
+       (get_local $5)
+       (get_local $4)
+      )
+      (set_local $4
+       (get_local $0)
+      )
+     )
+     (if
+      (i32.and
+       (i32.eq
+        (i32.load
+         (get_local $6)
+        )
+        (i32.const 1)
+       )
+       (i32.eq
+        (get_local $4)
+        (i32.const 1)
+       )
+      )
+      (i32.store8
+       (get_local $3)
+       (i32.const 1)
+      )
+     )
+    )
+   )
+  )
+ )
+ (func $___dynamic_cast (; 220 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  (local $10 i32)
+  (local $11 i32)
+  (set_local $8
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 64)
+   )
+  )
+  (set_local $7
+   (i32.add
+    (get_local $0)
+    (i32.load
+     (i32.add
+      (tee_local $4
+       (i32.load
+        (get_local $0)
+       )
+      )
+      (i32.const -8)
+     )
+    )
+   )
+  )
+  (set_local $6
+   (i32.load
+    (i32.add
+     (get_local $4)
+     (i32.const -4)
+    )
+   )
+  )
+  (i32.store
+   (tee_local $4
+    (get_local $8)
+   )
+   (get_local $2)
+  )
+  (i32.store offset=4
+   (get_local $4)
+   (get_local $0)
+  )
+  (i32.store offset=8
+   (get_local $4)
+   (get_local $1)
+  )
+  (i32.store offset=12
+   (get_local $4)
+   (get_local $3)
+  )
+  (set_local $1
+   (i32.add
+    (get_local $4)
+    (i32.const 20)
+   )
+  )
+  (set_local $9
+   (i32.add
+    (get_local $4)
+    (i32.const 24)
+   )
+  )
+  (set_local $10
+   (i32.add
+    (get_local $4)
+    (i32.const 28)
+   )
+  )
+  (set_local $11
+   (i32.add
+    (get_local $4)
+    (i32.const 32)
+   )
+  )
+  (set_local $3
+   (i32.add
+    (get_local $4)
+    (i32.const 40)
+   )
+  )
+  (i64.store align=4
+   (tee_local $5
+    (i32.add
+     (get_local $4)
+     (i32.const 16)
+    )
+   )
+   (i64.const 0)
+  )
+  (i64.store offset=8 align=4
+   (get_local $5)
+   (i64.const 0)
+  )
+  (i64.store offset=16 align=4
+   (get_local $5)
+   (i64.const 0)
+  )
+  (i64.store offset=24 align=4
+   (get_local $5)
+   (i64.const 0)
+  )
+  (i32.store offset=32
+   (get_local $5)
+   (i32.const 0)
+  )
+  (i32.store16 offset=36
+   (get_local $5)
+   (i32.const 0)
+  )
+  (i32.store8 offset=38
+   (get_local $5)
+   (i32.const 0)
+  )
+  (block $label$break$L1
+   (set_local $0
+    (if (result i32)
+     (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+      (get_local $6)
+      (get_local $2)
+      (i32.const 0)
+     )
+     (block (result i32)
+      (i32.store offset=48
+       (get_local $4)
+       (i32.const 1)
+      )
+      (call_indirect (type $FUNCSIG$viiiiii)
+       (get_local $6)
+       (get_local $4)
+       (get_local $7)
+       (get_local $7)
+       (i32.const 1)
+       (i32.const 0)
+       (i32.add
+        (i32.and
+         (i32.load offset=20
+          (i32.load
+           (get_local $6)
+          )
+         )
+         (i32.const 15)
+        )
+        (i32.const 240)
+       )
+      )
+      (if (result i32)
+       (i32.eq
+        (i32.load
+         (get_local $9)
+        )
+        (i32.const 1)
+       )
+       (get_local $7)
+       (i32.const 0)
+      )
+     )
+     (block (result i32)
+      (set_local $0
+       (i32.add
+        (get_local $4)
+        (i32.const 36)
+       )
+      )
+      (call_indirect (type $FUNCSIG$viiiii)
+       (get_local $6)
+       (get_local $4)
+       (get_local $7)
+       (i32.const 1)
+       (i32.const 0)
+       (i32.add
+        (i32.and
+         (i32.load offset=24
+          (i32.load
+           (get_local $6)
+          )
+         )
+         (i32.const 15)
+        )
+        (i32.const 224)
+       )
+      )
+      (block $switch
+       (block $switch-default
+        (block $switch-case0
+         (block $switch-case
+          (br_table $switch-case $switch-case0 $switch-default
+           (i32.load
+            (get_local $0)
+           )
+          )
+         )
+         (set_local $0
+          (i32.load
+           (get_local $1)
+          )
+         )
+         (if
+          (i32.eqz
+           (i32.and
+            (i32.and
+             (i32.eq
+              (i32.load
+               (get_local $3)
+              )
+              (i32.const 1)
+             )
+             (i32.eq
+              (i32.load
+               (get_local $10)
+              )
+              (i32.const 1)
+             )
+            )
+            (i32.eq
+             (i32.load
+              (get_local $11)
+             )
+             (i32.const 1)
+            )
+           )
+          )
+          (set_local $0
+           (i32.const 0)
+          )
+         )
+         (br $label$break$L1)
+        )
+        (br $switch)
+       )
+       (set_local $0
+        (i32.const 0)
+       )
+       (br $label$break$L1)
+      )
+      (if
+       (i32.ne
+        (i32.load
+         (get_local $9)
+        )
+        (i32.const 1)
+       )
+       (if
+        (i32.eqz
+         (i32.and
+          (i32.and
+           (i32.eqz
+            (i32.load
+             (get_local $3)
+            )
+           )
+           (i32.eq
+            (i32.load
+             (get_local $10)
+            )
+            (i32.const 1)
+           )
+          )
+          (i32.eq
+           (i32.load
+            (get_local $11)
+           )
+           (i32.const 1)
+          )
+         )
+        )
+        (block
+         (set_local $0
+          (i32.const 0)
+         )
+         (br $label$break$L1)
+        )
+       )
+      )
+      (i32.load
+       (get_local $5)
+      )
+     )
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $8)
+  )
+  (get_local $0)
+ )
+ (func $__ZNK10__cxxabiv120__si_class_type_info16search_above_dstEPNS_19__dynamic_cast_infoEPKvS4_ib (; 221 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (local $6 i32)
+  (if
+   (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+    (get_local $0)
+    (i32.load offset=8
+     (get_local $1)
+    )
+    (get_local $5)
+   )
+   (call $__ZNK10__cxxabiv117__class_type_info29process_static_type_above_dstEPNS_19__dynamic_cast_infoEPKvS4_i
+    (i32.const 0)
+    (get_local $1)
+    (get_local $2)
+    (get_local $3)
+    (get_local $4)
+   )
+   (call_indirect (type $FUNCSIG$viiiiii)
+    (tee_local $6
+     (i32.load offset=8
+      (get_local $0)
+     )
+    )
+    (get_local $1)
+    (get_local $2)
+    (get_local $3)
+    (get_local $4)
+    (get_local $5)
+    (i32.add
+     (i32.and
+      (i32.load offset=20
+       (i32.load
+        (get_local $6)
+       )
+      )
+      (i32.const 15)
+     )
+     (i32.const 240)
+    )
+   )
+  )
+ )
+ (func $__ZNK10__cxxabiv120__si_class_type_info16search_below_dstEPNS_19__dynamic_cast_infoEPKvib (; 222 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (block $do-once
+   (if
+    (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+     (get_local $0)
+     (i32.load offset=8
+      (get_local $1)
+     )
+     (get_local $4)
+    )
+    (call $__ZNK10__cxxabiv117__class_type_info29process_static_type_below_dstEPNS_19__dynamic_cast_infoEPKvi
+     (i32.const 0)
+     (get_local $1)
+     (get_local $2)
+     (get_local $3)
+    )
+    (block
+     (set_local $5
+      (i32.add
+       (get_local $0)
+       (i32.const 8)
+      )
+     )
+     (if
+      (i32.eqz
+       (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+        (get_local $0)
+        (i32.load
+         (get_local $1)
+        )
+        (get_local $4)
+       )
+      )
+      (block
+       (call_indirect (type $FUNCSIG$viiiii)
+        (tee_local $0
+         (i32.load
+          (get_local $5)
+         )
+        )
+        (get_local $1)
+        (get_local $2)
+        (get_local $3)
+        (get_local $4)
+        (i32.add
+         (i32.and
+          (i32.load offset=24
+           (i32.load
+            (get_local $0)
+           )
+          )
+          (i32.const 15)
+         )
+         (i32.const 224)
+        )
+       )
+       (br $do-once)
+      )
+     )
+     (set_local $0
+      (i32.add
+       (get_local $1)
+       (i32.const 32)
+      )
+     )
+     (if
+      (i32.ne
+       (i32.load offset=16
+        (get_local $1)
+       )
+       (get_local $2)
+      )
+      (if
+       (i32.ne
+        (i32.load
+         (tee_local $6
+          (i32.add
+           (get_local $1)
+           (i32.const 20)
+          )
+         )
+        )
+        (get_local $2)
+       )
+       (block
+        (i32.store
+         (get_local $0)
+         (get_local $3)
+        )
+        (br_if $do-once
+         (i32.eq
+          (i32.load
+           (tee_local $3
+            (i32.add
+             (get_local $1)
+             (i32.const 44)
+            )
+           )
+          )
+          (i32.const 4)
+         )
+        )
+        (i32.store8
+         (tee_local $0
+          (i32.add
+           (get_local $1)
+           (i32.const 52)
+          )
+         )
+         (i32.const 0)
+        )
+        (i32.store8
+         (tee_local $7
+          (i32.add
+           (get_local $1)
+           (i32.const 53)
+          )
+         )
+         (i32.const 0)
+        )
+        (call_indirect (type $FUNCSIG$viiiiii)
+         (tee_local $5
+          (i32.load
+           (get_local $5)
+          )
+         )
+         (get_local $1)
+         (get_local $2)
+         (get_local $2)
+         (i32.const 1)
+         (get_local $4)
+         (i32.add
+          (i32.and
+           (i32.load offset=20
+            (i32.load
+             (get_local $5)
+            )
+           )
+           (i32.const 15)
+          )
+          (i32.const 240)
+         )
+        )
+        (block $__rjto$0
+         (block $__rjti$0
+          (if
+           (i32.load8_s
+            (get_local $7)
+           )
+           (if
+            (i32.load8_s
+             (get_local $0)
+            )
+            (set_local $0
+             (i32.const 3)
+            )
+            (block
+             (set_local $0
+              (i32.const 3)
+             )
+             (br $__rjti$0)
+            )
+           )
+           (block
+            (set_local $0
+             (i32.const 4)
+            )
+            (br $__rjti$0)
+           )
+          )
+          (br $__rjto$0)
+         )
+         (i32.store
+          (get_local $6)
+          (get_local $2)
+         )
+         (i32.store
+          (tee_local $2
+           (i32.add
+            (get_local $1)
+            (i32.const 40)
+           )
+          )
+          (i32.add
+           (i32.load
+            (get_local $2)
+           )
+           (i32.const 1)
+          )
+         )
+         (if
+          (i32.eq
+           (i32.load offset=36
+            (get_local $1)
+           )
+           (i32.const 1)
+          )
+          (if
+           (i32.eq
+            (i32.load offset=24
+             (get_local $1)
+            )
+            (i32.const 2)
+           )
+           (i32.store8 offset=54
+            (get_local $1)
+            (i32.const 1)
+           )
+          )
+         )
+        )
+        (i32.store
+         (get_local $3)
+         (get_local $0)
+        )
+        (br $do-once)
+       )
+      )
+     )
+     (if
+      (i32.eq
+       (get_local $3)
+       (i32.const 1)
+      )
+      (i32.store
+       (get_local $0)
+       (i32.const 1)
+      )
+     )
+    )
+   )
+  )
+ )
+ (func $__ZNK10__cxxabiv120__si_class_type_info27has_unambiguous_public_baseEPNS_19__dynamic_cast_infoEPvi (; 223 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (local $4 i32)
+  (if
+   (call $__ZN10__cxxabiv18is_equalEPKSt9type_infoS2_b
+    (get_local $0)
+    (i32.load offset=8
+     (get_local $1)
+    )
+    (i32.const 0)
+   )
+   (call $__ZNK10__cxxabiv117__class_type_info24process_found_base_classEPNS_19__dynamic_cast_infoEPvi
+    (i32.const 0)
+    (get_local $1)
+    (get_local $2)
+    (get_local $3)
+   )
+   (call_indirect (type $FUNCSIG$viiii)
+    (tee_local $4
+     (i32.load offset=8
+      (get_local $0)
+     )
+    )
+    (get_local $1)
+    (get_local $2)
+    (get_local $3)
+    (i32.add
+     (i32.and
+      (i32.load offset=28
+       (i32.load
+        (get_local $4)
+       )
+      )
+      (i32.const 15)
+     )
+     (i32.const 208)
+    )
+   )
+  )
+ )
+ (func $__ZSt15get_new_handlerv (; 224 ;) (result i32)
+  (local $0 i32)
+  (i32.store
+   (i32.const 1777152)
+   (tee_local $0
+    (i32.load
+     (i32.const 1777152)
+    )
+   )
+  )
+  (get_local $0)
+ )
+ (func $___cxa_can_catch (; 225 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (set_local $3
+   (get_global $STACKTOP)
+  )
+  (set_global $STACKTOP
+   (i32.add
+    (get_global $STACKTOP)
+    (i32.const 16)
+   )
+  )
+  (i32.store
+   (tee_local $4
+    (get_local $3)
+   )
+   (i32.load
+    (get_local $2)
+   )
+  )
+  (set_local $0
+   (i32.and
+    (tee_local $1
+     (call_indirect (type $FUNCSIG$iiii)
+      (get_local $0)
+      (get_local $1)
+      (get_local $4)
+      (i32.add
+       (i32.and
+        (i32.load offset=16
+         (i32.load
+          (get_local $0)
+         )
+        )
+        (i32.const 31)
+       )
+       (i32.const 16)
+      )
+     )
+    )
+    (i32.const 1)
+   )
+  )
+  (if
+   (get_local $1)
+   (i32.store
+    (get_local $2)
+    (i32.load
+     (get_local $4)
+    )
+   )
+  )
+  (set_global $STACKTOP
+   (get_local $3)
+  )
+  (get_local $0)
+ )
+ (func $___cxa_is_pointer_type (; 226 ;) (param $0 i32) (result i32)
+  (i32.and
+   (if (result i32)
+    (get_local $0)
+    (i32.ne
+     (call $___dynamic_cast
+      (get_local $0)
+      (i32.const 1040)
+      (i32.const 1096)
+      (i32.const 0)
+     )
+     (i32.const 0)
+    )
+    (i32.const 0)
+   )
+   (i32.const 1)
+  )
+ )
+ (func $runPostSets (; 227 ;)
   (nop)
  )
- (func $_llvm_bswap_i32 (; 187 ;) (param $0 i32) (result i32)
+ (func $_llvm_bswap_i32 (; 228 ;) (param $0 i32) (result i32)
   (i32.or
    (i32.or
     (i32.or
@@ -37668,7 +42700,7 @@
    )
   )
  )
- (func $_memcpy (; 188 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $_memcpy (; 229 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -37996,7 +43028,86 @@
   )
   (get_local $4)
  )
- (func $_memset (; 189 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $_memmove (; 230 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+  (local $3 i32)
+  (if
+   (i32.and
+    (i32.lt_s
+     (get_local $1)
+     (get_local $0)
+    )
+    (i32.lt_s
+     (get_local $0)
+     (i32.add
+      (get_local $1)
+      (get_local $2)
+     )
+    )
+   )
+   (block
+    (set_local $3
+     (get_local $0)
+    )
+    (set_local $1
+     (i32.add
+      (get_local $1)
+      (get_local $2)
+     )
+    )
+    (set_local $0
+     (i32.add
+      (get_local $0)
+      (get_local $2)
+     )
+    )
+    (loop $while-in
+     (if
+      (i32.gt_s
+       (get_local $2)
+       (i32.const 0)
+      )
+      (block
+       (set_local $2
+        (i32.sub
+         (get_local $2)
+         (i32.const 1)
+        )
+       )
+       (i32.store8
+        (tee_local $0
+         (i32.sub
+          (get_local $0)
+          (i32.const 1)
+         )
+        )
+        (i32.load8_s
+         (tee_local $1
+          (i32.sub
+           (get_local $1)
+           (i32.const 1)
+          )
+         )
+        )
+       )
+       (br $while-in)
+      )
+     )
+    )
+    (set_local $0
+     (get_local $3)
+    )
+   )
+   (drop
+    (call $_memcpy
+     (get_local $0)
+     (get_local $1)
+     (get_local $2)
+    )
+   )
+  )
+  (get_local $0)
+ )
+ (func $_memset (; 231 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -38202,7 +43313,7 @@
    (get_local $2)
   )
  )
- (func $_sbrk (; 190 ;) (param $0 i32) (result i32)
+ (func $_sbrk (; 232 ;) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (set_local $1
@@ -38284,7 +43395,7 @@
   )
   (get_local $2)
  )
- (func $dynCall_ii (; 191 ;) (param $0 i32) (param $1 i32) (result i32)
+ (func $dynCall_ii (; 233 ;) (param $0 i32) (param $1 i32) (result i32)
   (call_indirect (type $FUNCSIG$ii)
    (get_local $1)
    (i32.and
@@ -38293,37 +43404,37 @@
    )
   )
  )
- (func $jsCall_ii_0 (; 192 ;) (param $0 i32) (result i32)
+ (func $jsCall_ii_0 (; 234 ;) (param $0 i32) (result i32)
   (call $jsCall_ii
    (i32.const 0)
    (get_local $0)
   )
  )
- (func $jsCall_ii_1 (; 193 ;) (param $0 i32) (result i32)
+ (func $jsCall_ii_1 (; 235 ;) (param $0 i32) (result i32)
   (call $jsCall_ii
    (i32.const 1)
    (get_local $0)
   )
  )
- (func $jsCall_ii_2 (; 194 ;) (param $0 i32) (result i32)
+ (func $jsCall_ii_2 (; 236 ;) (param $0 i32) (result i32)
   (call $jsCall_ii
    (i32.const 2)
    (get_local $0)
   )
  )
- (func $jsCall_ii_3 (; 195 ;) (param $0 i32) (result i32)
+ (func $jsCall_ii_3 (; 237 ;) (param $0 i32) (result i32)
   (call $jsCall_ii
    (i32.const 3)
    (get_local $0)
   )
  )
- (func $jsCall_ii_4 (; 196 ;) (param $0 i32) (result i32)
+ (func $jsCall_ii_4 (; 238 ;) (param $0 i32) (result i32)
   (call $jsCall_ii
    (i32.const 4)
    (get_local $0)
   )
  )
- (func $dynCall_iiii (; 197 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
+ (func $dynCall_iiii (; 239 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (result i32)
   (call_indirect (type $FUNCSIG$iiii)
    (get_local $1)
    (get_local $2)
@@ -38331,13 +43442,13 @@
    (i32.add
     (i32.and
      (get_local $0)
-     (i32.const 15)
+     (i32.const 31)
     )
     (i32.const 16)
    )
   )
  )
- (func $jsCall_iiii_0 (; 198 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $jsCall_iiii_0 (; 240 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (call $jsCall_iiii
    (i32.const 0)
    (get_local $0)
@@ -38345,7 +43456,7 @@
    (get_local $2)
   )
  )
- (func $jsCall_iiii_1 (; 199 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $jsCall_iiii_1 (; 241 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (call $jsCall_iiii
    (i32.const 1)
    (get_local $0)
@@ -38353,7 +43464,7 @@
    (get_local $2)
   )
  )
- (func $jsCall_iiii_2 (; 200 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $jsCall_iiii_2 (; 242 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (call $jsCall_iiii
    (i32.const 2)
    (get_local $0)
@@ -38361,7 +43472,7 @@
    (get_local $2)
   )
  )
- (func $jsCall_iiii_3 (; 201 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $jsCall_iiii_3 (; 243 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (call $jsCall_iiii
    (i32.const 3)
    (get_local $0)
@@ -38369,7 +43480,7 @@
    (get_local $2)
   )
  )
- (func $jsCall_iiii_4 (; 202 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $jsCall_iiii_4 (; 244 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (call $jsCall_iiii
    (i32.const 4)
    (get_local $0)
@@ -38377,43 +43488,43 @@
    (get_local $2)
   )
  )
- (func $dynCall_v (; 203 ;) (param $0 i32)
+ (func $dynCall_v (; 245 ;) (param $0 i32)
   (call_indirect (type $FUNCSIG$v)
    (i32.add
     (i32.and
      (get_local $0)
      (i32.const 15)
     )
-    (i32.const 32)
+    (i32.const 48)
    )
   )
  )
- (func $jsCall_v_0 (; 204 ;)
+ (func $jsCall_v_0 (; 246 ;)
   (call $jsCall_v
    (i32.const 0)
   )
  )
- (func $jsCall_v_1 (; 205 ;)
+ (func $jsCall_v_1 (; 247 ;)
   (call $jsCall_v
    (i32.const 1)
   )
  )
- (func $jsCall_v_2 (; 206 ;)
+ (func $jsCall_v_2 (; 248 ;)
   (call $jsCall_v
    (i32.const 2)
   )
  )
- (func $jsCall_v_3 (; 207 ;)
+ (func $jsCall_v_3 (; 249 ;)
   (call $jsCall_v
    (i32.const 3)
   )
  )
- (func $jsCall_v_4 (; 208 ;)
+ (func $jsCall_v_4 (; 250 ;)
   (call $jsCall_v
    (i32.const 4)
   )
  )
- (func $dynCall_vi (; 209 ;) (param $0 i32) (param $1 i32)
+ (func $dynCall_vi (; 251 ;) (param $0 i32) (param $1 i32)
   (call_indirect (type $FUNCSIG$vi)
    (get_local $1)
    (i32.add
@@ -38421,41 +43532,41 @@
      (get_local $0)
      (i32.const 127)
     )
-    (i32.const 48)
+    (i32.const 64)
    )
   )
  )
- (func $jsCall_vi_0 (; 210 ;) (param $0 i32)
+ (func $jsCall_vi_0 (; 252 ;) (param $0 i32)
   (call $jsCall_vi
    (i32.const 0)
    (get_local $0)
   )
  )
- (func $jsCall_vi_1 (; 211 ;) (param $0 i32)
+ (func $jsCall_vi_1 (; 253 ;) (param $0 i32)
   (call $jsCall_vi
    (i32.const 1)
    (get_local $0)
   )
  )
- (func $jsCall_vi_2 (; 212 ;) (param $0 i32)
+ (func $jsCall_vi_2 (; 254 ;) (param $0 i32)
   (call $jsCall_vi
    (i32.const 2)
    (get_local $0)
   )
  )
- (func $jsCall_vi_3 (; 213 ;) (param $0 i32)
+ (func $jsCall_vi_3 (; 255 ;) (param $0 i32)
   (call $jsCall_vi
    (i32.const 3)
    (get_local $0)
   )
  )
- (func $jsCall_vi_4 (; 214 ;) (param $0 i32)
+ (func $jsCall_vi_4 (; 256 ;) (param $0 i32)
   (call $jsCall_vi
    (i32.const 4)
    (get_local $0)
   )
  )
- (func $dynCall_vii (; 215 ;) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $dynCall_vii (; 257 ;) (param $0 i32) (param $1 i32) (param $2 i32)
   (call_indirect (type $FUNCSIG$vii)
    (get_local $1)
    (get_local $2)
@@ -38464,70 +43575,283 @@
      (get_local $0)
      (i32.const 15)
     )
-    (i32.const 176)
+    (i32.const 192)
    )
   )
  )
- (func $jsCall_vii_0 (; 216 ;) (param $0 i32) (param $1 i32)
+ (func $jsCall_vii_0 (; 258 ;) (param $0 i32) (param $1 i32)
   (call $jsCall_vii
    (i32.const 0)
    (get_local $0)
    (get_local $1)
   )
  )
- (func $jsCall_vii_1 (; 217 ;) (param $0 i32) (param $1 i32)
+ (func $jsCall_vii_1 (; 259 ;) (param $0 i32) (param $1 i32)
   (call $jsCall_vii
    (i32.const 1)
    (get_local $0)
    (get_local $1)
   )
  )
- (func $jsCall_vii_2 (; 218 ;) (param $0 i32) (param $1 i32)
+ (func $jsCall_vii_2 (; 260 ;) (param $0 i32) (param $1 i32)
   (call $jsCall_vii
    (i32.const 2)
    (get_local $0)
    (get_local $1)
   )
  )
- (func $jsCall_vii_3 (; 219 ;) (param $0 i32) (param $1 i32)
+ (func $jsCall_vii_3 (; 261 ;) (param $0 i32) (param $1 i32)
   (call $jsCall_vii
    (i32.const 3)
    (get_local $0)
    (get_local $1)
   )
  )
- (func $jsCall_vii_4 (; 220 ;) (param $0 i32) (param $1 i32)
+ (func $jsCall_vii_4 (; 262 ;) (param $0 i32) (param $1 i32)
   (call $jsCall_vii
    (i32.const 4)
    (get_local $0)
    (get_local $1)
   )
  )
- (func $b0 (; 221 ;) (param $0 i32) (result i32)
+ (func $dynCall_viiii (; 263 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call_indirect (type $FUNCSIG$viiii)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (i32.add
+    (i32.and
+     (get_local $0)
+     (i32.const 15)
+    )
+    (i32.const 208)
+   )
+  )
+ )
+ (func $jsCall_viiii_0 (; 264 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (call $jsCall_viiii
+   (i32.const 0)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+  )
+ )
+ (func $jsCall_viiii_1 (; 265 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (call $jsCall_viiii
+   (i32.const 1)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+  )
+ )
+ (func $jsCall_viiii_2 (; 266 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (call $jsCall_viiii
+   (i32.const 2)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+  )
+ )
+ (func $jsCall_viiii_3 (; 267 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (call $jsCall_viiii
+   (i32.const 3)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+  )
+ )
+ (func $jsCall_viiii_4 (; 268 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (call $jsCall_viiii
+   (i32.const 4)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+  )
+ )
+ (func $dynCall_viiiii (; 269 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call_indirect (type $FUNCSIG$viiiii)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+   (i32.add
+    (i32.and
+     (get_local $0)
+     (i32.const 15)
+    )
+    (i32.const 224)
+   )
+  )
+ )
+ (func $jsCall_viiiii_0 (; 270 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call $jsCall_viiiii
+   (i32.const 0)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+  )
+ )
+ (func $jsCall_viiiii_1 (; 271 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call $jsCall_viiiii
+   (i32.const 1)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+  )
+ )
+ (func $jsCall_viiiii_2 (; 272 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call $jsCall_viiiii
+   (i32.const 2)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+  )
+ )
+ (func $jsCall_viiiii_3 (; 273 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call $jsCall_viiiii
+   (i32.const 3)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+  )
+ )
+ (func $jsCall_viiiii_4 (; 274 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call $jsCall_viiiii
+   (i32.const 4)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+  )
+ )
+ (func $dynCall_viiiiii (; 275 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32) (param $6 i32)
+  (call_indirect (type $FUNCSIG$viiiiii)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+   (get_local $6)
+   (i32.add
+    (i32.and
+     (get_local $0)
+     (i32.const 15)
+    )
+    (i32.const 240)
+   )
+  )
+ )
+ (func $jsCall_viiiiii_0 (; 276 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call $jsCall_viiiiii
+   (i32.const 0)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+  )
+ )
+ (func $jsCall_viiiiii_1 (; 277 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call $jsCall_viiiiii
+   (i32.const 1)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+  )
+ )
+ (func $jsCall_viiiiii_2 (; 278 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call $jsCall_viiiiii
+   (i32.const 2)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+  )
+ )
+ (func $jsCall_viiiiii_3 (; 279 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call $jsCall_viiiiii
+   (i32.const 3)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+  )
+ )
+ (func $jsCall_viiiiii_4 (; 280 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call $jsCall_viiiiii
+   (i32.const 4)
+   (get_local $0)
+   (get_local $1)
+   (get_local $2)
+   (get_local $3)
+   (get_local $4)
+   (get_local $5)
+  )
+ )
+ (func $b0 (; 281 ;) (param $0 i32) (result i32)
   (call $abort
    (i32.const 0)
   )
   (i32.const 0)
  )
- (func $b1 (; 222 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $b1 (; 282 ;) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (call $abort
    (i32.const 1)
   )
   (i32.const 0)
  )
- (func $b2 (; 223 ;)
+ (func $b2 (; 283 ;)
   (call $abort
    (i32.const 2)
   )
  )
- (func $b3 (; 224 ;) (param $0 i32)
+ (func $b3 (; 284 ;) (param $0 i32)
   (call $abort
    (i32.const 3)
   )
  )
- (func $b4 (; 225 ;) (param $0 i32) (param $1 i32)
+ (func $b4 (; 285 ;) (param $0 i32) (param $1 i32)
   (call $abort
    (i32.const 4)
+  )
+ )
+ (func $b5 (; 286 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+  (call $abort
+   (i32.const 5)
+  )
+ )
+ (func $b6 (; 287 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (call $abort
+   (i32.const 6)
+  )
+ )
+ (func $b7 (; 288 ;) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32) (param $5 i32)
+  (call $abort
+   (i32.const 7)
   )
  )
 )

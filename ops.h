@@ -1,4 +1,3 @@
-
 typedef  uint8_t OpArgs[6+4];
 
 void op_nop(OpArgs &a);
@@ -160,7 +159,7 @@ opr opTable[] = {
   { 0,0, "ISB", op_isb},
   { 0,0, "LDM", op_ldm},
   { 0,0, "LDR (immediate)", op_ldr_immediate},
-  { 0,0, "LDR (literal)", op_ldr_literal},
+  { 0,0, "LDR (literal) ~Rt, ~imm", op_ldr_literal},
   { 0,0, "LDR (register)", op_ldr_register},
   { 0,0, "LDRB (immediate)", op_ldrb_immediate},
   { 0,0, "LDRB (register)", op_ldrb_register},

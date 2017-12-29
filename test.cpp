@@ -83,7 +83,8 @@ uint32_t fetchWord(uint32_t addr) {
 uint16_t fetchHalfword(uint32_t addr) {
   if (addr < 0x20000000) {
     // flash
-    uint16_t *flash16 = (uint16_t*)&flash;
+    // printf("HW[%x]: %x, %x\n", addr, flash[addr], flash[addr+1]);
+    uint16_t *flash16 = (uint16_t*)flash;
     return flash16[addr >> 1];
   }
   else if (addr < 0x40000000) {
@@ -146,7 +147,7 @@ void setPC(uint32_t newPc) {
 }
 
 void boot() {
-  uint32_t offset = 0;
+  uint32_t offset = 0x2000;
 
   apsr.N = 0;
   apsr.Z = 0;
@@ -156,10 +157,16 @@ void boot() {
   for (uint32_t i=0; i<sizeof(ram); i++) { ram[i] = 0; }
   for (uint8_t i=0; i < REGISTER_COUNT; i++) { registers[i] = 0; }
 
+  // uint32_t off = 0x43b8 - 20;
+  // for(uint32_t i = 0; i<32; i++) {
+  //   printf("0x%x: %x\n",off, fetchByte(off));
+  //   off++;
+  // }
 
   registers[spRegister] = fetchWord(0x0000 + offset);
   printf("sp: %x\n", registers[spRegister]);
   setPC(fetchHalfword(0x0004 + offset) & ~1);
+  // registers[pcRegister] += 2;
   registers[lrRegister] = 0xFFFFFFFF;
   printf("pc: %x\n", registers[pcRegister]);
 
@@ -188,18 +195,16 @@ void printBits(size_t const size, uint32_t data)
 void _step();
 void EMSCRIPTEN_KEEPALIVE loadFlash(uint8_t *buf, uint32_t size) {
   for (uint32_t i=0; i<sizeof(flash); i++) { flash[i] = 0xFF; }
-  memcpy(flash, buf, size);
-  for (uint8_t i=0; i<16; i++) {
-    printf("flash@%d: %d\n", i, flash[i]);
-  }
-  printf("loading buffer of size %d\n", size);
+  memcpy((flash+0x2000), buf, size);
+  // for (uint32_t i=0; i<1000; i+=2) {
+  //   printf("flash@0x%2x: %2x%2x\n", i, flash[i+1], flash[i]);
+  // }
+  // printf("flashat: %x%x\n",flash[0x43b8],flash[0x43b8+1]);
+  // printf("loading buffer of size %d\n", size);
   boot();
-  _step();
-  _step();
-  _step();
-  _step();
-  _step();
-  _step();
+  for (uint8_t i=0; i<15; i++) {
+      _step();
+  }
 }
 
 
@@ -209,8 +214,8 @@ void EMSCRIPTEN_KEEPALIVE loadFlash(uint8_t *buf, uint32_t size) {
 void decode_instruction(uint32_t addr, simple_op_args &opdata) {
   uint16_t instruction = fetchHalfword(addr);
   uint16_t opcode = instruction >> 10;
-  printf("opcode:");
-  printBits(6,opcode);
+  // printf("opcode:");
+  // printBits(6,opcode);
   switch (opcode) {
 
     // Data processing on page A5-80
@@ -386,6 +391,7 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
       }
       break;
     }
+  }
 
     // Shift (immediate), add, subtract, move, and compare on page A5-79
     if ((opcode & 0b110000) == 0) {
@@ -404,14 +410,15 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     // Load from Literal Pool (LDR)
     if ((opcode & 0b111110) == 0b010010) {
       opdata.handler = op_ldr_literal;
-      opdata.Rd = (instruction >> 8) & 0b111;
-      opdata.imm = IMM8(instruction);
+      opdata.Rt = (instruction >> 8) & 0b111;
+      opdata.imm = IMM8(instruction) << 2;
+      return;
     } else
     // Load/store single data item
     if (((opcode & 0b111100) == 0b010100) ||
       ((opcode & 0b111000) == 0b011000) ||
       ((opcode & 0b111000) == 0b100000)) {
-        printf("possibly load/store\n");
+        // printf("possibly load/store\n");
         uint8_t opA = instruction >> 12;
         uint8_t opB = (instruction >> 9) & 0b111;
         if (opA == 0b0101) { // (register)
@@ -734,7 +741,6 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
       opdata.imm = IMM11(instruction) << 1;
       return;
     }
-  }
 
   // 32-bit instructions
   opcode = (instruction >> 11) & 0b11111;
@@ -787,15 +793,30 @@ void decode_instruction(uint32_t addr, simple_op_args &opdata) {
     }
   }
 
-  opdata.handler = op_udf;
+  if(!opdata.handler) {
+    opdata.handler = op_udf;
+  }
 }
 
 void printOp(simple_op_args &op) {
+  uint32_t found;
   opr *o;
+  std::string s;
   uint8_t op_count = sizeof(opTable)/ sizeof(opr);
   for (uint8_t i=0; i<op_count; i++) {
     if (opTable[i].op == op.handler) {
-      printf("%s\n", opTable[i].label.c_str());
+      s = opTable[i].label;
+      found=s.find("~Rt",0);
+      if (found!=std::string::npos) {
+        s.replace(found, 3, "R");
+        s.replace(found+1, 0,  std::to_string(op.Rt));
+      }
+      found=s.find("~imm",0);
+      if (found!=std::string::npos) {
+        s.replace(found, 4, "#");
+        s.replace(found+1, 0,  std::to_string(op.imm));
+      }
+      printf("%s\n", s.c_str());
       break;
     }
   }
@@ -814,14 +835,18 @@ void _step() {
     decode_instruction(inst_addr, decoded_op);
   }
   uint32_t t = fetchHalfword(inst_addr);
-  // printf("%08B ",t);
+  printf("\n; %04x: %04x\n",inst_addr,t);
   printBits(16, t);
   printOp(decoded_op);
   handler = decoded_op.handler;
+
+  registers[pcRegister] += 2;
+
   handler((OpArgs&)decoded_op);
+  printf("flags: [NZCV] : [%d%d%d%d]\n",apsr.N, apsr.Z, apsr.C, apsr.V);
 
   // advance PC ?
-  registers[pcRegister] += 2;
+
 
   // assume all instructions are one clock
   ticks++;
@@ -982,8 +1007,9 @@ void op_ldm(OpArgs &a) {
 void op_ldr_literal(OpArgs &a) {
   simple_op_args &args = (simple_op_args&)a;
 
-  uint32_t base = registers[spRegister] & ~3;
+  uint32_t base = registers[pcRegister] & ~3;
   uint32_t offset_addr = base + args.imm;
+  printf("LDR addr: %0X\n",offset_addr & ~3);
   uint32_t result = fetchWord(offset_addr & ~3);
   registers[args.Rt] = result;
 }
