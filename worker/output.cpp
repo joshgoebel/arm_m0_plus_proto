@@ -10,9 +10,16 @@ printf("%d",ready);
   return ready;
 }
 
-int main() {
-  while (ready()) {
+void loop() {
+  if (ready()) {
     printf("hello\n");
+  }
+}
+
+int main() {
+  printf("before\n");
+  while(true) {
+    loop();
   }
   return 0;
 }
