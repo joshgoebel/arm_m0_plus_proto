@@ -1295,6 +1295,10 @@
         };
       };
       var myWorker = new Worker('worker.js');
+      myWorker.onmessage = function(e) {
+        console.log(e.data);
+        // myWorker.postMessage("test");
+      };
     </script>
     <!-- <script async type="text/javascript" src="play.js"></script> -->
   </body>
